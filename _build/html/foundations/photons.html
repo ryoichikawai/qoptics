@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Photons and quantum radiation fields &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'foundations/photons';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. What is quantum coherence?" href="coherence.html" />
+    <link rel="prev" title="Google Colab" href="../frontmatter/cloud.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bunching.html">3. Bunching and full counting statistics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../model/system.html">4. The System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">5. The Emitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">6. Radiation field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">7. External driving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">8. Dectectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">9. Quantum master equations</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/foundations/photons.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Ffoundations/photons.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/foundations/photons.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Photons and quantum radiation fields</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-photon">1.1. What is a photon?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-radiation-field">1.2. Classical radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photons">1.3. Photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantized-radiation-fields">1.4. Quantized radiation fields</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="photons-and-quantum-radiation-fields">
+<span id="ch-photons"></span><h1><span class="section-number">1. </span>Photons and quantum radiation fields<a class="headerlink" href="#photons-and-quantum-radiation-fields" title="Link to this heading">#</a></h1>
+<section id="what-is-a-photon">
+<h2><span class="section-number">1.1. </span>What is a photon?<a class="headerlink" href="#what-is-a-photon" title="Link to this heading">#</a></h2>
+<p>Classical light is described by electromagnetic fields which are continuous both in space and time.  Quantum light is described also by electromagnetic fields but they are quantum fields.  The quantum fields are also continuous.  So, where is “quantumness” in the quantum light?  Photons immediately pops up in our head.  But what are they?  Unfortunately, they are poorly defined in literature  and misused by many people. In 1951 Albert Einstein said “All these fifty years of conscious brooding have brought me no nearer to the answer to the question ‘What are light quanta?’ Nowadays every Tom, Dick and Harry thinks he knows it, but he is mistaken.”<span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id45" title="A. P. French. Einstein: A Centenary Volume. Harvard University Press, Cambridge, Mass., 1979. ISBN 978-0674242302.">1</a>]</span>  Since a correct use of the photon concept is so difficult, W. E. Lamb suggested that a license be required for use of the word photon.”<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id44" title="W. E. Lamb. Anti-photon. Applied Physics B, 60(2–3):77–84, February 1995. doi:10.1007/BF01135846.">2</a>]</span>  Roy J. Glauber, who were given a license, defined photon as  “A photon is what a photodetector detects” and also “A photon is where the photodetector detects it” rather than defining a photon as a pre-existing “particle” in space.  When three Nobel laureates in quantum optics were saying like that, the meaning of photons must be very difficult for laymen to understand.</p>
+<p>We should not imagine that a photon is traveling along its trajectory like a classical particle.  The position of a photon does not have clear meaning. No position operator can be defined for a photon and thus we cannot measure its position. Recall that for another quantum particle, electron, the position can be measured.  So the situation of photon is quite different from other quantum particles.  Nevertheless, we assume that the speed of a photon is the same as the speed of classical light <span class="math notranslate nohighlight">\(c\)</span>.<a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>Although we don’t have a license, we shall use the word “photon” in this lecture note but only in a limited scope. We use the word in two occasions:  we say “A photon is emitted” when a quanta of energy is transferred from the emitter to the radiation field, and “A photon is detected” when the detector clicked (received a quanta of energy from the field).   The mathematical definition of photons will be given below.</p>
+<p>If you are interested in the discussion of <em>What is a photon</em>, read Ref.<span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id43" title="Chandra Roychoudhuri, A. F. Kracklauer, and Kathy Creath, editors. Nature of Light What Is a Photon? CRC Press, 2017. ISBN 9781351835831.">3</a>]</span>.</p>
+</section>
+<section id="classical-radiation-field">
+<h2><span class="section-number">1.2. </span>Classical radiation field<a class="headerlink" href="#classical-radiation-field" title="Link to this heading">#</a></h2>
+<p>Classical radiation fields are described by electromagnetic waves. An electromagnetic wave is a solution to the Maxwell equations, which is a vector in the Hilbert space of infinite dimension.  Hence, the solution can be always  expressed as a linear combination of basis functions <span class="math notranslate nohighlight">\(\{u_{i}(x)\}\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-field-decomposition">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-eq-field-decomposition" title="Link to this equation">#</a></span>\[
+\mathbf{E}(\mathbf{x},t) = \sum_{j} \mathbf{e}_{j} \left( \mathcal{E}_{j} a_{j}(t) u_{j}(\mathbf{x}) +  \mathcal{E}^{*}_{j} a^{*}_{j}(t) u^{*}_{j}(\mathbf{x})\right )
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{E}_{j}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{e}_{j}\)</span> are a constant with the dimension of the electric field and a polarization vector associate with the <span class="math notranslate nohighlight">\(j\)</span>-th basis function. The coefficients <span class="math notranslate nohighlight">\(a_{j}\)</span> represent  a particular solution.  In optics, a basis is called an <em>optical mode</em>.</p>
+<p>In a free space,  the most popular choice of the basis is plane waves <span class="math notranslate nohighlight">\(u_{j}(\mathbf{x}) = e^{i\mathbf{k}_{j}\cdot \mathbf{x}}\)</span> and correspondingly, we have <span class="math notranslate nohighlight">\(a_{j}(t) = a_{j} e^{-i \omega_{j} t}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{E}_{j} = i \sqrt{\frac{\hbar \omega_j}{2 \varepsilon_{0} V}}\)</span>. We have used discrete wave vectors in order to avoid mathematical complication but in the real world, we have to use a continuous spectrum.</p>
+<p>In classical theory, the coefficients <span class="math notranslate nohighlight">\(a_{j}(t)\)</span> are treated as stochastic variables. The randomness accounts for the apparent loss of coherence.  It works quite well to reproduce experimental data but is not based on the first principles.</p>
+<p>In principle, the choice of modes are arbitrary. We can pick modes that are convenient for the physical situation we are investigating. A problem is that a convenient choice of modes to describe a light emitter is not necessarily a good choice for a detector. It is very important to pick modes consistent to the experimental setup.</p>
+<p>For mathematical convenienbce, we use the complex expression <span class="math notranslate nohighlight">\(\mathbf{E} = \mathbf{E}^{(+)} + \mathbf{E}^{(-)}\)</span>  defined by</p>
+<div class="math notranslate nohighlight" id="equation-eq-classical-fields">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-eq-classical-fields" title="Link to this equation">#</a></span>\[
+\mathbf{E}^{(+)}(\mathbf{x},t) = \sum_{j} \mathbf{e}_{j} \mathcal{E}_{j} a_{j}(t) u_{j}(\mathbf{x}), \qquad \mathbf{E}^{(-)}(\mathbf{x},t) = \sum_{j} \mathbf{e}_{j} \mathcal{E}^{*}_{j} a^{*}_{j}(t) u^{*}_{j}(\mathbf{x}).
+\]</div>
+<p>and the intensity of the light is defined by</p>
+<div class="math notranslate nohighlight" id="equation-eq-classical-intensity">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-eq-classical-intensity" title="Link to this equation">#</a></span>\[
+I(\mathbf{x}) = \langle \mathbf{E}^{(-)}(\mathbf{x},t) \cdot \mathbf{E}^{(+)}(\mathbf{x},t)\rangle = \sum_{i,j} \mathbf{e}_{i}\cdot\mathbf{e}_{j}\, \mathcal{E}_{i} \mathcal{E}^{*}_{j} \, u_{i}(\mathbf{x}) u^{*}_{j}(\mathbf{x})  \langle a^{*}_{i}(t) a_j(t)\rangle
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\langle \cdots \rangle\)</span> is an ensemble average of the probability distribution of the random phase. The ensemble average is usually replaced with temporal average in practical application.</p>
+</section>
+<section id="photons">
+<h2><span class="section-number">1.3. </span>Photons<a class="headerlink" href="#photons" title="Link to this heading">#</a></h2>
+<p>Quantizing radiation field <a class="reference internal" href="#equation-eq-classical-fields">(1.2)</a> is straight forward. The coefficients <span class="math notranslate nohighlight">\(a_{j}\)</span> and <span class="math notranslate nohighlight">\(a^{*}_{j}\)</span> become annihilation operator <span class="math notranslate nohighlight">\(\hat{a}_{j}\)</span> and creation operators <span class="math notranslate nohighlight">\(\hat{a}^{\dagger}_{j}\)</span>, respectively. They satisfy usual commutation relation <span class="math notranslate nohighlight">\([\hat{a}_{i},\hat{a}^{\dagger}_{j}] = \delta_{ij}\)</span> and follow the usual operator algebra of a Harmonic oscillator.
+We define photons using the creation and annihilation operators. Defining a vacuum state by <span class="math notranslate nohighlight">\(a_{j}|0\rangle=0\)</span>, we create a photon in  <span class="math notranslate nohighlight">\(j\)</span>-th mode by <span class="math notranslate nohighlight">\(|1_j\rangle = a^{\dagger}_{j}|0\rangle\)</span>.  <span class="math notranslate nohighlight">\(n_{j} = a^\dagger_{j}a_{j}\)</span> is a number operator as usual.
+We can say “a photon is created or destroyed.  We can also count photons.  That is all we can say about photons.</p>
+<p>The free Hamiltonian of photons is given by <span class="math notranslate nohighlight">\(\sum_{j} \frac{\omega_{j}}{2} \left(a^{\dagger}_{j} a_{j} + \frac{1}{2}\right)\)</span> where <span class="math notranslate nohighlight">\(\hbar \omega_{j}\)</span> is the energy of photon is the <span class="math notranslate nohighlight">\(j\)</span>-th mode.</p>
+<p>Since the operators are tied to the modes, <em>the number of photons also depends on the choice of modes</em>.  The bottom line is that the quantum electromagnetic fields are fundamental but photons are emergent.  Some people call photon a pseudo particle.  This is why Glauber said “a photon is what a photodetector detects”, which implies that we should not think about photons traveling around in the space.</p>
+<p>When an electron in an emitter jumps from a higher energy state to a lower energy state, we say a photon is emitted.  What these statements mean is that the electron deposits a quanta of energy to the field, and then the energy stored in the field somehow travels to the detector and gives a click. That is all we need for now. The photons reveal their existence only when the energy quanta comes in and out.</p>
+</section>
+<section id="quantized-radiation-fields">
+<h2><span class="section-number">1.4. </span>Quantized radiation fields<a class="headerlink" href="#quantized-radiation-fields" title="Link to this heading">#</a></h2>
+<p>Here we consider the radiation field in a free space. It is natural to expand the field with the plane wave basis set. Then, the electric field at position <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and time <span class="math notranslate nohighlight">\(t\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-quantum-free-field">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-eq-quantum-free-field" title="Link to this equation">#</a></span>\[
+\mathbf{E}(\mathbf{x}) = \sum_{\ell} \mathbf{e}_{\ell} \left( \mathcal{E}_{\ell} a_{\ell} e^{i \mathbf{k}_{\ell} \cdot \mathbf{x}} +  \mathcal{E}^{*}_{\ell} a^{\dagger}_{\ell} e^{-i \mathbf{k}_{\ell} \cdot \mathbf{x}}\right )
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{E}_{\ell} = i \sqrt{\frac{\hbar \omega_{\ell}}{2 \epsilon_{0} V}}\)</span> and <span class="math notranslate nohighlight">\(\epsilon_{\ell}\)</span> is the polarization vector for the <span class="math notranslate nohighlight">\(\ell\)</span>-th mode.</p>
+<p>We also use another popular notation which splits the field to the two parts:</p>
+<div class="math notranslate nohighlight" id="equation-eq-quantum-free-field-pm">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-eq-quantum-free-field-pm" title="Link to this equation">#</a></span>\[
+\mathbf{E}^{(+)}(\mathbf{x}) = \sum_{\ell} \mathbf{e}_{\ell} \mathcal{E}_{\ell} a_{\ell} e^{i \mathbf{k}_{\ell} \cdot \mathbf{x}}, \qquad
+\mathbf{E}^{(-)}(\mathbf{x}) = \sum_{\ell} \mathbf{e}_{\ell} \mathcal{E}^{*}_{\ell} a^{\dagger}_{\ell} e^{-i \mathbf{k}_{\ell} \cdot \mathbf{x}}.
+\]</div>
+<p>Remember that the electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is a quantum mechanical operator.  If the Heisenberg picture is used, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(a^\dagger\)</span> are time-dependent and thus <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is time-dependent.  If the Schrödinger picture is used, then <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> does not depend on time.  We will choose a convenient picture depending on the situation.</p>
+<p>The quantum expectation value of an observable <span class="math notranslate nohighlight">\(\hat{A}\)</span> is defined as <span class="math notranslate nohighlight">\(\langle A(t) \rangle = \text{tr}(A(t) \rho)\)</span> in the Heisenberg picture or <span class="math notranslate nohighlight">\(\text{tr}(A \rho(t))\)</span> in the Schrödinger picture, where <span class="math notranslate nohighlight">\(\rho\)</span> is a density operator.</p>
+<p>The mean intensity of light is given by</p>
+<div class="math notranslate nohighlight">
+\[
+I(\mathbf{x},t) = \langle \mathbf{E}^{(-)} \cdot\mathbf{E}^{(+)}\rangle = \sum_{i,j} \mathbf{e}_{i}\cdot\mathbf{e}_{j}\, \mathcal{E}^{*}_{i} \mathcal{E}_{j} \, e^{-i \mathbf{k}_{i}\cdot \mathbf{x}} e^{i \mathbf{k}_{j} \cdot \mathbf{x}}  \langle a^{\dagger}_{i}(t) a_{j}(t)\rangle
+\]</div>
+<p>This averaging replaces the ensemble average appeared in the classical intensity <a class="reference internal" href="#equation-eq-classical-intensity">(1.3)</a>.</p>
+<p>In classical optics, the electric field is a measurable quantity.  In quamtum field theory, the field is not an observable.  The expectation value of the field vanishes, <span class="math notranslate nohighlight">\(\langle \mathbf{E} \rangle\)</span>=0.   Mathematically, an observable must have <span class="math notranslate nohighlight">\(a_{j}\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}_{j}\)</span> as a pair.   The number operator <span class="math notranslate nohighlight">\(n_{j} = a^{\dagger}_{j} a_{j}\)</span> is an example.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>Think how the speed of photon can be experimentally measured. Strictly speaking, we can only infer it.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            name: "book",
+            path: "./foundations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../frontmatter/cloud.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Google Colab</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="coherence.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>What is quantum coherence?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-photon">1.1. What is a photon?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-radiation-field">1.2. Classical radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photons">1.3. Photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantized-radiation-fields">1.4. Quantized radiation fields</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

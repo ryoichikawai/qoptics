@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. The Emitter &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'model/emitter';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Radiation field" href="radiation-field.html" />
+    <link rel="prev" title="4. The System" href="system.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="system.html">4. The System</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. The Emitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radiation-field.html">6. Radiation field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driving.html">7. External driving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">8. Dectectors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">9. Quantum master equations</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/model/emitter.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Fmodel/emitter.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/model/emitter.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Emitter</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-two-level-system">5.1. A single two-level system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-identical-atoms">5.2. <span class="math notranslate nohighlight">\(N\)</span> identical atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#location-of-atoms">5.3. Location of atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">5.4. Dipole moment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">5.5. Interaction between the atoms</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-emitter">
+<span id="ch-emitter"></span><h1><span class="section-number">5. </span>The Emitter<a class="headerlink" href="#the-emitter" title="Link to this heading">#</a></h1>
+<p>The emitter of photons is a group of identical atoms (or quantum dots).Particularly we are interested in a small cluster of atoms, the number of atoms ranging from <span class="math notranslate nohighlight">\(N=1\)</span> through <span class="math notranslate nohighlight">\(N=5\)</span> or so.  We focus on a particular transition between two energy levels and ignore other levels.  Mathematically, the two-level system (TLS) can be treated as a qubit (or a system of spin-1/2).</p>
+<section id="a-single-two-level-system">
+<h2><span class="section-number">5.1. </span>A single two-level system<a class="headerlink" href="#a-single-two-level-system" title="Link to this heading">#</a></h2>
+<p>A single atom has two energy levels, a lower energy state <span class="math notranslate nohighlight">\(|g\rangle\)</span> and a higher energy state <span class="math notranslate nohighlight">\(|e\rangle\)</span> with corresponding energy <span class="math notranslate nohighlight">\(E_{g} &lt; E_{e}\)</span>.  We ignore electron spin. Such a system is called two-level system (TLS).  <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span> form an orthonormal basis set in the two-dimensional Hilbert space. We can consider the system as a qubit and the Pauli operators are defined by</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma^{x} = | e \rangle\langle g | + | g \rangle\langle e |, \qquad \sigma^{y} =  i (| e \rangle\langle g | -  | g \rangle\langle e |), \qquad \sigma^{z} = | e \rangle\langle e | - | g \rangle\langle g |
+\]</div>
+<p>and raising and lowering operators by</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma^{+} = \frac{1}{2}\left(\sigma^{x} - i \sigma^{y}\right) = | e \rangle\langle g |, \qquad \sigma^{-} =  \frac{1}{2}\left(\sigma^{x} + i \sigma^{y}\right) = | g \rangle\langle e |.
+\]</div>
+<p>Recall how the raising and lowering operators work:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma^{+}|g\rangle = |e\rangle, \quad \sigma^{+}|e\rangle =0, \qquad
+\sigma^{-}|g\rangle = 0, \quad \sigma^{-}|e\rangle = |g\rangle
+\]</div>
+<p>For numerical calculation, the basis vectors <span class="math notranslate nohighlight">\(|e\rangle\)</span> and <span class="math notranslate nohighlight">\(|g\rangle\)</span> are expressed in the following matrix form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|e\rangle = \begin{pmatrix} 1 \\ 0\end{pmatrix}, \qquad |g\rangle = \begin{pmatrix} 0 \\ 1\end{pmatrix}.
+\end{split}\]</div>
+<p>Be careful about this definition since some people define them in in the opposite way.</p>
+<p>Using the these notations, a free Hamiltonian for a single quantum dot is defined by</p>
+<div class="math notranslate nohighlight">
+\[
+H_{S} = \frac{\omega_0}{2} \sigma^{z}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega_0 = E_{e}-E_{g}\)</span>  (<span class="math notranslate nohighlight">\(\hbar=1\)</span> is assumed.)</p>
+</section>
+<section id="n-identical-atoms">
+<h2><span class="section-number">5.2. </span><span class="math notranslate nohighlight">\(N\)</span> identical atoms<a class="headerlink" href="#n-identical-atoms" title="Link to this heading">#</a></h2>
+<p>We assume that all atoms are identically modeled as TLS, with same excitation energy <span class="math notranslate nohighlight">\(\omega_0\)</span> and the same dipole moment <span class="math notranslate nohighlight">\(d\)</span>.  Only the difference is their location.</p>
+<p>The dimension of the Hilbert space is <span class="math notranslate nohighlight">\(2^N\)</span>. For computational purpose, we use the standard product basis set,</p>
+<div class="math notranslate nohighlight" id="equation-eq-product-basis-n">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-eq-product-basis-n" title="Link to this equation">#</a></span>\[
+|s_{1} s_{2} \cdots s_{N}\rangle = |s_{1}\rangle\otimes|s_{2}\rangle\otimes \cdots \otimes |s_{N}\rangle, \qquad |s_{j}\rangle = |g\rangle \text{ or } |e\rangle
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\otimes\)</span> denotes tensor product. For <span class="math notranslate nohighlight">\(N=2\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq-product-basis-2">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-eq-product-basis-2" title="Link to this equation">#</a></span>\[
+|gg\rangle = |g\rangle \otimes |g\rangle, \quad |ge\rangle = |g\rangle \otimes |e\rangle, \quad |eg\rangle = |e\rangle \otimes |g\rangle, \quad |ee\rangle=|e\rangle \otimes |e\rangle.
+\]</div>
+<p>The spin operator for the $j$-th atom is given by
+<div class="math notranslate nohighlight">
+\[
+\sigma^{\mu}_{j} = \overbrace{I \otimes \cdots \otimes  I}^{j-1} \otimes \sigma^{\mu} \otimes I \otimes \cdots \otimes I, \qquad \mu = {x,y,z,\pm} 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the identity operator for the two-dimensional Hilbert space.   For N=2. <span class="math notranslate nohighlight">\(\sigma^{\mu}_{1} = \sigma^{\mu} \otimes I\)</span> and <span class="math notranslate nohighlight">\(\sigma^{\mu}_{2} = I \otimes \sigma^{\mu}\)</span>.</p>
+<p>Then, the free Hamiltonian of the <span class="math notranslate nohighlight">\(N\)</span> atoms is a simple sum</p>
+<div class="math notranslate nohighlight">
+\[
+H_{S} = \sum_{j=1}^{N} \frac{\omega_0}{2} \sigma^{z}_{j}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma^{z}_{j}\)</span> is a Pauli operator for <span class="math notranslate nohighlight">\(j\)</span>-th quantum dot.</p>
+</section>
+<section id="location-of-atoms">
+<h2><span class="section-number">5.3. </span>Location of atoms<a class="headerlink" href="#location-of-atoms" title="Link to this heading">#</a></h2>
+<p>We denote the position of the <span class="math notranslate nohighlight">\(j\)</span>-th atom as <span class="math notranslate nohighlight">\(\mathbf{x}_{j}\)</span>. The relative position <span class="math notranslate nohighlight">\(\mathbf{r}_{ij} = \mathbf{x}_{i} - \mathbf{x}_{j}\)</span> actually takes more important roles.</p>
+<p>The location of atoms does not show up in the free Hamiltonian.  It will appear in the interaction Hamiltonian with radiation fields which will be discussed in <a class="reference internal" href="radiation-field.html#ch-radiation-field"><span class="std std-numref">Section 6</span></a>.  The dipole-dipole interaction introduced below is the part of atom-radiation interaction and depends on the relative position.</p>
+</section>
+<section id="dipole-moment">
+<h2><span class="section-number">5.4. </span>Dipole moment<a class="headerlink" href="#dipole-moment" title="Link to this heading">#</a></h2>
+<p>Each atom carries a dipole moment <span class="math notranslate nohighlight">\(\mathbf{d}\)</span>.  Although we don’t have to make a specific assumption, for mathematical simplicity it is assumed to be a linear dipole moment, which is a real vector.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{d} = -e \langle e | \mathbf{r}_{e} | g \rangle
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{r}_{e}\)</span> is the position of electron with respect to the atom center and <span class="math notranslate nohighlight">\(-e\)</span> is the electron charge.</p>
+</section>
+<section id="interaction-between-the-atoms">
+<h2><span class="section-number">5.5. </span>Interaction between the atoms<a class="headerlink" href="#interaction-between-the-atoms" title="Link to this heading">#</a></h2>
+<p>There are many possible interactions between atoms.  When the wave functions of two neighboring atoms overlap, quantum tunneling, exchange interaction and <a class="reference external" href="https://en.wikipedia.org/wiki/Dexter_electron_transfer">the Dexter energy transfer</a> are possible.  Even in the absence of the overlap, the Förster Resonance Energy Transfer (FRET) and inter-atoms Auger processes can take places.  For quantum dots, the exchange of phonons between the dots can destroy quantum phase (dephasing).</p>
+<p>In the present lecture note, we consider only the dipole-dipole interaction which is an indirect interaction through the free radiation field. The Hamiltonian for the dipole-dipole interaction is given by</p>
+<div class="math notranslate nohighlight">
+\[
+H_{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i} \sigma^{-}_{j}
+\]</div>
+<p>with the strength of the dipole-dipole interaction <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">8</a>]</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-dd-cupling-strength">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-eq-dd-cupling-strength" title="Link to this equation">#</a></span>\[
+\Omega_{ij} = \frac{3}{4} \gamma_{0} \left \{- \left[1-\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2}\right] \frac{\cos \xi_{ij}}{\xi_{ij}} + \left[1 - 3\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2}\right]\left(\frac{\sin \xi_{ij}}{\xi_{ij}^2}+\frac{\cos\xi_{ij}}{\xi_{ij}^3}\right)\right\}.
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma_{0} = \frac{4 \omega_{0}^3 d^2}{3 \hbar c^3}\)</span> is the rate of spontaneous emission and <span class="math notranslate nohighlight">\(\xi_{ij}=\omega_0 r_{ij}/c\)</span>.</p>
+<p>If the dipole is linear, <span class="math notranslate nohighlight">\(\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2} = \cos^2\theta\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(\mathbf{d}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{r}_{12}\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            name: "book",
+            path: "./model"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="system.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>The System</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="radiation-field.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Radiation field</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-two-level-system">5.1. A single two-level system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-identical-atoms">5.2. <span class="math notranslate nohighlight">\(N\)</span> identical atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#location-of-atoms">5.3. Location of atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">5.4. Dipole moment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">5.5. Interaction between the atoms</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

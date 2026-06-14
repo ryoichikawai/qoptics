@@ -1,0 +1,39 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: cover
+parts:
+-  caption: Front matter
+   numbered: false
+   chapters:
+   -  file: frontmatter/aboutme
+   -  file: frontmatter/preface
+   -  file: frontmatter/intro
+      sections:
+      -  file: frontmatter/thisbook
+      -  file: frontmatter/python
+      -  file: frontmatter/jupyter
+      -  file: frontmatter/cloud
+-  caption: Basics
+   numbered: 3
+   chapters:
+   -  file: foundations/photons
+   -  file: foundations/coherence
+   -  file: foundations/bunching
+-  caption: Model
+   numbered: 3
+   chapters:
+   -  file: model/system
+   -  file: model/emitter
+   -  file: model/radiation-field
+   -  file: model/driving
+   -  file: model/detector
+-  caption: Methods
+   numbered: 3
+   chapters:
+   -  file: methods/openqm-qme
+-  caption:
+   numbered: false
+   chapters:
+   -  file: references/references
