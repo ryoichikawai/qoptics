@@ -199,7 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="emitter.html">6. The Emitter</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Radiation field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectector</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
@@ -477,14 +477,14 @@ $<span class="math notranslate nohighlight">\(
 <section id="interaction-between-emitter-and-radiation">
 <h2><span class="section-number">7.3. </span>Interaction between emitter and radiation<a class="headerlink" href="#interaction-between-emitter-and-radiation" title="Link to this heading">#</a></h2>
 <p>The interaction between the atoms and the radiation field is simply due to the force exerted by the radiation field on the electron.  Assuming that the wave length of light emitted by the quantum dot is much larger than the size of the quantum dot, the interaction Hamiltonian can be written as</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-sr-coupling">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-sr-coupling" title="Link to this equation">#</a></span>\[
 H_{SR} = -\sum_{j} \mathbf{E}(\mathbf{x}_{j}) \cdot \mathbf{d} \left (\sigma^{-}_{j} + \sigma^{+}_{j}\right)
 \]</div>
 <p>where  <span class="math notranslate nohighlight">\(\mathbf{x}_{j}\)</span> is the center position of the <span class="math notranslate nohighlight">\(j\)</span>-th quantum dot and <span class="math notranslate nohighlight">\(\mathbf{d}_{j} = \langle 1| \mathbf{r_{j}}|0\rangle\)</span> is the dipole moment of each quantum dot (<span class="math notranslate nohighlight">\(\mathbf{r}_{j}\)</span> is the radial vector from the center of the <span class="math notranslate nohighlight">\(j\)</span>-th quantum dot and electric charge <span class="math notranslate nohighlight">\(e=1\)</span> is assumed.)</p>
 <p>Substituting Eq. <a class="reference internal" href="../foundations/photons.html#equation-eq-quantum-free-field-pm">(1.5)</a>, we have a full expression of the interaction Hamiltonian</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-h-sr">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-h-sr" title="Link to this equation">#</a></span>\[
 H_{SR} = - \sum_{j} \sum_{\ell} \mathbf{d}\cdot\mathbf{e}_{\ell} \left( \mathcal{E}_{\ell} a_{\ell} e^{i \mathbf{k}_{\ell} \cdot \mathbf{x}_{j}} +  \mathcal{E}^{*}_{\ell} a^{\dagger}_{\ell} e^{-i \mathbf{k}_{\ell} \cdot \mathbf{x}_{j}}\right )  \left (\sigma^{-}_{j} + \sigma^{+}_{j}\right)
 \]</div>
 </section>
