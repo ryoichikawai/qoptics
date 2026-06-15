@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -430,6 +430,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-radiation-field">1.2. Classical radiation field</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photons">1.3. Photons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantized-radiation-fields">1.4. Quantized radiation fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-of-radiation-field">1.5. Measurement of radiation field</a></li>
 </ul>
             </nav>
         </div>
@@ -461,7 +462,7 @@
 <p>In a free space,  the most popular choice of the basis is plane waves <span class="math notranslate nohighlight">\(u_{j}(\mathbf{x}) = e^{i\mathbf{k}_{j}\cdot \mathbf{x}}\)</span> and correspondingly, we have <span class="math notranslate nohighlight">\(a_{j}(t) = a_{j} e^{-i \omega_{j} t}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{E}_{j} = i \sqrt{\frac{\hbar \omega_j}{2 \varepsilon_{0} V}}\)</span>. We have used discrete wave vectors in order to avoid mathematical complication but in the real world, we have to use a continuous spectrum.</p>
 <p>In classical theory, the coefficients <span class="math notranslate nohighlight">\(a_{j}(t)\)</span> are treated as stochastic variables. The randomness accounts for the apparent loss of coherence.  It works quite well to reproduce experimental data but is not based on the first principles.</p>
 <p>In principle, the choice of modes are arbitrary. We can pick modes that are convenient for the physical situation we are investigating. A problem is that a convenient choice of modes to describe a light emitter is not necessarily a good choice for a detector. It is very important to pick modes consistent to the experimental setup.</p>
-<p>For mathematical convenienbce, we use the complex expression <span class="math notranslate nohighlight">\(\mathbf{E} = \mathbf{E}^{(+)} + \mathbf{E}^{(-)}\)</span>  defined by</p>
+<p>For mathematical convenience, we use the complex expression <span class="math notranslate nohighlight">\(\mathbf{E} = \mathbf{E}^{(+)} + \mathbf{E}^{(-)}\)</span>  defined by</p>
 <div class="math notranslate nohighlight" id="equation-eq-classical-fields">
 <span class="eqno">(1.2)<a class="headerlink" href="#equation-eq-classical-fields" title="Link to this equation">#</a></span>\[
 \mathbf{E}^{(+)}(\mathbf{x},t) = \sum_{j} \mathbf{e}_{j} \mathcal{E}_{j} a_{j}(t) u_{j}(\mathbf{x}), \qquad \mathbf{E}^{(-)}(\mathbf{x},t) = \sum_{j} \mathbf{e}_{j} \mathcal{E}^{*}_{j} a^{*}_{j}(t) u^{*}_{j}(\mathbf{x}).
@@ -499,12 +500,36 @@ We can say “a photon is created or destroyed.  We can also count photons.  Tha
 <p>Remember that the electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is a quantum mechanical operator.  If the Heisenberg picture is used, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(a^\dagger\)</span> are time-dependent and thus <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is time-dependent.  If the Schrödinger picture is used, then <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> does not depend on time.  We will choose a convenient picture depending on the situation.</p>
 <p>The quantum expectation value of an observable <span class="math notranslate nohighlight">\(\hat{A}\)</span> is defined as <span class="math notranslate nohighlight">\(\langle A(t) \rangle = \text{tr}(A(t) \rho)\)</span> in the Heisenberg picture or <span class="math notranslate nohighlight">\(\text{tr}(A \rho(t))\)</span> in the Schrödinger picture, where <span class="math notranslate nohighlight">\(\rho\)</span> is a density operator.</p>
 <p>The mean intensity of light is given by</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-radiation-intensity">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-eq-radiation-intensity" title="Link to this equation">#</a></span>\[
 I(\mathbf{x},t) = \langle \mathbf{E}^{(-)} \cdot\mathbf{E}^{(+)}\rangle = \sum_{i,j} \mathbf{e}_{i}\cdot\mathbf{e}_{j}\, \mathcal{E}^{*}_{i} \mathcal{E}_{j} \, e^{-i \mathbf{k}_{i}\cdot \mathbf{x}} e^{i \mathbf{k}_{j} \cdot \mathbf{x}}  \langle a^{\dagger}_{i}(t) a_{j}(t)\rangle
 \]</div>
 <p>This averaging replaces the ensemble average appeared in the classical intensity <a class="reference internal" href="#equation-eq-classical-intensity">(1.3)</a>.</p>
-<p>In classical optics, the electric field is a measurable quantity.  In quamtum field theory, the field is not an observable.  The expectation value of the field vanishes, <span class="math notranslate nohighlight">\(\langle \mathbf{E} \rangle\)</span>=0.   Mathematically, an observable must have <span class="math notranslate nohighlight">\(a_{j}\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}_{j}\)</span> as a pair.   The number operator <span class="math notranslate nohighlight">\(n_{j} = a^{\dagger}_{j} a_{j}\)</span> is an example.</p>
+<p>In classical optics, the electric field is a measurable quantity.  In quantum field theory, the observation of electric field is quite different.  If the state of radiation field is an eigenstate of the number operator, the expectation value of the field vanishes, .i.e. <span class="math notranslate nohighlight">\(\langle \mathbf{E} \rangle=0\)</span>.  However, <span class="math notranslate nohighlight">\(\langle \mathbf{E}^2 \rangle &gt; 0\)</span> even when there is no photon. This is just the properties of a harmonic oscillator.</p>
+<p>The classical-like electric field can be seen when the quantum state of the radiation is a <em>coherent state</em>, a mixture of different numbers of photons. The state of laser beam is an example.</p>
+<p>We also need to be careful about  <span class="math notranslate nohighlight">\(\mathbf{E}^{(\pm)}\)</span>.  They are not self-adjoint and thus not physical observables.  Measuring <span class="math notranslate nohighlight">\(\mathbf{E}^{(\pm)}\)</span> is not possible.</p>
+</section>
+<section id="measurement-of-radiation-field">
+<h2><span class="section-number">1.5. </span>Measurement of radiation field<a class="headerlink" href="#measurement-of-radiation-field" title="Link to this heading">#</a></h2>
+<p>In classical optics, the intensity of light is often defined as</p>
+<div class="math notranslate nohighlight" id="equation-eq-intensity-fullterms">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-eq-intensity-fullterms" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+I &amp;= \langle \mathbf{E}\cdot \mathbf{E} \rangle \nonumber \\
+&amp;= 
+\langle (\mathbf{E}^{(+)})^2 \rangle + \langle (\mathbf{E}^{(-)})^2 \rangle + \langle \mathbf{E}^{(+)}\cdot \mathbf{E}^{(-)} \rangle +  \langle \mathbf{E}^{(-)}\cdot \mathbf{E}^{(+)} \rangle.
+\end{aligned}
+\end{split}\]</div>
+<p>Equation <a class="reference internal" href="#equation-eq-radiation-intensity">(1.6)</a> is only one of the four terms.  Are we missing some energy?  There are several reasons quantum optics uses Eq. <a class="reference internal" href="#equation-eq-radiation-intensity">(1.6)</a>.</p>
+<p><strong>Infinite zero point energy</strong></p>
+<p>Suppose that we have a vacuum state (no photon).  <span class="math notranslate nohighlight">\(\langle 0 | \mathbf{E}^{(+)}\cdot \mathbf{E}^{(-)} | 0  \rangle\)</span> diverges due to the zero point energy of the infinite number of oscillators.  We want to remove this energy from the intensity of the radiation.</p>
+<p><strong>Rapid oscillations</strong></p>
+<p>Since <span class="math notranslate nohighlight">\(\mathbf{E}^{(+)} \propto e^{-i \omega t}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{E}^{(-)} \propto e^{i \omega t}\)</span>, the square terms in Eq. <a class="reference internal" href="#equation-eq-intensity-fullterms">(1.7)</a> are rapidly oscillating and the standard detector does not have a sufficient time resolution to see the oscillation.  The detector averages out the oscillation and thus these terms vanishes.  Since the actual detector can’t see them, there is no reason to include them. This is just a practical reason.</p>
+<p><strong>What a detector sees</strong></p>
+<p>A single photon detector records the arrival of individual photons.  Inside the detector, an electron gains energy from a photon by absorbing it.  Mathematically, this process is represented by <span class="math notranslate nohighlight">\(a^{\dagger}a\)</span>.  Only <span class="math notranslate nohighlight">\(\langle \mathbf{E}^{(-)}\cdot \mathbf{E}^{(+)} \rangle\)</span> corresponds to the process in the detector.</p>
+<p>We need to be careful about  <span class="math notranslate nohighlight">\(\mathbf{E}^{(\pm)}\)</span>.  They are not self-adjoint and thus not physical observable.  Measuring <span class="math notranslate nohighlight">\(\mathbf{E}^{(\pm)}\)</span> is not possible.  Any observable quantity must be a product of the same number of <span class="math notranslate nohighlight">\(\mathbf{E}^{(+)}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{E}^{(-)}\)</span>.</p>
+<p>In classical optics, the electric field is a measurable quantity.  In quantum field theory, the observation of electric field is quite different.  If the state of radiation field is an eigenstate of the photon number operator, the expectation value of the field vanishes, i.e., <span class="math notranslate nohighlight">\(\langle \mathbf{E}\rangle=0\)</span>  despite <span class="math notranslate nohighlight">\(\langle \mathbf{E}^2 \rangle\)</span> diverges even when there is no photon as we discussed above.</p>
+<p>The classical-like electric field can be seen when photons are in a <em>coherent state</em>, a mixture of different numbers of photons. The state of laser beam is an example.  In this lecture note, we are dealing with a weak radiation field so that we can count the number of photons arriving the detector.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id5" role="doc-footnote">
@@ -585,6 +610,7 @@ I(\mathbf{x},t) = \langle \mathbf{E}^{(-)} \cdot\mathbf{E}^{(+)}\rangle = \sum_{
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-radiation-field">1.2. Classical radiation field</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photons">1.3. Photons</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantized-radiation-fields">1.4. Quantized radiation fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-of-radiation-field">1.5. Measurement of radiation field</a></li>
 </ul>
   </nav></div>
 
