@@ -21,6 +21,9 @@ parts:
    -  file: foundations/photons
    -  file: foundations/coherence
    -  file: foundations/bunching
+   -  file: foundations/coherence-func
+      sections:
+      -  file: foundations/coherence-g1
 -  caption: Model
    numbered: 3
    chapters:
@@ -30,6 +33,10 @@ parts:
    -  file: model/driving
    -  file: model/detector
 -  caption: Methods
+   numbered: 3
+   chapters:
+   -  file: methods/qutip
+   -  file: methods/openqm-qme
    numbered: 3
    chapters:
    -  file: methods/openqm-qme

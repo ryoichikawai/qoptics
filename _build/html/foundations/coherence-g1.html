@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. External driving &#8212; Optical coherence from small atomic clusters.</title>
+    <title>4.1. First-order coherence function &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -61,11 +61,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'model/driving';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'foundations/coherence-g1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9. Dectectors" href="detector.html" />
-    <link rel="prev" title="7. Radiation field" href="radiation-field.html" />
+    <link rel="next" title="5. The System" href="../model/system.html" />
+    <link rel="prev" title="4. Coherence functions" href="coherence-func.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -182,22 +184,22 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="photons.html">1. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bunching.html">3. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="coherence-func.html">4. Coherence functions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. First-order coherence function</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emitter.html">6. The Emitter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="radiation-field.html">7. Radiation field</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectectors</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. The Emitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectectors</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
@@ -264,7 +266,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/model/driving.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/foundations/coherence-g1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +314,7 @@
       
       
       
-      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Fmodel/driving.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Ffoundations/coherence-g1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -342,7 +344,7 @@
       
       
       
-      <li><a href="../_sources/model/driving.ipynb" target="_blank"
+      <li><a href="../_sources/foundations/coherence-g1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -405,7 +407,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -416,11 +420,21 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>External driving</h1>
+    <h1>First-order coherence function</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.1.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-expression">4.1.2. Quantum expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-1-measurable">4.1.3. Is <span class="math notranslate nohighlight">\(g^{(1)}\)</span> measurable?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -430,8 +444,73 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="external-driving">
-<h1><span class="section-number">8. </span>External driving<a class="headerlink" href="#external-driving" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="first-order-coherence-function">
+<span id="sec-coherence-g1"></span><h1><span class="section-number">4.1. </span>First-order coherence function<a class="headerlink" href="#first-order-coherence-function" title="Link to this heading">#</a></h1>
+<section id="definition">
+<h2><span class="section-number">4.1.1. </span>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>The first-order coherence function is defined as correlation of the field amplitude at two different spacetime points:</p>
+<div class="math notranslate nohighlight" id="equation-eq-g1-full">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-g1-full" title="Link to this equation">#</a></span>\[
+g^{(1)}(t_{1},t_{2};\mathbf{x}_1,\mathbf{x}_2) = 
+\frac{\langle\mathbf{E}^{(-)}(\mathbf{x}_{1},t_{1}) \cdot \mathbf{E}^{(+)}(\mathbf{x}_2,t_{2})\rangle}
+{\sqrt{\langle\mathbf{E}^{(-)}(\mathbf{x}_{1},t_{1})\cdot\mathbf{E}^{(+)}(\mathbf{x}_{1},t_{1})\rangle \langle\mathbf{E}^{(-)}(\mathbf{x}_{2},t_{2})\cdot\mathbf{E}^{(+)}(\mathbf{x}_{2},t_{2})\rangle}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\((\mathbf{x}_1,t_{1})\)</span> and <span class="math notranslate nohighlight">\((\mathbf{x}_2,t_{2})\)</span> are two “measurement” points.  This function is complex. The magnitude of <span class="math notranslate nohighlight">\(g^{(1)}\)</span>, known as the complex degree of coherence, is bound between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(0\)</span>. A value of <span class="math notranslate nohighlight">\(1\)</span> indicates perfect coherence, while <span class="math notranslate nohighlight">\(0\)</span> means the fields are completely uncorrelated.</p>
+<p>We will focus on its special case, temporal correlation measured at a single location:</p>
+<div class="math notranslate nohighlight" id="equation-eq-g1-temp">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-eq-g1-temp" title="Link to this equation">#</a></span>\[
+g^{(1)}(\tau;\mathbf{x}) = 
+\frac{\langle\mathbf{E}^{(-)}(\mathbf{x},t) \cdot \mathbf{E}^{(+)}(\mathbf{x},t+\tau)\rangle}
+{\langle\mathbf{E}^{(-)}(\mathbf{x},t)\cdot\mathbf{E}^{(+)}(\mathbf{x},t)\rangle}.
+\]</div>
+<p>which measures <em>coherence time</em> (how long the radiation field remembers its phase.)</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\tau\rightarrow\infty} g^{(1)}(\tau;\mathbf{x}) = 0
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+g^{(1)}(0;\mathbf{x}) = 1
+\]</div>
+<p>at any position.</p>
+</section>
+<section id="quantum-expression">
+<h2><span class="section-number">4.1.2. </span>Quantum expression<a class="headerlink" href="#quantum-expression" title="Link to this heading">#</a></h2>
+<p>In quantum oprics, it is more convenient to write Eq. <a class="reference internal" href="#equation-eq-g1-temp">(4.2)</a> with photon operators. Substituting <a class="reference internal" href="photons.html#equation-eq-quantum-free-field-pm">(1.5)</a>, Eq. <a class="reference internal" href="#equation-eq-g1-temp">(4.2)</a> is expressed as</p>
+<div class="math notranslate nohighlight" id="equation-eq-g1-quantum">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-eq-g1-quantum" title="Link to this equation">#</a></span>\[
+g^{(1)}(\tau;\mathbf{x}) = \frac{\sum_{i,j} f_{ij}(\mathbf{x}) \langle a^{\dagger}_{i}(t+\tau) a_{j}(t)\rangle}{\sum_{i,j} f_{ij}(\mathbf{x})  \langle a^{\dagger}_{i}(t) a_{j}(t)\rangle}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+f_{ij}(\mathbf{x}) = \mathbf{e}_{i}\cdot \mathbf{e}_{j}\, \mathcal{E}_{i} \mathcal{E}^{*}_{j} \, e^{i (\mathbf{k}_{i}-\mathbf{k}_{j})\cdot \mathbf{x}}.
+\]</div>
+<p>To interpret Eq. <a class="reference internal" href="#equation-eq-g1-quantum">(4.3)</a> we rewrite it in slightly different expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-g1-weighted-sum">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-eq-g1-weighted-sum" title="Link to this equation">#</a></span>\[
+g^{(1)}(\tau,\mathbf{x}) = \sum_{ij} w_{ij}(\mathbf{x}) g^{(1)}_{ij}(\tau).
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-g1-temp-only">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-eq-g1-temp-only" title="Link to this equation">#</a></span>\[
+g^{(1)}_{ij}(\tau) = \frac{\langle a^{\dagger}_{i}(t+\tau)a_{j}(t)\rangle_t}{\langle a_{i}^{*}(t)a_{j}(t)\rangle}
+\]</div>
+<p>and weight functions</p>
+<div class="math notranslate nohighlight" id="equation-eq-wij">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-eq-wij" title="Link to this equation">#</a></span>\[
+w_{ij}(\mathbf{x}) = \frac{f_{ij}(\mathbf{x},\mathbf{x})  \langle a^{\dagger}_{i}(t) a_{j}(t)\rangle}
+{\sum_{ij}f_{ij}(\mathbf{x},\mathbf{x})  \langle a^{\dagger}_{i}(t) a_{j}(t)}.
+\]</div>
+<p>The weight is normalized as <span class="math notranslate nohighlight">\(\sum_{ij} w_{ij}(\mathbf{x}) = 1\)</span>.  Equation <a class="reference internal" href="#equation-eq-g1-weighted-sum">(4.4)</a> indicates that at each oint <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, the contribution of temporal correlation functions <span class="math notranslate nohighlight">\(g^{(1)}_{ij}\)</span> is different.</p>
+</section>
+<section id="is-g-1-measurable">
+<h2><span class="section-number">4.1.3. </span>Is <span class="math notranslate nohighlight">\(g^{(1)}\)</span> measurable?<a class="headerlink" href="#is-g-1-measurable" title="Link to this heading">#</a></h2>
+<p>The first-order coherence function is a correlation of electric fields measured at two spacetime points. Is that something we can measure in a real world experiment?  It is not. In quantum mechanics, electric field is not an observable. It is even not a self-adjoint operator and thus <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> is inherently complex. It is like measuring a wave function or a density operator. We know that neither is possible. Based on the principle of quantum mechanics, there is no way to measure <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span>!</p>
+<p>Then, why do we use it? It is a mathematical utility to investigate coherence. In fact, it is a powerful tool. Is there anyway to reconstruct it from experimental data?  Yes, there is. It is called <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_tomography">quantum tomography</a>.  You measure many different cases and if there is enough information in data, it is possible to <em>infer</em> the function by fitting data to the theory. Essentially, we adjust parameters until all data can be fit to the theory.  It is a tedious process.</p>
+<p>There is no such difficulty with the second-order coherence function since it is a correlation of intensities which can be measured at any time and any point.  It is also noted that quantum trajectory measures also intensity.  Thus we can evaluate <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the quantum trajectories but not <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -447,7 +526,7 @@
         },
         kernelOptions: {
             name: "book",
-            path: "./model"
+            path: "./foundations"
         },
         predefinedOutput: true
     }
@@ -465,20 +544,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="radiation-field.html"
+       href="coherence-func.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Radiation field</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Coherence functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="detector.html"
+       href="../model/system.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Dectectors</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>The System</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -488,6 +567,25 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.1.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-expression">4.1.2. Quantum expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-1-measurable">4.1.3. Is <span class="math notranslate nohighlight">\(g^{(1)}\)</span> measurable?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

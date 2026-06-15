@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Radiation field &#8212; Optical coherence from small atomic clusters.</title>
+    <title>7. Radiation field &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'model/radiation-field';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7. External driving" href="driving.html" />
-    <link rel="prev" title="5. The Emitter" href="emitter.html" />
+    <link rel="next" title="8. External driving" href="driving.html" />
+    <link rel="prev" title="6. The Emitter" href="emitter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -188,18 +188,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="system.html">4. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emitter.html">5. The Emitter</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Radiation field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="driving.html">7. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detector.html">8. Dectectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system.html">5. The System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emitter.html">6. The Emitter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Radiation field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driving.html">8. External driving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectectors</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">9. Quantum master equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">10. Quantum master equations</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -426,10 +430,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-gas">6.1. Photon gas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-radiation-field">6.2. Free radiation field</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-emitter-and-radiation">6.3. Interaction between emitter and radiation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lamb-shift-and-dipole-diploe-interaction">6.4. Lamb shift and dipole-diploe interaction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-gas">7.1. Photon gas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-radiation-field">7.2. Free radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-emitter-and-radiation">7.3. Interaction between emitter and radiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lamb-shift-and-dipole-diploe-interaction">7.4. Lamb shift and dipole-diploe interaction</a></li>
 </ul>
             </nav>
         </div>
@@ -442,10 +446,10 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="radiation-field">
-<span id="ch-radiation-field"></span><h1><span class="section-number">6. </span>Radiation field<a class="headerlink" href="#radiation-field" title="Link to this heading">#</a></h1>
+<span id="ch-radiation-field"></span><h1><span class="section-number">7. </span>Radiation field<a class="headerlink" href="#radiation-field" title="Link to this heading">#</a></h1>
 <p>We have already define the free radiation field in <a class="reference internal" href="../foundations/photons.html#ch-photons"><span class="std std-numref">Section 1</span></a>. A brief summary is given here again.  The key point in this chapter is the interaction between the emitter and the field.</p>
 <section id="photon-gas">
-<h2><span class="section-number">6.1. </span>Photon gas<a class="headerlink" href="#photon-gas" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Photon gas<a class="headerlink" href="#photon-gas" title="Link to this heading">#</a></h2>
 <p>The free radiation field can have a finite temperature.  We call it a photon gas. The free Hamiltonian of photon is defined by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -461,7 +465,7 @@ H_{R} = \sum_{\ell} \omega_{\ell} \left (a^{\dagger}_{\ell} a_{\ell} + \frac{1}{
 <p>When the photon gas interacts with the emitter, eventually the whole system reaches a new thermal equilibrium unless the emitter is externally driven.</p>
 </section>
 <section id="free-radiation-field">
-<h2><span class="section-number">6.2. </span>Free radiation field<a class="headerlink" href="#free-radiation-field" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Free radiation field<a class="headerlink" href="#free-radiation-field" title="Link to this heading">#</a></h2>
 <p>We have defined the free radiation field as (See <a class="reference internal" href="../foundations/photons.html#equation-eq-quantum-free-field-pm">(1.5)</a>.)
 $<span class="math notranslate nohighlight">\(
 \mathbf{E}^{(+)}(\mathbf{x}) = \sum_{\ell} \mathbf{e}_{\ell} \mathcal{E}_{\ell} a_{\ell} e^{i \mathbf{k}_{\ell} \cdot \mathbf{x}}, \qquad
@@ -470,7 +474,7 @@ $<span class="math notranslate nohighlight">\(
 <p>where <span class="math notranslate nohighlight">\(a^{\dagger}_{\ell}\)</span> and <span class="math notranslate nohighlight">\(a_{\ell}\)</span> are creation and annihilation operators of photons in the plane wave mode <span class="math notranslate nohighlight">\(e^{i \mathbf{k}_{\ell} \cdot \mathbf{x}}\)</span> with linear polarization <span class="math notranslate nohighlight">\(\epsilon_{\ell}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{E}_{\ell} = i \sqrt{\frac{\hbar \omega_{\ell}}{2 \epsilon_{0} V}}\)</span>.</p>
 </section>
 <section id="interaction-between-emitter-and-radiation">
-<h2><span class="section-number">6.3. </span>Interaction between emitter and radiation<a class="headerlink" href="#interaction-between-emitter-and-radiation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Interaction between emitter and radiation<a class="headerlink" href="#interaction-between-emitter-and-radiation" title="Link to this heading">#</a></h2>
 <p>The interaction between the atoms and the radiation field is simply due to the force exerted by the radiation field on the electron.  Assuming that the wave length of light emitted by the quantum dot is much larger than the size of the quantum dot, the interaction Hamiltonian can be written as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -484,9 +488,9 @@ H_{SR} = - \sum_{j} \sum_{\ell} \mathbf{d}\cdot\mathbf{e}_{\ell} \left( \mathcal
 \]</div>
 </section>
 <section id="lamb-shift-and-dipole-diploe-interaction">
-<h2><span class="section-number">6.4. </span>Lamb shift and dipole-diploe interaction<a class="headerlink" href="#lamb-shift-and-dipole-diploe-interaction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>Lamb shift and dipole-diploe interaction<a class="headerlink" href="#lamb-shift-and-dipole-diploe-interaction" title="Link to this heading">#</a></h2>
 <p>The above interaction generates spontaneous emission and absorption of photons. When the emitted photon is detected by a detector, the actual light is observed.  There are other processes through the above interaction.  Individual atoms can emit and absorb virtual photons.  The atoms are said to be dressed with photons. A consequence is the shift of energy, known as the Lamb shift. Since the experimental value of the energy includes the Lamb shift, we will not add it here.</p>
-<p>Another virtual processes is the exchange of photons between two atoms.  Within the dipole approximation, it becomes the dipole-dipole interaction between atoms introduced in <a class="reference internal" href="emitter.html#ch-emitter"><span class="std std-numref">Section 5</span></a>.  Higher-order interaction is not considered in this note.</p>
+<p>Another virtual processes is the exchange of photons between two atoms.  Within the dipole approximation, it becomes the dipole-dipole interaction between atoms introduced in <a class="reference internal" href="emitter.html#ch-emitter"><span class="std std-numref">Section 6</span></a>.  Higher-order interaction is not considered in this note.</p>
 </section>
 </section>
 
@@ -526,7 +530,7 @@ H_{SR} = - \sum_{j} \sum_{\ell} \mathbf{d}\cdot\mathbf{e}_{\ell} \left( \mathcal
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>The Emitter</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>The Emitter</p>
       </div>
     </a>
     <a class="right-next"
@@ -534,7 +538,7 @@ H_{SR} = - \sum_{j} \sum_{\ell} \mathbf{d}\cdot\mathbf{e}_{\ell} \left( \mathcal
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>External driving</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>External driving</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -556,10 +560,10 @@ H_{SR} = - \sum_{j} \sum_{\ell} \mathbf{d}\cdot\mathbf{e}_{\ell} \left( \mathcal
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-gas">6.1. Photon gas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-radiation-field">6.2. Free radiation field</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-emitter-and-radiation">6.3. Interaction between emitter and radiation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lamb-shift-and-dipole-diploe-interaction">6.4. Lamb shift and dipole-diploe interaction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-gas">7.1. Photon gas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-radiation-field">7.2. Free radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-emitter-and-radiation">7.3. Interaction between emitter and radiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lamb-shift-and-dipole-diploe-interaction">7.4. Lamb shift and dipole-diploe interaction</a></li>
 </ul>
   </nav></div>
 
