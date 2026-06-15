@@ -37,9 +37,6 @@ parts:
    chapters:
    -  file: methods/qutip
    -  file: methods/openqm-qme
-   numbered: 3
-   chapters:
-   -  file: methods/openqm-qme
 -  caption:
    numbered: false
    chapters:
