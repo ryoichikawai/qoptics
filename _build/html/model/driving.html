@@ -61,10 +61,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'model/driving';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9. Dectectors" href="detector.html" />
+    <link rel="next" title="9. Dectector" href="detector.html" />
     <link rel="prev" title="7. Radiation field" href="radiation-field.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,7 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="emitter.html">6. The Emitter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="radiation-field.html">7. Radiation field</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectector</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
@@ -406,7 +408,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -422,6 +426,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coupling-hamltonian">8.1. Coupling Hamltonian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotating-wave-approximation">8.2. Rotating wave approximation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -433,6 +446,78 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="external-driving">
 <h1><span class="section-number">8. </span>External driving<a class="headerlink" href="#external-driving" title="Link to this heading">#</a></h1>
+<p>Optionally, we add an external driving which induces transition between <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span>.  If a coherent laser beam is used, the driving of multiple atoms is synchronized and creates coherency among atoms. Interesting interference can be observed from such coherency, which we will discuss later in the chapters of case studies.</p>
+<section id="coupling-hamltonian">
+<h2><span class="section-number">8.1. </span>Coupling Hamltonian<a class="headerlink" href="#coupling-hamltonian" title="Link to this heading">#</a></h2>
+<p>The photons in an ideal laser beam are in a coherent state (Glauber state) and the corresponding radiation field behaves almost like a classical field.  It is a reasonable approximation to model the driving using a classical field:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{E}(\mathbf{x},t) =  \mathbf{E}^{(+)}_{L} e^{-i (\mathbf{k}_{L}\cdot \mathbf{x} -  \omega_{L} t)} + \mathbf{E}^{(-)}_{L}(\mathbf{x}) e^{i (\mathbf{k}_{L}\cdot \mathbf{x} -  \omega_{L} t)} 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{E}_{L}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{k}_{L}\)</span>, and <span class="math notranslate nohighlight">\(\omega_{L}=c \mathbf{k}_{L}\)</span> are field strength, wave vector, and frequency of the driving laser beam.</p>
+<p>The coupling Hamiltonian with the atoms located at <span class="math notranslate nohighlight">\(\mathbf{x}_{j}\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-h-d">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-eq-h-d" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+H_{L}(t) &amp;= - \sum_{j} \mathbf{d}_{j} \cdot \mathbf{E}(\mathbf{x}_j,t) \\
+&amp;= - \sum_{j}
+\left[\Omega e^{i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)} + \tilde{\Omega} e^{-i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)}\right] \sigma^{+}_{j} 
+-\sum_{j}\left[\Omega^{*} e^{-i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)} + \tilde{\Omega}^{*} e^{i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)}\right] \sigma^{-}_{j} 
+\end{aligned}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Omega \equiv \mathbf{d}\cdot \mathbf{E}^{(-)}_{L}\)</span> is the Rabi frequency and <span class="math notranslate nohighlight">\(\tilde{\Omega} \equiv \mathbf{d}^{*} \cdot \mathbf{E}^{(-)}_{L}\)</span> the counter-rotating frequency.</p>
+<p>As we discussed in <a class="reference internal" href="radiation-field.html#ch-radiation-field"><span class="std std-numref">Section 7</span></a>, this interaction Hamiltonian contains terms that do not conserve energy. We want to get rid of it.  In addition, the driving Hamiltonian is time dependent, which makes theoretical analysis of time evolution a little complicated. Although we can deal with it using the <a class="reference external" href="https://en.wikipedia.org/wiki/Floquet_theory">Floquet theory</a>, we want to avoid it if possible. A reasonable approximation called <a class="reference external" href="https://en.wikipedia.org/wiki/Rotating-wave_approximation">rotating wave approximation</a> removes the time dependency.</p>
+</section>
+<section id="rotating-wave-approximation">
+<h2><span class="section-number">8.2. </span>Rotating wave approximation<a class="headerlink" href="#rotating-wave-approximation" title="Link to this heading">#</a></h2>
+<p>The approximation takes the two steps.  The first step remove the non-energy conserving terms.  In the secod step, tie-dependency is removed.</p>
+<p>To remove unwanted terms, we write <span class="math notranslate nohighlight">\(H_{L}\)</span> in the interaction picture.</p>
+<div class="math notranslate nohighlight" id="equation-eq-h-l-int">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-eq-h-l-int" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+H^{\prime}_{L} = U H_{L} U^{\dagger} =  &amp;- \sum_{j}
+\left[\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i(\omega_{0}-\omega_{L}) t} + \tilde{\Omega} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i (\omega_{0}+ \omega_{L}) t}\right] \sigma^{+}_{j} \\
+&amp;-\sum_{j}\left[\Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i (\omega_{0}-\omega_{L}) t} + \tilde{\Omega}^{*} e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i(\omega_{0}+\omega_{L} t)}\right] \sigma^{-}_{j} 
+\end{aligned}
+\end{split}\]</div>
+<p>where the unitary transformation is given by</p>
+<div class="math notranslate nohighlight">
+\[
+U = e^{-i H_{0} t} = e^{-i \omega_0 t/2} |g_{j}\rangle\langle g_{j}| + e^{i \omega_0 t/2} |e_{j}\rangle\langle e_{j}|.
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(|g_j\rangle\)</span> and <span class="math notranslate nohighlight">\(|e_j\rangle\)</span> are two states of the <span class="math notranslate nohighlight">\(j\)</span>-th atom.</p>
+<p>Assuming perfect or near resonance condition,  <span class="math notranslate nohighlight">\(\Delta = \omega_{0} - \omega_{L} \approx 0\)</span>, <span class="math notranslate nohighlight">\(e^{i (\omega_{0} + \omega_{L})t}\)</span> oscillates much faster than <span class="math notranslate nohighlight">\(e^{ i (\omega_{0} - \omega_{L})t}\)</span>.  We omit the fast oscillating term since they will be canceled out.  The interacting Hamiltonian is simplified to</p>
+<div class="math notranslate nohighlight">
+\[
+(H^{\text{RWA}}_{L})^\prime = - \sum_{j}
+\left[\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i\Delta t} \sigma^{+}_{j}
++ \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i \Delta t} \sigma^{-}_{j} \right]
+\]</div>
+<p>Moving back to the Schroedinger picture, the coupling becomes</p>
+<div class="math notranslate nohighlight">
+\[
+H^{\text{RWA}}_{L}(t) = - \sum_{j}
+\left[\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i\Omega_{L} t} \sigma^{+}_{j}
++ \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i\Omega_{L} t} \sigma^{-}_{j} \right]
+\]</div>
+<p>Now, the non-energy-conserving term is gone.  However, it still explicitly depends on time.  Next we shift the origin of energy. WE can measure energy from any reference we like.  We apply  another unitary transformation by <span class="math notranslate nohighlight">\(V = e^{ i \sum_{j} \frac{\omega_{L}}{2}\sigma^{z}_j}\)</span> which shift all energies by <span class="math notranslate nohighlight">\(-\omega_{L}\)</span>.  The free energy of atoms becomes</p>
+<div class="math notranslate nohighlight">
+\[
+H^\text{RWA}_{0} = V H_{0} V^{\dagger} = \sum_{j} \frac{\Delta}{2} \sigma^{z}_{j}
+\]</div>
+<p>and the coupling Hamiltonian</p>
+<div class="math notranslate nohighlight" id="equation-eq-h-l-rwa">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-eq-h-l-rwa" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+H^\text{RWA}_{L} &amp;=V  H^\text{RWA}_{L}(t) V^{\dagger} \\
+&amp;= - \sum_{j}
+\left(\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} \sigma^{+}_{j}
++ \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} \sigma^{-}_{j} \right) \\
+&amp; = - |\Omega| \sum_{j} \left (e^{i \phi_{j}} \sigma^{+} + e^{-i \phi_{j}} \sigma^{-}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_{j} = \mathbf{k}_{L}\cdot \mathbf{x}_{j} + \text{phase of }\Omega\)</span>.  This phase plays some crucial roles in some cases.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -479,7 +564,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Dectectors</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Dectector</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -489,6 +574,24 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coupling-hamltonian">8.1. Coupling Hamltonian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotating-wave-approximation">8.2. Rotating wave approximation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="11. Quantum master equations" href="openqm-qme.html" />
-    <link rel="prev" title="9. Dectectors" href="../model/detector.html" />
+    <link rel="prev" title="9. Dectector" href="../model/detector.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -199,7 +199,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. The Emitter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectectors</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="current nav bd-sidenav">
@@ -498,7 +499,7 @@
 <li><p><strong>shape</strong>: shape of the object.  This is the shape of data, which is essentially the shape of an array.</p></li>
 <li><p><strong>data</strong>: actual data in a matrix form.</p></li>
 </ol>
-<p>You cannot define quantum object as a simple matrix.  For example,  assigning a column matrix does create a state vector. There are two methods to create desired quantum objects.</p>
+<p>You cannot define quantum object as a simple matrix.  For example,  assigning a column matrix does not create a state vector. There are two methods to create desired quantum objects.</p>
 <ol class="arabic simple">
 <li><p>Use a build-in function such as <code class="docutils literal notranslate"><span class="pre">basis()</span></code> for a qubit state vector and <code class="docutils literal notranslate"><span class="pre">sigmaz()</span></code> for the Pauli operator <span class="math notranslate nohighlight">\(\sigma^z\)</span>.</p></li>
 <li><p>Convert an array to a quantum object using <code class="docutils literal notranslate"><span class="pre">Qobj()</span></code> function.</p></li>
@@ -891,7 +892,7 @@ Qobj data =
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.14s
 </pre></div>
 </div>
-<img alt="../_images/ec5501ef298b884adbbf53b19051075a95ab9adc1ae143bd42eed0f80759338c.png" src="../_images/ec5501ef298b884adbbf53b19051075a95ab9adc1ae143bd42eed0f80759338c.png" />
+<img alt="../_images/47bbf3a2492b68d002e0859aadebbb4f55c7377c98530ae7f4505464d0944207.png" src="../_images/47bbf3a2492b68d002e0859aadebbb4f55c7377c98530ae7f4505464d0944207.png" />
 </div>
 </div>
 <p><strong>waiting time distribution</strong></p>
@@ -916,8 +917,8 @@ Qobj data =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  9.925611611466806
-standard deviation =  9.641281537795859
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  10.0985695973844
+standard deviation =  10.236459947441183
 likely poissonian
 </pre></div>
 </div>
@@ -935,7 +936,7 @@ likely poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/da4027eff8c173bcc091a16b4fb216acdaba65deee6d1c56166bc528557313f4.png" src="../_images/da4027eff8c173bcc091a16b4fb216acdaba65deee6d1c56166bc528557313f4.png" />
+<img alt="../_images/00e10b5439809c155bcba00015c2a66273c3654eb48639425cb1f8be6a849856.png" src="../_images/00e10b5439809c155bcba00015c2a66273c3654eb48639425cb1f8be6a849856.png" />
 </div>
 </div>
 </section>
@@ -977,7 +978,7 @@ likely poissonian
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Dectectors</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Dectector</p>
       </div>
     </a>
     <a class="right-next"
