@@ -196,7 +196,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emitter.html">6. The Emitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emitter.html">6. Emitters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="radiation-field.html">7. Radiation field</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. External driving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectector</a></li>
@@ -466,7 +466,7 @@ H_{L}(t) &amp;= - \sum_{j} \mathbf{d}_{j} \cdot \mathbf{E}(\mathbf{x}_j,t) \\
 \end{aligned}
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Omega \equiv \mathbf{d}\cdot \mathbf{E}^{(-)}_{L}\)</span> is the Rabi frequency and <span class="math notranslate nohighlight">\(\tilde{\Omega} \equiv \mathbf{d}^{*} \cdot \mathbf{E}^{(-)}_{L}\)</span> the counter-rotating frequency.</p>
-<p>As we discussed in <a class="reference internal" href="radiation-field.html#ch-radiation-field"><span class="std std-numref">Section 7</span></a>, this interaction Hamiltonian contains terms that do not conserve energy. We want to get rid of it.  In addition, the driving Hamiltonian is time dependent, which makes theoretical analysis of time evolution a little complicated. Although we can deal with it using the <a class="reference external" href="https://en.wikipedia.org/wiki/Floquet_theory">Floquet theory</a>, we want to avoid it if possible. A reasonable approximation called <a class="reference external" href="https://en.wikipedia.org/wiki/Rotating-wave_approximation">rotating wave approximation</a> removes the time dependency.</p>
+<p>As we discussed in <a class="reference internal" href="radiation-field.html#ch-radiation-field"><span class="std std-numref">Section 7</span></a>, this interaction Hamiltonian contains terms that do not conserve energy. We want to get rid of it.  In addition, the driving Hamiltonian is time dependent, which makes theoretical analysis of time evolution a little complicated. Although we can deal with it using the <a class="reference external" href="https://en.wikipedia.org/wiki/Floquet_theory">Floquet theory</a>, we want to avoid it if possible. A reasonable approximation called <a class="reference external" href="https://en.wikipedia.org/wiki/Rotating-wave_approximation">rotating wave approximation</a> (RWA) removes the time dependency.</p>
 </section>
 <section id="rotating-wave-approximation">
 <h2><span class="section-number">8.2. </span>Rotating wave approximation<a class="headerlink" href="#rotating-wave-approximation" title="Link to this heading">#</a></h2>
@@ -497,8 +497,8 @@ U = e^{-i H_{0} t} = e^{-i \omega_0 t/2} |g_{j}\rangle\langle g_{j}| + e^{i \ome
 <div class="math notranslate nohighlight">
 \[
 H^{\text{RWA}}_{L}(t) = - \sum_{j}
-\left[\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i\Omega_{L} t} \sigma^{+}_{j}
-+ \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i\Omega_{L} t} \sigma^{-}_{j} \right]
+\left[\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i\omega_{L} t} \sigma^{+}_{j}
++ \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i\omega_{L} t} \sigma^{-}_{j} \right]
 \]</div>
 <p>Now, the non-energy-conserving term is gone.  However, it still explicitly depends on time.  Next we shift the origin of energy. WE can measure energy from any reference we like.  We apply  another unitary transformation by <span class="math notranslate nohighlight">\(V = e^{ i \sum_{j} \frac{\omega_{L}}{2}\sigma^{z}_j}\)</span> which shift all energies by <span class="math notranslate nohighlight">\(-\omega_{L}\)</span>.  The free energy of atoms becomes</p>
 <div class="math notranslate nohighlight">
@@ -513,10 +513,16 @@ H^\text{RWA}_{L} &amp;=V  H^\text{RWA}_{L}(t) V^{\dagger} \\
 &amp;= - \sum_{j}
 \left(\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} \sigma^{+}_{j}
 + \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} \sigma^{-}_{j} \right) \\
-&amp; = - |\Omega| \sum_{j} \left (e^{i \phi_{j}} \sigma^{+} + e^{-i \phi_{j}} \sigma^{-}\right)
+&amp; = - |\Omega| \sum_{j} \left (e^{i \phi_{j}} \sigma^{+}_{j} + e^{-i \phi_{j}} \sigma^{-}_{j}\right)
 \end{aligned}
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\phi_{j} = \mathbf{k}_{L}\cdot \mathbf{x}_{j} + \text{phase of }\Omega\)</span>.  This phase plays some crucial roles in some cases.</p>
+<p>The Hamiltonian of the driven system with RWA is</p>
+<div class="math notranslate nohighlight">
+\[
+H^\text{RWA}_{S} = H^\text{RWA}_{0} +  H^\text{RWA}_{L}  = \sum_{j} \left[ \frac{\Delta}{2} \sigma^{z}_{j} + |\Omega| \left (e^{i \phi_{j}} \sigma^{+}_{j} + e^{-i \phi_{j}} \sigma^{-}_{j}\right) \right].
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta = \omega_{0}-\omega_{L}\)</span> is the detuning of the driving.  If the tuning is perfect (<span class="math notranslate nohighlight">\(\Delta = 0\)</span>), then we have only the driving term in the system Hamiltonian.</p>
 </section>
 </section>
 
