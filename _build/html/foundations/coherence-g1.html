@@ -199,7 +199,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. The Emitter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
@@ -508,9 +508,45 @@ w_{ij}(\mathbf{x}) = \frac{f_{ij}(\mathbf{x},\mathbf{x})  \langle a^{\dagger}_{i
 </section>
 <section id="is-g-1-measurable">
 <h2><span class="section-number">4.1.3. </span>Is <span class="math notranslate nohighlight">\(g^{(1)}\)</span> measurable?<a class="headerlink" href="#is-g-1-measurable" title="Link to this heading">#</a></h2>
-<p>The first-order coherence function is a correlation of electric fields measured at two spacetime points. Is that something we can measure in a real world experiment?  It is not. In quantum mechanics, electric field is not an observable. It is even not a self-adjoint operator and thus <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> is inherently complex. It is like measuring a wave function or a density operator. We know that neither is possible. Based on the principle of quantum mechanics, there is no way to measure <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span>!</p>
-<p>Then, why do we use it? It is a mathematical utility to investigate coherence. In fact, it is a powerful tool. Is there anyway to reconstruct it from experimental data?  Yes, there is. It is called <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_tomography">quantum tomography</a>.  You measure many different cases and if there is enough information in data, it is possible to <em>infer</em> the function by fitting data to the theory. Essentially, we adjust parameters until all data can be fit to the theory.  It is a tedious process.</p>
-<p>There is no such difficulty with the second-order coherence function since it is a correlation of intensities which can be measured at any time and any point.  It is also noted that quantum trajectory measures also intensity.  Thus we can evaluate <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the quantum trajectories but not <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span>.</p>
+<p>In classical world, the temporal correlation <span class="math notranslate nohighlight">\(\langle A(t+\tau) B(t) \rangle\)</span> can be measured directly.  We record the time evolution of <span class="math notranslate nohighlight">\(A(t)\)</span> and <span class="math notranslate nohighlight">\(B(t)\)</span>. Then, we make statistical analysis of the records.  In quantum mechanics, that approach is not possible because the measurement changes the state.  The situation is even worse for <span class="math notranslate nohighlight">\(\langle a^{\dagger}(t+\tau) a(t) \rangle\)</span> because <span class="math notranslate nohighlight">\(a(t)\)</span> is not an observable.  Furthermore, the photodetector can measure only the intensity of the field.  Then, how can we determine <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> by experimental measurement?</p>
+<p>There is a method using an interferometer.  The actual procedure is similar to <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_tomography">quantum tomography</a>.  Suppose that a beam of light is divided into two beams, A and B, by a beam splitter. Beam B travles a longer path than A.  At time <span class="math notranslate nohighlight">\(t\)</span> the radiation fields of beam A and B at the detector are <span class="math notranslate nohighlight">\(\mathbf{E}^{\pm}_{A}(t) = \frac{1}{\sqrt{2}} = \mathbf{E}^{\pm}(t)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{E}^{\pm}_{B}(t) = \frac{1}{\sqrt{2}} = \mathbf{E}^{\pm}(t+\tau)\)</span> where <span class="math notranslate nohighlight">\(\tau\)</span> is the delay time due to the longer path.   The detector measures the intensity of the combined beam, <span class="math notranslate nohighlight">\(\mathbf{E}^{\pm}_{D}(t) = \frac{1}{\sqrt{2}} \left[\mathbf{E}^{\pm}(t) + \mathbf{E}^{\pm}(t+\tau) \right]\)</span>.  Then, the intensity observed by the detector is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+I_{D}(\tau) &amp;= \langle \mathbf{E}^{(+)}_{D}(t)\cdot\mathbf{E}^{(-)}_{D}(t)\rangle \\
+&amp; = \frac{1}{2} \langle \left[\mathbf{E}^{+}(t) + \mathbf{E}^{(+)}(t+\tau)\right]\cdot 
+\left[\mathbf{E}^{-}(t) + \mathbf{E}^{(-)}(t+\tau)\right]\rangle \\
+&amp; = I_{A} + I_{B}
++ \text{Re} \langle \mathbf{E}^{(+)}(t)\cdot\mathbf{E}^{(-)}(t+\tau)\rangle \\
+&amp; = I_{A} + I_{B} + \text{Re}\, G^{(1)}(\tau) 
+\end{aligned}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_{D}\)</span>, <span class="math notranslate nohighlight">\(I_{A}\)</span>, and <span class="math notranslate nohighlight">\(I_{B}\)</span> are the intensity at the detector and the intensities of beam A and B.  From the conservation of energy <span class="math notranslate nohighlight">\(I_{A}+ I_{B}=I_{0}\)</span> where <span class="math notranslate nohighlight">\(I_{0}\)</span> is the intensity of the original beam before splitting.  Then,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{I_{D}(\tau)}{I_{0}} &amp;=  1 + \text{Re}\, g^{(1)}(\tau) \\
+&amp; = 1 + \gamma^{(1)}(\tau) \cos(\phi(\tau))
+\end{aligned}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma^{(1)}(\tau)\)</span> and <span class="math notranslate nohighlight">\(\phi(\tau)\)</span> are modulus and phase of <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span>.  In a regular interference, the fringes are generated by the phase and the modulus does not change.  Therefore, we assume that <span class="math notranslate nohighlight">\(\gamma^{(1)}\)</span> is constant.</p>
+<p>To determine the real part of <span class="math notranslate nohighlight">\(g^{2}\)</span>, we need to measure <span class="math notranslate nohighlight">\(I_{0}\)</span> and <span class="math notranslate nohighlight">\(I_{D}\)</span>.  We need to measure them separately in the same experimental setup since the measurement of <span class="math notranslate nohighlight">\(I_{0}\)</span> change the outcome of <span class="math notranslate nohighlight">\(I_{D}\)</span>.</p>
+<p>To find the imaginary part, we change <span class="math notranslate nohighlight">\(\tau\)</span> (change the traveling distance of beam B) and find the maximum and minimum intensity</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{I^\text{max}_{D}}{I} &amp;= 1 + \gamma^{(1)} \\
+\frac{I^\text{min}_{D}}{I} &amp;= 1 - \gamma^{(1)}
+\end{aligned}
+\end{split}\]</div>
+<p>From which we can find the modulus (known as degree of first-order coherence),</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma^{(1)} = \frac{I^\text{max}_{D} - I^\text{min}_{D}}{2 I_0}
+\]</div>
+<p>Now it is straight forward to compute the phase.</p>
+<p>In conclusion, it is possible to determine <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> by a single photon detector.  However, it is not a simple measurement.  We need to measure intensity  by changing the travel distance.  In other words, we need to map interference fringes by changing parameters.  We need also to be careful not to destroy the interference fringes.</p>
+<p>For more detailed discussion, see Ref. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id56" title="Zbigniew Ficek and Stuart Swain. Quantum Interference and Coherence. SpringerLink. Springer New York, New York, NY, 2005. ISBN 0-387-22965-5.">8</a>]</span>.</p>
 </section>
 </section>
 
