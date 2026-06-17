@@ -49,6 +49,8 @@ sphinx:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     html_show_copyright: false
     bibtex_reference_style: label
+    numfig_format:
+      section: "Chapter %s"
   extra_extensions:
     - sphinx_proof
 

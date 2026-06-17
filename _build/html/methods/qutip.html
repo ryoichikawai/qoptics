@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -190,16 +190,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. The Emitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
@@ -635,7 +635,7 @@ Qobj data =
 <p>QuTip includes quantum master equation solvers and many utilities to evaluate physical quantities using the output from the solver.  Here is a brief summary of basic operations.</p>
 <section id="defining-a-quantum-master-equation">
 <h3><span class="section-number">10.2.1. </span>Defining a quantum master equation<a class="headerlink" href="#defining-a-quantum-master-equation" title="Link to this heading">#</a></h3>
-<p>We want to solve a quantum master equation <span class="math notranslate nohighlight">\(\frac{d}{dt}\rho = \mathcal{L} \rho\)</span> where <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a Liouville super operator (Liouvillian). (See <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Section 11</span></a>.)  The Liouville superoperators are uniquely determined by the system Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> and a set of dissipators <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> such that</p>
+<p>We want to solve a quantum master equation <span class="math notranslate nohighlight">\(\frac{d}{dt}\rho = \mathcal{L} \rho\)</span> where <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a Liouville super operator (Liouvillian). (See <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 11</span></a>.)  The Liouville superoperators are uniquely determined by the system Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> and a set of dissipators <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L} \rho = -i [H,\rho] + \sum_{ij} \gamma_{ij} \mathcal{D}_{ij} \rho
@@ -770,7 +770,7 @@ Qobj data =
 </div>
 </div>
 <p><strong>Computing temporal correlation functions</strong></p>
-<p>To compute temporal correlation function, we need to use the quantum regression theorem (see <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Section 11</span></a>.  QuTip has several functions which computes a correlaion function without explicitely envoking <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.  Two convenient ones are</p>
+<p>To compute temporal correlation function, we need to use the quantum regression theorem (see <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 11</span></a>.  QuTip has several functions which computes a correlaion function without explicitely envoking <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.  Two convenient ones are</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">correlation.correlation_2op_1t(H,</span> <span class="pre">psi0,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">A,</span> <span class="pre">B)</span></code>   for <span class="math notranslate nohighlight">\(\langle A(\tau)B(0) \rangle\)</span>:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">correlation.correlation_3op_1t(H,</span> <span class="pre">psi0,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">A,</span> <span class="pre">B,</span> <span class="pre">C)</span></code>  for <span class="math notranslate nohighlight">\(\langle A(0)B(\tau)C(0 \rangle\)</span>:</p></li>
@@ -854,7 +854,7 @@ Qobj data =
 </section>
 <section id="quantum-trajectory">
 <h2><span class="section-number">10.3. </span>Quantum Trajectory<a class="headerlink" href="#quantum-trajectory" title="Link to this heading">#</a></h2>
-<p>There is also build-in functions for quantum trajectory calculation.  In <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Section 11</span></a>, we calculated a quantum trajectory manually.  Monte Carlo solver <code class="docutils literal notranslate"><span class="pre">mcsolve()</span></code> generates quantum trajectories without hustle.  Since the quantum trajectory approach is mathematically equivalent to the corresponding quantum master equation, calling procedure is essentially the same, except for number of trajectories.  To get better statistics, we need many samplings.  If data is too noisy, increase the number of trajectories.  We just need to measure number operators.  Unfortunately, there is no function that analyzes the trajectory. We need to write a code.</p>
+<p>There is also build-in functions for quantum trajectory calculation.  In <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 11</span></a>, we calculated a quantum trajectory manually.  Monte Carlo solver <code class="docutils literal notranslate"><span class="pre">mcsolve()</span></code> generates quantum trajectories without hustle.  Since the quantum trajectory approach is mathematically equivalent to the corresponding quantum master equation, calling procedure is essentially the same, except for number of trajectories.  To get better statistics, we need many samplings.  If data is too noisy, increase the number of trajectories.  We just need to measure number operators.  Unfortunately, there is no function that analyzes the trajectory. We need to write a code.</p>
 <p><strong>spike plot</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -892,7 +892,7 @@ Qobj data =
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.14s
 </pre></div>
 </div>
-<img alt="../_images/47bbf3a2492b68d002e0859aadebbb4f55c7377c98530ae7f4505464d0944207.png" src="../_images/47bbf3a2492b68d002e0859aadebbb4f55c7377c98530ae7f4505464d0944207.png" />
+<img alt="../_images/48ddc198e0b7befbd112173cfc6a0ba6e5728bb59d56f6930c283f9072730cf1.png" src="../_images/48ddc198e0b7befbd112173cfc6a0ba6e5728bb59d56f6930c283f9072730cf1.png" />
 </div>
 </div>
 <p><strong>waiting time distribution</strong></p>
@@ -917,8 +917,8 @@ Qobj data =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  10.0985695973844
-standard deviation =  10.236459947441183
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  9.942343548637883
+standard deviation =  9.734536892026611
 likely poissonian
 </pre></div>
 </div>
@@ -936,7 +936,7 @@ likely poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/00e10b5439809c155bcba00015c2a66273c3654eb48639425cb1f8be6a849856.png" src="../_images/00e10b5439809c155bcba00015c2a66273c3654eb48639425cb1f8be6a849856.png" />
+<img alt="../_images/66a241c026ae0ed6ab9a623a7d7eb5b6158e1ce256d19613ba7a19e7ea032406.png" src="../_images/66a241c026ae0ed6ab9a623a7d7eb5b6158e1ce256d19613ba7a19e7ea032406.png" />
 </div>
 </div>
 </section>

@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -190,16 +190,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emitter.html">6. The Emitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emitter.html">6. Emitters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="radiation-field.html">7. Radiation field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="driving.html">8. External driving</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Dectector</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
@@ -451,11 +451,11 @@
 <p>It is important understand what physical quantity the detector is measuring. In the standard quantum mechanics, a physical quantity is represented by a self-adjoint operator.  The outcome of the measurement is one of the eigenvalues of the operator. At the end of the measurement, the system state collapses (is projected) to the corresponding eigenvector. The probability to obtain a particular outcome is determined by the Born rule.  This kind of measurement is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics">projective measurement</a>.</p>
 <p>Measurement of radiation fields or photons are totally different from the projective measurement. First of all, the photon disappears when it was detected.  Therefore, the projection is not possible.  Secondly, photons do not have position.  Mathematically we cannot define the position operator for photons.
 At the foundamental level, the quantum measurement in the quantum field theory is still debated. We will not discuss it here.</p>
-<p>For most practical applications,  the photon detection model developed by Glauber <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">10</a>]</span> works quite well.   Briefly stating, a detector can measure only the intensity of radiation field through a record of clicks.  Nothing else.</p>
+<p>For most practical applications,  the photon detection model developed by Glauber <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">15</a>]</span> works quite well.   Briefly stating, a detector can measure only the intensity of radiation field through a record of clicks.  Nothing else.</p>
 <section id="the-glauber-model">
 <h2><span class="section-number">9.1. </span>The Glauber model<a class="headerlink" href="#the-glauber-model" title="Link to this heading">#</a></h2>
-<p>First of all, we need to think what a photodetector records.  It clicks when a photon is detected.  The outcome of measurement is not a usual physical quantity.   The outcome is “0” for no signal and “1” for a click.  A single click does not have any useful information except that there was at least one photon in the space.   After many clicks, we have a random time series.  What we can learn from it?  The theory of statistics can extract many information out of it. (See <a class="reference internal" href="../foundations/bunching.html#ch-bunching-fcs"><span class="std std-numref">Section 3</span></a>.) We are particularly interested in two of them. 1) how often the clicks happen (mean detection rate) and 2) stndard deviation form the mean.</p>
-<p>At each click, an electron in the detector absorb a photon.  Therefore, the mean detection rate corresponds to the absorption rate which we can calculate using the standard quantum mechanics.  Usually we use a perturbation theory (the Fermi’s golden rule). Glauber was able to connect the transition rate to the mean intensity of radiation. <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">10</a>]</span>   We now show that the detector measures the mean intensity <a class="reference internal" href="../foundations/photons.html#equation-eq-radiation-intensity">(1.6)</a>.</p>
+<p>First of all, we need to think what a photodetector records.  It clicks when a photon is detected.  The outcome of measurement is not a usual physical quantity.   The outcome is “0” for no signal and “1” for a click.  A single click does not have any useful information except that there was at least one photon in the space.   After many clicks, we have a random time series.  What we can learn from it?  The theory of statistics can extract many information out of it. (See <a class="reference internal" href="../foundations/bunching.html#ch-bunching-fcs"><span class="std std-numref">Chapter 3</span></a>.) We are particularly interested in two of them. 1) how often the clicks happen (mean detection rate) and 2) stndard deviation form the mean.</p>
+<p>At each click, an electron in the detector absorb a photon.  Therefore, the mean detection rate corresponds to the absorption rate which we can calculate using the standard quantum mechanics.  Usually we use a perturbation theory (the Fermi’s golden rule). Glauber was able to connect the transition rate to the mean intensity of radiation. <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">15</a>]</span>   We now show that the detector measures the mean intensity <a class="reference internal" href="../foundations/photons.html#equation-eq-radiation-intensity">(1.6)</a>.</p>
 </section>
 <section id="transion-rates">
 <h2><span class="section-number">9.2. </span>Transion rates<a class="headerlink" href="#transion-rates" title="Link to this heading">#</a></h2>

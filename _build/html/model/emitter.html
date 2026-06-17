@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -190,6 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
@@ -510,7 +511,7 @@ H_{0} = \sum_{j=1}^{N} \frac{\omega_0}{2} \sigma^{z}_{j}
 <section id="location-of-atoms">
 <h2><span class="section-number">6.3. </span>Location of atoms<a class="headerlink" href="#location-of-atoms" title="Link to this heading">#</a></h2>
 <p>We denote the position of the <span class="math notranslate nohighlight">\(j\)</span>-th atom as <span class="math notranslate nohighlight">\(\mathbf{x}_{j}\)</span>. The relative position <span class="math notranslate nohighlight">\(\mathbf{r}_{ij} = \mathbf{x}_{i} - \mathbf{x}_{j}\)</span> actually takes more important roles.</p>
-<p>The location of atoms does not show up in the free Hamiltonian.  It will appear in the interaction Hamiltonian with radiation fields which will be discussed in <a class="reference internal" href="radiation-field.html#ch-radiation-field"><span class="std std-numref">Section 7</span></a>.  The dipole-dipole interaction introduced below is the part of atom-radiation interaction and depends on the relative position.</p>
+<p>The location of atoms does not show up in the free Hamiltonian.  It will appear in the interaction Hamiltonian with radiation fields which will be discussed in <a class="reference internal" href="radiation-field.html#ch-radiation-field"><span class="std std-numref">Chapter 7</span></a>.  The dipole-dipole interaction introduced below is the part of atom-radiation interaction and depends on the relative position.</p>
 </section>
 <section id="dipole-moment">
 <h2><span class="section-number">6.4. </span>Dipole moment<a class="headerlink" href="#dipole-moment" title="Link to this heading">#</a></h2>
@@ -529,7 +530,7 @@ H_{0} = \sum_{j=1}^{N} \frac{\omega_0}{2} \sigma^{z}_{j}
 \[
 H_{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i} \sigma^{-}_{j}
 \]</div>
-<p>with the strength of the dipole-dipole interaction <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">9</a>]</span></p>
+<p>with the strength of the dipole-dipole interaction <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">14</a>]</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-dd-cupling-strength">
 <span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-dd-cupling-strength" title="Link to this equation">#</a></span>\[
 \Omega_{ij} = \frac{3}{4} \gamma_{0} \left \{- \left[1-\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2}\right] \frac{\cos \xi_{ij}}{\xi_{ij}} + \left[1 - 3\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2}\right]\left(\frac{\sin \xi_{ij}}{\xi_{ij}^2}+\frac{\cos\xi_{ij}}{\xi_{ij}^3}\right)\right\}.
