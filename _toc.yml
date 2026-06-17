@@ -24,6 +24,7 @@ parts:
    -  file: foundations/coherence-func
       sections:
       -  file: foundations/coherence-g1
+      -  file: foundations/coherence-g2
 -  caption: Model
    numbered: 3
    chapters:

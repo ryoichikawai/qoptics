@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.1. First-order coherence function &#8212; Optical coherence from small atomic clusters.</title>
+    <title>4.2. The second-order coeherence function &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -63,11 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'foundations/coherence-g1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'foundations/coherence-g2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.2. The second-order coeherence function" href="coherence-g2.html" />
-    <link rel="prev" title="4. Coherence functions" href="coherence-func.html" />
+    <link rel="next" title="5. The System" href="../model/system.html" />
+    <link rel="prev" title="4.1. First-order coherence function" href="coherence-g1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -189,8 +189,8 @@
 <li class="toctree-l1"><a class="reference internal" href="coherence.html">2. What is quantum coherence?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bunching.html">3. Bunching and full counting statistics</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="coherence-func.html">4. Coherence functions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coherence-g2.html">4.2. The second-order coeherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coherence-g1.html">4.1. First-order coherence function</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/foundations/coherence-g1.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/foundations/coherence-g2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +316,7 @@
       
       
       
-      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Ffoundations/coherence-g1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Ffoundations/coherence-g2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +346,7 @@
       
       
       
-      <li><a href="../_sources/foundations/coherence-g1.ipynb" target="_blank"
+      <li><a href="../_sources/foundations/coherence-g2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +422,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>First-order coherence function</h1>
+    <h1>The second-order coeherence function</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,9 +432,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.1.1. Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-expression">4.1.2. Quantum expression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-1-measurable">4.1.3. Is <span class="math notranslate nohighlight">\(g^{(1)}\)</span> measurable?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.2.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-general-properties">4.2.2. Some general properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-effects">4.2.3. Quantum effects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-2-measurebale">4.2.4. Is <span class="math notranslate nohighlight">\(g^(2)\)</span> measurebale?</a></li>
 </ul>
             </nav>
         </div>
@@ -446,108 +447,87 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="first-order-coherence-function">
-<span id="sec-coherence-g1"></span><h1><span class="section-number">4.1. </span>First-order coherence function<a class="headerlink" href="#first-order-coherence-function" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-second-order-coeherence-function">
+<span id="sec-coherence-g2"></span><h1><span class="section-number">4.2. </span>The second-order coeherence function<a class="headerlink" href="#the-second-order-coeherence-function" title="Link to this heading">#</a></h1>
+<p>The first-order coherence function quantifies the coherence of amplitude, in direct connection to interference fringes.  The experiment by Hanbury Brown and Twiss demonstrated that a different type of coherence exists. It is a spatio-temporal correlation of intensity.</p>
 <section id="definition">
-<h2><span class="section-number">4.1.1. </span>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
-<p>The first-order coherence function is defined as correlation of the field amplitude at two different spacetime points:</p>
-<div class="math notranslate nohighlight" id="equation-eq-g1-full">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-g1-full" title="Link to this equation">#</a></span>\[
-g^{(1)}(t_{1},t_{2};\mathbf{x}_1,\mathbf{x}_2) = 
-\frac{\langle\mathbf{E}^{(-)}(\mathbf{x}_{1},t_{1}) \cdot \mathbf{E}^{(+)}(\mathbf{x}_2,t_{2})\rangle}
-{\sqrt{\langle\mathbf{E}^{(-)}(\mathbf{x}_{1},t_{1})\cdot\mathbf{E}^{(+)}(\mathbf{x}_{1},t_{1})\rangle \langle\mathbf{E}^{(-)}(\mathbf{x}_{2},t_{2})\cdot\mathbf{E}^{(+)}(\mathbf{x}_{2},t_{2})\rangle}}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\((\mathbf{x}_1,t_{1})\)</span> and <span class="math notranslate nohighlight">\((\mathbf{x}_2,t_{2})\)</span> are two “measurement” points.  This function is complex. The modulus <span class="math notranslate nohighlight">\(\gamma^{(1)} \equiv |g^{(1)}|\)</span>, known as the degree of first coherence, is bound between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span>. A value of <span class="math notranslate nohighlight">\(1\)</span> indicates perfect coherence, while <span class="math notranslate nohighlight">\(0\)</span> means the fields are completely uncorrelated.</p>
-<p>We will focus on its special case, temporal correlation measured at a single location:</p>
-<div class="math notranslate nohighlight" id="equation-eq-g1-temp">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-eq-g1-temp" title="Link to this equation">#</a></span>\[
-g^{(1)}(\tau;\mathbf{x}) = 
-\frac{\langle\mathbf{E}^{(-)}(\mathbf{x},t) \cdot \mathbf{E}^{(+)}(\mathbf{x},t+\tau)\rangle}
-{\langle\mathbf{E}^{(-)}(\mathbf{x},t)\cdot\mathbf{E}^{(+)}(\mathbf{x},t)\rangle}.
-\]</div>
-<p>which measures <em>coherence time</em> (how long the radiation field remembers its phase.)</p>
+<h2><span class="section-number">4.2.1. </span>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>The second-order coherence function is defined as correlation of radiation intensity at two different spacetime points:</p>
 <div class="math notranslate nohighlight">
-\[
-\lim_{\tau\rightarrow\infty} g^{(1)}(\tau;\mathbf{x}) = 0
-\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[
-g^{(1)}(0;\mathbf{x}) = 1
-\]</div>
-<p>at any position.</p>
+\[\begin{split}
+\begin{aligned}
+g^{(2)}(t_{1},t_{2};\mathbf{x}_{1},\mathbf{x}_{2}) 
+&amp;= \frac{\langle I(\mathbf{x}_{1},t_{1}) I(\mathbf{x}_{2},t_{2})\rangle}{\langle I(\mathbf{x}_{1},t_{1}) \rangle\langle I(\mathbf{x}_{2},t_{2}) \rangle}\\
+&amp;= \frac{\langle\big(\mathbf{E}^{(-)}(\mathbf{x}_{1},t_{1}) \cdot \mathbf{E}^{(+)}(\mathbf{x}_{1},t_{1})\big)\big(\mathbf{E}^{(-)}(\mathbf{x}_{2},t_{2}) \cdot \mathbf{E}^{(+)}(\mathbf{x}_{2},t_{2})\big)\rangle}{\langle\mathbf{E}^{(-)}(\mathbf{x}_{1},t_{1}) \cdot \mathbf{E}^{(+)}(\mathbf{x}_{1},t_{1})\rangle \langle\mathbf{E}^{(-)}(\mathbf{x}_{2},t_{2}) \cdot \mathbf{E}^{(+)}(\mathbf{x}_{2},t_{2})\rangle}
+\end{aligned}
+\end{split}\]</div>
+<p>In many case, we are interested in the temporal correlation measured at a single point</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-tau-x1">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-eq-g2-tau-x1" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+g^{(2)}(\tau;\mathbf{x})
+&amp;= \frac{\langle I(\mathbf{x},t) I(\mathbf{x},t+\tau)\rangle}{\langle I(\mathbf{x},t) \rangle\langle I(\mathbf{x},t+\tau) \rangle }\\
+&amp;= \frac{\langle I(\mathbf{x},t) I(\mathbf{x},t+\tau)\rangle}{[\langle I(\mathbf{x}) \rangle]^2}\\
+\end{aligned}
+\end{split}\]</div>
+<p>In the last line, we assume that the system is in a steady state.  We will mainly work on this temporal correlation.</p>
 </section>
-<section id="quantum-expression">
-<h2><span class="section-number">4.1.2. </span>Quantum expression<a class="headerlink" href="#quantum-expression" title="Link to this heading">#</a></h2>
-<p>In quantum oprics, it is more convenient to write Eq. <a class="reference internal" href="#equation-eq-g1-temp">(4.2)</a> with photon operators. Substituting <a class="reference internal" href="photons.html#equation-eq-quantum-free-field-pm">(1.5)</a>, Eq. <a class="reference internal" href="#equation-eq-g1-temp">(4.2)</a> is expressed as</p>
-<div class="math notranslate nohighlight" id="equation-eq-g1-quantum">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-eq-g1-quantum" title="Link to this equation">#</a></span>\[
-g^{(1)}(\tau;\mathbf{x}) = \frac{\sum_{i,j} f_{ij}(\mathbf{x}) \langle a^{\dagger}_{i}(t+\tau) a_{j}(t)\rangle}{\sum_{i,j} f_{ij}(\mathbf{x})  \langle a^{\dagger}_{i}(t) a_{j}(t)\rangle}
-\]</div>
-<p>where</p>
+<section id="some-general-properties">
+<h2><span class="section-number">4.2.2. </span>Some general properties<a class="headerlink" href="#some-general-properties" title="Link to this heading">#</a></h2>
+<p>We expect that the correlation vanishes for a large <span class="math notranslate nohighlight">\(\tau\)</span>, that meansfor large <span class="math notranslate nohighlight">\(\tau\)</span>,  <span class="math notranslate nohighlight">\(\langle I(\mathbf{x},t) I(\mathbf{x},t+\tau)\rangle \approx \langle I(\mathbf{x},t) \rangle \langle I(\mathbf{x},t+\tau) \rangle\)</span>, from which we obtain</p>
 <div class="math notranslate nohighlight">
 \[
-f_{ij}(\mathbf{x}) = \mathbf{e}_{i}\cdot \mathbf{e}_{j}\, \mathcal{E}_{i} \mathcal{E}^{*}_{j} \, e^{i (\mathbf{k}_{i}-\mathbf{k}_{j})\cdot \mathbf{x}}.
+\lim_{\tau\rightarrow\infty} g^{(2)}(\tau;\mathbf{x}) = 1.
 \]</div>
-<p>To interpret Eq. <a class="reference internal" href="#equation-eq-g1-quantum">(4.3)</a> we rewrite it in slightly different expression:</p>
-<div class="math notranslate nohighlight" id="equation-eq-g1-weighted-sum">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-eq-g1-weighted-sum" title="Link to this equation">#</a></span>\[
-g^{(1)}(\tau,\mathbf{x}) = \sum_{ij} w_{ij}(\mathbf{x}) g^{(1)}_{ij}(\tau).
+<p>When <span class="math notranslate nohighlight">\(\tau=0\)</span> (nodelay correlation function),</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-nodelay-classical">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-eq-g2-nodelay-classical" title="Link to this equation">#</a></span>\[
+g^{(2)}(0;\mathbf{x}) = \frac{\langle I^{2}(\mathbf{x},t)\rangle_t}{\langle I(\mathbf{x},t) \rangle_t^2} = 1 + \left(\frac{\Delta I(\mathbf{x},t)}{\langle I(\mathbf{x},t) \rangle_t}\right)^{2}
 \]</div>
-<p>where</p>
-<div class="math notranslate nohighlight" id="equation-eq-g1-temp-only">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-eq-g1-temp-only" title="Link to this equation">#</a></span>\[
-g^{(1)}_{ij}(\tau) = \frac{\langle a^{\dagger}_{i}(t+\tau)a_{j}(t)\rangle_t}{\langle a_{i}^{*}(t)a_{j}(t)\rangle}
-\]</div>
-<p>and weight functions</p>
-<div class="math notranslate nohighlight" id="equation-eq-wij">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-eq-wij" title="Link to this equation">#</a></span>\[
-w_{ij}(\mathbf{x}) = \frac{f_{ij}(\mathbf{x},\mathbf{x})  \langle a^{\dagger}_{i}(t) a_{j}(t)\rangle}
-{\sum_{ij}f_{ij}(\mathbf{x},\mathbf{x})  \langle a^{\dagger}_{i}(t) a_{j}(t)}.
-\]</div>
-<p>The weight is normalized as <span class="math notranslate nohighlight">\(\sum_{ij} w_{ij}(\mathbf{x}) = 1\)</span>.  Equation <a class="reference internal" href="#equation-eq-g1-weighted-sum">(4.4)</a> indicates that at each oint <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, the contribution of temporal correlation functions <span class="math notranslate nohighlight">\(g^{(1)}_{ij}\)</span> is different.</p>
+<p>where the variance is defined by <span class="math notranslate nohighlight">\(\left(\Delta I(\mathbf{x,t})\right)^{2} = \langle I^{2}(\mathbf{x},t) \rangle_t - \langle I(\mathbf{x},t)\rangle_t^{2} \ge 0\)</span>.  Equation <a class="reference internal" href="#equation-eq-g2-nodelay-classical">(4.8)</a> indicates that <span class="math notranslate nohighlight">\(g^{(2)}(0,\mathbf{x}) \ge 1\)</span>.  The equality holds if and only if <span class="math notranslate nohighlight">\(\Delta I =0\)</span>.  This means that if an experiment data shows <span class="math notranslate nohighlight">\(g^{(2)}(0)=1\)</span> then the light intensity is not fluctuating. The positive value was first confirmed by Hanbury Brown and Twiss.<span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id28" title="R. Hanbury Brown and R. Q. Twiss. Correlation between photons in two coherent beams of light. Nature, 177(4497):27–29, 1956. doi:10.1038/177027a0.">9</a>]</span>.  More recently, cleaner results have been obtained  with  modern experimental techniques.<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id25" title="P. K. Tan, G. H. Yeo, H. S. Poh, A. H. Chan, and C. Kurtsiefer. Measuring temporal photon bunching in blackbody radiation. The Astrophysical Journal Letters, 789(1):L10, jun 2014. doi:10.1088/2041-8205/789/1/L10.">10</a>, <a class="reference internal" href="../references/references.html#id30" title="P. K. Tan and C. Kurtsiefer. Temporal intensity interferometry for characterization of very narrow spectral lines. Monthly Notices of the Royal Astronomical Society, 469(2):1617-1621, 04 2017. doi:10.1093/mnras/stx968.">11</a>]</span>.</p>
+<p>It turns out that negative value of <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> has also been observed<span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id20" title="H. J. Kimble, M. Dagenais, and L. Mandel. Photon antibunching in resonance fluorescence. Phys. Rev. Lett., 39:691–695, Sep 1977. doi:10.1103/PhysRevLett.39.691.">12</a>, <a class="reference internal" href="../references/references.html#id21" title="P. Grangier, G. Roger, and A. Aspect. Experimental evidence for a photon anticorrelation effect on a beam splitter: a new light on single-photon interferences. Europhysics Letters, 1(4):173, feb 1986. doi:10.1209/0295-5075/1/4/004.">13</a>]</span> in violation of the above result.  Such results can be explained only by quantum optics.</p>
 </section>
-<section id="is-g-1-measurable">
-<h2><span class="section-number">4.1.3. </span>Is <span class="math notranslate nohighlight">\(g^{(1)}\)</span> measurable?<a class="headerlink" href="#is-g-1-measurable" title="Link to this heading">#</a></h2>
-<p>In classical world, the temporal correlation <span class="math notranslate nohighlight">\(\langle A(t+\tau) B(t) \rangle\)</span> can be measured directly.  We record the time evolution of <span class="math notranslate nohighlight">\(A(t)\)</span> and <span class="math notranslate nohighlight">\(B(t)\)</span>. Then, we make statistical analysis of the records.  In quantum mechanics, that approach is not possible because the measurement changes the state.  The situation is even worse for <span class="math notranslate nohighlight">\(\langle a^{\dagger}(t+\tau) a(t) \rangle\)</span> because <span class="math notranslate nohighlight">\(a(t)\)</span> is not an observable.  Furthermore, the photodetector can measure only the intensity of the field.  Then, how can we determine <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> by experimental measurement?</p>
-<p>There is a method using an interferometer.  The actual procedure is similar to <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_tomography">quantum tomography</a>.  Suppose that a beam of light is divided into two beams, A and B, by a beam splitter. Beam B travles a longer path than A.  At time <span class="math notranslate nohighlight">\(t\)</span> the radiation fields of beam A and B at the detector are <span class="math notranslate nohighlight">\(\mathbf{E}^{\pm}_{A}(t) = \frac{1}{\sqrt{2}} = \mathbf{E}^{\pm}(t)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{E}^{\pm}_{B}(t) = \frac{1}{\sqrt{2}} = \mathbf{E}^{\pm}(t+\tau)\)</span> where <span class="math notranslate nohighlight">\(\tau\)</span> is the delay time due to the longer path.   The detector measures the intensity of the combined beam, <span class="math notranslate nohighlight">\(\mathbf{E}^{\pm}_{D}(t) = \frac{1}{\sqrt{2}} \left[\mathbf{E}^{\pm}(t) + \mathbf{E}^{\pm}(t+\tau) \right]\)</span>.  Then, the intensity observed by the detector is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-I_{D}(\tau) &amp;= \langle \mathbf{E}^{(+)}_{D}(t)\cdot\mathbf{E}^{(-)}_{D}(t)\rangle \\
-&amp; = \frac{1}{2} \langle \left[\mathbf{E}^{+}(t) + \mathbf{E}^{(+)}(t+\tau)\right]\cdot 
-\left[\mathbf{E}^{-}(t) + \mathbf{E}^{(-)}(t+\tau)\right]\rangle \\
-&amp; = I_{A} + I_{B}
-+ \text{Re} \langle \mathbf{E}^{(+)}(t)\cdot\mathbf{E}^{(-)}(t+\tau)\rangle \\
-&amp; = I_{A} + I_{B} + \text{Re}\, G^{(1)}(\tau) 
-\end{aligned}
-\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(I_{D}\)</span>, <span class="math notranslate nohighlight">\(I_{A}\)</span>, and <span class="math notranslate nohighlight">\(I_{B}\)</span> are the intensity at the detector and the intensities of beam A and B.  From the conservation of energy <span class="math notranslate nohighlight">\(I_{A}+ I_{B}=I_{0}\)</span> where <span class="math notranslate nohighlight">\(I_{0}\)</span> is the intensity of the original beam before splitting.  Then,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\frac{I_{D}(\tau)}{I_{0}} &amp;=  1 + \text{Re}\, g^{(1)}(\tau) \\
-&amp; = 1 + \gamma^{(1)}(\tau) \cos(\phi(\tau))
-\end{aligned}
-\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\gamma^{(1)}(\tau)\)</span> and <span class="math notranslate nohighlight">\(\phi(\tau)\)</span> are modulus and phase of <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span>.  In a regular interference, the fringes are generated by the phase and the modulus does not change.  Therefore, we assume that <span class="math notranslate nohighlight">\(\gamma^{(1)}\)</span> is constant.</p>
-<p>To determine the real part of <span class="math notranslate nohighlight">\(g^{2}\)</span>, we need to measure <span class="math notranslate nohighlight">\(I_{0}\)</span> and <span class="math notranslate nohighlight">\(I_{D}\)</span>.  We need to measure them separately in the same experimental setup since the measurement of <span class="math notranslate nohighlight">\(I_{0}\)</span> change the outcome of <span class="math notranslate nohighlight">\(I_{D}\)</span>.</p>
-<p>To find the imaginary part, we change <span class="math notranslate nohighlight">\(\tau\)</span> (change the traveling distance of beam B) and find the maximum and minimum intensity</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\frac{I^\text{max}_{D}}{I} &amp;= 1 + \gamma^{(1)} \\
-\frac{I^\text{min}_{D}}{I} &amp;= 1 - \gamma^{(1)}
-\end{aligned}
-\end{split}\]</div>
-<p>From which we can find the modulus (known as degree of first-order coherence),</p>
-<div class="math notranslate nohighlight">
-\[
-\gamma^{(1)} = \frac{I^\text{max}_{D} - I^\text{min}_{D}}{2 I_0}
+<section id="quantum-effects">
+<h2><span class="section-number">4.2.3. </span>Quantum effects<a class="headerlink" href="#quantum-effects" title="Link to this heading">#</a></h2>
+<p>Using EQs. <a class="reference internal" href="photons.html#equation-eq-quantum-free-field-pm">(1.5)</a> and <a class="reference internal" href="photons.html#equation-eq-radiation-intensity">(1.6)</a>, EQ. <a class="reference internal" href="#equation-eq-g2-tau-x1">(4.7)</a> can be expressed as</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-qm-modes">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-eq-g2-qm-modes" title="Link to this equation">#</a></span>\[
+g^{(2)}(\tau;\mathbf{x}) = \sum_{ij} \sum_{i'j'} w_{ij}(\mathbf{x}) w_{i'j'}(\mathbf{x}) g^{(2)}_{ij,i'j'}(\tau)
 \]</div>
-<p>Now it is straight forward to compute the phase.</p>
-<p>In conclusion, it is possible to determine <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> by a single photon detector.  However, it is not a simple measurement.  We need to measure intensity  by changing the travel distance.  In other words, we need to map interference fringes by changing parameters.  We need also to be careful not to destroy the interference fringes.</p>
-<p>For more detailed discussion, see Ref. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id56" title="Zbigniew Ficek and Stuart Swain. Quantum Interference and Coherence. SpringerLink. Springer New York, New York, NY, 2005. ISBN 0-387-22965-5. doi:10.1007/b100106.">8</a>]</span>.</p>
+<p>with</p>
+<div class="math notranslate nohighlight" id="equation-eq-subg2-qm-modes">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-eq-subg2-qm-modes" title="Link to this equation">#</a></span>\[
+g_{ij,i'j'}^{(2)}(\tau) = \frac{\langle a^{\dagger}_{i'}(t) a^{\dagger}_{i}(t+\tau) a_{j}(t+\tau) a_{j'}(t)\rangle}{\langle a^{\dagger}_{i}(t) a_{j}(t)\rangle \langle a^{\dagger}_{i'}(t) a_{j'}(t)\rangle}
+\]</div>
+<p>See <a class="reference internal" href="coherence-g1.html#sec-coherence-g1"><span class="std std-numref">Section 4.1</span></a> for <span class="math notranslate nohighlight">\(w_{ij}\)</span>.</p>
+<p>Pay a close attention to the order of creation and annihilation operators, which is a crucial point of quantum correlation.  In the product of creation and annihilation operators, all creation operators are placed to the left of all annihilation operators to eliminate infinite zero-point vacuum energy and resolve ordering ambiguities when promoting classical fields to quantum operators. This order is called <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_order">normal order</a>.  The rule of the normal order does not tell how to order chronologically.  That is determined by the detector model by Glauber. (See <a class="reference internal" href="../model/detector.html#ch-detector"><span class="std std-numref">Section 9</span></a>.) Recall that each click corresponds to a jump expressed by an annihilation operator.  If the first click happened at <span class="math notranslate nohighlight">\(t_1\)</span> and the second one at <span class="math notranslate nohighlight">\(t_{2}\)</span>, the state jumps as <span class="math notranslate nohighlight">\(a(t_{2}) a(t_{1})\)</span> (the right most is the earliest).  To compute the transition probability we need its adjoint <span class="math notranslate nohighlight">\([a(t_2) a(t_1)]^{\dagger} = a^{\dagger}(t_{1}) a^{\dagger}(t_{2})\)</span>.  Combining all, we have <span class="math notranslate nohighlight">\(a^{\dagger}(t_{1}) a^{\dagger}(t_{2})a(t_{2}) a(t_{1})\)</span>.  REquirement from the quantum field theory and the detection theory uniquely determine the order of operators.</p>
+<p>Let us look at the simplest case, no-delay coherence of a single mode radiation:</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-qm-single-mode">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-eq-g2-qm-single-mode" title="Link to this equation">#</a></span>\[
+g^{(2)}(0;\mathbf{x}) = \frac{\langle a^{\dagger} a^{\dagger} a a\rangle_{ss}}{(\langle a^{\dagger}a \rangle_{ss})^2}
+\]</div>
+<p>which does not depend on the location. <span class="math notranslate nohighlight">\(\langle \cdots \rangle_{ss}\)</span> indicates average over a steady state.  Using the commutation relation, <span class="math notranslate nohighlight">\(a^{\dagger}a^{\dagger} a a = a^{\dagger} a a^{\dagger} a - a^{\dagger} a = n^2-n\)</span>, we find</p>
+<div class="math notranslate nohighlight" id="equation-eq-nodelay-g2-qm-single-mode">
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-eq-nodelay-g2-qm-single-mode" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+g^{(2)}(0) &amp;= \frac{\langle n(n-1) \rangle_{ss}}{\langle n \rangle_{ss}^2} = \frac{\langle n^2 \rangle_{ss}}{\langle n \rangle_{ss}^2} - \frac{1}{\langle n \rangle_{ss}} \\
+&amp;=1 + \left(\frac{\Delta n}{\langle n \rangle_{ss}}\right)^2 - \frac{1}{\langle n \rangle_{ss}}
+\end{aligned}
+\end{split}\]</div>
+<p>where we used the fluctuation of photon numbers <span class="math notranslate nohighlight">\((\Delta n)^2 = \langle n^2 \rangle_{ss} - \langle n \rangle_{ss}^2\)</span>. This nodelay second-order coherence function looks similar to the classical version <a class="reference internal" href="#equation-eq-g2-nodelay-classical">(4.8)</a> but actually quite different.  While the classical value is always above 1, we cannot say so for the quantum version.  For example, if <span class="math notranslate nohighlight">\(\langle n \rangle_{ss}=1\)</span> and <span class="math notranslate nohighlight">\(\Delta n = 0\)</span>, then we have <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0\)</span>.  That means if the detector sees only one photon at a time, the nodelay second-order coherence function vanishes.  This is purely a quantum effect known as photon antibunching.</p>
+<p>If the order of the operators are different, we did not get this result. It is critical to get the correct order of creation annihilation operators to obtain correct quantum effects.</p>
+<div class="important admonition" id="adm-normal-oirder">
+<p class="admonition-title">Order of operators</p>
+<p>The creation and annhilation operators must be ordered as follows.</p>
+<ol class="arabic simple">
+<li><p><strong>Normal order</strong>: All creation operators must be placed to the left of all annihilation operators.</p></li>
+<li><p><strong>Chronological order</strong>: Annihilation operators must be ordered chronologicaylly according to the clicks of the dector.</p></li>
+</ol>
+</div>
+</section>
+<section id="is-g-2-measurebale">
+<h2><span class="section-number">4.2.4. </span>Is <span class="math notranslate nohighlight">\(g^(2)\)</span> measurebale?<a class="headerlink" href="#is-g-2-measurebale" title="Link to this heading">#</a></h2>
+<p>Unlike <span class="math notranslate nohighlight">\(g^(1)\)</span>, there is no difficulty in measuring <span class="math notranslate nohighlight">\(g^(2)\)</span> since intensity is an observable and recording of clicks by the dectector can be converted to the intensity.  See <a class="reference internal" href="../model/detector.html#ch-detector"><span class="std std-numref">Section 9</span></a>.</p>
 </section>
 </section>
 
@@ -582,20 +562,20 @@ I_{D}(\tau) &amp;= \langle \mathbf{E}^{(+)}_{D}(t)\cdot\mathbf{E}^{(-)}_{D}(t)\r
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="coherence-func.html"
+       href="coherence-g1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Coherence functions</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>First-order coherence function</p>
       </div>
     </a>
     <a class="right-next"
-       href="coherence-g2.html"
+       href="../model/system.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>The second-order coeherence function</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>The System</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -617,9 +597,10 @@ I_{D}(\tau) &amp;= \langle \mathbf{E}^{(+)}_{D}(t)\cdot\mathbf{E}^{(-)}_{D}(t)\r
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.1.1. Definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-expression">4.1.2. Quantum expression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-1-measurable">4.1.3. Is <span class="math notranslate nohighlight">\(g^{(1)}\)</span> measurable?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.2.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-general-properties">4.2.2. Some general properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-effects">4.2.3. Quantum effects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-2-measurebale">4.2.4. Is <span class="math notranslate nohighlight">\(g^(2)\)</span> measurebale?</a></li>
 </ul>
   </nav></div>
 
