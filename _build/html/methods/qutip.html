@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. Numerical calculation using QuTip &#8212; Optical coherence from small atomic clusters.</title>
+    <title>11. Numerical calculation using QuTip &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'methods/qutip';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11. Quantum master equations" href="openqm-qme.html" />
-    <link rel="prev" title="9. Dectector" href="../model/detector.html" />
+    <link rel="next" title="12. Quantum master equations" href="openqm-qme.html" />
+    <link rel="prev" title="10. Phonon bath" href="../model/phonon-bath.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -201,11 +201,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openqm-qme.html">11. Quantum master equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openqm-qme.html">12. Quantum master equations</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -432,18 +433,18 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">10.1. Basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-qutip-modules">10.1.1. Loading QuTip modules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-objects">10.1.2. Quantum objects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-operations-on-quantum-objects">10.1.3. Standard operations on quantum objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">11.1. Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-qutip-modules">11.1.1. Loading QuTip modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-objects">11.1.2. Quantum objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-operations-on-quantum-objects">11.1.3. Standard operations on quantum objects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">10.2. Quantum master equation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-quantum-master-equation">10.2.1. Defining a quantum master equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">10.2.2. Coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">11.2. Quantum master equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-quantum-master-equation">11.2.1. Defining a quantum master equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">11.2.2. Coherence functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectory">10.3. Quantum Trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectory">11.3. Quantum Trajectory</a></li>
 </ul>
             </nav>
         </div>
@@ -456,12 +457,12 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-calculation-using-qutip">
-<span id="ch-qutip"></span><h1><span class="section-number">10. </span>Numerical calculation using QuTip<a class="headerlink" href="#numerical-calculation-using-qutip" title="Link to this heading">#</a></h1>
+<span id="ch-qutip"></span><h1><span class="section-number">11. </span>Numerical calculation using QuTip<a class="headerlink" href="#numerical-calculation-using-qutip" title="Link to this heading">#</a></h1>
 <p>A summary of QuTip usage for computing open quantum system is given.   Only modules and functions used in this note are included.</p>
 <section id="basics">
-<h2><span class="section-number">10.1. </span>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
 <section id="loading-qutip-modules">
-<h3><span class="section-number">10.1.1. </span>Loading QuTip modules<a class="headerlink" href="#loading-qutip-modules" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.1.1. </span>Loading QuTip modules<a class="headerlink" href="#loading-qutip-modules" title="Link to this heading">#</a></h3>
 <p>First of all, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> must be loaded since <code class="docutils literal notranslate"><span class="pre">QuTip</span></code> uses them. It is assumed that they are loaded as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -491,7 +492,7 @@
 </div>
 </section>
 <section id="quantum-objects">
-<h3><span class="section-number">10.1.2. </span>Quantum objects<a class="headerlink" href="#quantum-objects" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.1.2. </span>Quantum objects<a class="headerlink" href="#quantum-objects" title="Link to this heading">#</a></h3>
 <p>Mathematically, elements of quantum mechanics are state vector: <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, density operator: <span class="math notranslate nohighlight">\(\rho\)</span>, and operators as observables: <span class="math notranslate nohighlight">\(H\)</span>.  In traditional numerical methods, they are all expressed as a matrix.  QuTip treats them as different python objects known as qantum objects or <code class="docutils literal notranslate"><span class="pre">Qobj</span></code>.  Each object consists of at least four parts:</p>
 <ol class="arabic simple">
 <li><p><strong>type</strong>: ket <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, bra <span class="math notranslate nohighlight">\(\langle\psi|\)</span>, operator <span class="math notranslate nohighlight">\(\hat{O}\)</span>, super operator <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p></li>
@@ -578,7 +579,7 @@ Qobj data =
 </div>
 </section>
 <section id="standard-operations-on-quantum-objects">
-<h3><span class="section-number">10.1.3. </span>Standard operations on quantum objects<a class="headerlink" href="#standard-operations-on-quantum-objects" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.1.3. </span>Standard operations on quantum objects<a class="headerlink" href="#standard-operations-on-quantum-objects" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>standard operators</p>
 <ul class="simple">
@@ -631,11 +632,11 @@ Qobj data =
 </section>
 </section>
 <section id="quantum-master-equation">
-<h2><span class="section-number">10.2. </span>Quantum master equation<a class="headerlink" href="#quantum-master-equation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>Quantum master equation<a class="headerlink" href="#quantum-master-equation" title="Link to this heading">#</a></h2>
 <p>QuTip includes quantum master equation solvers and many utilities to evaluate physical quantities using the output from the solver.  Here is a brief summary of basic operations.</p>
 <section id="defining-a-quantum-master-equation">
-<h3><span class="section-number">10.2.1. </span>Defining a quantum master equation<a class="headerlink" href="#defining-a-quantum-master-equation" title="Link to this heading">#</a></h3>
-<p>We want to solve a quantum master equation <span class="math notranslate nohighlight">\(\frac{d}{dt}\rho = \mathcal{L} \rho\)</span> where <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a Liouville super operator (Liouvillian). (See <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 11</span></a>.)  The Liouville superoperators are uniquely determined by the system Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> and a set of dissipators <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> such that</p>
+<h3><span class="section-number">11.2.1. </span>Defining a quantum master equation<a class="headerlink" href="#defining-a-quantum-master-equation" title="Link to this heading">#</a></h3>
+<p>We want to solve a quantum master equation <span class="math notranslate nohighlight">\(\frac{d}{dt}\rho = \mathcal{L} \rho\)</span> where <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a Liouville super operator (Liouvillian). (See <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.)  The Liouville superoperators are uniquely determined by the system Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> and a set of dissipators <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L} \rho = -i [H,\rho] + \sum_{ij} \gamma_{ij} \mathcal{D}_{ij} \rho
@@ -770,7 +771,7 @@ Qobj data =
 </div>
 </div>
 <p><strong>Computing temporal correlation functions</strong></p>
-<p>To compute temporal correlation function, we need to use the quantum regression theorem (see <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 11</span></a>.  QuTip has several functions which computes a correlaion function without explicitely envoking <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.  Two convenient ones are</p>
+<p>To compute temporal correlation function, we need to use the quantum regression theorem (see <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.  QuTip has several functions which computes a correlaion function without explicitely envoking <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.  Two convenient ones are</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">correlation.correlation_2op_1t(H,</span> <span class="pre">psi0,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">A,</span> <span class="pre">B)</span></code>   for <span class="math notranslate nohighlight">\(\langle A(\tau)B(0) \rangle\)</span>:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">correlation.correlation_3op_1t(H,</span> <span class="pre">psi0,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">A,</span> <span class="pre">B,</span> <span class="pre">C)</span></code>  for <span class="math notranslate nohighlight">\(\langle A(0)B(\tau)C(0 \rangle\)</span>:</p></li>
@@ -784,8 +785,8 @@ Qobj data =
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G1</span> <span class="o">=</span> <span class="n">correlation</span><span class="o">.</span><span class="n">correlation_2op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">sigmap</span><span class="p">(),</span> <span class="n">sigmam</span><span class="p">())</span>
 <span class="n">G2</span> <span class="o">=</span> <span class="n">correlation</span><span class="o">.</span><span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">sigmap</span><span class="p">(),</span> <span class="n">sigmap</span><span class="p">()</span><span class="o">*</span><span class="n">sigmam</span><span class="p">(),</span> <span class="n">sigmam</span><span class="p">())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">G1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Re $G^{(1})$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">G2</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Re $G^{(2})$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">G1</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|G^{(1})|$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">G2</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$G^{(2})$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\sigma^{+}\sigma^{-}$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -794,39 +795,13 @@ Qobj data =
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9f9ea4d2fd0b8f7e869938d47d0438a680e60876b5a8fba026f3ccc008722734.png" src="../_images/9f9ea4d2fd0b8f7e869938d47d0438a680e60876b5a8fba026f3ccc008722734.png" />
+<img alt="../_images/d3c3910527318d92660055ec9fd82e6dbb45a6ff19f7ae0af7c314152e6e669b.png" src="../_images/d3c3910527318d92660055ec9fd82e6dbb45a6ff19f7ae0af7c314152e6e669b.png" />
 </div>
 </div>
 </section>
 <section id="coherence-functions">
-<h3><span class="section-number">10.2.2. </span>Coherence functions<a class="headerlink" href="#coherence-functions" title="Link to this heading">#</a></h3>
-<p>You can calculate the first-order and second-order coherence functions easily using the above QuTip functions.  However, there are wrapper routines for <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> and <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span>.  They calls the functions explained above.  Then, normalize the correlation appropriately.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">coherence_function_g1(H,</span> <span class="pre">None,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">a)</span></code>   for   <span class="math notranslate nohighlight">\(g^{(1)}(\tau) = \frac{\langle a^{\dagger}(t+\tau) a(t)\rangle_{ss}}{\langle a^{\dagger}(t) a(t)\rangle_{ss}}\)</span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">coherence_function_g2(H,</span> <span class="pre">None,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">a)</span></code>   for   <span class="math notranslate nohighlight">\(g^{(2)}(\tau) = \frac{\langle a^{\dagger}(t)a^{\dagger}(t+\tau) a(t+\tau) a(t)\rangle_{ss}}{(\langle a^{\dagger}(t) a(t)\rangle_{ss})^2}\)</span></p></li>
-</ul>
-<p>These functions actually return both <span class="math notranslate nohighlight">\(G^{(n)}(\tau)\)</span> and <span class="math notranslate nohighlight">\(g^{(n)}(\tau)\)</span>.</p>
-<p>If cross correlation between different modes are included, these wrapper functions won’t work.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span><span class="p">,</span> <span class="n">G1</span> <span class="o">=</span><span class="n">coherence_function_g1</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">sigmap</span><span class="p">())</span>
-<span class="n">g2</span><span class="p">,</span> <span class="n">G2</span> <span class="o">=</span><span class="n">coherence_function_g2</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">sigmap</span><span class="p">())</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Re $g^{(1})$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g2</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$g^{(2})$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;coherence functions&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/aad9516214bf085cd8a2b22931e72d488c28dbc0e03d38759627a08b1de08369.png" src="../_images/aad9516214bf085cd8a2b22931e72d488c28dbc0e03d38759627a08b1de08369.png" />
-</div>
-</div>
-<p>In case <code class="docutils literal notranslate"><span class="pre">coherence_function_g1</span></code> or <code class="docutils literal notranslate"><span class="pre">coherence_function_g2</span></code> does not work, we resort to the original tools for correlation functions for <span class="math notranslate nohighlight">\(G^{(1)}\)</span> and <span class="math notranslate nohighlight">\(G^{(2)}\)</span>.  Then, we need to find appropriate normalization, which is just expectation values which can be computed with <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.  The following example produces the same output as the previous example.</p>
+<h3><span class="section-number">11.2.2. </span>Coherence functions<a class="headerlink" href="#coherence-functions" title="Link to this heading">#</a></h3>
+<p>The coherence functions <span class="math notranslate nohighlight">\(g^{(1)}\)</span> and <span class="math notranslate nohighlight">\(g^{(2)}\)</span> are just the normalized version of the correlation functions <span class="math notranslate nohighlight">\(G^{(1)}\)</span> and <span class="math notranslate nohighlight">\(G^{(2)}\)</span>. The normalization constant is  simply the intensity of the field and we can calculate it using <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the normalization constant</span>
@@ -837,7 +812,7 @@ Qobj data =
 <span class="n">g2</span> <span class="o">=</span> <span class="n">G2</span><span class="o">/</span><span class="n">norm1</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Re $g^{(1})$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">g1</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|g^{(1})|$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g2</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$g^{(2})$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;coherence functions&quot;</span><span class="p">)</span>
@@ -847,14 +822,39 @@ Qobj data =
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aad9516214bf085cd8a2b22931e72d488c28dbc0e03d38759627a08b1de08369.png" src="../_images/aad9516214bf085cd8a2b22931e72d488c28dbc0e03d38759627a08b1de08369.png" />
+<img alt="../_images/2269c01a5ea0f4b80f9439ecd22ba48bd11846ca6e00d7a388e590e4848e6b96.png" src="../_images/2269c01a5ea0f4b80f9439ecd22ba48bd11846ca6e00d7a388e590e4848e6b96.png" />
+</div>
+</div>
+<p>Aactually, <code class="docutils literal notranslate"><span class="pre">QuTip</span></code> has build-in functions that compute both <span class="math notranslate nohighlight">\(G^{(n)}\)</span> and <span class="math notranslate nohighlight">\(g^{(n)}\)</span> at once.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">coherence_function_g1(H,</span> <span class="pre">None,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">a)</span></code>   for   <span class="math notranslate nohighlight">\(g^{(1)}\)</span> and <span class="math notranslate nohighlight">\(G^{(1)}\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coherence_function_g2(H,</span> <span class="pre">None,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">a)</span></code>   for   <span class="math notranslate nohighlight">\(g^{(2)}\)</span> and <span class="math notranslate nohighlight">\(G^{(2)}\)</span>.</p></li>
+</ul>
+<p>The following example generates the same results using the above functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span><span class="p">,</span> <span class="n">G1</span> <span class="o">=</span><span class="n">coherence_function_g1</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">sigmap</span><span class="p">())</span>
+<span class="n">g2</span><span class="p">,</span> <span class="n">G2</span> <span class="o">=</span><span class="n">coherence_function_g2</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">sigmap</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">g1</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|g^{(1})|$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g2</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$g^{(2})$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;coherence functions&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2269c01a5ea0f4b80f9439ecd22ba48bd11846ca6e00d7a388e590e4848e6b96.png" src="../_images/2269c01a5ea0f4b80f9439ecd22ba48bd11846ca6e00d7a388e590e4848e6b96.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="quantum-trajectory">
-<h2><span class="section-number">10.3. </span>Quantum Trajectory<a class="headerlink" href="#quantum-trajectory" title="Link to this heading">#</a></h2>
-<p>There is also build-in functions for quantum trajectory calculation.  In <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 11</span></a>, we calculated a quantum trajectory manually.  Monte Carlo solver <code class="docutils literal notranslate"><span class="pre">mcsolve()</span></code> generates quantum trajectories without hustle.  Since the quantum trajectory approach is mathematically equivalent to the corresponding quantum master equation, calling procedure is essentially the same, except for number of trajectories.  To get better statistics, we need many samplings.  If data is too noisy, increase the number of trajectories.  We just need to measure number operators.  Unfortunately, there is no function that analyzes the trajectory. We need to write a code.</p>
+<h2><span class="section-number">11.3. </span>Quantum Trajectory<a class="headerlink" href="#quantum-trajectory" title="Link to this heading">#</a></h2>
+<p>There is also build-in functions for quantum trajectory calculation.  In <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>, we calculated a quantum trajectory manually.  Monte Carlo solver <code class="docutils literal notranslate"><span class="pre">mcsolve()</span></code> generates quantum trajectories without hustle.  Since the quantum trajectory approach is mathematically equivalent to the corresponding quantum master equation, calling procedure is essentially the same, except for number of trajectories.  To get better statistics, we need many samplings.  If data is too noisy, increase the number of trajectories.  We just need to measure number operators.  Unfortunately, there is no function that analyzes the trajectory. We need to write a code.</p>
 <p><strong>spike plot</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -892,7 +892,7 @@ Qobj data =
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.14s
 </pre></div>
 </div>
-<img alt="../_images/48ddc198e0b7befbd112173cfc6a0ba6e5728bb59d56f6930c283f9072730cf1.png" src="../_images/48ddc198e0b7befbd112173cfc6a0ba6e5728bb59d56f6930c283f9072730cf1.png" />
+<img alt="../_images/b703bb9e43978f3bb0338b65adb4501e23b99ba0fddbeac95a42dd2573c295c0.png" src="../_images/b703bb9e43978f3bb0338b65adb4501e23b99ba0fddbeac95a42dd2573c295c0.png" />
 </div>
 </div>
 <p><strong>waiting time distribution</strong></p>
@@ -917,8 +917,8 @@ Qobj data =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  9.942343548637883
-standard deviation =  9.734536892026611
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  9.864279387831866
+standard deviation =  10.119947707599016
 likely poissonian
 </pre></div>
 </div>
@@ -936,7 +936,7 @@ likely poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66a241c026ae0ed6ab9a623a7d7eb5b6158e1ce256d19613ba7a19e7ea032406.png" src="../_images/66a241c026ae0ed6ab9a623a7d7eb5b6158e1ce256d19613ba7a19e7ea032406.png" />
+<img alt="../_images/3958097b6c3a0262260153524382233d113c8717db9dd3f7e57482dcba0a5721.png" src="../_images/3958097b6c3a0262260153524382233d113c8717db9dd3f7e57482dcba0a5721.png" />
 </div>
 </div>
 </section>
@@ -973,12 +973,12 @@ likely poissonian
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../model/detector.html"
+       href="../model/phonon-bath.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Dectector</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Phonon bath</p>
       </div>
     </a>
     <a class="right-next"
@@ -986,7 +986,7 @@ likely poissonian
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Quantum master equations</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Quantum master equations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1008,18 +1008,18 @@ likely poissonian
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">10.1. Basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-qutip-modules">10.1.1. Loading QuTip modules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-objects">10.1.2. Quantum objects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-operations-on-quantum-objects">10.1.3. Standard operations on quantum objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">11.1. Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-qutip-modules">11.1.1. Loading QuTip modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-objects">11.1.2. Quantum objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-operations-on-quantum-objects">11.1.3. Standard operations on quantum objects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">10.2. Quantum master equation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-quantum-master-equation">10.2.1. Defining a quantum master equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">10.2.2. Coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">11.2. Quantum master equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-quantum-master-equation">11.2.1. Defining a quantum master equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">11.2.2. Coherence functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectory">10.3. Quantum Trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectory">11.3. Quantum Trajectory</a></li>
 </ul>
   </nav></div>
 

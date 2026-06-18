@@ -33,6 +33,7 @@ parts:
    -  file: model/radiation-field
    -  file: model/driving
    -  file: model/detector
+   -  file: model/phonon-bath
 -  caption: Methods
    numbered: 3
    chapters:

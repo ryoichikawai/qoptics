@@ -201,11 +201,12 @@
 <li class="toctree-l1"><a class="reference internal" href="radiation-field.html">7. Radiation field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="driving.html">8. External driving</a></li>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phonon-bath.html">10. Phonon bath</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">10. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">11. Quantum master equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">12. Quantum master equations</a></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -436,7 +437,11 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-identical-atoms">6.2. <span class="math notranslate nohighlight">\(N\)</span> identical atoms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#location-of-atoms">6.3. Location of atoms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">6.4. Dipole moment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">6.5. Interaction between the atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">6.5. Interaction between the atoms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-dipole-coupling">6.5.1. Dipole-dipole coupling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phonon-mediated-coupling">6.5.2. Phonon-mediated coupling</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -454,13 +459,13 @@
 <section id="a-single-two-level-system">
 <h2><span class="section-number">6.1. </span>A single two-level system<a class="headerlink" href="#a-single-two-level-system" title="Link to this heading">#</a></h2>
 <p>A single atom has two energy levels, a lower energy state <span class="math notranslate nohighlight">\(|g\rangle\)</span> and a higher energy state <span class="math notranslate nohighlight">\(|e\rangle\)</span> with corresponding energy <span class="math notranslate nohighlight">\(E_{g} &lt; E_{e}\)</span>.  We ignore electron spin. Such a system is called two-level system (TLS).  <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span> form an orthonormal basis set in the two-dimensional Hilbert space. We can consider the system as a qubit and the Pauli operators are defined by</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-sigma-xyz">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-sigma-xyz" title="Link to this equation">#</a></span>\[
 \sigma^{x} = | e \rangle\langle g | + | g \rangle\langle e |, \qquad \sigma^{y} =  i (| e \rangle\langle g | -  | g \rangle\langle e |), \qquad \sigma^{z} = | e \rangle\langle e | - | g \rangle\langle g |
 \]</div>
 <p>and raising and lowering operators by</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-sigma-pm">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-eq-sigma-pm" title="Link to this equation">#</a></span>\[
 \sigma^{+} = \frac{1}{2}\left(\sigma^{x} - i \sigma^{y}\right) = | e \rangle\langle g |, \qquad \sigma^{-} =  \frac{1}{2}\left(\sigma^{x} + i \sigma^{y}\right) = | g \rangle\langle e |.
 \]</div>
 <p>Recall how the raising and lowering operators work:</p>
@@ -475,10 +480,10 @@
 |e\rangle = \begin{pmatrix} 1 \\ 0\end{pmatrix}, \qquad |g\rangle = \begin{pmatrix} 0 \\ 1\end{pmatrix}.
 \end{split}\]</div>
 <p>Be careful about this definition since some people define them in in the opposite way.</p>
-<p>Using the these notations, a free Hamiltonian for a single quantum dot is defined by</p>
-<div class="math notranslate nohighlight">
-\[
-H_{S} = \frac{\omega_0}{2} \sigma^{z}
+<p>Using the these notations, a free Hamiltonian for a single atom is defined by</p>
+<div class="math notranslate nohighlight" id="equation-eq-free-h-single-atom">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-free-h-single-atom" title="Link to this equation">#</a></span>\[
+H_{0} = \frac{\omega_0}{2} \sigma^{z}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega_0 = E_{e}-E_{g}\)</span>  (<span class="math notranslate nohighlight">\(\hbar=1\)</span> is assumed.)</p>
 </section>
@@ -487,12 +492,12 @@ H_{S} = \frac{\omega_0}{2} \sigma^{z}
 <p>We assume that all atoms are identically modeled as TLS, with same excitation energy <span class="math notranslate nohighlight">\(\omega_0\)</span> and the same dipole moment <span class="math notranslate nohighlight">\(d\)</span>.  Only the difference is their location.</p>
 <p>The dimension of the Hilbert space is <span class="math notranslate nohighlight">\(2^N\)</span>. For computational purpose, we use the standard product basis set,</p>
 <div class="math notranslate nohighlight" id="equation-eq-product-basis-n">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-product-basis-n" title="Link to this equation">#</a></span>\[
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-product-basis-n" title="Link to this equation">#</a></span>\[
 |s_{1} s_{2} \cdots s_{N}\rangle = |s_{1}\rangle\otimes|s_{2}\rangle\otimes \cdots \otimes |s_{N}\rangle, \qquad |s_{j}\rangle = |g\rangle \text{ or } |e\rangle
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\otimes\)</span> denotes tensor product. For <span class="math notranslate nohighlight">\(N=2\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq-product-basis-2">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-eq-product-basis-2" title="Link to this equation">#</a></span>\[
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-eq-product-basis-2" title="Link to this equation">#</a></span>\[
 |gg\rangle = |g\rangle \otimes |g\rangle, \quad |ge\rangle = |g\rangle \otimes |e\rangle, \quad |eg\rangle = |e\rangle \otimes |g\rangle, \quad |ee\rangle=|e\rangle \otimes |e\rangle.
 \]</div>
 <p>The spin operator for the $j$-th atom is given by
@@ -503,7 +508,7 @@ H_{S} = \frac{\omega_0}{2} \sigma^{z}
 <p>where <span class="math notranslate nohighlight">\(I\)</span> is the identity operator for the two-dimensional Hilbert space.   For N=2. <span class="math notranslate nohighlight">\(\sigma^{\mu}_{1} = \sigma^{\mu} \otimes I\)</span> and <span class="math notranslate nohighlight">\(\sigma^{\mu}_{2} = I \otimes \sigma^{\mu}\)</span>.</p>
 <p>Then, the free Hamiltonian of the <span class="math notranslate nohighlight">\(N\)</span> atoms is a simple sum</p>
 <div class="math notranslate nohighlight" id="equation-eq-atom-free-hamiltonian">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-atom-free-hamiltonian" title="Link to this equation">#</a></span>\[
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-eq-atom-free-hamiltonian" title="Link to this equation">#</a></span>\[
 H_{0} = \sum_{j=1}^{N} \frac{\omega_0}{2} \sigma^{z}_{j}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma^{z}_{j}\)</span> is a Pauli operator for <span class="math notranslate nohighlight">\(j\)</span>-th quantum dot.</p>
@@ -525,6 +530,8 @@ H_{0} = \sum_{j=1}^{N} \frac{\omega_0}{2} \sigma^{z}_{j}
 <section id="interaction-between-the-atoms">
 <h2><span class="section-number">6.5. </span>Interaction between the atoms<a class="headerlink" href="#interaction-between-the-atoms" title="Link to this heading">#</a></h2>
 <p>There are many possible interactions between atoms.  When the wave functions of two neighboring atoms overlap, quantum tunneling, exchange interaction and <a class="reference external" href="https://en.wikipedia.org/wiki/Dexter_electron_transfer">the Dexter energy transfer</a> are possible.  Even in the absence of the overlap, the Förster Resonance Energy Transfer (FRET) and inter-atoms Auger processes can take places.  For quantum dots, the exchange of phonons between the dots can destroy quantum phase (dephasing).</p>
+<section id="dipole-dipole-coupling">
+<h3><span class="section-number">6.5.1. </span>Dipole-dipole coupling<a class="headerlink" href="#dipole-dipole-coupling" title="Link to this heading">#</a></h3>
 <p>In the present lecture note, we consider only the dipole-dipole interaction which is an indirect interaction through the free radiation field. The Hamiltonian for the dipole-dipole interaction is given by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -532,11 +539,26 @@ H_{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i} \sigma^{-}_{j}
 \]</div>
 <p>with the strength of the dipole-dipole interaction <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">14</a>]</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-dd-cupling-strength">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-dd-cupling-strength" title="Link to this equation">#</a></span>\[
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-eq-dd-cupling-strength" title="Link to this equation">#</a></span>\[
 \Omega_{ij} = \frac{3}{4} \gamma_{0} \left \{- \left[1-\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2}\right] \frac{\cos \xi_{ij}}{\xi_{ij}} + \left[1 - 3\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2}\right]\left(\frac{\sin \xi_{ij}}{\xi_{ij}^2}+\frac{\cos\xi_{ij}}{\xi_{ij}^3}\right)\right\}.
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\gamma_{0} = \frac{4 \omega_{0}^3 d^2}{3 \hbar c^3}\)</span> is the rate of spontaneous emission and <span class="math notranslate nohighlight">\(\xi_{ij}=\omega_0 r_{ij}/c\)</span>.</p>
 <p>If the dipole is linear, <span class="math notranslate nohighlight">\(\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2} = \cos^2\theta\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(\mathbf{d}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{r}_{12}\)</span>.</p>
+</section>
+<section id="phonon-mediated-coupling">
+<h3><span class="section-number">6.5.2. </span>Phonon-mediated coupling<a class="headerlink" href="#phonon-mediated-coupling" title="Link to this heading">#</a></h3>
+<p>The phonon-mediate coupling between the emitters (quantum dots) is expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+H_{\phi-\phi} = \sum_{i\ne j} \Gamma(\mathbf{x}_{i} - \mathbf{x}_{j}) \sigma^{z}_{i}\sigma^{z}_{j}
+\]</div>
+<p>where the coupling strength is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(\mathbf{x}) = \sum_{\mathbf{q}} \frac{2|g_\mathbf{q}|^2}{\omega_{\mathbf{q}}} \cos(\mathbf{q}\cdot\mathbf{x})
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega_\mathbf{q}\)</span> is the energy of phonon with momentum <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>.</p>
+</section>
 </section>
 </section>
 
@@ -610,7 +632,11 @@ H_{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i} \sigma^{-}_{j}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-identical-atoms">6.2. <span class="math notranslate nohighlight">\(N\)</span> identical atoms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#location-of-atoms">6.3. Location of atoms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">6.4. Dipole moment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">6.5. Interaction between the atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">6.5. Interaction between the atoms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-dipole-coupling">6.5.1. Dipole-dipole coupling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phonon-mediated-coupling">6.5.2. Phonon-mediated coupling</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
