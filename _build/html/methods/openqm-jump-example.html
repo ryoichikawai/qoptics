@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'methods/openqm-jump-example';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. A single emitter: External driving and the Rabi oscillation" href="../monomer/monomer-intro.html" />
+    <link rel="next" title="14. Monomer: Driving and the Rabi oscillation" href="../monomer/monomer-intro.html" />
     <link rel="prev" title="13.1. Jump method algorithm" href="openqm-jump-method.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -220,10 +220,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. A single emitter:  External driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. Solution to QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. Monomer II:  Rabi oscillation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
 </ul>
 </details></li>
 </ul>
@@ -584,8 +589,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of emissions  = 1000    rate = 0.04350001087500272
-number of absorption = 999    rate = 0.04345651086412772
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of emissions  = 1000    rate = 0.042548483997515166
+number of absorption = 1000    rate = 0.042548483997515166
 </pre></div>
 </div>
 </div>
@@ -615,7 +620,7 @@ number of absorption = 999    rate = 0.04345651086412772
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b89e445b0927b43303eed89d854b59cbbbfb99a5bab3db3d48bf861e5552c2bd.png" src="../_images/b89e445b0927b43303eed89d854b59cbbbfb99a5bab3db3d48bf861e5552c2bd.png" />
+<img alt="../_images/ce1d0af8fc18177ae17250528f35edaa8612cb0da56d352f7e23c57352a7889a.png" src="../_images/ce1d0af8fc18177ae17250528f35edaa8612cb0da56d352f7e23c57352a7889a.png" />
 </div>
 </div>
 </section>
@@ -650,12 +655,12 @@ number of absorption = 999    rate = 0.04345651086412772
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  23.01081081081081
-standard deviation =  17.57428116885143
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  23.50680680680681
+standard deviation =  18.07660635769687
 likely sub-poissonian
 </pre></div>
 </div>
-<img alt="../_images/d993000b67861f046a820ec2a620de6c445a262849cd49549be920ad70928c61.png" src="../_images/d993000b67861f046a820ec2a620de6c445a262849cd49549be920ad70928c61.png" />
+<img alt="../_images/0cfa04dc2144ece4a606112821a5e551ed0e06b4e0318c501594fecfe435aca9.png" src="../_images/0cfa04dc2144ece4a606112821a5e551ed0e06b4e0318c501594fecfe435aca9.png" />
 </div>
 </div>
 </section>
@@ -718,7 +723,7 @@ g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2fce23a7c28cf840e8167276feaf0af6262c6f431f3a5348b423bff954b7e5b8.png" src="../_images/2fce23a7c28cf840e8167276feaf0af6262c6f431f3a5348b423bff954b7e5b8.png" />
+<img alt="../_images/baf89c45f1b98203507834c9d7859499802a6ce99be40808106b6464083a3ead.png" src="../_images/baf89c45f1b98203507834c9d7859499802a6ce99be40808106b6464083a3ead.png" />
 </div>
 </div>
 </section>
@@ -779,8 +784,8 @@ g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of absorptions = 1006  rate = 0.041916666666666665
-Number of emissions   = 1006  rate = 0.041916666666666665
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of absorptions = 1023  rate = 0.042625
+Number of emissions   = 1023  rate = 0.042625
 </pre></div>
 </div>
 </div>
@@ -832,7 +837,7 @@ Number of emissions   = 1006  rate = 0.041916666666666665
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>A single emitter:  External driving and the Rabi oscillation</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Monomer: Driving and the Rabi oscillation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

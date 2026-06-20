@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -220,10 +220,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. A single emitter:  External driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. Solution to QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. Monomer II:  Rabi oscillation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
 </ul>
 </details></li>
 </ul>
@@ -453,7 +458,8 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-quantum-master-equation-a-summary">12.1.1. Derivation of quantum master equation - a summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.2. Quantum regression theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">12.1.2. Coherence function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.3. Quantum regression theorem</a></li>
 </ul>
             </nav>
         </div>
@@ -552,9 +558,19 @@ H_\text{LS} = \frac{1}{2i} \sum_{\omega} \sum_{ij}  \left(\Gamma_{ij}(\omega) - 
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(C_{i}(\omega) = \sqrt{\Gamma_i(\omega)} L_i(\omega)\)</span>, which we shall call <em>collapse operator</em>.</p>
 </section>
+<section id="coherence-function">
+<h2><span class="section-number">12.1.2. </span>Coherence function<a class="headerlink" href="#coherence-function" title="Link to this heading">#</a></h2>
+<p>We now measure the second-order coherence function by a detector placed at <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>. Using the source field <a class="reference internal" href="../model/radiation-field.html#equation-eq-source-field-approx">(7.8)</a>, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-src-field">
+<span class="eqno">(12.4)<a class="headerlink" href="#equation-eq-g2-src-field" title="Link to this equation">#</a></span>\[
+g^{(2)}(\tau;\mathbf{R}) 
+= \frac{\sum_{ij} \sum_{k\ell} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}}e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{k\ell}} \langle\sigma^{+}_{i}(t) \sigma^{+}_{k}(t+\tau)\sigma^{-}_{\ell}(t+\tau)\sigma^{-}_{j}(t)\rangle_{ss}}{ \left( \sum_{ij} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}}\langle\sigma^{+}_{i}(t)\sigma^{-}_{j}(t)\rangle_{ss}\right) \left(\sum_{k\ell} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{k\ell}}  \langle \sigma^{+}_{k}(t)\sigma^{-}_{\ell}(t)\rangle_{ss}\right)}.
+\]</div>
+<p>The coherence is in general depends on the relative coordinates <span class="math notranslate nohighlight">\(\mathbf{r}_{ij}=\mathbf{x}_{i}-\mathbf{x}_{j}\)</span>, thus on the geometric configuration of the emitters.  Notice that the constants in the source field are all canceled out since the emitters are assumed to be identical.</p>
+</section>
 <section id="quantum-regression-theorem">
-<h2><span class="section-number">12.1.2. </span>Quantum regression theorem<a class="headerlink" href="#quantum-regression-theorem" title="Link to this heading">#</a></h2>
-<p>There is a problem with the definitions <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.8)</a> and <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.8)</a>.  We don’t how to calculate the expectation values since two different times are involved. There is a trick that works only when the Born-Markovian approximation is valid as discussed next.</p>
+<h2><span class="section-number">12.1.3. </span>Quantum regression theorem<a class="headerlink" href="#quantum-regression-theorem" title="Link to this heading">#</a></h2>
+<p>There is a problem with the definitions <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.9)</a> and <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.9)</a>.  We don’t how to calculate the expectation values since two different times are involved. There is a trick that works only when the Born-Markovian approximation is valid as discussed next.</p>
 <p>Suppose that the expectation value of an operator <span class="math notranslate nohighlight">\(A\)</span> evolves in time. It should be written as <span class="math notranslate nohighlight">\(\langle A \rangle_t\)</span> (expectation evaluated at time <span class="math notranslate nohighlight">\(t\)</span>) but  often written as <span class="math notranslate nohighlight">\(\langle A(t) \rangle\)</span> which suggests that <span class="math notranslate nohighlight">\(A\)</span> depends on time. If the system evolution is unitary, then <span class="math notranslate nohighlight">\(A(t)\)</span> can be considered as an operator in the Heisenberg picture and the average is taken with respect to an initial state.  However, when the evolution of the system is not unitary, we can’t define the usual Heisenberg picture. We interpret it as <span class="math notranslate nohighlight">\(\langle A(t) \rangle \equiv \text{tr}(A \rho(t))\)</span>  where the state is evolving in time and the operator is stationary.</p>
 <p>A problem arises when operators depend on two different times.  Fortunately, there is a very usefull theorem, known as the quantum regression theorem, which states that</p>
 <div class="math notranslate nohighlight">
@@ -632,7 +648,8 @@ H_\text{LS} = \frac{1}{2i} \sum_{\omega} \sum_{ij}  \left(\Gamma_{ij}(\omega) - 
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-quantum-master-equation-a-summary">12.1.1. Derivation of quantum master equation - a summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.2. Quantum regression theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">12.1.2. Coherence function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.3. Quantum regression theorem</a></li>
 </ul>
   </nav></div>
 

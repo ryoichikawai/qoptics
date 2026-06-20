@@ -54,6 +54,10 @@ parts:
       -  file: monomer/monomer-theory
       -  file: monomer/monomer-qme
       -  file: monomer/monomer-jump
+   -  file: dimer1/dimer-case1-intro
+      sections:
+      -  file: dimer1/dimer-case1-qme
+      -  file: dimer1/dimer-case1-jump
 -  caption:
    numbered: false
    chapters:

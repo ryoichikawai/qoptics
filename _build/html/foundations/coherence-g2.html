@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -220,10 +220,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. A single emitter:  External driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. Solution to QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. Monomer II:  Rabi oscillation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
 </ul>
 </details></li>
 </ul>
@@ -455,7 +460,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.2.1. Definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-general-properties">4.2.2. Some general properties</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-effects">4.2.3. Quantum effects</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-2-measurebale">4.2.4. Is <span class="math notranslate nohighlight">\(g^{(2)}\)</span> measurebale?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identical-and-independent-emitters">4.2.4. Identical and independent emitters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-2-measurebale">4.2.5. Is <span class="math notranslate nohighlight">\(g^{(2)}\)</span> measurebale?</a></li>
 </ul>
             </nav>
         </div>
@@ -545,8 +551,56 @@ g^{(2)}(0) &amp;= \frac{\langle n(n-1) \rangle_{ss}}{\langle n \rangle_{ss}^2} =
 </ol>
 </div>
 </section>
+<section id="identical-and-independent-emitters">
+<h2><span class="section-number">4.2.4. </span>Identical and independent emitters<a class="headerlink" href="#identical-and-independent-emitters" title="Link to this heading">#</a></h2>
+<p>Th above expression is too complicated for further theoretical analysis. Here, we look at a case which is drastically simple but has still physical significance.  Cosider <span class="math notranslate nohighlight">\(N\)</span> identical emitters.  Each of them is interacting with an independent single mode.  There is no correlation between the modes and thus</p>
+<div class="math notranslate nohighlight">
+\[
+\langle a^{*}_{i}(t) a_{j}(t)\rangle_t = \langle a^{*}_{i}(t) a_{i}(t)\rangle_t \delta_{ij}
+\]</div>
+<p>Moreover, since the emitters are identical, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\langle a^{*}_{i}(t) a_{i}(t)\rangle_t = \langle a^{*}_{j}(t) a_{j}(t)\rangle_t,  \qquad \forall i,j
+\]</div>
+<p>Then, the weight becomes</p>
+<div class="math notranslate nohighlight">
+\[
+w_{ij}(\mathbf{x}) = w_{i}(\mathbf{x}) \delta_{ij} 
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+w_{i}(\mathbf{x}) = \frac{f_{ii}(\mathbf{x})}{\sum_{j} f_{jj}(\mathbf{x})} \ge 0, \qquad \sum_{i} w_{i}(\mathbf{x})=1
+\]</div>
+<p><span class="math notranslate nohighlight">\(w_{i}(\mathbf{x})\)</span> can be interpreted as a probability of detecting the <span class="math notranslate nohighlight">\(i\)</span>-th mode at position <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.</p>
+<p>Under these assumptions, the coherence functions become</p>
+<div class="math notranslate nohighlight">
+\[
+g^{(1)}(\tau;\mathbf{x}) = \sum_{i} w_{i}(\mathbf{x}) g^{(1))}_{ii} (\tau)
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+g^{(2)}(\tau;\mathbf{x}) = \sum_{ij} w_{i} (\mathbf{x}) w_{j}(\mathbf{x}) g^{(2)}_{ii,jj}(\tau)
+\]</div>
+<p><span class="math notranslate nohighlight">\(w_{i}(\mathbf{x}) w_{j}(\mathbf{x})\)</span> is interpreted as a joint probability of detecting modes <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> simultaneously.</p>
+<p>Since the modes are independent, <span class="math notranslate nohighlight">\(\langle a^{*}_{i}(t+\tau)a_{i}(t+\tau)\,a^{*}_{j}(t) a_{j}(t)\rangle_t =  \langle a^{*}_{i}(t+\tau)a_i(t+\tau)\rangle_t \,\langle a^{*}_{j}(t) a_{j}(t)\rangle_t\)</span> for <span class="math notranslate nohighlight">\(i \ne j\)</span>, which makes <span class="math notranslate nohighlight">\(g^{(2)}_{ii,jj}(\tau) = 1\)</span>.   Finally, we obtain the second-order coherence function for <span class="math notranslate nohighlight">\(N\)</span> incoherent emitters as</p>
+<div class="math notranslate nohighlight">
+\[
+g^{(2)}(\tau;\mathbf{x}) = \sum_{j} \big(w_{jj}(\mathbf{x}) \big)^2 g^{(2)}_{jj,jj}(\tau) + 1 - \sum_{j} \big(w_{jj}(\mathbf{x}) \big)^2
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\sum_{j} w_{jj}(\mathbf{x})  = 1\)</span>, <span class="math notranslate nohighlight">\(1 &gt; \sum_{j}  \big(w_{jj}(\mathbf{x}) \big)^2 \ge  0\)</span>.</p>
+<p>which suggests that the second-order coherence functions of incoherent emitters is not just a sum of the individual coherence functions. There is an additive positive constant which does not depend on the delay time <span class="math notranslate nohighlight">\(\tau\)</span>.  Nevertheless, <span class="math notranslate nohighlight">\(\lim_{\tau\rightarrow\infty} g^{(2)}(\tau) = 1\)</span> is still valid since <span class="math notranslate nohighlight">\(\lim_{\tau\rightarrow\infty}g^{(2)}_{jj,jj}(\tau) = 1\)</span>.</p>
+<p>Finally, if we assume that all modes equally contribute to the coherence function, that is <span class="math notranslate nohighlight">\(w_{j}(\mathbf{x}) = \frac{1}{N}\)</span>, we obtain the second-order coherence function for the <span class="math notranslate nohighlight">\(N\)</span> independent and incoherent emitters is given by</p>
+<div class="math notranslate nohighlight" id="equation-g2-incoherent-n">
+<span class="eqno">(4.14)<a class="headerlink" href="#equation-g2-incoherent-n" title="Link to this equation">#</a></span>\[
+g^{(2)}(\tau;\mathbf{x}) =  \frac{1}{N}\sum_{j} g^{(2)}_{jj,jj}(\tau) + 1 - \frac{1}{N}
+\]</div>
+<p>The additive constant <span class="math notranslate nohighlight">\(1 - \frac{1}{N}\)</span> is a signature of <span class="math notranslate nohighlight">\(N\)</span> incoherent light source and won’t change even when quantum effect is taken into account in later chapters.</p>
+</section>
 <section id="is-g-2-measurebale">
-<h2><span class="section-number">4.2.4. </span>Is <span class="math notranslate nohighlight">\(g^{(2)}\)</span> measurebale?<a class="headerlink" href="#is-g-2-measurebale" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2.5. </span>Is <span class="math notranslate nohighlight">\(g^{(2)}\)</span> measurebale?<a class="headerlink" href="#is-g-2-measurebale" title="Link to this heading">#</a></h2>
 <p>Unlike <span class="math notranslate nohighlight">\(g^{(1)}\)</span>, there is no difficulty in measuring <span class="math notranslate nohighlight">\(g^{(2)}\)</span> since intensity is an observable and recording of clicks by the detector can be converted to the intensity.  See <a class="reference internal" href="../model/detector.html#ch-detector"><span class="std std-numref">Chapter 9</span></a>.</p>
 </section>
 </section>
@@ -620,7 +674,8 @@ g^{(2)}(0) &amp;= \frac{\langle n(n-1) \rangle_{ss}}{\langle n \rangle_{ss}^2} =
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.2.1. Definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-general-properties">4.2.2. Some general properties</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-effects">4.2.3. Quantum effects</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-2-measurebale">4.2.4. Is <span class="math notranslate nohighlight">\(g^{(2)}\)</span> measurebale?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identical-and-independent-emitters">4.2.4. Identical and independent emitters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-g-2-measurebale">4.2.5. Is <span class="math notranslate nohighlight">\(g^{(2)}\)</span> measurebale?</a></li>
 </ul>
   </nav></div>
 

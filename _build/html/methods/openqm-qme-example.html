@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -220,10 +220,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. A single emitter:  External driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. Solution to QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. Monomer II:  Rabi oscillation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
 </ul>
 </details></li>
 </ul>
@@ -501,28 +506,28 @@ N_{T}=\frac{1}{e^{\hbar \omega_0/T}-1}
 <p>The jump operators are <span class="math notranslate nohighlight">\(A^{a} = \sigma_{-}\)</span>  for absorption and <span class="math notranslate nohighlight">\(A^{e} = \sigma_{+}\)</span>,  which are obvious from the definition of <span class="math notranslate nohighlight">\(\sigma_{\pm}\)</span>.</p>
 <p>The final form of the quantum master equation  is</p>
 <div class="math notranslate nohighlight" id="equation-eq-qme-optical">
-<span class="eqno">(12.4)<a class="headerlink" href="#equation-eq-qme-optical" title="Link to this equation">#</a></span>\[
+<span class="eqno">(12.5)<a class="headerlink" href="#equation-eq-qme-optical" title="Link to this equation">#</a></span>\[
 \frac{d}{dt} \rho = -i \frac{\omega_{0}}{2} [\sigma^{z},\rho] + \mathcal{D}^{a} \rho  + \mathcal{D}^{e} \rho 
 \]</div>
 <p>which is simply an ordinary differential equation of <span class="math notranslate nohighlight">\(2\times2\)</span> matrix.  This is simple enough to solve analytically.</p>
 </section>
 <section id="bloch-equations">
 <h2><span class="section-number">12.2.2. </span>Bloch equations<a class="headerlink" href="#bloch-equations" title="Link to this heading">#</a></h2>
-<p>There are many ways to solve Eq. <a class="reference internal" href="#equation-eq-qme-optical">(12.4)</a>.  There is a special method that works only for the two-dimensional Hilbert space.  Recalling that the identity matrix <span class="math notranslate nohighlight">\(I\)</span> and the Pauli matrices <span class="math notranslate nohighlight">\(\sigma_{i}\)</span> form a basis set. Expanding the density operator in the basis set,</p>
+<p>There are many ways to solve Eq. <a class="reference internal" href="#equation-eq-qme-optical">(12.5)</a>.  There is a special method that works only for the two-dimensional Hilbert space.  Recalling that the identity matrix <span class="math notranslate nohighlight">\(I\)</span> and the Pauli matrices <span class="math notranslate nohighlight">\(\sigma_{i}\)</span> form a basis set. Expanding the density operator in the basis set,</p>
 <div class="math notranslate nohighlight">
 \[
 \rho(t) = \frac{1}{2}\left(I + \vec{r}(t) \cdot \vec{\sigma} \right)
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\vec{\sigma} = (\sigma^{x}, \sigma^{y}, \sigma^{z})\)</span> and <span class="math notranslate nohighlight">\(\vec{r}(t) = (r_{1}(t),r_{2}(t),r_{3}(t))\)</span> is the Bloch vector, which uniquely determine the density operator.<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>, <a class="reference internal" href="../references/references.html#id38" title="Peter Lambropoulos. Fundamentals of Quantum Optics and Quantum Information. Springer, 2007. doi:10.1007/978-3-540-34572-5.">23</a>]</span>  Since the density operator is self-adjoint, <span class="math notranslate nohighlight">\(\vec{r}\)</span> is real.  In fact, it is easy to show that <span class="math notranslate nohighlight">\(\vec{r} = \langle \vec{\sigma}\rangle = \text{tr}\left[\vec{\sigma}\rho(t)\right]\)</span>.  Multiply <span class="math notranslate nohighlight">\(\vec{\sigma}\)</span> to Eq. <a class="reference internal" href="#equation-eq-qme-optical">(12.4)</a> and taking trace, we obtain the equation of motion for the Bloch vector is given by</p>
+<p>where <span class="math notranslate nohighlight">\(\vec{\sigma} = (\sigma^{x}, \sigma^{y}, \sigma^{z})\)</span> and <span class="math notranslate nohighlight">\(\vec{r}(t) = (r_{1}(t),r_{2}(t),r_{3}(t))\)</span> is the Bloch vector, which uniquely determine the density operator.<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>, <a class="reference internal" href="../references/references.html#id38" title="Peter Lambropoulos. Fundamentals of Quantum Optics and Quantum Information. Springer, 2007. doi:10.1007/978-3-540-34572-5.">23</a>]</span>  Since the density operator is self-adjoint, <span class="math notranslate nohighlight">\(\vec{r}\)</span> is real.  In fact, it is easy to show that <span class="math notranslate nohighlight">\(\vec{r} = \langle \vec{\sigma}\rangle = \text{tr}\left[\vec{\sigma}\rho(t)\right]\)</span>.  Multiply <span class="math notranslate nohighlight">\(\vec{\sigma}\)</span> to Eq. <a class="reference internal" href="#equation-eq-qme-optical">(12.5)</a> and taking trace, we obtain the equation of motion for the Bloch vector is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-bloch-eq">
-<span class="eqno">(12.5)<a class="headerlink" href="#equation-eq-bloch-eq" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(12.6)<a class="headerlink" href="#equation-eq-bloch-eq" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \frac{d}{dt} \langle \sigma^{x}(t)\rangle &amp;= \omega_0 \langle \sigma^{y} (t)\rangle - \frac{\gamma}{2} \langle \sigma^{x}(t)\rangle \\
 \frac{d}{dt} \langle \sigma^{y}(t)\rangle &amp;= \omega_0 \langle \sigma^{x} (t)\rangle - \frac{\gamma}{2} \langle \sigma^{y}(t)\rangle \\
 \frac{d}{dt} \langle \sigma^{z}(t)\rangle &amp;= - \gamma \langle \sigma^{x} (t)\rangle  - \gamma_{0}
 \end{aligned}
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\gamma = \gamma_0 (2N+1)\)</span>.  Equation <a class="reference internal" href="#equation-eq-bloch-eq">(12.5)</a> is called the Bloch equation.<span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>, <a class="reference internal" href="../references/references.html#id37" title="Pierre Meystre. Elements of Quantum Optics. Springer, 4th ed. edition, 2007. doi:10.1007/978-3-540-74211-1.">24</a>]</span></p>
+<p>where <span class="math notranslate nohighlight">\(\gamma = \gamma_0 (2N+1)\)</span>.  Equation <a class="reference internal" href="#equation-eq-bloch-eq">(12.6)</a> is called the Bloch equation.<span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>, <a class="reference internal" href="../references/references.html#id37" title="Pierre Meystre. Elements of Quantum Optics. Springer, 4th ed. edition, 2007. doi:10.1007/978-3-540-74211-1.">24</a>]</span></p>
 <p>By letting the left hand side 0, we can immediately find the steady state.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -530,7 +535,7 @@ N_{T}=\frac{1}{e^{\hbar \omega_0/T}-1}
 \]</div>
 <p>The probability to find the atom in the excited state is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-p-e-ss">
-<span class="eqno">(12.6)<a class="headerlink" href="#equation-eq-p-e-ss" title="Link to this equation">#</a></span>\[
+<span class="eqno">(12.7)<a class="headerlink" href="#equation-eq-p-e-ss" title="Link to this equation">#</a></span>\[
 p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac{N_{T}}{2N_{T}+1} = \frac{1}{Z_R}e^{-\beta \omega_0}
 \]</div>
 <p>which is just the thermal equilibrium state.  Hence, the system is relaxed to the thermal state.</p>
@@ -546,7 +551,7 @@ p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac
 \]</div>
 <p>The solution is</p>
 <div class="math notranslate nohighlight" id="equation-eq-qme-bloch-solution">
-<span class="eqno">(12.7)<a class="headerlink" href="#equation-eq-qme-bloch-solution" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(12.8)<a class="headerlink" href="#equation-eq-qme-bloch-solution" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \langle \sigma^{x}(t) \rangle &amp;=&amp; e^{-\gamma t/2} \cos(\omega_{0} t) \sin(2\theta) \\
 \langle \sigma^{y}(t) \rangle &amp;=&amp; e^{-\gamma t/2} \sin(\omega_{0} t) \sin(2\theta) \\
@@ -555,7 +560,7 @@ p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac
 \end{split}\]</div>
 <p>which indicates <span class="math notranslate nohighlight">\(\gamma\)</span> is the relaxation rate.</p>
 <p>A nice things about the Bloch equation is that you can visualize the solution on the Bloch sphere.  We will see it in the numerical example.</p>
-<p>Equation <a class="reference internal" href="#equation-eq-qme-bloch-solution">(12.7)</a> that this process involves the dissipative type of decoherence with <span class="math notranslate nohighlight">\(T_1 = 1/\gamma\)</span> and <span class="math notranslate nohighlight">\(T_2 = 2/\gamma\)</span>.  Thus <span class="math notranslate nohighlight">\(T_2= 2 T_1\)</span> as mentioned in <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 2</span></a>.</p>
+<p>Equation <a class="reference internal" href="#equation-eq-qme-bloch-solution">(12.8)</a> that this process involves the dissipative type of decoherence with <span class="math notranslate nohighlight">\(T_1 = 1/\gamma\)</span> and <span class="math notranslate nohighlight">\(T_2 = 2/\gamma\)</span>.  Thus <span class="math notranslate nohighlight">\(T_2= 2 T_1\)</span> as mentioned in <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 2</span></a>.</p>
 </section>
 <section id="solving-a-master-equation-numerically-using-qutip">
 <h2><span class="section-number">12.2.3. </span>Solving a master equation numerically using QuTiP<a class="headerlink" href="#solving-a-master-equation-numerically-using-qutip" title="Link to this heading">#</a></h2>
@@ -642,12 +647,12 @@ p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac
 <h2><span class="section-number">12.2.4. </span>Coherence functions<a class="headerlink" href="#coherence-functions" title="Link to this heading">#</a></h2>
 <p>The coherence functions measures the spatio-temporal correlation of radiation fields. (See <a class="reference internal" href="../foundations/coherence-g1.html#sec-coherence-g1"><span class="std std-numref">Chapter 4.1</span></a> and <a class="reference internal" href="../foundations/coherence-g2.html#sec-coherence-g2"><span class="std std-numref">Chapter 4.2</span></a>.)  To compute them, we need the creation and annihilation operators.  The open quantum approach does not solve the evolution of the radiation field.   Then, how do we calculate them?  As introduced in <a class="reference internal" href="../model/radiation-field.html#ch-radiation-field"><span class="std std-numref">Chapter 7</span></a>, the radiation field generated by the emitters can be expressed with the operators of the emitters.  Using Eq. <a class="reference internal" href="../model/radiation-field.html#equation-eq-source-field-approx">(7.8)</a>, the coherence functions for a single emitter which is placed at the origin of coordinates are given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-g1-emission">
-<span class="eqno">(12.8)<a class="headerlink" href="#equation-eq-g1-emission" title="Link to this equation">#</a></span>\[
+<span class="eqno">(12.9)<a class="headerlink" href="#equation-eq-g1-emission" title="Link to this equation">#</a></span>\[
 g^{(1)}(\tau) = \frac{\langle \sigma_{+}(\tau) \sigma_{-}(0)\rangle_{ss}}{\langle  \sigma_{+}(0)\sigma_{-}(0) \rangle_{ss}}
 \]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eq-g2-emission">
-<span class="eqno">(12.9)<a class="headerlink" href="#equation-eq-g2-emission" title="Link to this equation">#</a></span>\[
+<span class="eqno">(12.10)<a class="headerlink" href="#equation-eq-g2-emission" title="Link to this equation">#</a></span>\[
 g^{(2)}(\tau) = \frac{\langle \sigma_{+}(0)\sigma_{+}(\tau)\sigma_{-}(\tau) \sigma_{-}(0) \rangle_{ss}}{(\langle  \sigma_{+}(0)\sigma_{+}(0) \rangle_{ss})^2}
 \]</div>
 <p>Recall that the coherence function for a single mode does not depend on the location of the detector.  All the constants in Eq. <a class="reference internal" href="../model/radiation-field.html#equation-eq-source-field-approx">(7.8)</a> are canceled by the normalization.  Interestingly, emission counting statistics is exactly the same as detection counting statistics. But this is true only for a single emitter.<a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
@@ -671,11 +676,11 @@ g^{(2)}(\tau) &amp;= \frac{\text{tr} [ \sigma_{+}(0) \sigma^{+}(\tau) \sigma_{-}
 <p>where we have rotated the operators inside the trace.</p>
 <p>Using Eqs. <a class="reference internal" href="../model/emitter.html#equation-eq-sigma-pm">(6.2)</a>, <span class="math notranslate nohighlight">\(e^{\mathcal{L}t} (\sigma^{-}\rho_{ss}\sigma^{+}) = \langle e|\rho| e\rangle e^{\mathcal{L}t}(|g\rangle\langle g|)\)</span> , we find an explicit expression of the correlation function</p>
 <div class="math notranslate nohighlight" id="equation-eq-g2-explicit">
-<span class="eqno">(12.10)<a class="headerlink" href="#equation-eq-g2-explicit" title="Link to this equation">#</a></span>\[
+<span class="eqno">(12.11)<a class="headerlink" href="#equation-eq-g2-explicit" title="Link to this equation">#</a></span>\[
 g^{(2)}(\tau)= \frac{\langle e | \left(e^{\mathcal{L}\tau} |g\rangle\langle g |\right) | e \rangle}{\langle e | \rho^{ss} | e \rangle}  = \frac{\langle e | \rho(\tau;g) | e \rangle}{\langle e | \rho^{ss} | e \rangle} = \frac{p_{e}(\tau;g)}{p_{e}^{ss}}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\rho(\tau;g)\)</span> is a state at <span class="math notranslate nohighlight">\(t=\tau\)</span> starting from the ground state at <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(p_{e}(\tau;g)\)</span> is a conditional probability that the system is in the ground state at <span class="math notranslate nohighlight">\(t=0\)</span> and in the excited state at <span class="math notranslate nohighlight">\(t=\tau\)</span>.  <span class="math notranslate nohighlight">\(p_{s}^{ss}\)</span> is the probability of the steady state being in <span class="math notranslate nohighlight">\(|e\rangle\)</span> which we already know from <a class="reference internal" href="#equation-eq-p-e-ss">(12.6)</a>.  Noting that <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow \infty} p_{e}(\tau;g) = p_{e}^{ss}\)</span>, we find <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow \infty} g^{(2)}(\tau) = 1\)</span>.  On the other hand, <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow 0} p_{e}(\tau;g) = 0\)</span> since <span class="math notranslate nohighlight">\(|e\rangle\)</span> and <span class="math notranslate nohighlight">\(|g\rangle\)</span> are orthogonal.  Thus we have <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0\)</span>.</p>
-<p>From the final expression of Eq. <a class="reference internal" href="#equation-eq-g2-explicit">(12.10)</a>, only we need is <span class="math notranslate nohighlight">\(p_{e}(\tau;g)\)</span> which can be obtained by solving the master equation. Using the general solution <a class="reference internal" href="#equation-eq-qme-bloch-solution">(12.7)</a> with initial condition <span class="math notranslate nohighlight">\(\theta=0\)</span>, we find <span class="math notranslate nohighlight">\(p_{e}(\tau;g) = \frac{1}{2}\left(1-e^{-\gamma \tau}\right)\left(1+\langle\sigma_z^{ss}\right)\)</span> and <span class="math notranslate nohighlight">\(p_{e}^{ss} = \frac{1}{2}\left(1+\langle\sigma_z^{ss}\right)\)</span>.  WE obtain an explicit expression of the second-order coherence:</p>
+<p>where <span class="math notranslate nohighlight">\(\rho(\tau;g)\)</span> is a state at <span class="math notranslate nohighlight">\(t=\tau\)</span> starting from the ground state at <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(p_{e}(\tau;g)\)</span> is a conditional probability that the system is in the ground state at <span class="math notranslate nohighlight">\(t=0\)</span> and in the excited state at <span class="math notranslate nohighlight">\(t=\tau\)</span>.  <span class="math notranslate nohighlight">\(p_{s}^{ss}\)</span> is the probability of the steady state being in <span class="math notranslate nohighlight">\(|e\rangle\)</span> which we already know from <a class="reference internal" href="#equation-eq-p-e-ss">(12.7)</a>.  Noting that <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow \infty} p_{e}(\tau;g) = p_{e}^{ss}\)</span>, we find <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow \infty} g^{(2)}(\tau) = 1\)</span>.  On the other hand, <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow 0} p_{e}(\tau;g) = 0\)</span> since <span class="math notranslate nohighlight">\(|e\rangle\)</span> and <span class="math notranslate nohighlight">\(|g\rangle\)</span> are orthogonal.  Thus we have <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0\)</span>.</p>
+<p>From the final expression of Eq. <a class="reference internal" href="#equation-eq-g2-explicit">(12.11)</a>, only we need is <span class="math notranslate nohighlight">\(p_{e}(\tau;g)\)</span> which can be obtained by solving the master equation. Using the general solution <a class="reference internal" href="#equation-eq-qme-bloch-solution">(12.8)</a> with initial condition <span class="math notranslate nohighlight">\(\theta=0\)</span>, we find <span class="math notranslate nohighlight">\(p_{e}(\tau;g) = \frac{1}{2}\left(1-e^{-\gamma \tau}\right)\left(1+\langle\sigma_z^{ss}\right)\)</span> and <span class="math notranslate nohighlight">\(p_{e}^{ss} = \frac{1}{2}\left(1+\langle\sigma_z^{ss}\right)\)</span>.  WE obtain an explicit expression of the second-order coherence:</p>
 <div class="math notranslate nohighlight">
 \[
 g^{(2)}(\tau) =  1-e^{-\gamma |\tau|}
@@ -722,7 +727,7 @@ g^{(2)}(\tau) =  1-e^{-\gamma |\tau|}
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">1</a><span class="fn-bracket">]</span></span>
-<p>Be warned that in some papers, Eqs. <a class="reference internal" href="#equation-eq-g1-emission">(12.8)</a> and <a class="reference internal" href="#equation-eq-g2-emission">(12.9)</a> are computed as if they are the original definition of the coherence functions. They are vaild only under the weak coupling limit. <span class="bibtex-citation" id="id6">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">14</a>]</span></p>
+<p>Be warned that in some papers, Eqs. <a class="reference internal" href="#equation-eq-g1-emission">(12.9)</a> and <a class="reference internal" href="#equation-eq-g2-emission">(12.10)</a> are computed as if they are the original definition of the coherence functions. They are vaild only under the weak coupling limit. <span class="bibtex-citation" id="id6">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">14</a>]</span></p>
 </aside>
 </aside>
 </section>

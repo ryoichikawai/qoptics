@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -220,10 +220,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. A single emitter:  External driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. Solution to QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. Monomer II:  Rabi oscillation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
 </ul>
 </details></li>
 </ul>
@@ -931,7 +936,7 @@ Qobj data =
 <p class="admonition-title">Note</p>
 <p>The following function computes <span class="math notranslate nohighlight">\(G^{(1)}(\tau) = \langle A^\dagger(\tau) A(0) \rangle\)</span> and <span class="math notranslate nohighlight">\(G^{(2)}(\tau) = \langle A^{\dagger}(0)A^{\dagger}(\tau) A(\tau) A(0) \rangle\)</span>, and the normalized functions  <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> and <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>g1, G1 = coherence_function_g1(H, psi, times, c_ops, A)
-g2, G2 = coherence_function_g1(H, psi, times, c_ops, A)
+g2, G2 = coherence_function_g2(H, psi, times, c_ops, A)
 
 H     : Hamiltonian
 psi   : initial state, use `NONE` for steady state
@@ -1014,7 +1019,7 @@ A     : operator used in the correlation.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.14s
 </pre></div>
 </div>
-<img alt="../_images/6bf928580dd8a5b8f95a2dddb79391663b6d7d5681ac1309c50507c6b25ae2ba.png" src="../_images/6bf928580dd8a5b8f95a2dddb79391663b6d7d5681ac1309c50507c6b25ae2ba.png" />
+<img alt="../_images/492028aefcd17316737b8f63c15e7be7982b7de1044ffab276162d8e9061fd73.png" src="../_images/492028aefcd17316737b8f63c15e7be7982b7de1044ffab276162d8e9061fd73.png" />
 </div>
 </div>
 <p><strong>waiting time distribution</strong></p>
@@ -1039,8 +1044,8 @@ A     : operator used in the correlation.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  10.151425770973916
-standard deviation =  10.148173192834788
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  10.252278030596646
+standard deviation =  10.419827841355337
 likely poissonian
 </pre></div>
 </div>
@@ -1058,7 +1063,7 @@ likely poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1be9635add6840bbcc3926054bf48f620be9f966f5a5323307c07de17828aec.png" src="../_images/a1be9635add6840bbcc3926054bf48f620be9f966f5a5323307c07de17828aec.png" />
+<img alt="../_images/b007562597e5a68cdf06ef010de25289fa87f1ba19bbaac7257b9a3a563c9a98.png" src="../_images/b007562597e5a68cdf06ef010de25289fa87f1ba19bbaac7257b9a3a563c9a98.png" />
 </div>
 </div>
 </section>
