@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -206,7 +206,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">12. Quantum master equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -457,11 +467,11 @@
 \[
 H_{\phi} = \sum_{j} \sum_{\mathbf{q}} \left( g_\mathbf{q} e^{i \mathbf{q}\cdot \mathbf{x}_{j}} b_\mathbf{q} + g_\mathbf{q}^{*} e^{-i \mathbf{q}\cdot \mathbf{x}_{j}} b^{\dagger}_\mathbf{q} \right) \sigma^{z}_{j}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(b_\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(b^{\dagger}_\mathbf{a}\)</span> are respectively annhihilation and creation operator of a phonon with momentum <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>, and <span class="math notranslate nohighlight">\(g_\mathbf{q}\)</span> is a coupling constant.  This form of interaction causes pure dephasing. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id60" title="L. D. Contreras-Pulido and R. Aguado. Entanglement between charge qubits induced by a common dissipative environment. Phys. Rev. B, 77:155420, Apr 2008. doi:10.1103/PhysRevB.77.155420.">16</a>, <a class="reference internal" href="../references/references.html#id57" title="Xuedong Hu. Two-spin dephasing by electron-phonon interaction in semiconductor double quantum dots. Phys. Rev. B, 83:165322, Apr 2011. doi:10.1103/PhysRevB.83.165322.">17</a>, <a class="reference internal" href="../references/references.html#id36" title="Perry Rice. An introduction to quantum optics. IOP Publishing, Bristol, second edition edition, 2025. doi:10.1088/978-0-7503-6014-2.">18</a>]</span></p>
+<p>where <span class="math notranslate nohighlight">\(b_\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(b^{\dagger}_\mathbf{a}\)</span> are respectively annhihilation and creation operator of a phonon with momentum <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>, and <span class="math notranslate nohighlight">\(g_\mathbf{q}\)</span> is a coupling constant.  This form of interaction causes pure dephasing. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id60" title="L. D. Contreras-Pulido and R. Aguado. Entanglement between charge qubits induced by a common dissipative environment. Phys. Rev. B, 77:155420, Apr 2008. doi:10.1103/PhysRevB.77.155420.">17</a>, <a class="reference internal" href="../references/references.html#id57" title="Xuedong Hu. Two-spin dephasing by electron-phonon interaction in semiconductor double quantum dots. Phys. Rev. B, 83:165322, Apr 2011. doi:10.1103/PhysRevB.83.165322.">18</a>, <a class="reference internal" href="../references/references.html#id36" title="Perry Rice. An introduction to quantum optics. IOP Publishing, second edition edition, 2025. doi:10.1088/978-0-7503-6014-2.">19</a>]</span></p>
 </section>
 <section id="collective-dephasing">
 <h2><span class="section-number">10.2. </span>Collective dephasing<a class="headerlink" href="#collective-dephasing" title="Link to this heading">#</a></h2>
-<p>The emitters coupled to phonon collectively when the distance between the emitters is shorter than the wave length of phonon. This results in superradiance and subradiance of phonon.  Under the subradiance condition, a special entanglement is formed which protects the emitters from dephasing. <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id59" title="P. Zanardi and M. Rasetti. Noiseless quantum codes. Phys. Rev. Lett., 79:3306–3309, Oct 1997. doi:10.1103/PhysRevLett.79.3306.">19</a>, <a class="reference internal" href="../references/references.html#id58" title="D. A. Lidar, I. L. Chuang, and K. B. Whaley. Decoherence-free subspaces for quantum computation. Phys. Rev. Lett., 81:2594–2597, Sep 1998. doi:10.1103/PhysRevLett.81.2594.">20</a>]</span></p>
+<p>The emitters coupled to phonon collectively when the distance between the emitters is shorter than the wave length of phonon. This results in superradiance and subradiance of phonon.  Under the subradiance condition, a special entanglement is formed which protects the emitters from dephasing. <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id59" title="P. Zanardi and M. Rasetti. Noiseless quantum codes. Phys. Rev. Lett., 79:3306–3309, Oct 1997. doi:10.1103/PhysRevLett.79.3306.">20</a>, <a class="reference internal" href="../references/references.html#id58" title="D. A. Lidar, I. L. Chuang, and K. B. Whaley. Decoherence-free subspaces for quantum computation. Phys. Rev. Lett., 81:2594–2597, Sep 1998. doi:10.1103/PhysRevLett.81.2594.">21</a>]</span></p>
 </section>
 <section id="phono-mediated-coupling">
 <h2><span class="section-number">10.3. </span>Phono-mediated coupling<a class="headerlink" href="#phono-mediated-coupling" title="Link to this heading">#</a></h2>

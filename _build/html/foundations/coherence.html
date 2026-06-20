@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -206,7 +206,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">12. Quantum master equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -455,7 +465,7 @@
 <span id="ch-coherence"></span><h1><span class="section-number">2. </span>What is quantum coherence?<a class="headerlink" href="#what-is-quantum-coherence" title="Link to this heading">#</a></h1>
 <section id="definition-of-coherence">
 <h2><span class="section-number">2.1. </span>Definition of coherence<a class="headerlink" href="#definition-of-coherence" title="Link to this heading">#</a></h2>
-<p>In <a class="reference internal" href="photons.html#ch-photons"><span class="std std-numref">Chapter 1</span></a>, we mentioned the difficulty of defining the concept of photon.  Similarly, the precise definition of quantum coherence is difficult.  Most of textbooks do not touch on this issue. People seems agreeing that Coherence is the ability of a state to generate observable interference.  For a comprehensive discussion on interference and coherence, see Ref. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id56" title="Zbigniew Ficek and Stuart Swain. Quantum Interference and Coherence. SpringerLink. Springer New York, New York, NY, 2005. ISBN 0-387-22965-5. doi:10.1007/b100106.">4</a>]</span></p>
+<p>In <a class="reference internal" href="photons.html#ch-photons"><span class="std std-numref">Chapter 1</span></a>, we mentioned the difficulty of defining the concept of photon.  Similarly, the precise definition of quantum coherence is difficult.  Most of textbooks do not touch on this issue. People seems agreeing that Coherence is the ability of a state to generate observable interference.  For a comprehensive discussion on interference and coherence, see Ref. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id56" title="Zbigniew Ficek and Stuart Swain. Quantum Interference and Coherence. Springer, 2005. ISBN 0-387-22965-5. doi:10.1007/b100106.">4</a>]</span></p>
 <div class="proof definition admonition" id="def:coherence">
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Coherence)</p>
 <section class="definition-content" id="proof-content">
@@ -524,7 +534,7 @@ P_{1} = \sum_{ij} \langle a_{1} | u_{i} \rangle \rho_{ij} \langle u_{j} | a_{1}\
 \end{split}\]</div>
 <p>which shows usual interference fringes.</p>
 <p>These two extreme examples show that even when the whole system is in a pure state (coherent), the interference can vanish depending on the structure of state vectors.   If the state is in a product state, perfect interference is observed.  On the other hand, if the state is entangled, interference is partially or entirely destroyed depending on the type of entanglement.</p>
-<p>For detailed discussion on decoherence beyond optics, see Refs. <span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford [u.a.], repr. edition, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>, <a class="reference internal" href="../references/references.html#id54" title="Maximilian Schlosshauser. Decoherence. Springer Berlin Heidelberg, 2007. ISBN 9783540357759. doi:10.1007/978-3-540-35775-9.">6</a>, <a class="reference internal" href="../references/references.html#id55" title="Wojciech Hubert Zurek. Decoherence and Quantum Darwinism: From Quantum Foundations to Classical Reality. Cambridge University Press, March 2025. ISBN 9781009552899. doi:10.1017/9781009552868.">7</a>]</span>.</p>
+<p>For detailed discussion on decoherence beyond optics, see Refs. <span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>, <a class="reference internal" href="../references/references.html#id54" title="Maximilian Schlosshauser. Decoherence. Springer, 2007. ISBN 9783540357759. doi:10.1007/978-3-540-35775-9.">6</a>, <a class="reference internal" href="../references/references.html#id55" title="Wojciech Hubert Zurek. Decoherence and Quantum Darwinism: From Quantum Foundations to Classical Reality. Cambridge University Press, 2025. ISBN 9781009552899. doi:10.1017/9781009552868.">7</a>]</span>.</p>
 <div class="important admonition" id="adm-decoherence">
 <p class="admonition-title">Decoherence</p>
 <p>The coherence is lost when the system is quantum mechanically entangled with other systems or environments.</p>
@@ -590,7 +600,7 @@ Hence, there is no coherence between <span class="math notranslate nohighlight">
 <section id="methods-of-open-quantum-system">
 <h2><span class="section-number">2.7. </span>Methods of open quantum system<a class="headerlink" href="#methods-of-open-quantum-system" title="Link to this heading">#</a></h2>
 <p>One of the objective of the present lecture note is to calculate the reduced density matrix for the emitters by tracing out the radiation degrees of freedom.  How can we calculate the reduced density of a subsystem?  Do we have to compute the while system and take a partial trace?  That needs substantial mathematical and computational power. We cannot use the traditional quantum mechanics for a subsystem since it is developed only for a closed system.</p>
-<p>Fortunately, a method of open quantum system has been developed and widely used in quantum optics.  Although it is an approximated method and valid only in certain situation, there are many evidences that the method works quite well for quantum optics The method is widely used.  The method will be introduced in <a class="reference internal" href="../methods/openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.</p>
+<p>Fortunately, a method of open quantum system has been developed and widely used in quantum optics.  Although it is an approximated method and valid only in certain situation, there are many evidences that the method works quite well for quantum optics The method is widely used.  The method will be introduced in <a class="reference internal" href="../methods/openqm-qme-intro.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id6" role="doc-footnote">

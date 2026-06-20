@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -206,7 +206,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">12. Quantum master equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -454,17 +464,17 @@
 <p>The photons in an ideal laser beam are in a coherent state (Glauber state) and the corresponding radiation field behaves almost like a classical field.  It is a reasonable approximation to model the driving using a classical field:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbf{E}(\mathbf{x},t) =  \mathbf{E}^{(+)}_{L} e^{-i (\mathbf{k}_{L}\cdot \mathbf{x} -  \omega_{L} t)} + \mathbf{E}^{(-)}_{L}(\mathbf{x}) e^{i (\mathbf{k}_{L}\cdot \mathbf{x} -  \omega_{L} t)} 
+\mathbf{E}(\mathbf{x},t) = \mathbf{E}_{L} \cos(\mathbf{k}_{L}\cdot \mathbf{x} -  \omega_{L} t) = \frac{1}{2} \left(  \mathbf{E}^{(+)}_{L} e^{-i (\mathbf{k}_{L}\cdot \mathbf{x} -  \omega_{L} t)} + \mathbf{E}^{(-)}_{L}(\mathbf{x}) e^{i (\mathbf{k}_{L}\cdot \mathbf{x} -  \omega_{L} t)} \right)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{E}_{L}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{k}_{L}\)</span>, and <span class="math notranslate nohighlight">\(\omega_{L}=c \mathbf{k}_{L}\)</span> are field strength, wave vector, and frequency of the driving laser beam.</p>
 <p>The coupling Hamiltonian with the atoms located at <span class="math notranslate nohighlight">\(\mathbf{x}_{j}\)</span> is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-h-d">
 <span class="eqno">(8.1)<a class="headerlink" href="#equation-eq-h-d" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
-H_{L}(t) &amp;= - \sum_{j} \mathbf{d}_{j} \cdot \mathbf{E}(\mathbf{x}_j,t) \\
-&amp;= - \sum_{j}
+H_{L}(t) &amp;= -  \sum_{j} \mathbf{d}_{j} \cdot \mathbf{E}(\mathbf{x}_j,t) \\
+&amp;= - \frac{1}{2}\sum_{j}
 \left[\Omega e^{i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)} + \tilde{\Omega} e^{-i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)}\right] \sigma^{+}_{j} 
--\sum_{j}\left[\Omega^{*} e^{-i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)} + \tilde{\Omega}^{*} e^{i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)}\right] \sigma^{-}_{j} 
+-\frac{1}{2} \sum_{j}\left[\Omega^{*} e^{-i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)} + \tilde{\Omega}^{*} e^{i (\mathbf{k}_{L}\cdot \mathbf{x}_{j} -  \omega_{L} t)}\right] \sigma^{-}_{j} 
 \end{aligned}
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Omega \equiv \mathbf{d}\cdot \mathbf{E}^{(-)}_{L}\)</span> is the Rabi frequency and <span class="math notranslate nohighlight">\(\tilde{\Omega} \equiv \mathbf{d}^{*} \cdot \mathbf{E}^{(-)}_{L}\)</span> the counter-rotating frequency.</p>
@@ -477,9 +487,9 @@ H_{L}(t) &amp;= - \sum_{j} \mathbf{d}_{j} \cdot \mathbf{E}(\mathbf{x}_j,t) \\
 <div class="math notranslate nohighlight" id="equation-eq-h-l-int">
 <span class="eqno">(8.2)<a class="headerlink" href="#equation-eq-h-l-int" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
-H^{\prime}_{L} = U H_{L} U^{\dagger} =  &amp;- \sum_{j}
+H^{\prime}_{L} = U H_{L} U^{\dagger} =  &amp;- \frac{1}{2} \sum_{j}
 \left[\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i(\omega_{0}-\omega_{L}) t} + \tilde{\Omega} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i (\omega_{0}+ \omega_{L}) t}\right] \sigma^{+}_{j} \\
-&amp;-\sum_{j}\left[\Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i (\omega_{0}-\omega_{L}) t} + \tilde{\Omega}^{*} e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i(\omega_{0}+\omega_{L} t)}\right] \sigma^{-}_{j} 
+&amp;-\frac{1}{2} \sum_{j}\left[\Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i (\omega_{0}-\omega_{L}) t} + \tilde{\Omega}^{*} e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i(\omega_{0}+\omega_{L} t)}\right] \sigma^{-}_{j} 
 \end{aligned}
 \end{split}\]</div>
 <p>where the unitary transformation is given by</p>
@@ -491,14 +501,14 @@ U = e^{-i H_{0} t} = e^{-i \omega_0 t/2} |g_{j}\rangle\langle g_{j}| + e^{i \ome
 <p>Assuming perfect or near resonance condition,  <span class="math notranslate nohighlight">\(\Delta = \omega_{0} - \omega_{L} \approx 0\)</span>, <span class="math notranslate nohighlight">\(e^{i (\omega_{0} + \omega_{L})t}\)</span> oscillates much faster than <span class="math notranslate nohighlight">\(e^{ i (\omega_{0} - \omega_{L})t}\)</span>.  We omit the fast oscillating term since they will be canceled out.  The interacting Hamiltonian is simplified to</p>
 <div class="math notranslate nohighlight">
 \[
-(H^{\text{RWA}}_{L})^\prime = - \sum_{j}
+(H^{\text{RWA}}_{L})^\prime = - \frac{1}{2}\sum_{j}
 \left[\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i\Delta t} \sigma^{+}_{j}
 + \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i \Delta t} \sigma^{-}_{j} \right]
 \]</div>
 <p>Moving back to the Schroedinger picture, the coupling becomes</p>
 <div class="math notranslate nohighlight">
 \[
-H^{\text{RWA}}_{L}(t) = - \sum_{j}
+H^{\text{RWA}}_{L}(t) = -\frac{1}{2}\sum_{j}
 \left[\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{-i\omega_{L} t} \sigma^{+}_{j}
 + \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} e^{i\omega_{L} t} \sigma^{-}_{j} \right]
 \]</div>
@@ -512,17 +522,17 @@ H^\text{RWA}_{0} = V H_{0} V^{\dagger} = \sum_{j} \frac{\Delta}{2} \sigma^{z}_{j
 <span class="eqno">(8.3)<a class="headerlink" href="#equation-eq-h-l-rwa" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 H^\text{RWA}_{L} &amp;=V  H^\text{RWA}_{L}(t) V^{\dagger} \\
-&amp;= - \sum_{j}
+&amp;= - \frac{1}{2}\sum_{j}
 \left(\Omega e^{i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} \sigma^{+}_{j}
 + \Omega^{*} e^{-i \mathbf{k}_{L}\cdot \mathbf{x}_{j}} \sigma^{-}_{j} \right) \\
-&amp; = - |\Omega| \sum_{j} \left (e^{i \phi_{j}} \sigma^{+}_{j} + e^{-i \phi_{j}} \sigma^{-}_{j}\right)
+&amp; = - \frac{|\Omega|}{2} \sum_{j} \left (e^{i \phi_{j}} \sigma^{+}_{j} + e^{-i \phi_{j}} \sigma^{-}_{j}\right)
 \end{aligned}
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\phi_{j} = \mathbf{k}_{L}\cdot \mathbf{x}_{j} + \text{phase of }\Omega\)</span>.  This phase plays some crucial roles in some cases.</p>
 <p>The Hamiltonian of the driven system with RWA is</p>
 <div class="math notranslate nohighlight">
 \[
-H^\text{RWA}_{S} = H^\text{RWA}_{0} +  H^\text{RWA}_{L}  = \sum_{j} \left[ \frac{\Delta}{2} \sigma^{z}_{j} + |\Omega| \left (e^{i \phi_{j}} \sigma^{+}_{j} + e^{-i \phi_{j}} \sigma^{-}_{j}\right) \right].
+H^\text{RWA}_{S} = H^\text{RWA}_{0} +  H^\text{RWA}_{L}  = \sum_{j} \left[ \frac{\Delta}{2} \sigma^{z}_{j} - \frac{|\Omega|}{2} \left (e^{i \phi_{j}} \sigma^{+}_{j} + e^{-i \phi_{j}} \sigma^{-}_{j}\right) \right].
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta = \omega_{0}-\omega_{L}\)</span> is the detuning of the driving.  If the tuning is perfect (<span class="math notranslate nohighlight">\(\Delta = 0\)</span>), then we have only the driving term in the system Hamiltonian.</p>
 </section>

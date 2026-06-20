@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'references/references';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="12. Quantum master equations" href="../methods/openqm-qme.html" />
+    <link rel="prev" title="13.3. A Simple example of the jump method" href="../methods/openqm-jump-example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -203,7 +203,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">12. Quantum master equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
 </ul>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">References</a></li>
@@ -407,7 +417,7 @@
 <div role="list" class="citation-list">
 <div class="citation" id="id45" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<p>A. P. French. <em>Einstein: A Centenary Volume</em>. Harvard University Press, Cambridge, Mass., 1979. ISBN 978-0674242302.</p>
+<p>A. P. French. <em>Einstein: A Centenary Volume</em>. Harvard University Press, Cambridge, 1979. ISBN 978-0674242302.</p>
 </div>
 <div class="citation" id="id44" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
@@ -419,19 +429,19 @@
 </div>
 <div class="citation" id="id56" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
-<p>Zbigniew Ficek and Stuart Swain. <em>Quantum Interference and Coherence</em>. SpringerLink. Springer New York, New York, NY, 2005. ISBN 0-387-22965-5. <a class="reference external" href="https://doi.org/10.1007/b100106">doi:10.1007/b100106</a>.</p>
+<p>Zbigniew Ficek and Stuart Swain. <em>Quantum Interference and Coherence</em>. Springer, 2005. ISBN 0-387-22965-5. <a class="reference external" href="https://doi.org/10.1007/b100106">doi:10.1007/b100106</a>.</p>
 </div>
 <div class="citation" id="id33" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
-<p>H.-P. Breuer and F. Petruccione. <em>The theory of open quantum systems</em>. Oxford, Oxford [u.a.], repr. edition, 2002. ISBN 9780199213900. <a class="reference external" href="https://doi.org/10.1093/acprof:oso/9780199213900.001.0001">doi:10.1093/acprof:oso/9780199213900.001.0001</a>.</p>
+<p>H.-P. Breuer and F. Petruccione. <em>The theory of open quantum systems</em>. Oxford, Oxford, 2002. ISBN 9780199213900. <a class="reference external" href="https://doi.org/10.1093/acprof:oso/9780199213900.001.0001">doi:10.1093/acprof:oso/9780199213900.001.0001</a>.</p>
 </div>
 <div class="citation" id="id54" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
-<p>Maximilian Schlosshauser. <em>Decoherence</em>. Springer Berlin Heidelberg, 2007. ISBN 9783540357759. <a class="reference external" href="https://doi.org/10.1007/978-3-540-35775-9">doi:10.1007/978-3-540-35775-9</a>.</p>
+<p>Maximilian Schlosshauser. <em>Decoherence</em>. Springer, 2007. ISBN 9783540357759. <a class="reference external" href="https://doi.org/10.1007/978-3-540-35775-9">doi:10.1007/978-3-540-35775-9</a>.</p>
 </div>
 <div class="citation" id="id55" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
-<p>Wojciech Hubert Zurek. <em>Decoherence and Quantum Darwinism: From Quantum Foundations to Classical Reality</em>. Cambridge University Press, March 2025. ISBN 9781009552899. <a class="reference external" href="https://doi.org/10.1017/9781009552868">doi:10.1017/9781009552868</a>.</p>
+<p>Wojciech Hubert Zurek. <em>Decoherence and Quantum Darwinism: From Quantum Foundations to Classical Reality</em>. Cambridge University Press, 2025. ISBN 9781009552899. <a class="reference external" href="https://doi.org/10.1017/9781009552868">doi:10.1017/9781009552868</a>.</p>
 </div>
 <div class="citation" id="id39" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
@@ -465,33 +475,81 @@
 <span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
 <p>Roy J. Glauber. <em>Quantum Theory of Optical Coherence: Selected Papers and Lectures</em>. John Wiley &amp; Sons, 2007. ISBN 9783527609918. <a class="reference external" href="https://doi.org/10.1002/9783527610075">doi:10.1002/9783527610075</a>.</p>
 </div>
-<div class="citation" id="id60" role="doc-biblioentry">
+<div class="citation" id="id34" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
+<p>Howard Carmichael. <em>An Open Systems Approach to Quantum Optics</em>. Springer, 1st ed. edition, 1993. ISBN 9783540476207.</p>
+</div>
+<div class="citation" id="id60" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
 <p>L. D. Contreras-Pulido and R. Aguado. Entanglement between charge qubits induced by a common dissipative environment. <em>Phys. Rev. B</em>, 77:155420, Apr 2008. <a class="reference external" href="https://doi.org/10.1103/PhysRevB.77.155420">doi:10.1103/PhysRevB.77.155420</a>.</p>
 </div>
 <div class="citation" id="id57" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></span>
 <p>Xuedong Hu. Two-spin dephasing by electron-phonon interaction in semiconductor double quantum dots. <em>Phys. Rev. B</em>, 83:165322, Apr 2011. <a class="reference external" href="https://doi.org/10.1103/PhysRevB.83.165322">doi:10.1103/PhysRevB.83.165322</a>.</p>
 </div>
 <div class="citation" id="id36" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></span>
-<p>Perry Rice. <em>An introduction to quantum optics</em>. IOP Publishing, Bristol, second edition edition, 2025. <a class="reference external" href="https://doi.org/10.1088/978-0-7503-6014-2">doi:10.1088/978-0-7503-6014-2</a>.</p>
+<span class="label"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></span>
+<p>Perry Rice. <em>An introduction to quantum optics</em>. IOP Publishing, second edition edition, 2025. <a class="reference external" href="https://doi.org/10.1088/978-0-7503-6014-2">doi:10.1088/978-0-7503-6014-2</a>.</p>
 </div>
 <div class="citation" id="id59" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></span>
 <p>P. Zanardi and M. Rasetti. Noiseless quantum codes. <em>Phys. Rev. Lett.</em>, 79:3306–3309, Oct 1997. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.79.3306">doi:10.1103/PhysRevLett.79.3306</a>.</p>
 </div>
 <div class="citation" id="id58" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></span>
 <p>D. A. Lidar, I. L. Chuang, and K. B. Whaley. Decoherence-free subspaces for quantum computation. <em>Phys. Rev. Lett.</em>, 81:2594–2597, Sep 1998. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.81.2594">doi:10.1103/PhysRevLett.81.2594</a>.</p>
 </div>
-<div class="citation" id="id37" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></span>
-<p>Pierre Meystre. <em>Elements of Quantum Optics</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 4. 4th ed. 2007 edition, 2007. <a class="reference external" href="https://doi.org/10.1007/978-3-540-74211-1">doi:10.1007/978-3-540-74211-1</a>.</p>
+<div class="citation" id="id35" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></span>
+<p>Crispin W. Gardiner and Peter Zoller. <em>Quantum noise</em>. Springer, 2000. ISBN 3540665714.</p>
 </div>
 <div class="citation" id="id38" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></span>
-<p>Peter Lambropoulos. <em>Fundamentals of Quantum Optics and Quantum Information</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2007. <a class="reference external" href="https://doi.org/10.1007/978-3-540-34572-5">doi:10.1007/978-3-540-34572-5</a>.</p>
+<span class="label"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></span>
+<p>Peter Lambropoulos. <em>Fundamentals of Quantum Optics and Quantum Information</em>. Springer, 2007. <a class="reference external" href="https://doi.org/10.1007/978-3-540-34572-5">doi:10.1007/978-3-540-34572-5</a>.</p>
+</div>
+<div class="citation" id="id37" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></span>
+<p>Pierre Meystre. <em>Elements of Quantum Optics</em>. Springer, 4th ed. edition, 2007. <a class="reference external" href="https://doi.org/10.1007/978-3-540-74211-1">doi:10.1007/978-3-540-74211-1</a>.</p>
+</div>
+<div class="citation" id="id65" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></span>
+<p>Howard M. Wiseman and Gerard J. Milburn. <em>Quantum measurement and control</em>. Cambridge University Press, 2010. ISBN 978-0-521-80442-4.</p>
+</div>
+<div class="citation" id="id61" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></span>
+<p>Howard J. Carmichael. <em>Statistical Methods in Quantum Optics 1</em>. Springer, 2002. ISBN 9783642081330. <a class="reference external" href="https://doi.org/10.1007/978-3-662-03875-8">doi:10.1007/978-3-662-03875-8</a>.</p>
+</div>
+<div class="citation" id="id63" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></span>
+<p>H.D. Zeh. There are no quantum jumps, nor are there particles! <em>Physics Letters A</em>, 172(4):189–192, 1993. <a class="reference external" href="https://doi.org/https://doi.org/10.1016/0375-9601(93)91005-P">doi:https://doi.org/10.1016/0375-9601(93)91005-P</a>.</p>
+</div>
+<div class="citation" id="id40" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></span>
+<p>Warren Nagourney, Jon Sandberg, and Hans Dehmelt. Shelved optical electron amplifier: observation of quantum jumps. <em>Phys. Rev. Lett.</em>, 56:2797–2799, Jun 1986. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.56.2797">doi:10.1103/PhysRevLett.56.2797</a>.</p>
+</div>
+<div class="citation" id="id41" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></span>
+<p>J. C. Bergquist, Randall G. Hulet, Wayne M. Itano, and D. J. Wineland. Observation of quantum jumps in a single atom. <em>Phys. Rev. Lett.</em>, 57:1699–1702, Oct 1986. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.57.1699">doi:10.1103/PhysRevLett.57.1699</a>.</p>
+</div>
+<div class="citation" id="id42" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></span>
+<p>Th. Sauter, W. Neuhauser, R. Blatt, and P. E. Toschek. Observation of quantum jumps. <em>Phys. Rev. Lett.</em>, 57:1696–1698, Oct 1986. <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.57.1696">doi:10.1103/PhysRevLett.57.1696</a>.</p>
+</div>
+<div class="citation" id="id64" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></span>
+<p>Z. K. Minev, S. O. Mundhada, S. Shankar, P. Reinhold, R. Gutiérrez-Jáuregui, R. J. Schoelkopf, M. Mirrahimi, H. J. Carmichael, and M. H. Devoret. To catch and reverse a quantum jump mid-flight. <em>Nature</em>, 570(7760):200–204, 2019. <a class="reference external" href="https://doi.org/10.1038/s41586-019-1287-z">doi:10.1038/s41586-019-1287-z</a>.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></span>
+<p>M. B. Plenio and P. L. Knight. The quantum-jump approach to dissipative dynamics in quantum optics. <em>Rev. Mod. Phys.</em>, 70:101–144, Jan 1998. <a class="reference external" href="https://doi.org/10.1103/RevModPhys.70.101">doi:10.1103/RevModPhys.70.101</a>.</p>
+</div>
+<div class="citation" id="id66" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></span>
+<p>Gerhard C. Hegerfeldt. The quantum jump approachand quantum trajectories. In <em>Irreversible Quantum Dynamics</em>, LNP 622, 233–242. Springer, 2003.</p>
+</div>
+<div class="citation" id="id67" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></span>
+<p>Marco Radaelli, Gabriel T. Landi, and Felix C. Binder. Gillespie algorithm for quantum jump trajectories. <em>Phys. Rev. A</em>, 110:062212, Dec 2024. <a class="reference external" href="https://doi.org/10.1103/PhysRevA.110.062212">doi:10.1103/PhysRevA.110.062212</a>.</p>
 </div>
 </div>
 </div>
@@ -528,12 +586,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../methods/openqm-qme.html"
+       href="../methods/openqm-jump-example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Quantum master equations</p>
+        <p class="prev-next-title"><span class="section-number">13.3. </span>A Simple example of the jump method</p>
       </div>
     </a>
 </div>

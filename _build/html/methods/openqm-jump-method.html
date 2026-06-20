@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>13.1. Jump method algorithm &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'methods/openqm-jump-method';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="13.3. A Simple example of the jump method" href="openqm-jump-example.html" />
+    <link rel="prev" title="13. Jump method and Quantum Trajectory" href="openqm-jump-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="qutip.html">11. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/methods/openqm-jump-method.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Fmethods/openqm-jump-method.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/methods/openqm-jump-method.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Jump method algorithm</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13.1. Jump method algorithm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basic-idea-of-the-jump-method">13.1.1. The basic idea of the jump method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">13.1.2. Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-with-the-quantum-master-equation">13.2. Relation with the quantum master equation</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="jump-method-algorithm">
+<span id="sec-openqm-jump-method"></span><h1><span class="section-number">13.1. </span>Jump method algorithm<a class="headerlink" href="#jump-method-algorithm" title="Link to this heading">#</a></h1>
+<section id="the-basic-idea-of-the-jump-method">
+<h2><span class="section-number">13.1.1. </span>The basic idea of the jump method<a class="headerlink" href="#the-basic-idea-of-the-jump-method" title="Link to this heading">#</a></h2>
+<p>In the standard quantum mechanics, a quantum state the time evolution of <span class="math notranslate nohighlight">\(|psi\rangle\)</span> is determined by the Schrödinger equation <span class="math notranslate nohighlight">\(i\frac{d}{dt}|\psi\rangle = H |\psi\rangle\)</span>, which preserves the normalization.  The amount of information encoded in the state remains the same all time.  This is true as long as the Hamiltonian is self-adjoint, i.e., <span class="math notranslate nohighlight">\(H^{\dagger} = H\)</span>.  The evolution is continuous and smooth.  However, such a unitary evolution alone cannot describe the whole story of quantum evolution.  When measurement is performed on the state, it instantaneously jumps to one of eigenvectors of the observable.  No unitary evolution can describe quantum measurement process.</p>
+<p>Quantum jumps sees in a quantum trajectory are essentially the same as such quantum measurement processes.  The interaction between emitters and radiation field can be interpreted as continuous measurement by the radiation field, which causes the jumps.  Hence, we can’t use the standard  Schrödinger equation to find a quantum trajectory. WE need a non-unitary evolution.</p>
+<p>Suppose that in absence of the radiation field, the emitter evolves unitarily with  Hamiltonian <span class="math notranslate nohighlight">\(H_{S}\)</span>.  When it interacts with the radiation field jump from state <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> to <span class="math notranslate nohighlight">\(|\beta\rangle\)</span>. Such jump is mathematically described by an operator <span class="math notranslate nohighlight">\(C=\sqrt{\gamma} |\beta\rangle\langle \alpha|\)</span> where <span class="math notranslate nohighlight">\(\gamma\)</span> is a rate of jump<span class="math notranslate nohighlight">\(.  \)</span>C$ is called collapse operator.</p>
+<p>Next, we consider an effective Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[
+H_\text{eff} = H_{S} - \frac{i}{2} C^{\dagger} C
+\]</div>
+<p>Because of the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> in front of the collapse operator, the effective Hamiltonian is not self-adjoint.  Nevertheless, we use this Hamiltonian in the Schrödinger equation</p>
+<div class="math notranslate nohighlight" id="equation-eq-fake-shcroedinger">
+<span class="eqno">(13.1)<a class="headerlink" href="#equation-eq-fake-shcroedinger" title="Link to this equation">#</a></span>\[
+i \frac{d}{dt} |\psi\rangle = H_\text{eff} |\psi\rangle
+\]</div>
+<p>Obviously, the norm is not conserved.  Some information is leaking out of the system. But total information must be constant.  So, the radiation field must be receiving the information, which is photon.  We know that emission happens randomly and instantaneously.  So, the loss of information must happen as a jump.</p>
+<p>Now, we describe this scenario mathematically.  Integrating Eq. <a class="reference internal" href="#equation-eq-fake-unitary">(13.2)</a> for brief time period <span class="math notranslate nohighlight">\(\delta t\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-fake-unitary">
+<span class="eqno">(13.2)<a class="headerlink" href="#equation-eq-fake-unitary" title="Link to this equation">#</a></span>\[
+|\psi(t+\delta t)\rangle \approx \left(1 - i H_\text{eff} \delta t\right) |\psi(t)\rangle
+\]</div>
+<p>Assuming that the state is initially normalized (<span class="math notranslate nohighlight">\(\langle\psi(t)|\psi(t)\rangle = 1\)</span>), the loss of the normalization is
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+\delta p &amp;\approx  1 - \langle\psi(t+\delta t)|\psi(t+\delta t)\rangle \\
+&amp;= i \delta t \langle \psi(t)| H_\text{eff} - H^{\dagger}_\text{eff}|\psi(t)\rangle  \\
+&amp;= \delta t  \langle \psi(t)|C^{\dagger} C|\psi(t)\rangle  \\
+&amp;= \delta t \gamma |\langle \alpha|\psi(t)\rangle |^2
+\end{aligned}
+\)</span>$</p>
+<p>First of all, <span class="math notranslate nohighlight">\(\delta p\)</span> is clearly non-negative.  If <span class="math notranslate nohighlight">\(|\psi(t)\rangle\)</span> is orthogonal to <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>, <span class="math notranslate nohighlight">\(\delta p = 0\)</span>.  The norm conserves since no transition can happen.  On the opposite limit, if <span class="math notranslate nohighlight">\(\psi(t)\rangle = |\alpha\rangle\)</span> and <span class="math notranslate nohighlight">\(\delta t \gamma=1\)</span>, then <span class="math notranslate nohighlight">\(\delta p = 1\)</span>, that means the norm is completely lost.  Since <span class="math notranslate nohighlight">\(\gamma\)</span> is the rate of jump, if the initial state is <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>, it will jump to <span class="math notranslate nohighlight">\(|\beta\rangle\)</span> within <span class="math notranslate nohighlight">\(\delta t = 1/\gamma\)</span>.  We note that <span class="math notranslate nohighlight">\(\delta p\)</span> behaves like a probability.  If <span class="math notranslate nohighlight">\(\delta p =0\)</span>, then there is no jump.  If <span class="math notranslate nohighlight">\(\delta p = 1\)</span>, a jump certainly takes place.  Based on this observation, we postulate that a jump takes place during time period <span class="math notranslate nohighlight">\(\delta t\)</span> with probability <span class="math notranslate nohighlight">\(\delta p\)</span>.</p>
+</section>
+<section id="algorithm">
+<h2><span class="section-number">13.1.2. </span>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">#</a></h2>
+<p>In the above example, we used only one collapse operator.  We can include as many collapse operators as we like:</p>
+<div class="math notranslate nohighlight">
+\[
+C_{j} = \sqrt{\gamma_j} |\beta_{j}\rangle\langle \alpha_{j}|.
+\]</div>
+<p>Here is the summary of algorithm.</p>
+<p><strong>Initial preparation</strong></p>
+<ol class="arabic simple">
+<li><p>Set a time step size <span class="math notranslate nohighlight">\(\delta t\)</span>.  it should be smaller than any of <span class="math notranslate nohighlight">\(1/\gamma_{j}\)</span>.</p></li>
+<li><p>Set initial time <span class="math notranslate nohighlight">\(t_0 = 0\)</span> and loop counter <span class="math notranslate nohighlight">\(k=0\)</span>.</p></li>
+<li><p>Prepare an initial state <span class="math notranslate nohighlight">\(\psi(0)\rangle\)</span> at time <span class="math notranslate nohighlight">\(t=0\)</span> at random. It should be normalized.</p></li>
+</ol>
+<p><strong>Main loop begins</strong></p>
+<ol class="arabic simple">
+<li><p>Increment a loop counter: <span class="math notranslate nohighlight">\(k=k+1\)</span>.</p></li>
+<li><p>Set a new time <span class="math notranslate nohighlight">\(t_{k} = t_{k-1}+\delta t\)</span>.</p></li>
+</ol>
+<p><strong>Choose Schrödinger step or jump step at random</strong></p>
+<ol class="arabic simple">
+<li><p>Evaluate <span class="math notranslate nohighlight">\(\delta p_{j} = \delta t \langle \psi(t_{k-1})|C_{j}^{\dagger} C_{j}|\psi(t_{k-1})\rangle\)</span> for each <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>Calculate probabilities <span class="math notranslate nohighlight">\(\delta p = \sum_{j} \delta p_{j}\)</span>.</p></li>
+<li><p>Generate a uniform random number <span class="math notranslate nohighlight">\(r \in [0,1]\)</span>.  If <span class="math notranslate nohighlight">\(r &gt; \delta p\)</span>, then go to Schrödinger step.  Otherwise go to jump step.</p></li>
+</ol>
+<p><strong>Schrödinger step</strong></p>
+<ol class="arabic simple">
+<li><p>Compute a new state <span class="math notranslate nohighlight">\(|\psi(t_{k})\rangle = \left( 1 - i H_\text{eff} \delta t \right) |\psi(t_{k-1})\rangle\)</span>.</p></li>
+<li><p>Normalize the new state.</p></li>
+<li><p>Set jump flag = 0</p></li>
+<li><p>Go to recording step.</p></li>
+</ol>
+<p><strong>Jump step</strong></p>
+<ol class="arabic simple">
+<li><p>Generate a uniform random number <span class="math notranslate nohighlight">\(r \in [0,1]\)</span>.  Pick a jump channel <span class="math notranslate nohighlight">\(j\)</span> based on the random number.</p></li>
+<li><p>Compute a new state <span class="math notranslate nohighlight">\(|\psi(t_{k})\rangle = C_{j} | \psi(t_{k-1} \rangle\)</span>.</p></li>
+<li><p>Normalize the new state.</p></li>
+<li><p>Set jump flag = the channel number</p></li>
+<li><p>Go to recording step.</p></li>
+</ol>
+<p><strong>Recording step</strong></p>
+<ol class="arabic simple">
+<li><p>Record current time</p></li>
+<li><p>Using the new state vector, evaluate expectation value of desired observables.  Record them.</p></li>
+<li><p>If jump flag &gt; 0, then record jump time</p></li>
+<li><p>Go to the next cycle of the main loop</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="relation-with-the-quantum-master-equation">
+<h1><span class="section-number">13.2. </span>Relation with the quantum master equation<a class="headerlink" href="#relation-with-the-quantum-master-equation" title="Link to this heading">#</a></h1>
+<p>Using the state vector <span class="math notranslate nohighlight">\(|psi(t)\rangle\)</span> obtained by the above jump methods, the density operator evolves as</p>
+<div class="math notranslate nohighlight" id="equation-eq-fake-liouoville">
+<span class="eqno">(13.3)<a class="headerlink" href="#equation-eq-fake-liouoville" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+\frac{d}{dt} \rho(t) &amp;= \left(\frac{d}{dt}|\psi(t)\rangle\right)\langle\psi(t)| + |\psi(t)\rangle\left(\frac{d}{dt} \langle \psi(t)|\right)\\
+&amp; = -i H_\text{eff} |\psi(t)\rangle\langle\psi(t)| + i |\psi(t)\rangle\langle\psi(t)| H^{\dagger}_\text{eff} \\
+&amp; = -i [H_{S},\rho(t)] - \frac{1}{2} C^{\dagger} C \rho(t) - \frac{1}{2} \rho(t) C^{\dagger} C
+\end{aligned}
+\end{split}\]</div>
+<p>SInce this evolution does not include the jumps yet, the norm of <span class="math notranslate nohighlight">\(\rho\)</span> does not conserve. Taking trace of Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(13.3)</a>, we find that the density operator is losing the normalization by <span class="math notranslate nohighlight">\(\langle C^{\dagger} C \rangle\)</span> per unit time.  Hence, we need to add a jump term which compensates the loss.</p>
+<p>Compare  Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(13.3)</a> with the standard form of a quantum master equation, <span class="math notranslate nohighlight">\(C \rho(t) C^{\dagger}\)</span> is missing.  This is exactly the state created by the jump, <span class="math notranslate nohighlight">\(C|\psi\rangle\langle \psi|C^{\dagger}= \gamma |\langle\alpha|\psi\rangle|^2|\beta\rangle\langle \beta|\)</span>. If this is added to Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(13.3)</a>, the loss of the normalization is fully recovered. In fact, we can see that the additional term adds the destination state <span class="math notranslate nohighlight">\(|\beta\rangle\langle \beta|\)</span> with the rate <span class="math notranslate nohighlight">\(\gamma |\langle\alpha|\psi\rangle|^2|\)</span>.  This rate is reasonable since <span class="math notranslate nohighlight">\(\gamma\)</span> is the decay rate of <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> and <span class="math notranslate nohighlight">\(|\langle\alpha|\psi\rangle|^2|\)</span> is the probability that the state is in <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>.</p>
+<p>Now we conclude that the density operator in a standard quantum master equation includes both the Schrödinger like evolution with <span class="math notranslate nohighlight">\(H_\text{eff}\)</span> and jumps and thus<br />
+the jump method is equivalent to the quantum master equation.  Since the jump method simulates the evolution of a single system rather than the ensemble, it is often said that the jump method unravels the corresponding quantum master equation.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            name: "book",
+            path: "./methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="openqm-jump-intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Jump method and Quantum Trajectory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="openqm-jump-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">13.3. </span>A Simple example of the jump method</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13.1. Jump method algorithm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basic-idea-of-the-jump-method">13.1.1. The basic idea of the jump method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">13.1.2. Algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-with-the-quantum-master-equation">13.2. Relation with the quantum master equation</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

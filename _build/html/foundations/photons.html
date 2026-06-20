@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -206,7 +206,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">12. Quantum master equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -453,7 +463,7 @@
 <span id="ch-photons"></span><h1><span class="section-number">1. </span>Photons and quantum radiation fields<a class="headerlink" href="#photons-and-quantum-radiation-fields" title="Link to this heading">#</a></h1>
 <section id="what-is-a-photon">
 <h2><span class="section-number">1.1. </span>What is a photon?<a class="headerlink" href="#what-is-a-photon" title="Link to this heading">#</a></h2>
-<p>Classical light is described by electromagnetic fields which are continuous both in space and time.  Quantum light is described also by electromagnetic fields but they are quantum fields.  The quantum fields are also continuous.  So, where is “quantumness” in the quantum light?  Photons immediately pops up in our head.  But what are they?  Unfortunately, they are poorly defined in literature  and misused by many people. In 1951 Albert Einstein said “All these fifty years of conscious brooding have brought me no nearer to the answer to the question ‘What are light quanta?’ Nowadays every Tom, Dick and Harry thinks he knows it, but he is mistaken.”<span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id45" title="A. P. French. Einstein: A Centenary Volume. Harvard University Press, Cambridge, Mass., 1979. ISBN 978-0674242302.">1</a>]</span>  Since a correct use of the photon concept is so difficult, W. E. Lamb suggested that a license be required for use of the word photon.”<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id44" title="W. E. Lamb. Anti-photon. Applied Physics B, 60(2–3):77–84, February 1995. doi:10.1007/BF01135846.">2</a>]</span>  Roy J. Glauber, who were given a license, defined photon as  “A photon is what a photodetector detects” and also “A photon is where the photodetector detects it” rather than defining a photon as a pre-existing “particle” in space.  When three Nobel laureates in quantum optics were saying like that, the meaning of photons must be very difficult for laymen to understand.</p>
+<p>Classical light is described by electromagnetic fields which are continuous both in space and time.  Quantum light is described also by electromagnetic fields but they are quantum fields.  The quantum fields are also continuous.  So, where is “quantumness” in the quantum light?  Photons immediately pops up in our head.  But what are they?  Unfortunately, they are poorly defined in literature  and misused by many people. In 1951 Albert Einstein said “All these fifty years of conscious brooding have brought me no nearer to the answer to the question ‘What are light quanta?’ Nowadays every Tom, Dick and Harry thinks he knows it, but he is mistaken.”<span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id45" title="A. P. French. Einstein: A Centenary Volume. Harvard University Press, Cambridge, 1979. ISBN 978-0674242302.">1</a>]</span>  Since a correct use of the photon concept is so difficult, W. E. Lamb suggested that a license be required for use of the word photon.”<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id44" title="W. E. Lamb. Anti-photon. Applied Physics B, 60(2–3):77–84, February 1995. doi:10.1007/BF01135846.">2</a>]</span>  Roy J. Glauber, who were given a license, defined photon as  “A photon is what a photodetector detects” and also “A photon is where the photodetector detects it” rather than defining a photon as a pre-existing “particle” in space.  When three Nobel laureates in quantum optics were saying like that, the meaning of photons must be very difficult for laymen to understand.</p>
 <p>We should not imagine that a photon is traveling along its trajectory like a classical particle.  The position of a photon does not have clear meaning. No position operator can be defined for a photon and thus we cannot measure its position. Recall that for another quantum particle, electron, the position can be measured.  So the situation of photon is quite different from other quantum particles.  Nevertheless, we assume that the speed of a photon is the same as the speed of classical light <span class="math notranslate nohighlight">\(c\)</span>.<a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <p>Although we don’t have a license, we shall use the word “photon” in this lecture note but only in a limited scope. We use the word in two occasions:  we say “A photon is emitted” when a quanta of energy is transferred from the emitter to the radiation field, and “A photon is detected” when the detector clicked (received a quanta of energy from the field).   The mathematical definition of photons will be given below.</p>
 <p>If you are interested in the discussion of <em>What is a photon</em>, read Ref.<span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id43" title="Chandra Roychoudhuri, A. F. Kracklauer, and Kathy Creath, editors. Nature of Light What Is a Photon? CRC Press, 2017. ISBN 9781351835831. doi:10.1201/9781420044256.">3</a>]</span>.</p>

@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'methods/qutip';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12. Quantum master equations" href="openqm-qme.html" />
+    <link rel="next" title="12. Quantum master equations" href="openqm-qme-intro.html" />
     <link rel="prev" title="10. Phonon bath" href="../model/phonon-bath.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -206,7 +206,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openqm-qme.html">12. Quantum master equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -439,12 +449,13 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-operations-on-quantum-objects">11.1.3. Standard operations on quantum objects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">11.2. Quantum master equation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-quantum-master-equation">11.2.1. Defining a quantum master equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">11.2.2. Coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-equation">11.2. Schrödinger equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">11.3. Quantum master equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-quantum-master-equation">11.3.1. Defining a quantum master equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">11.3.2. Coherence functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectory">11.3. Quantum Trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectory">11.4. Quantum Trajectory</a></li>
 </ul>
             </nav>
         </div>
@@ -510,6 +521,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">qutip</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">psi</span> <span class="o">=</span> <span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -631,12 +643,62 @@ Qobj data =
 </ol>
 </section>
 </section>
+<section id="schrodinger-equation">
+<h2><span class="section-number">11.2. </span>Schrödinger equation<a class="headerlink" href="#schrodinger-equation" title="Link to this heading">#</a></h2>
+<p>Function <code class="docutils literal notranslate"><span class="pre">sesolve()</span></code> solve the Schrödinger equation for a given Hamiltonian and initial state.  The following example solves the Schrödinger with <span class="math notranslate nohighlight">\(H=\sigma^{x}\)</span> and <span class="math notranslate nohighlight">\(|\psi(0)\rangle = \frac{4}{5}|g\rangle + \frac{3}{5}|e\rangle\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">psi</span><span class="p">,</span><span class="n">times</span><span class="o">.</span><span class="n">e_ops</span><span class="o">=</span><span class="p">[],</span><span class="n">options</span><span class="o">=</span><span class="p">{})</span>
+
+<span class="n">H</span>      <span class="p">:</span> <span class="n">Hermitian</span> <span class="n">part</span> <span class="n">of</span> <span class="n">Hamiltonian</span> <span class="p">(</span><span class="n">Do</span> <span class="ow">not</span> <span class="n">include</span> <span class="n">the</span> <span class="n">collaps</span> <span class="n">operators</span><span class="o">.</span><span class="p">)</span>
+<span class="n">psi</span>    <span class="p">:</span> <span class="n">inititial</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">either</span> <span class="n">wave</span> <span class="n">vector</span> <span class="ow">or</span> <span class="n">density</span> <span class="n">operator</span>
+<span class="n">e_ops</span><span class="o">=</span> <span class="p">:</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">observable</span> <span class="n">operators</span> <span class="n">to</span> <span class="n">be</span> <span class="n">measured</span>
+</pre></div>
+</div>
+<p>All outputs are stored in <code class="docutils literal notranslate"><span class="pre">result</span></code>.  Select a particular data using the following attribute.</p>
+<p><code class="docutils literal notranslate"><span class="pre">result.states</span></code> : state vectors evaluated at times specified in <code class="docutils literal notranslate"><span class="pre">times</span></code> (array)<br />
+<code class="docutils literal notranslate"><span class="pre">result.final</span></code>  : final state vector<br />
+<code class="docutils literal notranslate"><span class="pre">result.expect</span></code> : expectation values of <code class="docutils literal notranslate"><span class="pre">e_ops</span></code></p>
+<p>When <code class="docutils literal notranslate"><span class="pre">e_ops</span></code> is not empty, only expectation values are computed and state vector is not returned.  If you want both the state vector and the expectation values, you need to specify option <code class="docutils literal notranslate"><span class="pre">{&quot;store_states&quot;:</span> <span class="pre">True}</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solve a Schrödinger equation</span>
+
+<span class="c1"># Hamiltonian</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">sigmax</span><span class="p">()</span>
+
+<span class="c1"># Initial state</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># List of times</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Compute state vector and expectation value of sigmaz</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">psi0</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">e_ops</span><span class="o">=</span><span class="n">sigmaz</span><span class="p">(),</span><span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;store_states&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+<span class="c1"># plot &lt;sigma_z&gt;</span>
+<span class="n">sz</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">sz</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\sigma^</span><span class="si">{z}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9ee4784afac2ad832b9c5f13d1653da590581881e8b6a884509d39f6b98a227e.png" src="../_images/9ee4784afac2ad832b9c5f13d1653da590581881e8b6a884509d39f6b98a227e.png" />
+</div>
+</div>
+</section>
 <section id="quantum-master-equation">
-<h2><span class="section-number">11.2. </span>Quantum master equation<a class="headerlink" href="#quantum-master-equation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>Quantum master equation<a class="headerlink" href="#quantum-master-equation" title="Link to this heading">#</a></h2>
 <p>QuTip includes quantum master equation solvers and many utilities to evaluate physical quantities using the output from the solver.  Here is a brief summary of basic operations.</p>
 <section id="defining-a-quantum-master-equation">
-<h3><span class="section-number">11.2.1. </span>Defining a quantum master equation<a class="headerlink" href="#defining-a-quantum-master-equation" title="Link to this heading">#</a></h3>
-<p>We want to solve a quantum master equation <span class="math notranslate nohighlight">\(\frac{d}{dt}\rho = \mathcal{L} \rho\)</span> where <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a Liouville super operator (Liouvillian). (See <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.)  The Liouville superoperators are uniquely determined by the system Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> and a set of dissipators <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> such that</p>
+<h3><span class="section-number">11.3.1. </span>Defining a quantum master equation<a class="headerlink" href="#defining-a-quantum-master-equation" title="Link to this heading">#</a></h3>
+<p>We want to solve a quantum master equation <span class="math notranslate nohighlight">\(\frac{d}{dt}\rho = \mathcal{L} \rho\)</span> where <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is a Liouville super operator (Liouvillian). (See <a class="reference internal" href="openqm-qme-intro.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.)  The Liouville superoperators are uniquely determined by the system Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> and a set of dissipators <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L} \rho = -i [H,\rho] + \sum_{ij} \gamma_{ij} \mathcal{D}_{ij} \rho
@@ -713,9 +775,26 @@ Qobj data =
 </pre></div>
 </div>
 <p>This is important when off-diagonal disppators are needed since we must construct a Liouvillian manually.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">mesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="p">[])</span>
+
+
+<span class="n">H</span>      <span class="p">:</span> <span class="n">Hermitian</span> <span class="n">part</span> <span class="n">of</span> <span class="n">Hamiltonian</span> <span class="p">(</span><span class="n">Do</span> <span class="ow">not</span> <span class="n">include</span> <span class="n">the</span> <span class="n">collaps</span> <span class="n">operators</span><span class="o">.</span><span class="p">)</span>
+<span class="n">psi</span>    <span class="p">:</span> <span class="n">inititial</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">either</span> <span class="n">wave</span> <span class="n">vector</span> <span class="ow">or</span> <span class="n">density</span> <span class="n">operator</span>
+<span class="n">c_ops</span>  <span class="p">:</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">collapse</span> <span class="n">operators</span> 
+<span class="n">e_ops</span><span class="o">=</span> <span class="p">:</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">observable</span> <span class="n">operators</span> <span class="n">to</span> <span class="n">be</span> <span class="n">measured</span>
+</pre></div>
+</div>
+<p>All outputs are stored in <code class="docutils literal notranslate"><span class="pre">result</span></code>.  Select a particular data using the following attribute.</p>
+<p><code class="docutils literal notranslate"><span class="pre">result.states</span></code> : density operator evaluated at times specified in <code class="docutils literal notranslate"><span class="pre">times</span></code> (array)<br />
+<code class="docutils literal notranslate"><span class="pre">result.final</span></code>  : final density matrix<br />
+<code class="docutils literal notranslate"><span class="pre">result.expect</span></code> : expectation values of <code class="docutils literal notranslate"><span class="pre">e_ops</span></code></p>
+<p>When e_ops is not empty, only expectation values are computed and state is not returned. If you want both the state and the expectation values, you need to specify option {“store_states”: True}</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi0</span> <span class="o">=</span> <span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi0</span> <span class="o">=</span> <span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
 <span class="n">e_ops</span> <span class="o">=</span> <span class="p">[</span><span class="n">sigmaz</span><span class="p">(),</span><span class="n">sigmap</span><span class="p">()</span><span class="o">*</span><span class="n">sigmam</span><span class="p">()]</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">mesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">e_ops</span><span class="p">)</span>
@@ -730,30 +809,38 @@ Qobj data =
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">mesolve</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
+
+<span class="c1"># density operator at the final time</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">final_state</span><span class="p">)</span>
+
 <span class="c1"># density operator at all sampling times</span>
 <span class="n">rho</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">states</span>
 
-<span class="c1"># density operator at the final time</span>
-<span class="n">rho_final</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">rho_final</span><span class="p">)</span>
+<span class="c1"># plot the evolution in the Bloch sphere</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Bloch</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">b</span><span class="o">.</span><span class="n">add_states</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;point&#39;</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quantum object: dims=[[2], [2]], shape=(2, 2), type=&#39;oper&#39;, dtype=Dense, isherm=True
 Qobj data =
-[[0.49999642 0.        ]
- [0.         0.50000358]]
+[[5.00000000e-01+0.j         1.91037582e-04+0.00122446j]
+ [1.91037582e-04-0.00122446j 5.00000000e-01+0.j        ]]
 </pre></div>
 </div>
+<img alt="../_images/e931c273c832065e3b41bcde21b257126203ccaad3bc5da3cae83a81acdc74e4.png" src="../_images/e931c273c832065e3b41bcde21b257126203ccaad3bc5da3cae83a81acdc74e4.png" />
 </div>
 </div>
 <p><strong>Extracting expectation values</strong></p>
-<p>Next we compute the expectation value of number operator <span class="math notranslate nohighlight">\(n=\sigma^{+}\sigma^{-}\)</span>.  The result is stored in <code class="docutils literal notranslate"><span class="pre">result.expect[0]</span></code>.  If you specified multiple observables, the second observable is given by <code class="docutils literal notranslate"><span class="pre">result.expect[1]</span></code> and so on.</p>
+<p>Next we compute the expectation value of number operator <span class="math notranslate nohighlight">\(n=\sigma^{+}\sigma^{-}\)</span>.  The result is stored in <code class="docutils literal notranslate"><span class="pre">result.expect[0]</span></code>.  If you specified multiple observables, the second observable is given by <code class="docutils literal notranslate"><span class="pre">result.expect[1]</span></code> and so on.  The following example plots the expectation value <span class="math notranslate nohighlight">\(\langle \sigma^{+}\sigma^{-}\rangle\)</span> as a function of time. instead of writing a code, you can also use a method <code class="docutils literal notranslate"><span class="pre">result.plot_expect()</span></code> for quick plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">mesolve</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">sigmap</span><span class="p">()</span><span class="o">*</span><span class="n">sigmam</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial state</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span><span class="o">/</span><span class="mi">5</span><span class="o">*</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">mesolve</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">sigmap</span><span class="p">()</span><span class="o">*</span><span class="n">sigmam</span><span class="p">())</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -767,11 +854,11 @@ Qobj data =
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d50fb806670d6dd79e698c6330af788a7accca23b0eda3e325cc401dec7eac71.png" src="../_images/d50fb806670d6dd79e698c6330af788a7accca23b0eda3e325cc401dec7eac71.png" />
+<img alt="../_images/dba262fe823877d1cc52b250e141c2ebede1d47d4b4b0ee28c5f47d6f3550f00.png" src="../_images/dba262fe823877d1cc52b250e141c2ebede1d47d4b4b0ee28c5f47d6f3550f00.png" />
 </div>
 </div>
 <p><strong>Computing temporal correlation functions</strong></p>
-<p>To compute temporal correlation function, we need to use the quantum regression theorem (see <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.  QuTip has several functions which computes a correlaion function without explicitely envoking <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.  Two convenient ones are</p>
+<p>To compute temporal correlation function, we need to use the quantum regression theorem (see <a class="reference internal" href="openqm-qme-intro.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.  QuTip has several functions which computes a correlaion function without explicitely envoking <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.  Two convenient ones are</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">correlation.correlation_2op_1t(H,</span> <span class="pre">psi0,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">A,</span> <span class="pre">B)</span></code>   for <span class="math notranslate nohighlight">\(\langle A(\tau)B(0) \rangle\)</span>:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">correlation.correlation_3op_1t(H,</span> <span class="pre">psi0,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">A,</span> <span class="pre">B,</span> <span class="pre">C)</span></code>  for <span class="math notranslate nohighlight">\(\langle A(0)B(\tau)C(0 \rangle\)</span>:</p></li>
@@ -800,7 +887,7 @@ Qobj data =
 </div>
 </section>
 <section id="coherence-functions">
-<h3><span class="section-number">11.2.2. </span>Coherence functions<a class="headerlink" href="#coherence-functions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.3.2. </span>Coherence functions<a class="headerlink" href="#coherence-functions" title="Link to this heading">#</a></h3>
 <p>The coherence functions <span class="math notranslate nohighlight">\(g^{(1)}\)</span> and <span class="math notranslate nohighlight">\(g^{(2)}\)</span> are just the normalized version of the correlation functions <span class="math notranslate nohighlight">\(G^{(1)}\)</span> and <span class="math notranslate nohighlight">\(G^{(2)}\)</span>. The normalization constant is  simply the intensity of the field and we can calculate it using <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -831,6 +918,20 @@ Qobj data =
 <li><p><code class="docutils literal notranslate"><span class="pre">coherence_function_g2(H,</span> <span class="pre">None,</span> <span class="pre">times,</span> <span class="pre">c_ops,</span> <span class="pre">a)</span></code>   for   <span class="math notranslate nohighlight">\(g^{(2)}\)</span> and <span class="math notranslate nohighlight">\(G^{(2)}\)</span>.</p></li>
 </ul>
 <p>The following example generates the same results using the above functions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following function computes <span class="math notranslate nohighlight">\(G^{(1)}(\tau) = \langle A^\dagger(\tau) A(0) \rangle\)</span> and <span class="math notranslate nohighlight">\(G^{(2)}(\tau) = \langle A^{\dagger}(0)A^{\dagger}(\tau) A(\tau) A(0) \rangle\)</span>, and the normalized functions  <span class="math notranslate nohighlight">\(g^{(1)}(\tau)\)</span> and <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>g1, G1 = coherence_function_g1(H, psi, times, c_ops, A)
+g2, G2 = coherence_function_g1(H, psi, times, c_ops, A)
+
+H     : Hamiltonian
+psi   : initial state, use `NONE` for steady state
+times : a set of times when the functions are evaluated (array)
+c_ops : collapse operators 
+A     : operator used in the correlation.
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span><span class="p">,</span> <span class="n">G1</span> <span class="o">=</span><span class="n">coherence_function_g1</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">sigmap</span><span class="p">())</span>
@@ -853,8 +954,20 @@ Qobj data =
 </section>
 </section>
 <section id="quantum-trajectory">
-<h2><span class="section-number">11.3. </span>Quantum Trajectory<a class="headerlink" href="#quantum-trajectory" title="Link to this heading">#</a></h2>
-<p>There is also build-in functions for quantum trajectory calculation.  In <a class="reference internal" href="openqm-qme.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>, we calculated a quantum trajectory manually.  Monte Carlo solver <code class="docutils literal notranslate"><span class="pre">mcsolve()</span></code> generates quantum trajectories without hustle.  Since the quantum trajectory approach is mathematically equivalent to the corresponding quantum master equation, calling procedure is essentially the same, except for number of trajectories.  To get better statistics, we need many samplings.  If data is too noisy, increase the number of trajectories.  We just need to measure number operators.  Unfortunately, there is no function that analyzes the trajectory. We need to write a code.</p>
+<h2><span class="section-number">11.4. </span>Quantum Trajectory<a class="headerlink" href="#quantum-trajectory" title="Link to this heading">#</a></h2>
+<p>There is also build-in functions for quantum trajectory calculation.  In <a class="reference internal" href="openqm-qme-intro.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>, we calculated a quantum trajectory manually.  Monte Carlo solver <code class="docutils literal notranslate"><span class="pre">mcsolve()</span></code> generates quantum trajectories without hustle.  Since the quantum trajectory approach is mathematically equivalent to the corresponding quantum master equation, calling procedure is essentially the same, except for number of trajectories.  To get better statistics, we need many samplings.  If data is too noisy, increase the number of trajectories.  We just need to measure number operators.  Unfortunately, there is no function that analyzes the trajectory. We need to write our own code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">psi</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">e_ops</span><span class="o">=</span><span class="p">[],</span><span class="n">ntraj</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">H</span>      <span class="p">:</span> <span class="n">Hermitian</span> <span class="n">part</span> <span class="n">of</span> <span class="n">Hamiltonian</span> <span class="p">(</span><span class="n">Do</span> <span class="ow">not</span> <span class="n">include</span> <span class="n">the</span> <span class="n">collaps</span> <span class="n">operators</span><span class="o">.</span><span class="p">)</span>
+<span class="n">psi</span>    <span class="p">:</span> <span class="n">inititial</span> <span class="n">state</span><span class="o">.</span>
+<span class="n">c_ops</span>  <span class="p">:</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">collapse</span> <span class="n">operators</span> 
+<span class="n">e_ops</span><span class="o">=</span> <span class="p">:</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">observable</span> <span class="n">operators</span> <span class="n">to</span> <span class="n">be</span> <span class="n">measured</span>
+<span class="n">ntraj</span><span class="o">=</span> <span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">trajectries</span>
+</pre></div>
+</div>
+</div>
 <p><strong>spike plot</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -869,7 +982,7 @@ Qobj data =
 <span class="c1"># initial state</span>
 <span class="n">psi0</span> <span class="o">=</span> <span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># we calculate only one trajectory </span>
+<span class="c1"># we calculate only one trajectory</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">psi0</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">e_ops</span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="n">ntraj</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># save the history of jumps</span>
@@ -892,7 +1005,7 @@ Qobj data =
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.14s
 </pre></div>
 </div>
-<img alt="../_images/b703bb9e43978f3bb0338b65adb4501e23b99ba0fddbeac95a42dd2573c295c0.png" src="../_images/b703bb9e43978f3bb0338b65adb4501e23b99ba0fddbeac95a42dd2573c295c0.png" />
+<img alt="../_images/69a85a58a24c6a549036f2c00ce112009c996e1d0172d26430066f0c516d29f8.png" src="../_images/69a85a58a24c6a549036f2c00ce112009c996e1d0172d26430066f0c516d29f8.png" />
 </div>
 </div>
 <p><strong>waiting time distribution</strong></p>
@@ -917,8 +1030,8 @@ Qobj data =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  9.864279387831866
-standard deviation =  10.119947707599016
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  10.210513868174234
+standard deviation =  9.836568713776419
 likely poissonian
 </pre></div>
 </div>
@@ -936,7 +1049,7 @@ likely poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3958097b6c3a0262260153524382233d113c8717db9dd3f7e57482dcba0a5721.png" src="../_images/3958097b6c3a0262260153524382233d113c8717db9dd3f7e57482dcba0a5721.png" />
+<img alt="../_images/ef0285803f171d571eaa0d9105d97bb298d9b0bbbc6a42a761eb70ec8527aec4.png" src="../_images/ef0285803f171d571eaa0d9105d97bb298d9b0bbbc6a42a761eb70ec8527aec4.png" />
 </div>
 </div>
 </section>
@@ -982,7 +1095,7 @@ likely poissonian
       </div>
     </a>
     <a class="right-next"
-       href="openqm-qme.html"
+       href="openqm-qme-intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -1014,12 +1127,13 @@ likely poissonian
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-operations-on-quantum-objects">11.1.3. Standard operations on quantum objects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">11.2. Quantum master equation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-quantum-master-equation">11.2.1. Defining a quantum master equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">11.2.2. Coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-equation">11.2. Schrödinger equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">11.3. Quantum master equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-quantum-master-equation">11.3.1. Defining a quantum master equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">11.3.2. Coherence functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectory">11.3. Quantum Trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectory">11.4. Quantum Trajectory</a></li>
 </ul>
   </nav></div>
 

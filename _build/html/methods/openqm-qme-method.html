@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12.1. Brief summary of a quantum master equations &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'methods/openqm-qme-method';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12.2. An example: Optical master equation" href="openqm-qme-example.html" />
+    <link rel="prev" title="12. Quantum master equations" href="openqm-qme-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="qutip.html">11. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-qme-intro.html">12. Quantum master equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/methods/openqm-qme-method.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Fmethods/openqm-qme-method.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/methods/openqm-qme-method.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Brief summary of a quantum master equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-quantum-master-equation-a-summary">12.1.1. Derivation of quantum master equation - a summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.2. Quantum regression theorem</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="brief-summary-of-a-quantum-master-equations">
+<span id="sec-openqm-qme-method"></span><h1><span class="section-number">12.1. </span>Brief summary of a quantum master equations<a class="headerlink" href="#brief-summary-of-a-quantum-master-equations" title="Link to this heading">#</a></h1>
+<section id="derivation-of-quantum-master-equation-a-summary">
+<h2><span class="section-number">12.1.1. </span>Derivation of quantum master equation - a summary<a class="headerlink" href="#derivation-of-quantum-master-equation-a-summary" title="Link to this heading">#</a></h2>
+<p>Here a very brief summary of the derivation steps is provided so that we know what approximations are used.  Read a textbook listed in the previous page for the full derivation.
+Consider a system S surrounded by a thermal reservoir R.  We assume that the reservoir is an ideal heat bath which remains in thermal equilibrium all time.  which is a key assumption to derive quantum master equation. The total system S+R is completely isolated and thus its time evolution is unitary.  The Hamiltonian of the total system can be divided to three parts:</p>
+<div class="math notranslate nohighlight">
+\[
+H_\text{S+R} = H_\text{S} \otimes I_\text{R} + I_\text{S} \otimes H_\text{R} + V_\text{SR}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(H_\text{S}\)</span>,  <span class="math notranslate nohighlight">\(H_\text{R}\)</span> and <span class="math notranslate nohighlight">\(V_\text{SR}\)</span> are the Hamiltonian for the system S, the reservoir R, and the interaction between S and R.  <span class="math notranslate nohighlight">\(I_\text{S}\)</span> and <span class="math notranslate nohighlight">\(I_\text{R}\)</span> are identity operators in each Hilbert space.</p>
+<p>The state of the total system is described by the density operator <span class="math notranslate nohighlight">\(\rho_\text{SR}\)</span> and its time evolution is determined by the Liouville-von Neumann equation</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \rho_\text{SR} = -i \left[H_\text{SR}, \rho_\text{SR}\right].
+\]</div>
+<p>To solve this equation, two approximations are introduced.</p>
+<ol class="arabic">
+<li><p>The interaction between S and R is weak enough to use the Born approximation (1st order perturbation). Only <span class="math notranslate nohighlight">\(V_\text{SR}\)</span> and (<span class="math notranslate nohighlight">\(V_\text{SR})^2\)</span> are taken into account and all higher order terms are neglected.</p></li>
+<li><p>The reservoir is always in the thermal state <span class="math notranslate nohighlight">\(\rho_\text{R} = \text{tr}_\text{S} \left( \rho_\text{SR} \right)= \frac{1}{Z_\text{R}} e^{-\beta H_\text{R}}\)</span> where <span class="math notranslate nohighlight">\(\text{tr}_\text{S}\)</span> is a partial trace over the system Hilbert space.  <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(Z_\text{R}=\text{tr}_\text{R} e^{-\beta H_\text{R}}\)</span> are usual inverse temperature and the partition function.</p></li>
+<li><p>When the reservoir is disturbed, it <em>instantaneously</em> relaxes to the original equilibrium state.  Hence, the state of reservoir remains in <span class="math notranslate nohighlight">\(\rho_\text{R}\)</span> all time.  This implies that the reservoir has no memory of past events. This assumption is called the Markovian approximation.</p></li>
+<li><p>The coupling Hamiltonian is separable.  Mathematically, <span class="math notranslate nohighlight">\(V_\text{SR} = \sum_{i} A_i \otimes B_i\)</span>.  Further we assume that <span class="math notranslate nohighlight">\(\langle B_i \rangle = \text{tr} \left( B_{i} \rho_\text{R} \right) = 0\)</span>.</p></li>
+<li><p>We introduce jump operators, each of which represents either excitation or deexcitation process.</p>
+<div class="math notranslate nohighlight" id="equation-eq-qme-jump-op">
+<span class="eqno">(12.1)<a class="headerlink" href="#equation-eq-qme-jump-op" title="Link to this equation">#</a></span>\[
+   A_{i} (\omega) = \sum_{k,k'} \delta(E_{k} - E_{k'} - \omega) |k\rangle \langle k | A_{i} |k' \rangle \langle k'|
+   \]</div>
+<p><span class="math notranslate nohighlight">\(A_{i}(\omega)\)</span> and <span class="math notranslate nohighlight">\(A_{i}^{\dagger}(\omega)\)</span> behave like annihilation and creation operators for <span class="math notranslate nohighlight">\(i\)</span>-th mode. From the completeness relation <span class="math notranslate nohighlight">\(\sum_{\omega} A_{i}(\omega) = \sum_{\omega} A_{i}^{\dagger}(\omega) = A_i\)</span>.</p>
+</li>
+<li><p>All the effects of the reservoir are taken into account through the temporal correlation of the reservoir operators.</p>
+<div class="math notranslate nohighlight">
+\[
+   c_{ij}(\tau) = \text{tr}_\text{R} \left(B_j(\tau) B_i(0) \rho_\text{R}\right), \quad \tau&gt;0.
+   \]</div>
+</li>
+<li><p>Based on the Born-Markovian approximation, the state of the system can be approximated as <span class="math notranslate nohighlight">\(\rho_\text{SR} (t) \approx \rho_\text{S} (t) \otimes \rho_\text{R}\)</span> where <span class="math notranslate nohighlight">\(\rho_\text{S} = \text{tr}_\text{R} \rho_\text{SR}\)</span>.</p></li>
+</ol>
+<p>At last we have a general form of quantum master equation.</p>
+<div class="math notranslate nohighlight" id="equation-eq-qme-general">
+<span class="eqno">(12.2)<a class="headerlink" href="#equation-eq-qme-general" title="Link to this equation">#</a></span>\[
+\frac{d}{dt} \rho_\text{S} = -i \left[ H_\text{S} + H_\text{LS}, \rho_\text{S}\right] + \mathcal{D} \rho_\text{S} 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> is a superoperator known as dissipator.  It acts on a density operator as</p>
+<div class="math notranslate nohighlight" id="equation-eq-dissipator-general">
+<span class="eqno">(12.3)<a class="headerlink" href="#equation-eq-dissipator-general" title="Link to this equation">#</a></span>\[
+\mathcal{D} \rho  = \sum_{\omega} \sum_{ij} \Gamma_{ij}(\omega) \left[ A_{j}(\omega) \rho A_{i}^{\dagger}(\omega) - \frac{1}{2} \left\{ A_{i}^{\dagger}(\omega)A_{j}(\omega), \rho \right\} \right]
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\{\cdot,\cdot\}\)</span> is anti-commutator and the dissipation rate <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span> is the Fourier transform of the correlation function:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma_{ij} (\omega) = \int_{-\infty}^{+\infty} c_{ij}(\tau) e^{i\omega \tau} d\tau.
+\]</div>
+<p>In Equation <a class="reference internal" href="#equation-eq-qme-general">(12.2)</a>, the unitary part include is a Lamb shift <span class="math notranslate nohighlight">\(H_\text{LS}\)</span> defined by</p>
+<div class="math notranslate nohighlight">
+\[
+H_\text{LS} = \frac{1}{2i} \sum_{\omega} \sum_{ij}  \left(\Gamma_{ij}(\omega) - \Gamma_{ji}^{*}(\omega)\right)
+\]</div>
+<p>Mathematically speaking, the Lamb shift diverges.  To resolve this issue, we need to use mass renormalization in the relativistic quantum field theory.  The shift is found to be very tiny.  Hence, we shall omit it throughout this lecture note.</p>
+<p>The quantum master equation <a class="reference internal" href="#equation-eq-qme-general">(12.2)</a> works well only when the Born-Markovian approximation is valid.  In many applications in quantum optics, the approximation holds reasonably well.</p>
+<p>To simplify mathematical notation, the master equation <a class="reference internal" href="#equation-eq-qme-general">(12.2)</a> is often expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \rho = \mathcal{L} \rho
+\]</div>
+<p>with  a super operator  <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, known as Liouvillian, which acts on density operator as</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} \rho = -i \left[ H_\text{S} + H_\text{LS}, \rho \right] + \mathcal{D} \rho
+\]</div>
+<p>which allow us to write a solution to the master equation as</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(t) = e^{\mathcal{L} t} \rho(0).
+\]</div>
+<p>We shall utilize the simplistic expression from time to time.</p>
+<p>By changing the basis, the <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span> in Eq. <a class="reference internal" href="#equation-eq-dissipator-general">(12.3)</a> can be diagonalized.  The diagonal form of the disspator is written</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D} \rho  = \sum_{\omega} \sum_{i} \Gamma_{i}(\omega) \left[ L_{i}(\omega) \rho L_{i}^{\dagger}(\omega) - \frac{1}{2} \left\{ L_{i}^{\dagger}(\omega)L_{i}(\omega), \rho \right\} \right]
+\]</div>
+<p>which is the standard form shown in literature.  The operator <span class="math notranslate nohighlight">\(L_i\)</span> is often called Lindblad operator or <em>jump operator</em>.  Yet another form is often used, in particular QuTiP.  The <span class="math notranslate nohighlight">\(\Gamma_i\)</span> is absorbed into the definition of jump operators and the dissipator is written as</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D} \rho  = \sum_{\omega} \sum_{i} \left[ C_{i}(\omega) \rho C_{i}^{\dagger}(\omega) - \frac{1}{2} \left\{ C_{i}^{\dagger}(\omega)C_{i}(\omega), \rho \right\} \right]
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{i}(\omega) = \sqrt{\Gamma_i(\omega)} L_i(\omega)\)</span>, which we shall call <em>collapse operator</em>.</p>
+</section>
+<section id="quantum-regression-theorem">
+<h2><span class="section-number">12.1.2. </span>Quantum regression theorem<a class="headerlink" href="#quantum-regression-theorem" title="Link to this heading">#</a></h2>
+<p>There is a problem with the definitions <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.8)</a> and <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.8)</a>.  We don’t how to calculate the expectation values since two different times are involved. There is a trick that works only when the Born-Markovian approximation is valid as discussed next.</p>
+<p>Suppose that the expectation value of an operator <span class="math notranslate nohighlight">\(A\)</span> evolves in time. It should be written as <span class="math notranslate nohighlight">\(\langle A \rangle_t\)</span> (expectation evaluated at time <span class="math notranslate nohighlight">\(t\)</span>) but  often written as <span class="math notranslate nohighlight">\(\langle A(t) \rangle\)</span> which suggests that <span class="math notranslate nohighlight">\(A\)</span> depends on time. If the system evolution is unitary, then <span class="math notranslate nohighlight">\(A(t)\)</span> can be considered as an operator in the Heisenberg picture and the average is taken with respect to an initial state.  However, when the evolution of the system is not unitary, we can’t define the usual Heisenberg picture. We interpret it as <span class="math notranslate nohighlight">\(\langle A(t) \rangle \equiv \text{tr}(A \rho(t))\)</span>  where the state is evolving in time and the operator is stationary.</p>
+<p>A problem arises when operators depend on two different times.  Fortunately, there is a very usefull theorem, known as the quantum regression theorem, which states that</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A(\tau),B(0) \rangle = \text{tr} [ A e^{\mathcal{L}t} (B \rho(0)) ]
+\]</div>
+<p>Notice that neither <span class="math notranslate nohighlight">\(A\)</span> nor <span class="math notranslate nohighlight">\(B\)</span> depends on time in the right hand side of the equality. <span class="math notranslate nohighlight">\(B \rho(0)\)</span> is evaluated at <span class="math notranslate nohighlight">\(t=0\)</span> and evolves to t=<span class="math notranslate nohighlight">\(\tau\)</span>.  Then we take the trace. It is a kind of surprising that the same evolution operator <span class="math notranslate nohighlight">\(e{\mathcal{L}t}\)</span> can be used to evolve <span class="math notranslate nohighlight">\(B\rho\)</span>.  We can calculate <span class="math notranslate nohighlight">\(e^{\mathcal{L} t} (B \rho(0))\)</span> by solving the quantum master equation with the initial condition  <span class="math notranslate nohighlight">\(\eta(0) = B\rho(0)\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            name: "book",
+            path: "./methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="openqm-qme-intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Quantum master equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="openqm-qme-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12.2. </span>An example: Optical master equation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-quantum-master-equation-a-summary">12.1.1. Derivation of quantum master equation - a summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.2. Quantum regression theorem</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

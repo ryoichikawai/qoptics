@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -206,7 +206,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../methods/openqm-qme.html">12. Quantum master equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
 </ul>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
@@ -452,15 +462,15 @@
 <p>It is important understand what physical quantity the detector is measuring. In the standard quantum mechanics, a physical quantity is represented by a self-adjoint operator.  The outcome of the measurement is one of the eigenvalues of the operator. At the end of the measurement, the system state collapses (is projected) to the corresponding eigenvector. The probability to obtain a particular outcome is determined by the Born rule.  This kind of measurement is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics">projective measurement</a>.</p>
 <p>Measurement of radiation fields or photons are totally different from the projective measurement. First of all, the photon disappears when it was detected.  Therefore, the projection is not possible.  Secondly, photons do not have position.  Mathematically we cannot define the position operator for photons.
 At the foundamental level, the quantum measurement in the quantum field theory is still debated. We will not discuss it here.</p>
-<p>For most practical applications,  the photon detection model developed by Glauber <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">15</a>]</span> works quite well.   Briefly stating, a detector can measure only the intensity of radiation field through a record of clicks.  Nothing else.</p>
+<p>For most practical applications,  the photon detection model developed by Glauber <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">15</a>]</span> works quite well.   Briefly stating, a detector can measure only the intensity of radiation field through a record of clicks.  Nothing else.  See also Carmichael <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id34" title="Howard Carmichael. An Open Systems Approach to Quantum Optics. Springer, 1st ed. edition, 1993. ISBN 9783540476207.">16</a>]</span> for the discussion of photodetection.</p>
 <section id="the-glauber-model">
 <h2><span class="section-number">9.1. </span>The Glauber model<a class="headerlink" href="#the-glauber-model" title="Link to this heading">#</a></h2>
 <p>First of all, we need to think what a photodetector records.  It clicks when a photon is detected.  The outcome of measurement is not a usual physical quantity.   The outcome is “0” for no signal and “1” for a click.  A single click does not have any useful information except that there was at least one photon in the space.   After many clicks, we have a random time series.  What we can learn from it?  The theory of statistics can extract many information out of it. (See <a class="reference internal" href="../foundations/bunching.html#ch-bunching-fcs"><span class="std std-numref">Chapter 3</span></a>.) We are particularly interested in two of them. 1) how often the clicks happen (mean detection rate) and 2) stndard deviation form the mean.</p>
-<p>At each click, an electron in the detector absorb a photon.  Therefore, the mean detection rate corresponds to the absorption rate which we can calculate using the standard quantum mechanics.  Usually we use a perturbation theory (the Fermi’s golden rule). Glauber was able to connect the transition rate to the mean intensity of radiation. <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">15</a>]</span>   We now show that the detector measures the mean intensity <a class="reference internal" href="../foundations/photons.html#equation-eq-radiation-intensity">(1.6)</a>.</p>
+<p>At each click, an electron in the detector absorb a photon.  Therefore, the mean detection rate corresponds to the absorption rate which we can calculate using the standard quantum mechanics.  Usually we use a perturbation theory (the Fermi’s golden rule). Glauber was able to connect the transition rate to the mean intensity of radiation. <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">15</a>]</span>   We now show that the detector measures the mean intensity <a class="reference internal" href="../foundations/photons.html#equation-eq-radiation-intensity">(1.6)</a>.</p>
 </section>
 <section id="transion-rates">
 <h2><span class="section-number">9.2. </span>Transion rates<a class="headerlink" href="#transion-rates" title="Link to this heading">#</a></h2>
-<p>Suppose that the radiation field is in a state <span class="math notranslate nohighlight">\(|i\rangle\)</span> and the electron in <span class="math notranslate nohighlight">\(|g\rangle\)</span> before the click and <span class="math notranslate nohighlight">\(|f\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span> after the click.  The transition rate is proportional to the square of the transition matrix <span class="math notranslate nohighlight">\(W_{if} \propto |\langle e |\otimes \langle f | V | |g\rangle \otimes | i \rangle|^2\)</span> where <span class="math notranslate nohighlight">\(V\)</span> is the interaction Hamiltonian defined as (See Eq. <a class="reference internal" href="radiation-field.html#equation-eq-sr-coupling">(7.2)</a>.)</p>
+<p>Suppose that the radiation field is in a state <span class="math notranslate nohighlight">\(|i\rangle\)</span> and the electron in <span class="math notranslate nohighlight">\(|g\rangle\)</span> before the click and <span class="math notranslate nohighlight">\(|f\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span> after the click.  The transition rate is proportional to the square of the transition matrix <span class="math notranslate nohighlight">\(W_{if} \propto |\langle e |\otimes \langle f | V | |g\rangle \otimes | i \rangle|^2\)</span> where <span class="math notranslate nohighlight">\(V\)</span> is the interaction Hamiltonian defined as (See Eq. <a class="reference internal" href="radiation-field.html#equation-eq-sr-coupling">(7.3)</a>.)</p>
 <div class="math notranslate nohighlight">
 \[
 V = - \left (\mathbf{E}^{(+)}(\mathbf{x}) + \mathbf{E}^{(-)}(\mathbf{x})\right) \cdot \mathbf{d} \left (\sigma^{-} + \sigma^{+}\right)

@@ -38,7 +38,14 @@ parts:
    numbered: 3
    chapters:
    -  file: methods/qutip
-   -  file: methods/openqm-qme
+   -  file: methods/openqm-qme-intro
+      sections:
+      -  file: methods/openqm-qme-method
+      -  file: methods/openqm-qme-example
+   -  file: methods/openqm-jump-intro
+      sections:
+      -  file: methods/openqm-jump-method
+      -  file: methods/openqm-jump-example
 -  caption:
    numbered: false
    chapters:
