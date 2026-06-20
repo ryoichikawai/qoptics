@@ -1,0 +1,132 @@
+Traceback (most recent call last):
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/asyncio/base_events.py", line 721, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# ignore warnings (qutip issues various unwanted warnings)
+import warnings
+warnings.filterwarnings('ignore')
+
+import matplotlib.pyplot as plt
+import numpy as np
+from qutip import *
+
+# reset random number
+rng = np.random.default_rng()
+
+# System parameters
+omega0 = 1.0   # excitation energy
+gamma0 = 0.1   # spontaneous emission rate
+Delta = 0.0  # detuning
+Omega = 1  # Rabi frequency
+temperature = 1.0  # tempeature of photon gas
+N = 1/(np.exp(omega0/temperature)-1) # Planck distribution
+
+# Collapse operators
+n_c_ops = 2
+gamma1 = gamma0 * N   # coefficient to absorption
+gamma2 = gamma0 * (N+1)  # coefficient to emission
+c_ops = [np.sqrt(gamma1) * sigmap(),np.sqrt(gamma2) * sigmam()]
+
+# Effective Hamiltonian for a two-level system
+H = 0.5*Delta*sigmaz() + 0.5*Omega*sigmax()
+
+# set arrays for record
+times = np.array([])   # time
+spikes = np.array([])  # time when a photon is emitted
+sz = np.array([]) # expectation value of sigma_z
+
+# control parameters
+# maximum number of photons to be counted
+max_photons = 2000
+
+# time step
+dt = 0.1  
+
+# number of photons emitted
+n_photons = 0 
+
+# current time
+k=0 # loop counter
+times = np.append(times,k*dt)
+
+# random initial state vector
+theta = rng.random()*2*np.pi
+psi = basis(2,0)*np.sin(theta) + basis(2,1)*np.cos(theta)
+
+# we measure sigmaz
+sz = np.append(sz,expect(sigmaz(),psi))
+
+# main loop begins
+while n_photons < max_photons:
+
+# set new time
+    k += 1
+    times = np.append(times,k*dt)
+
+# calculate jump probability
+
+    for j in range(len(c_ops)):
+       n[j] = expect(c_ops[j].dag() * c_ops[j], psi)*dt
+    dp = sum(n)
+    dq = n/dp
+
+# choose schraoedinger or jump step at random
+    if rng.random() > dp:
+        # Srhcoedinger step
+        psi_new = schroedinger(H,psi,dt)
+
+    else:
+        # Jump step
+        psi_new, flag = jump(c_ops,psi,dq)
+        if flag == 1:  # emission
+            spikes = np.append(spikes,times[k])
+            n_photons += 1
+
+# record the expectation value
+    sz = np.append(sz,expect(sigmaz(),psi_new))
+
+# set the state vector for next cycle
+    psi=psi_new
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 65[39m
+[32m     61[39m 
+[32m     62[39m [38;5;66;03m# calculate jump probability[39;00m
+[32m     63[39m 
+[32m     64[39m     [38;5;28;01mfor[39;00m j [38;5;28;01min[39;00m range(len(c_ops)):
+[32m---> [39m[32m65[39m        n[j] = expect(c_ops[j].dag() * c_ops[j], psi)*dt
+[32m     66[39m     dp = sum(n)
+[32m     67[39m     dq = n/dp
+[32m     68[39m 
+
+[31mNameError[39m: name 'n' is not defined
+

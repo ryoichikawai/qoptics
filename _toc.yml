@@ -46,6 +46,14 @@ parts:
       sections:
       -  file: methods/openqm-jump-method
       -  file: methods/openqm-jump-example
+-  caption: Applications
+   numbered: 3
+   chapters:
+   -  file: monomer/monomer-intro
+      sections:
+      -  file: monomer/monomer-theory
+      -  file: monomer/monomer-qme
+      -  file: monomer/monomer-jump
 -  caption:
    numbered: false
    chapters:
