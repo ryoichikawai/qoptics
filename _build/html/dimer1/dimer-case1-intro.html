@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'dimer1/dimer-case1-intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15.4. QME: Numerical analysis" href="dimer-case1-qme.html" />
+    <link rel="next" title="15.1. Dimer I: Model" href="dimer-case1-model.html" />
     <link rel="prev" title="14.3. Quantum Trajectory" href="../monomer/monomer-jump.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -227,8 +227,16 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">15. Dimer I: Incoherent emitters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-model.html">15.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -434,9 +442,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -452,16 +458,6 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system">15.1. System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipator">15.2. Dissipator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">15.3. Coherence function</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -473,54 +469,15 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dimer-i-incoherent-emitters">
 <span id="ch-dimer-case1"></span><h1><span class="section-number">15. </span>Dimer I: Incoherent emitters<a class="headerlink" href="#dimer-i-incoherent-emitters" title="Link to this heading">#</a></h1>
-<p>A pair of emitters are thermally excited and spontaneously emit light (thermal fluorescence).  We assume that they are completely independent to each other and thus there is no coherence in the product basis.</p>
-<section id="system">
-<h2><span class="section-number">15.1. </span>System<a class="headerlink" href="#system" title="Link to this heading">#</a></h2>
-<p>Each quantum dot is modeled by a two-level system as defined in <a class="reference internal" href="../model/emitter.html#ch-emitter"><span class="std std-numref">Chapter 6</span></a>.  The Hilbert space of the pair is now four dimensional.  For computational purpose, we use the standard product basis set</p>
+<p>We investigate thermal fluorescence emitted by an incoherent pair of emitters.  We assume that the pair, which we shall call a dimer, are completely independent to each other and thus there is no coherence in the product basis (Recall that coherence depends on the choice of the basis set, See <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 2</span></a>.) . Let us look at the entanglement more carefully.</p>
+<p>Consider the product basis:</p>
 <div class="math notranslate nohighlight">
 \[
 |gg\rangle = |g\rangle \otimes |g\rangle, \quad |ge\rangle = |g\rangle \otimes |e\rangle, \quad |eg\rangle = |e\rangle \otimes |g\rangle, \quad |ee\rangle = |e\rangle \otimes |e\rangle
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\otimes\)</span> indicates tensor product. We introduce other basis sets such as the Dick basis for theory and also for data analysis.  In particular, we need to define collapse operators for quantum trajectories using an appropriate basis, which we will discuss case by case.</p>
-<p>The four-dimensional spin operators are defined by</p>
-<div class="math notranslate nohighlight">
-\[
-\sigma_{1}^{\mu} = \sigma^{\mu} \otimes I, \qquad \sigma_{2}^{\mu} = I \otimes \sigma^{\mu} , \qquad \mu = x,y,z, \pm
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(I\)</span> is the identity operator in the two-dimensional Hilbert space.</p>
-<p>The Hamiltonian of the free system is then expressed as</p>
-<div class="math notranslate nohighlight" id="equation-eq-monomer-case1-hamiltonian">
-<span class="eqno">(15.1)<a class="headerlink" href="#equation-eq-monomer-case1-hamiltonian" title="Link to this equation">#</a></span>\[
-H_{0} = \sum_{j=1}^{2} \frac{\omega_0}{2} \sigma^{z}_{j}
-\]</div>
-<p>We assume that there is no interaction between the emitters.</p>
-</section>
-<section id="dissipator">
-<h2><span class="section-number">15.2. </span>Dissipator<a class="headerlink" href="#dissipator" title="Link to this heading">#</a></h2>
-<p>Each emitter absorbs and emitts photons independently.  The dissipator for the pair is given by</p>
-<div class="math notranslate nohighlight" id="equation-eq-monomer-case1-dissipator">
-<span class="eqno">(15.2)<a class="headerlink" href="#equation-eq-monomer-case1-dissipator" title="Link to this equation">#</a></span>\[\begin{split}
-\begin{aligned}
-\mathcal{D}(\rho) 
-&amp;=  \frac{1}{2} \gamma_{e} \left(2 \sigma^{-}_{1} \rho \sigma^{+}_{1} - \sigma^{+}_{1}\sigma^{-}_{1} \rho - \rho \sigma^{+}_{1}\sigma^{-}_{1} \right) \\
-&amp;+  \frac{1}{2} \gamma_{e} \left(2 \sigma^{-}_{2} \rho \sigma^{+}_{2} - \sigma^{+}_{2}\sigma^{-}_{2} \rho - \rho \sigma^{+}_{2}\sigma^{-}_{2} \right) \\
-&amp;=  \frac{1}{2} \gamma_{a} \left(2 \sigma^{+}_{1} \rho \sigma^{-}_{1} - \sigma^{-}_{1}\sigma^{+}_{1} \rho - \rho \sigma^{-}_{1}\sigma^{+}_{1} \right) \\
-&amp;+  \frac{1}{2} \gamma_{a} \left(2 \sigma^{+}_{2} \rho \sigma^{-}_{2} - \sigma^{-}_{2}\sigma^{+}_{2} \rho - \rho \sigma^{-}_{2}\sigma^{+}_{2} \right)
-\end{aligned}
-\end{split}\]</div>
-<p>where the emission and absorption rates are defined <span class="math notranslate nohighlight">\(\gamma_{e} = \gamma_{0} (N_{T}+1)\)</span> and <span class="math notranslate nohighlight">\(\gamma_{a} = \gamma_{0} N_{T}\)</span>.  See <a class="reference internal" href="../methods/openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 12.2</span></a> for details.</p>
-<p>There is no off-diagonal dissipator.  We have four collapse operators, <span class="math notranslate nohighlight">\(\sqrt{\gamma_{e}}\sigma^{-}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sqrt{\gamma_{a}}\sigma^{+}_{j}\)</span> with <span class="math notranslate nohighlight">\(j=1,2\)</span>.</p>
-</section>
-<section id="coherence-function">
-<h2><span class="section-number">15.3. </span>Coherence function<a class="headerlink" href="#coherence-function" title="Link to this heading">#</a></h2>
-<p>We now measure the second-order coherence function by a detector placed at <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>. Using the source field <a class="reference internal" href="../methods/openqm-qme-method.html#equation-eq-g2-src-field">(12.4)</a> and discard the cross correlation between the emitters, we obtain</p>
-<div class="math notranslate nohighlight" id="equation-eq-g2-dimer-incoherent">
-<span class="eqno">(15.3)<a class="headerlink" href="#equation-eq-g2-dimer-incoherent" title="Link to this equation">#</a></span>\[
-g^{(2)}(\tau;\mathbf{R}) 
-= \frac{\sum_{ij} \langle\sigma^{+}_{i}(t) \sigma^{+}_{j}(t+\tau)\sigma^{-}_{j}(t+\tau)\sigma^{-}_{i}(t)\rangle_{ss}}{ \left( \sum_{i} \langle\sigma^{+}_{i}(t)\sigma^{-}_{i}(t)\rangle_{ss}\right)^2}.
-\]</div>
-<p>The position dependency vanishes since the radiations from the two emitters are incoherent (no interference).</p>
-</section>
+<p>Suppose that the system is <span class="math notranslate nohighlight">\(|Psi\rangle =  c_0(t) |ee\rangle \otimes |\phi_{0}\rangle + c_{1}(t) |ge\rangle \otimes |\phi_{1}\rangle + c_{1}^\prime(t)  |eg\rangle \otimes |\phi_{1}^\prime\rangle + c_{2} |gg\rangle \otimes |\phi_{2}\rangle\)</span> where <span class="math notranslate nohighlight">\(|\phi_{n}\rangle\)</span> indicates the state of field with <span class="math notranslate nohighlight">\(n\)</span> photon.   <span class="math notranslate nohighlight">\(|\phi_{1}\rangle\)</span> and <span class="math notranslate nohighlight">\(|\phi_{1}^\prime\rangle\)</span> are two different states of the radiation field containing one photon.  In order to see the coherence in this basis, we calculate the reduced density.  In particular we are interested in <span class="math notranslate nohighlight">\(\rho_{eg} = c_{1} (c_{1}^\prime)^{*} |eg\rangle\langle ge| \langle \phi_{1}^\prime|\phi_{1}\rangle\)</span>.   If <span class="math notranslate nohighlight">\(\langle \phi_{1}^\prime|\phi_{1}\rangle = 0\)</span>, there is no coherence between <span class="math notranslate nohighlight">\(|eg\rangle\)</span> and <span class="math notranslate nohighlight">\(|ge\rangle\)</span>. (See <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 2</span></a>.)   In the opposite end,  if <span class="math notranslate nohighlight">\(\langle \phi_{1}^\prime|\phi_{1}\rangle = 1\)</span>, they are perfectly coherent (superradiance).  Othrewise, they are partially coherent.</p>
+<p>In this chapter, we assume that <span class="math notranslate nohighlight">\(\langle \phi_{1}^\prime|\phi_{1}\rangle = 0\)</span> so that <span class="math notranslate nohighlight">\(|eg\rangle\)</span> and <span class="math notranslate nohighlight">\(|ge\rangle\)</span> are incoherent.</p>
+<p>We first introduce a model the model and then investigate the coherence properties using the quantum master equation and unravel the processes using the jump method.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -565,11 +522,11 @@ g^{(2)}(\tau;\mathbf{R})
       </div>
     </a>
     <a class="right-next"
-       href="dimer-case1-qme.html"
+       href="dimer-case1-model.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15.4. </span>QME: Numerical analysis</p>
+        <p class="prev-next-title"><span class="section-number">15.1. </span>Dimer I: Model</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -579,25 +536,6 @@ g^{(2)}(\tau;\mathbf{R})
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system">15.1. System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipator">15.2. Dissipator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">15.3. Coherence function</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

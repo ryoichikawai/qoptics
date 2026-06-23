@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -186,7 +186,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is coherence?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
@@ -227,8 +227,16 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -458,8 +466,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-quantum-master-equation-a-summary">12.1.1. Derivation of quantum master equation - a summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">12.1.2. Coherence function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.3. Quantum regression theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.2. Quantum regression theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguity">12.1.3. Ambiguity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-of-photons">12.1.4. Detection of photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">12.1.5. Coherence function</a></li>
 </ul>
             </nav>
         </div>
@@ -558,19 +568,9 @@ H_\text{LS} = \frac{1}{2i} \sum_{\omega} \sum_{ij}  \left(\Gamma_{ij}(\omega) - 
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(C_{i}(\omega) = \sqrt{\Gamma_i(\omega)} L_i(\omega)\)</span>, which we shall call <em>collapse operator</em>.</p>
 </section>
-<section id="coherence-function">
-<h2><span class="section-number">12.1.2. </span>Coherence function<a class="headerlink" href="#coherence-function" title="Link to this heading">#</a></h2>
-<p>We now measure the second-order coherence function by a detector placed at <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>. Using the source field <a class="reference internal" href="../model/radiation-field.html#equation-eq-source-field-approx">(7.8)</a>, we obtain</p>
-<div class="math notranslate nohighlight" id="equation-eq-g2-src-field">
-<span class="eqno">(12.4)<a class="headerlink" href="#equation-eq-g2-src-field" title="Link to this equation">#</a></span>\[
-g^{(2)}(\tau;\mathbf{R}) 
-= \frac{\sum_{ij} \sum_{k\ell} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}}e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{k\ell}} \langle\sigma^{+}_{i}(t) \sigma^{+}_{k}(t+\tau)\sigma^{-}_{\ell}(t+\tau)\sigma^{-}_{j}(t)\rangle_{ss}}{ \left( \sum_{ij} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}}\langle\sigma^{+}_{i}(t)\sigma^{-}_{j}(t)\rangle_{ss}\right) \left(\sum_{k\ell} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{k\ell}}  \langle \sigma^{+}_{k}(t)\sigma^{-}_{\ell}(t)\rangle_{ss}\right)}.
-\]</div>
-<p>The coherence is in general depends on the relative coordinates <span class="math notranslate nohighlight">\(\mathbf{r}_{ij}=\mathbf{x}_{i}-\mathbf{x}_{j}\)</span>, thus on the geometric configuration of the emitters.  Notice that the constants in the source field are all canceled out since the emitters are assumed to be identical.</p>
-</section>
 <section id="quantum-regression-theorem">
-<h2><span class="section-number">12.1.3. </span>Quantum regression theorem<a class="headerlink" href="#quantum-regression-theorem" title="Link to this heading">#</a></h2>
-<p>There is a problem with the definitions <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.9)</a> and <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.9)</a>.  We don’t how to calculate the expectation values since two different times are involved. There is a trick that works only when the Born-Markovian approximation is valid as discussed next.</p>
+<h2><span class="section-number">12.1.2. </span>Quantum regression theorem<a class="headerlink" href="#quantum-regression-theorem" title="Link to this heading">#</a></h2>
+<p>There is a problem with the definitions <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.11)</a> and <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(12.11)</a>.  We don’t how to calculate the expectation values since two different times are involved. There is a trick that works only when the Born-Markovian approximation is valid as discussed next.</p>
 <p>Suppose that the expectation value of an operator <span class="math notranslate nohighlight">\(A\)</span> evolves in time. It should be written as <span class="math notranslate nohighlight">\(\langle A \rangle_t\)</span> (expectation evaluated at time <span class="math notranslate nohighlight">\(t\)</span>) but  often written as <span class="math notranslate nohighlight">\(\langle A(t) \rangle\)</span> which suggests that <span class="math notranslate nohighlight">\(A\)</span> depends on time. If the system evolution is unitary, then <span class="math notranslate nohighlight">\(A(t)\)</span> can be considered as an operator in the Heisenberg picture and the average is taken with respect to an initial state.  However, when the evolution of the system is not unitary, we can’t define the usual Heisenberg picture. We interpret it as <span class="math notranslate nohighlight">\(\langle A(t) \rangle \equiv \text{tr}(A \rho(t))\)</span>  where the state is evolving in time and the operator is stationary.</p>
 <p>A problem arises when operators depend on two different times.  Fortunately, there is a very usefull theorem, known as the quantum regression theorem, which states that</p>
 <div class="math notranslate nohighlight">
@@ -578,6 +578,105 @@ g^{(2)}(\tau;\mathbf{R})
 \langle A(\tau),B(0) \rangle = \text{tr} [ A e^{\mathcal{L}t} (B \rho(0)) ]
 \]</div>
 <p>Notice that neither <span class="math notranslate nohighlight">\(A\)</span> nor <span class="math notranslate nohighlight">\(B\)</span> depends on time in the right hand side of the equality. <span class="math notranslate nohighlight">\(B \rho(0)\)</span> is evaluated at <span class="math notranslate nohighlight">\(t=0\)</span> and evolves to t=<span class="math notranslate nohighlight">\(\tau\)</span>.  Then we take the trace. It is a kind of surprising that the same evolution operator <span class="math notranslate nohighlight">\(e{\mathcal{L}t}\)</span> can be used to evolve <span class="math notranslate nohighlight">\(B\rho\)</span>.  We can calculate <span class="math notranslate nohighlight">\(e^{\mathcal{L} t} (B \rho(0))\)</span> by solving the quantum master equation with the initial condition  <span class="math notranslate nohighlight">\(\eta(0) = B\rho(0)\)</span>.</p>
+</section>
+<section id="ambiguity">
+<h2><span class="section-number">12.1.3. </span>Ambiguity<a class="headerlink" href="#ambiguity" title="Link to this heading">#</a></h2>
+<p>The expression of a quantum master equation is not unique.  It is invariant under many transformation.  Suppose that the dissipator is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D}\rho = \sum_{j} \left(A_{j} \rho A^{\dagger}_{j} - \frac{1}{2} \left \{A^{\dagger}_{j}A_{j},\rho\right\}\right)
+\]</div>
+<p>Introducing a set of new operators using a unitary transformation <span class="math notranslate nohighlight">\(U\)</span> such that <span class="math notranslate nohighlight">\(B_{j} = \sum_{k} U_{jk} A_{k}\)</span>, the dispator is transformed to</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D}\rho = \sum_{j} \left(B_{j} \rho B^{\dagger}_{j}- \frac{1}{2} \left \{B^{\dagger}_{j}B_{j},\rho\right\}\right)
+\]</div>
+<p>Even under a simple shift <span class="math notranslate nohighlight">\(B_{j} = A_{j} + \alpha_{j}\)</span> where <span class="math notranslate nohighlight">\(\alpha_{j}\)</span> is a constant, the dissipator is invariant.  Hence, there are infinitely many expression of the same quantum master equation.</p>
+<p><strong>Example</strong></p>
+<p>Consider a pair of emitters interacting with the free radiation field.  The quantum master equation for the emitters is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \rho = -i [H_{S},\rho] + \mathcal{D}\rho
+\]</div>
+<p>with the free Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[
+H_{S} = \sum_{j} \frac{\omega_0}{2} \sigma^{z}_{j}
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D} \rho = \gamma \sum_{j} \left( \sigma^{+}_{j} \rho \sigma^{-}_{j} - \frac{1}{2} \left\{\sigma^{-}_{j}\sigma^{+}_{j}, \rho\right\} \right)
+\]</div>
+<p>Now introducing new operators</p>
+<div class="math notranslate nohighlight">
+\[
+\eta^{\pm}_{1} = \sigma^{\pm}_{1} + \sigma^{\pm}_{2}, \qquad \eta^{\pm}_{2} = \sigma^{\pm}_{1} - \sigma^{\pm}_{2}
+\]</div>
+<p>This transformation does not change <span class="math notranslate nohighlight">\(H_{S}\)</span>.  The original dissipator is transformed to</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D} \rho = \gamma \sum_{j} \left( \eta^{+}_{j} \rho \eta^{-}_{j} - \frac{1}{2} \left\{\eta^{-}_{j}\eta^{+}_{j}, \rho\right\} \right)
+\]</div>
+<p>which has the exactly the same form as the original one.  We will be using this transformation in some applications.</p>
+<p>Although the expression changed, the density operator is invariant. So, if we are interested in only the state of the emitter, there seems no problem.  The expectation value of any observabale in the emitter’s Hilbert space is indeed invariant.</p>
+<p>However, we are interested in the light (photon) emitted by the emitters. The light is not included in the master equation.  During the derivation of the master equation, we thrown away the information of the radiation field.   Actually the loss of information on the radiation field is the caused of ambiguity in the quantum master equation.   The detector obviously interacts with the radiation field, not with the emitters.  Therefore, the solution of the quantum master equation has no direct connection to the detector.  What is the information missing in the solution to the master equation?  First of all, it does not tell which transition emits a photon.  The concept of the transition depends on the basis set.  In turn, we don’t know what mode of photon is emitted.  At the end of the process, the detector picks up a photon in a certain mode, which depends of the experimental set up. None of those information is included in the quantum master equation.  The ambiguity is precisely due to the lack of these information.</p>
+<p>In the jump method which will be introduced in <a class="reference internal" href="openqm-jump-intro.html#ch-openqm-jump"><span class="std std-numref">Chapter 13</span></a>, we will learn that the detector sees a jump operator (collapse operator).  As shown in <a class="reference internal" href="openqm-jump-intro.html#ch-openqm-jump"><span class="std std-numref">Chapter 13</span></a>  the jump operator used by the detector is the correct Lindblad operator in the  master equation.  In turn the jump operator that the detector sees is determined by the radiation field emitted by the emitter like Eq. <a class="reference internal" href="../model/radiation-field.html#equation-eq-source-field-approx">(7.8)</a>.  At the end, we must pick a correct jump operator consistent with physics, in particular quantum entanglement between the emitter and the radiation field.</p>
+<div class="key admonition" id="adm-jump-operator">
+<p class="admonition-title">Jump operator</p>
+<p>The representation of a quantum master equation is not unique, leading to an ambiguity in the choice of jump operators.  The ambiguity is fixed by a photodetection model.</p>
+</div>
+</section>
+<section id="detection-of-photons">
+<h2><span class="section-number">12.1.4. </span>Detection of photons<a class="headerlink" href="#detection-of-photons" title="Link to this heading">#</a></h2>
+<p>In <a class="reference internal" href="../model/detector.html#ch-detector"><span class="std std-numref">Chapter 9</span></a>, we learned the Glauber’s theory of detection.  A history of clicks recorded by a detector corresponds to the measurement of radiation intensity.  However, a quantum master equation does not have that information.  Folloiwng Lehmberg <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">14</a>]</span>,  we can make a connection between the density matrix and intensity through the source radiation field  <a class="reference internal" href="../model/radiation-field.html#equation-eq-source-field-approx">(7.8)</a>.    The intensity at the position of detector <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+I(\mathbf{x},t) = \langle E^{(-)}(\mathbf{x},t)E^{(+)}(\mathbf{x},t)\rangle \rangle =  
+\langle J^{+}(\mathbf{R},t) J^{-}(\mathbf{R},t) \rangle
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-jump-operator-r">
+<span class="eqno">(12.4)<a class="headerlink" href="#equation-eq-jump-operator-r" title="Link to this equation">#</a></span>\[
+J^{\pm} (\mathbf{R},t) = \sqrt{\gamma(\mathbf{R})} \sum_{i} e^{ \pm i k_{0} \hat{\mathbf{R}} \cdot \mathbf{r}_{j}} \sigma^{\pm}_{j}(t).
+\]</div>
+<p>with the transition rate</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma(\mathbf{R}) = \left(\frac{\omega_{0}^{2}d}{c^2}\right)^{2} \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right].
+\]</div>
+<p>This suggest that <span class="math notranslate nohighlight">\(J^{-}\)</span> is the jump operator the detector measures (in the Heisenberg picture) if the all the emitters are coherent.</p>
+<p>If the emitters are not coherent,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+I(\mathbf{x},t) &amp;= \langle J^{+}(\mathbf{R},t) J^{-}(\mathbf{R},t) \rangle \\
+&amp;= \left(\frac{\omega_{0}^{2}d}{c^2}\right)^2 \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right] \sum_{ij} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}} \langle \sigma^{+}_{i} \sigma^{-}_{j}\rangle \\
+&amp;= \left(\frac{\omega_{0}^{2}d}{c^2}\right)^2 \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right] \sum_{j}  \langle \sigma^{+}_{j} \sigma^{-}_{j}\rangle 
+\end{aligned}
+\end{split}\]</div>
+<p>where we used the incoherent condition <span class="math notranslate nohighlight">\(\langle \sigma^{+}_{i} \sigma_{j}\rangle = 0\)</span> for <span class="math notranslate nohighlight">\(i\ne j\)</span>.  In this case, <span class="math notranslate nohighlight">\(\sqrt{\gamma(\mathbf{R})} \sigma^{-}_{j}\)</span> is the jump operator.  To convert this jump operator for the quantum master equation, we need to count all photons emitted in all direction.  Integrating <span class="math notranslate nohighlight">\(\gamma(\mathbf{R})\)</span> over the solid angle</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^{2\pi} \int_{-\pi}^{\pi} \gamma(\mathbf{R}) \sin(\theta) d\theta d\phi = \gamma_0
+\]</div>
+<p>which is the standard rate of spontaneous emission.</p>
+</section>
+<section id="coherence-function">
+<h2><span class="section-number">12.1.5. </span>Coherence function<a class="headerlink" href="#coherence-function" title="Link to this heading">#</a></h2>
+<p>We now measure the second-order coherence function by a detector placed at <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>.  Using the jump operators <a class="reference internal" href="#equation-eq-jump-operator-r">(12.4)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-src-field">
+<span class="eqno">(12.5)<a class="headerlink" href="#equation-eq-g2-src-field" title="Link to this equation">#</a></span>\[
+g^{(2)}(\tau;\mathbf{R}) 
+= \frac{\langle J^{+}(\mathbf{R},t) J^{+}(\mathbf{R},t+\tau) J^{-}(\mathbf{R},t+\tau) J^{-}(\mathbf{R},t)  \rangle_{ss}}{(\langle J^{+}(\mathbf{R},t) J^{-}(\mathbf{R},t)\rangle_{ss})^2} =
+= \frac{\sum_{ij} \sum_{k\ell} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}}e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{k\ell}} \langle\sigma^{+}_{i}(t) \sigma^{+}_{k}(t+\tau)\sigma^{-}_{\ell}(t+\tau)\sigma^{-}_{j}(t)\rangle_{ss}}{ \left( \sum_{ij} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}}\langle\sigma^{+}_{i}(t)\sigma^{-}_{j}(t)\rangle_{ss}\right)^2 }.
+\]</div>
+<p>which assume that the emitters are all coherent.  if not we use  <span class="math notranslate nohighlight">\(\sqrt{\gamma} a^{-}_{j}\)</span> as jump operators and we obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-src-field-incoherent">
+<span class="eqno">(12.6)<a class="headerlink" href="#equation-eq-g2-src-field-incoherent" title="Link to this equation">#</a></span>\[
+g^{(2)}(\tau;\mathbf{R}) 
+= \frac{\sum_{ij}  \langle\sigma^{+}_{i}(t) \sigma^{+}_{j}(t+\tau)\sigma^{-}_{j}(t+\tau)\sigma^{-}_{i}(t)\rangle_{ss}}{ \left( \sum_{j} \langle\sigma^{+}_{j}(t)\sigma^{-}_{j}(t)\rangle_{ss}\right)^2 }.
+\]</div>
 </section>
 </section>
 
@@ -648,8 +747,10 @@ g^{(2)}(\tau;\mathbf{R})
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-quantum-master-equation-a-summary">12.1.1. Derivation of quantum master equation - a summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">12.1.2. Coherence function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.3. Quantum regression theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">12.1.2. Quantum regression theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguity">12.1.3. Ambiguity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-of-photons">12.1.4. Detection of photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">12.1.5. Coherence function</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15.5. Quantum trajectory &#8212; Optical coherence from small atomic clusters.</title>
+    <title>15.3. Quantum trajectory &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'dimer1/dimer-case1-jump';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="References" href="../references/references.html" />
-    <link rel="prev" title="15.4. QME: Numerical analysis" href="dimer-case1-qme.html" />
+    <link rel="next" title="16. Dimer II: Coherent driving" href="../dimer2/dimer-case2-intro.html" />
+    <link rel="prev" title="15.2. QME: Numerical analysis" href="dimer-case1-qme.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -227,8 +227,16 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-model.html">15.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -457,9 +465,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-emissions-from-each-qd">15.5.1. Counting emissions from each QD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spikes">15.5.2. Spikes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution">15.5.3. Waiting time distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-emissions-from-each-qd">15.3.1. Counting emissions from each QD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spikes">15.3.2. Spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution">15.3.3. Waiting time distribution</a></li>
 </ul>
             </nav>
         </div>
@@ -472,9 +480,9 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="quantum-trajectory">
-<span id="sec-dimer-case1-qmt"></span><h1><span class="section-number">15.5. </span>Quantum trajectory<a class="headerlink" href="#quantum-trajectory" title="Link to this heading">#</a></h1>
+<span id="sec-dimer-case1-qmt"></span><h1><span class="section-number">15.3. </span>Quantum trajectory<a class="headerlink" href="#quantum-trajectory" title="Link to this heading">#</a></h1>
 <section id="counting-emissions-from-each-qd">
-<h2><span class="section-number">15.5.1. </span>Counting emissions from each QD<a class="headerlink" href="#counting-emissions-from-each-qd" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.3.1. </span>Counting emissions from each QD<a class="headerlink" href="#counting-emissions-from-each-qd" title="Link to this heading">#</a></h2>
 <p>We are interested in quantum jumps each of which emits a photon.  There are two such jumps which are associated with <span class="math notranslate nohighlight">\(\sigma^{-}_{1}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{-}_{2}\)</span>.  We discards absorption jumps since they cannot be detected by the detector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -542,16 +550,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emission jumps in system 1 = 551
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emission jumps in system 1 = 552
 Number of emission jumps in system 2 = 520
-Total number of emission jumps       = 1071
+Total number of emission jumps       = 1072
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="spikes">
-<h2><span class="section-number">15.5.2. </span>Spikes<a class="headerlink" href="#spikes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.3.2. </span>Spikes<a class="headerlink" href="#spikes" title="Link to this heading">#</a></h2>
 <p>Now, we plot spike trains for each channel and total. Only first 200 time unit is plotted.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,12 +581,12 @@ Total number of emission jumps       = 1071
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/38c3e33fbc0f7e14072b3b674e6a00e7ab7a783d5a5c4b6f50228edabc1a0959.png" src="../_images/38c3e33fbc0f7e14072b3b674e6a00e7ab7a783d5a5c4b6f50228edabc1a0959.png" />
+<img alt="../_images/972513beb6694bfd8a12f938d76b731dc4a47e121d5d32bf83de6183f3f8dc3b.png" src="../_images/972513beb6694bfd8a12f938d76b731dc4a47e121d5d32bf83de6183f3f8dc3b.png" />
 </div>
 </div>
 </section>
 <section id="waiting-time-distribution">
-<h2><span class="section-number">15.5.3. </span>Waiting time distribution<a class="headerlink" href="#waiting-time-distribution" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.3.3. </span>Waiting time distribution<a class="headerlink" href="#waiting-time-distribution" title="Link to this heading">#</a></h2>
 <p>Next, we plot the waiting distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -619,18 +627,18 @@ Total number of emission jumps       = 1071
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>** System 1 **
-mean waiting time  =  22.95597352621164
-standard deviation =  18.494623284976598
+mean waiting time  =  22.924134376398914
+standard deviation =  16.57317910494988
 likely sub-poissonian
 
 ** System 2 **
-mean waiting time  =  24.277487428449806
-standard deviation =  20.210618620170838
+mean waiting time  =  24.336048182348048
+standard deviation =  20.036271111866288
 likely sub-poissonian
 
 ** All Systems **
-mean waiting time  =  11.799799476090095
-standard deviation =  10.147700536830401
+mean waiting time  =  11.795824017184827
+standard deviation =  9.83179960074662
 likely sub-poissonian
 </pre></div>
 </div>
@@ -668,7 +676,7 @@ likely sub-poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9417028511afa02663b7ed94d311c0086094d7e8aa12445d5a3b64d7489fffd0.png" src="../_images/9417028511afa02663b7ed94d311c0086094d7e8aa12445d5a3b64d7489fffd0.png" />
+<img alt="../_images/24edda1e27b156f2010dd3fd65d69576dbc243fda6a21567190c7ab651606928.png" src="../_images/24edda1e27b156f2010dd3fd65d69576dbc243fda6a21567190c7ab651606928.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -768,7 +776,7 @@ likely sub-poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f1994880a2a1b7ab5aff2f1e4a8de8bac0ae8de09db4cb34ec3d340d09c65818.png" src="../_images/f1994880a2a1b7ab5aff2f1e4a8de8bac0ae8de09db4cb34ec3d340d09c65818.png" />
+<img alt="../_images/1badd51d91ccb5852e89af9189c4d80e89c33c190c189f9ae9d8b8838834d68f.png" src="../_images/1badd51d91ccb5852e89af9189c4d80e89c33c190c189f9ae9d8b8838834d68f.png" />
 </div>
 </div>
 <p>In the above plots, the orange curve is showing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> for a single system.  The quantum trajectory from each system agrees with it.  However, the coherence function obtained from the combined data differs from it. The data still very noisy but the curve seems going to 0.5 at <span class="math notranslate nohighlight">\(\tau=0\)</span>.</p>
@@ -811,15 +819,15 @@ likely sub-poissonian
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15.4. </span>QME: Numerical analysis</p>
+        <p class="prev-next-title"><span class="section-number">15.2. </span>QME: Numerical analysis</p>
       </div>
     </a>
     <a class="right-next"
-       href="../references/references.html"
+       href="../dimer2/dimer-case2-intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">References</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Dimer II: Coherent driving</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -841,9 +849,9 @@ likely sub-poissonian
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-emissions-from-each-qd">15.5.1. Counting emissions from each QD</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spikes">15.5.2. Spikes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution">15.5.3. Waiting time distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-emissions-from-each-qd">15.3.1. Counting emissions from each QD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spikes">15.3.2. Spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution">15.3.3. Waiting time distribution</a></li>
 </ul>
   </nav></div>
 

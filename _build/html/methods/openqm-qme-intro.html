@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -186,7 +186,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is coherence?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
@@ -227,8 +227,16 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -462,13 +470,13 @@
   <section class="tex2jax_ignore mathjax_ignore" id="quantum-master-equations">
 <span id="ch-openqm-qme"></span><h1><span class="section-number">12. </span>Quantum master equations<a class="headerlink" href="#quantum-master-equations" title="Link to this heading">#</a></h1>
 <p>As we discussed in <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 2</span></a>, coherence is not a property of the system.  It is a property of a reduce density matrix expressed in a certain basis set.   Rigorously speaking, we need to find the density operator of the whole system including at least the emitters and the radiation field and then take partial trace over the radiation field. However, it is very difficult to do so.  Under a weak coupling limit, there is a direct method to compute the reduce density matrix without computing the state of the whole system. The method is known as open quantum system approach. In many practical cases, the interaction between the radiation field and the emitters is weak and such approach works quite well.  Using the reduced density matrix, we can compute ensemble average like regular quantum mechanics.</p>
-<p>for a closed system, we solve the Schrodinger equation <span class="math notranslate nohighlight">\(i \frac{d}{dt} |\psi\rangle = H |\psi\rangle\)</span> or  the Liouville-von Neumann equation <span class="math notranslate nohighlight">\(i \frac{d}{dt}\rho = [H , \rho]\)</span>.  In the open quantum system approach, we solve a quantum master equation (also known as Lindblad equation)<span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>]</span>, <span class="math notranslate nohighlight">\(\frac{d}{dt}\rho = \mathcal{L} \rho\)</span> which is introduced below.</p>
+<p>for a closed system, we solve the Schrodinger equation <span class="math notranslate nohighlight">\(i \frac{d}{dt} |\psi\rangle = H |\psi\rangle\)</span> or  the Liouville-von Neumann equation <span class="math notranslate nohighlight">\(i \frac{d}{dt}\rho = [H , \rho]\)</span>.  In the open quantum system approach, we solve a quantum master equation (also known as Lindblad equation)<span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">6</a>]</span>, <span class="math notranslate nohighlight">\(\frac{d}{dt}\rho = \mathcal{L} \rho\)</span> which is introduced below.</p>
 <p>There are many excellent textbooks.  The following list includes only a few of them.</p>
 <p><strong>Books</strong></p>
 <ul class="simple">
 <li><p>Carmichael (1993): <em>An Open Systems Approach to Quantum Optics</em>  CH. 1-6 <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id34" title="Howard Carmichael. An Open Systems Approach to Quantum Optics. Springer, 1st ed. edition, 1993. ISBN 9783540476207.">16</a>]</span></p></li>
 <li><p>Gardiner and Zoller (2000): <em>Quantum Noise</em> CH. 5-6 <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id35" title="Crispin W. Gardiner and Peter Zoller. Quantum noise. Springer, 2000. ISBN 3540665714.">22</a>]</span></p></li>
-<li><p>Breuer and Petruccione (2002): <em>The Theory of Open Quantum Systems</em> CH. 3-4 <span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>]</span></p></li>
+<li><p>Breuer and Petruccione (2002): <em>The Theory of Open Quantum Systems</em> CH. 3-4 <span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">6</a>]</span></p></li>
 <li><p>Carmichamel (2002): <em>Statistical Methods in Quantum Optics 1</em> CH. 1  <span class="bibtex-citation" id="id5">[<a class="reference internal" href="../references/references.html#id34" title="Howard Carmichael. An Open Systems Approach to Quantum Optics. Springer, 1st ed. edition, 1993. ISBN 9783540476207.">16</a>]</span></p></li>
 <li><p>Lambropoulos (2007): <em>Fundamentals of Quantum Optics and Quantum Information</em> CH. 4 <span class="bibtex-citation" id="id6">[<a class="reference internal" href="../references/references.html#id38" title="Peter Lambropoulos. Fundamentals of Quantum Optics and Quantum Information. Springer, 2007. doi:10.1007/978-3-540-34572-5.">23</a>]</span></p></li>
 <li><p>Meystre (2007): <em>Elements of Quantum Optics</em> CH. 15 <span class="bibtex-citation" id="id7">[<a class="reference internal" href="../references/references.html#id37" title="Pierre Meystre. Elements of Quantum Optics. Springer, 4th ed. edition, 2007. doi:10.1007/978-3-540-74211-1.">24</a>]</span></p></li>

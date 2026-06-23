@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -227,8 +227,16 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -589,8 +597,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of emissions  = 1000    rate = 0.042548483997515166
-number of absorption = 1000    rate = 0.042548483997515166
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of emissions  = 1000    rate = 0.0422993951186498
+number of absorption = 1000    rate = 0.0422993951186498
 </pre></div>
 </div>
 </div>
@@ -620,7 +628,7 @@ number of absorption = 1000    rate = 0.042548483997515166
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ce1d0af8fc18177ae17250528f35edaa8612cb0da56d352f7e23c57352a7889a.png" src="../_images/ce1d0af8fc18177ae17250528f35edaa8612cb0da56d352f7e23c57352a7889a.png" />
+<img alt="../_images/e1cff31cd98a9af7a7ceedc31945cb289d31edb2a6267286ca6652b73b097831.png" src="../_images/e1cff31cd98a9af7a7ceedc31945cb289d31edb2a6267286ca6652b73b097831.png" />
 </div>
 </div>
 </section>
@@ -655,12 +663,12 @@ number of absorption = 1000    rate = 0.042548483997515166
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  23.50680680680681
-standard deviation =  18.07660635769687
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  23.64084084084084
+standard deviation =  19.562615613033845
 likely sub-poissonian
 </pre></div>
 </div>
-<img alt="../_images/0cfa04dc2144ece4a606112821a5e551ed0e06b4e0318c501594fecfe435aca9.png" src="../_images/0cfa04dc2144ece4a606112821a5e551ed0e06b4e0318c501594fecfe435aca9.png" />
+<img alt="../_images/cef6b07696bb96ee58a06154cdf7bd9770235ff6099c15a5bf043980b9eee30d.png" src="../_images/cef6b07696bb96ee58a06154cdf7bd9770235ff6099c15a5bf043980b9eee30d.png" />
 </div>
 </div>
 </section>
@@ -723,7 +731,7 @@ g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/baf89c45f1b98203507834c9d7859499802a6ce99be40808106b6464083a3ead.png" src="../_images/baf89c45f1b98203507834c9d7859499802a6ce99be40808106b6464083a3ead.png" />
+<img alt="../_images/3cecc33f447091103b26bed62caec5f97d06c6c905ca9ee3b66aae5b3372a65c.png" src="../_images/3cecc33f447091103b26bed62caec5f97d06c6c905ca9ee3b66aae5b3372a65c.png" />
 </div>
 </div>
 </section>
@@ -784,8 +792,8 @@ g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of absorptions = 1023  rate = 0.042625
-Number of emissions   = 1023  rate = 0.042625
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of absorptions = 1019  rate = 0.042458333333333334
+Number of emissions   = 1019  rate = 0.042458333333333334
 </pre></div>
 </div>
 </div>

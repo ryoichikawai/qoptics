@@ -1,0 +1,107 @@
+Traceback (most recent call last):
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/asyncio/base_events.py", line 721, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import numpy as np
+from qutip import *
+
+# Parameters
+Delta = 0.0   # detuning
+gamma0 = 0.1  # spontaneous emission rate 
+Omega = 0.8*gamma0
+
+phi = np.pi/4
+
+i2 = qeye(2)
+sz = [tensor(sigmaz(),i2),tensor(i2,sigmaz())]
+sp = [tensor(sigmap(),i2),tensor(i2,sigmap())]
+sm = [tensor(sigmam(),i2),tensor(i2,sigmam())]
+ep = np.exp( 1j*phi)
+em = np.exp(-1j*phi)
+
+# Hamiltonian
+H = 0.5*Delta*(sz[0]+sz[1]) + 0.5*Omega*(ep*sp[0]+em*sm[0]+em*sp[1]+ep*sm[1])
+
+# Collapse operators
+c_ops = [np.sqrt(gamma0)*sm[0], np.sqrt(gamma0)*sm[1]]
+
+# Steady state
+rho = steadystate(H,c_ops)
+
+# product basis
+u=[]
+u.append(tensor(basis(2,0),basis(2,0)))
+u.append(tensor(basis(2,1),basis(2,0)))
+u.append(tensor(basis(2,0),basis(2,1)))
+u.append(tensor(basis(2,1),basis(2,1)))
+
+# Skornia basis
+v=[]
+v.append(u[0])
+v.append((ep*u[1]+em*u[2])/np.sqrt(2))
+v.append((ep*u[1]-em*u[2])/np.sqrt(2))
+v.append(u[3])
+
+# change of the basis set_
+rho_s = np.zeros((4, 4), dtype=complex)
+for i in range(4):
+    for j in range(4):
+        rho_s[[i],[j]] = rho_p.matrix_element(v[i],v[j])
+
+# theoretical values (Skornia2001)
+p_gg = (gamma0**2+Omega**2)**2/(gamma0**2+2*Omega**2)**2
+p_ss = Omega**2*(2*gamma0**2+Omega**2)/(gamma0**2+2*Omega**2)**2
+p_aa = Omega**4/(gamma0**2+2*Omega**2)**2
+p_ee = p_aa
+
+print("** Diagonal elements of density operator **")
+print("       numerical   theory")
+print("ρ_gg  = {0:7.4f}   {1:7.4f}".format(rho_s[0,0].real, p_ee))
+print("ρ_ss  = {0:7.4f}   {1:7.4f}".format(rho_s[1,1].real, p_ss))
+print("ρ_aa  = {0:7.4f}   {1:7.4f}".format(rho_s[2,2].real, p_aa))
+print("ρ_ee  = {0:7.4f}   {1:7.4f}".format(rho_s[3,3].real, p_gg))
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 46[39m
+[32m     42[39m [38;5;66;03m# change of the basis set_[39;00m
+[32m     43[39m rho_s = np.zeros(([32m4[39m, [32m4[39m), dtype=complex)
+[32m     44[39m [38;5;28;01mfor[39;00m i [38;5;28;01min[39;00m range([32m4[39m):
+[32m     45[39m     [38;5;28;01mfor[39;00m j [38;5;28;01min[39;00m range([32m4[39m):
+[32m---> [39m[32m46[39m         rho_s[[i],[j]] = rho_p.matrix_element(v[i],v[j])
+[32m     47[39m 
+[32m     48[39m [38;5;66;03m# theoretical values (Skornia2001)[39;00m
+[32m     49[39m p_gg = (gamma0**[32m2[39m+Omega**[32m2[39m)**[32m2[39m/(gamma0**[32m2[39m+[32m2[39m*Omega**[32m2[39m)**[32m2[39m
+
+[31mNameError[39m: name 'rho_p' is not defined
+

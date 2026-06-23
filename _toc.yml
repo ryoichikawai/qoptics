@@ -56,8 +56,15 @@ parts:
       -  file: monomer/monomer-jump
    -  file: dimer1/dimer-case1-intro
       sections:
+      -  file: dimer1/dimer-case1-model
       -  file: dimer1/dimer-case1-qme
       -  file: dimer1/dimer-case1-jump
+   -  file: dimer2/dimer-case2-intro
+      sections:
+      -  file: dimer2/dimer-case2-model
+      -  file: dimer2/dimer-case2-qme-g1
+      -  file: dimer2/dimer-case2-qme-g2
+      -  file: dimer2/dimer-case2-jump
 -  caption:
    numbered: false
    chapters:

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. What is quantum coherence? &#8212; Optical coherence from small atomic clusters.</title>
+    <title>2. What is coherence? &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -186,7 +186,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. What is quantum coherence?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. What is coherence?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bunching.html">3. Bunching and full counting statistics</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="coherence-g1.html">4.1. First-order coherence function</a></li>
@@ -227,8 +227,16 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -447,7 +455,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>What is quantum coherence?</h1>
+    <h1>What is coherence?</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -457,13 +465,21 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-coherence">2.1. Definition of coherence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-vs-superposition">2.2. Coherence vs superposition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3. </a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsystems-and-reduced-density-operator">2.4. Subsystems and reduced density operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoherence-due-to-dissipation">2.5. Decoherence due to dissipation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-dephasing">2.6. Pure dephasing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-open-quantum-system">2.7. Methods of open quantum system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-definition-of-coherence">2.1. Working definition of coherence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-expression">2.2. Mathematical expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-vs-superposition">2.3. Coherence vs superposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-origin-of-decoherence">2.4. The quantum origin of decoherence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-of-radiation-field">2.4.1. Perspective of radiation field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-of-the-atoms">2.4.2. Perspective of the atoms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduced-density-operator-for-a-subsystem">2.5. Reduced density operator for a subsystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-open-quantum-system">2.6. Methods of open quantum system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-decoherence">2.7. Types of Decoherence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipation">2.7.1. Dissipation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-dephasing">2.7.2. Pure dephasing</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -475,18 +491,23 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="what-is-quantum-coherence">
-<span id="ch-coherence"></span><h1><span class="section-number">2. </span>What is quantum coherence?<a class="headerlink" href="#what-is-quantum-coherence" title="Link to this heading">#</a></h1>
-<section id="definition-of-coherence">
-<h2><span class="section-number">2.1. </span>Definition of coherence<a class="headerlink" href="#definition-of-coherence" title="Link to this heading">#</a></h2>
-<p>In <a class="reference internal" href="photons.html#ch-photons"><span class="std std-numref">Chapter 1</span></a>, we mentioned the difficulty of defining the concept of photon.  Similarly, the precise definition of quantum coherence is difficult.  Most of textbooks do not touch on this issue. People seems agreeing that Coherence is the ability of a state to generate observable interference.  For a comprehensive discussion on interference and coherence, see Ref. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id56" title="Zbigniew Ficek and Stuart Swain. Quantum Interference and Coherence. Springer, 2005. ISBN 0-387-22965-5. doi:10.1007/b100106.">4</a>]</span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-coherence">
+<span id="ch-coherence"></span><h1><span class="section-number">2. </span>What is coherence?<a class="headerlink" href="#what-is-coherence" title="Link to this heading">#</a></h1>
+<p>In classical optics, the origin of coherence was illusive.  The classical theory uses artificial random phases to explain experimental observation without justification from the first principles. It is quantum mechanics that explains the origin of decoherence.  In this chapter, first we introduce an operational definition of coherence.  Then, we discuss the origin of decoherence with the standard quantum mechanics. At last, we make a connection between the quantum mechanical account and the operational definition.</p>
+<section id="working-definition-of-coherence">
+<h2><span class="section-number">2.1. </span>Working definition of coherence<a class="headerlink" href="#working-definition-of-coherence" title="Link to this heading">#</a></h2>
+<p>The precise definition of quantum coherence has been difficult. People seems agreeing that coherence is the ability of a state to generate observable interference.  As a working definition, we adopt this concept. For a comprehensive discussion on interference and coherence, see Ref. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id56" title="Zbigniew Ficek and Stuart Swain. Quantum Interference and Coherence. Springer, 2005. ISBN 0-387-22965-5. doi:10.1007/b100106.">4</a>]</span></p>
 <div class="proof definition admonition" id="def:coherence">
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Coherence)</p>
 <section class="definition-content" id="proof-content">
 <p>Coherence is the ability of a state to generate observable interference.</p>
 </section>
-</div><p>How do we mathematically implement the above definition?  The state of a quantum system is expressed as a density operator <span class="math notranslate nohighlight">\(\rho\)</span>.  How do we know if a density operator is capable of generating observable interference?  We need to make a certain measurement to see interference.
-Suppose that we measure an observable <span class="math notranslate nohighlight">\(\hat{A}\)</span> whose eigenvalues and the corresponding eigenvectors are expressed as <span class="math notranslate nohighlight">\(a_{j}\)</span> and <span class="math notranslate nohighlight">\(|a_{j}\rangle\)</span>.  Based on the Born rule, the probability of obtaining <span class="math notranslate nohighlight">\(a_{1}\)</span> is given by</p>
+</div><p>Notice that the coherence is not the property of a system.  It is a property of its state.  Strictly speaking, statements like “These two atoms are incoherent” does not make a sense.  It should be interpreted that the two atoms are in an incoherent state.</p>
+</section>
+<section id="mathematical-expression">
+<h2><span class="section-number">2.2. </span>Mathematical expression<a class="headerlink" href="#mathematical-expression" title="Link to this heading">#</a></h2>
+<p>How do we mathematically implement the above definition?  The state of a quantum system is expressed as a density operator <span class="math notranslate nohighlight">\(\rho\)</span>.  How do we know if a density operator is capable of generating observable interference?  We need to make a certain measurement to see interference.</p>
+<p>Suppose that we measure an observable <span class="math notranslate nohighlight">\(\hat{A}\)</span> whose eigenvalues and the corresponding eigenvectors are expressed as <span class="math notranslate nohighlight">\(a_{j}\)</span> and <span class="math notranslate nohighlight">\(|a_{j}\rangle\)</span>.  Based on the Born rule, the probability of obtaining <span class="math notranslate nohighlight">\(a_{1}\)</span> upon measurement is given by</p>
 <div class="math notranslate nohighlight">
 \[
 P_{1} = \text{tr}\left(|a_{1}\rangle\langle a_{1}| \rho\right) = \langle a_{1}|\rho|a_{1}\rangle
@@ -496,96 +517,163 @@ P_{1} = \text{tr}\left(|a_{1}\rangle\langle a_{1}| \rho\right) = \langle a_{1}|\
 \[
 P_{1} = \sum_{ij} \langle a_{1} | u_{i} \rangle \rho_{ij} \langle u_{j} | a_{1}\rangle = \sum_{j} |\langle a_{1}|u_{j}\rangle|^2 \rho_{jj} + \sum_{i\ne j} \langle a_{1} | u_{i} \rangle \langle u_{j} | a_{1}\rangle \rho_{ij}
 \]</div>
-<p>where the density matrix is defined by <span class="math notranslate nohighlight">\(\rho_{ij} = \langle u_{i} | \rho | u_{j}\rangle\)</span>.  The second term in the right hand side is clearly showing interference between <span class="math notranslate nohighlight">\(|u_{1}\rangle\)</span> and <span class="math notranslate nohighlight">\(|u_{2}\rangle\)</span> through the off-diagonal elements <span class="math notranslate nohighlight">\(\rho_{i\ne j}\)</span>.  Therefore, mathematically speaking, if the state has the ability to generate obervable interference or not is determined by the off-diagonal elements of the density operator.</p>
-<p>But it depends on the choice of the basis set. If a different basis set is used, the value of the off-diagonal elements change.  Furthermore, we can always diagonalize a density matrix, eliminating all off-diagonal elements entirely.</p>
+<p>where the density matrix is defined by <span class="math notranslate nohighlight">\(\rho_{ij} = \langle u_{i} | \rho | u_{j}\rangle\)</span>.  The second term in the right hand side is clearly showing interference between <span class="math notranslate nohighlight">\(|u_{i}\rangle\)</span> and <span class="math notranslate nohighlight">\(|u_{j}\rangle,\, i\ne j\)</span> through the off-diagonal elements <span class="math notranslate nohighlight">\(\rho_{i\ne j}\)</span>.  Therefore, mathematically speaking, whether the state has the ability to generate observable interference or not is determined by the off-diagonal elements of the density operator.</p>
+<p>But it depends on the choice of the basis set. If a different basis set is used, the value of the off-diagonal elements change.  Furthermore, we can always diagonalize a density matrix, eliminating all off-diagonal elements.</p>
 <p>We conclude that  coherence is the ability of a state to generate observable interference between <em>certain basis vectors</em>.  The ability is determined by the off-diagonal elements of the density matrix in <em>a specified basis set</em>.</p>
-<div class="important admonition" id="adm-coherence-basis">
+<div class="key admonition" id="adm-coherence-basis">
 <p class="admonition-title">Coherence and basis set</p>
 <p>It does not make a sense to discuss coherence without specifying a basis set.</p>
 </div>
 </section>
 <section id="coherence-vs-superposition">
-<h2><span class="section-number">2.2. </span>Coherence vs superposition<a class="headerlink" href="#coherence-vs-superposition" title="Link to this heading">#</a></h2>
-<p>Interference is well-defined phenomena in the classical wave theory. In quantum mechanics, wave functions can generate interference exactly in the same way as the classical waves.  It seems that any quantum state can generate interference and thus any quantum state seems coherent.  This misleading idea is coming from undergraduate quantum mechanics courses in which all examples are perfectly coherent.</p>
-<p>In undergraduate textbooks, the state of a quantum system is mathematically specified by a vector in a Hilbert space.  The superposition principle states that any state vector <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> can be expressed as a superposition of basis vectors <span class="math notranslate nohighlight">\(|u_{j}\rangle\)</span> as</p>
+<h2><span class="section-number">2.3. </span>Coherence vs superposition<a class="headerlink" href="#coherence-vs-superposition" title="Link to this heading">#</a></h2>
+<p>Interference is well-defined phenomena in the classical wave theory. In quantum mechanics, wave functions can generate interference exactly in the same way as the classical waves.  It seems that any quantum state can generate interference and thus any quantum state seems coherent.  This is indeed true if the state can be written in a superposition:</p>
 <div class="math notranslate nohighlight">
 \[
 |\psi\rangle = \sum_{j} c_{j} |u_{j}\rangle
 \]</div>
-<p>Let us check if this state is coherent or not based on our definition.  Writing the state in terms of density operator</p>
+<p>Let us check if this state is coherent or not based on the working definition.  Writing the state in terms of density operator</p>
 <div class="math notranslate nohighlight">
 \[
 \rho = |\psi\rangle \langle \psi | = \sum_{ij} c_{i} c^{*}_{j} |u_{i}\rangle \langle u_{j}|
 \]</div>
-<p>The off-diagonal elements are <span class="math notranslate nohighlight">\(\rho_{i\ne j} = c_{i} c^{*}_{j}\)</span>. All off-diagonal elements vanish if and only if <span class="math notranslate nohighlight">\(c_{i}\ne 0\)</span> and all other coefficients vanish, a state <span class="math notranslate nohighlight">\(|\psi\rangle = |u_{i}\rangle\)</span> cannot generate interference in the current basis set.<a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>  Otherwise, the state has the ability of generating interference and thus the state is coherent.   Does this mean any quantum state is coherent?</p>
-<p>It is true that if the state of a system can be written as a superposition, then the system is coherent in that basis.  No doubt about that.  The question is if all states can be written as a superpoisition of basis vectors.  The answer is No.  Any state that can be written as a state vector is called a <em>pure</em> state and the corresponding density operator is <span class="math notranslate nohighlight">\(\rho = |\psi\rangle|\langle \psi |\)</span>.  There are other states that cannot be expressed with a state vector.  Those states are known as  a <em>mixed</em> state.  A mixed state can be also coherent even though  it cannot be in a simple superposition state.</p>
-<p>In conclusion, any pure state written as a superposition of basis vectors, it is highly coherent. However, not all states are pure. A mixed state can have a certain level of coherency  as long as not all off-diagonal elements vanish.</p>
+<p>The off-diagonal elements are <span class="math notranslate nohighlight">\(\rho_{i\ne j} = c_{i} c^{*}_{j}\)</span>. All off-diagonal elements vanish if and only if <span class="math notranslate nohighlight">\(c_{i}\ne 0\)</span> and all other coefficients vanish, a state <span class="math notranslate nohighlight">\(|\psi\rangle = |u_{i}\rangle\)</span> cannot generate interference in the current basis set.<a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>  Otherwise, the state has the ability of generating interference and thus the state is coherent.   Does this mean any quantum state is coherent?</p>
+<p>The above analysis tells us that if the state of a system can be written as a superposition, then the system is coherent in that basis.  No doubt about that.  The question is if all states can be written as a superposition of basis vectors.  The answer is No.  A state that can be written as a state vector is called a <em>pure</em> state and the corresponding density operator is <span class="math notranslate nohighlight">\(\rho = |\psi\rangle|\langle \psi |\)</span>.  There are other states that cannot be expressed by a state vector.  Those states are known as  a <em>mixed</em> state.  A mixed state can be also coherent even though  it cannot be in a simple superposition state.</p>
+<p>In conclusion, any pure state written as a superposition of basis vectors, it is highly coherent. However, not all states are pure. A mixed state can have a certain level of coherency  as long as not all off-diagonal elements vanish.  Do not forget that the matrix elements depend on the choice of a basis set. Until we pick a basis set, we can’t tell if the state is coherent or not.</p>
 </section>
-<section id="id3">
-<h2><span class="section-number">2.3. </span><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>The origin of decoherence</p>
-<p>The fundamental principles of quantum mechanics defines the state of a system as a vector which is inherently coherent in any basis.  Then, how is the coherence lost?  Actually, we never lose coherence if the whole system including environments are included in the quantum description.</p>
-<p>TO see that, consider a pair of atoms, <span class="math notranslate nohighlight">\(A_{1}\)</span> and <span class="math notranslate nohighlight">\(A_{2}\)</span> each has a ground state <span class="math notranslate nohighlight">\(|g\rangle\)</span> and an excited state <span class="math notranslate nohighlight">\(|e\rangle\)</span>.  <span class="math notranslate nohighlight">\(A_{1}\)</span> emits radiation <span class="math notranslate nohighlight">\(|R_{1}\rangle\)</span> and independently <span class="math notranslate nohighlight">\(A_{2}\)</span> emits <span class="math notranslate nohighlight">\(|R_{2}\rangle\)</span>.  Suppose that after one photon is emitted, the total system is in <span class="math notranslate nohighlight">\(|\Psi\rangle = \frac{1}{\sqrt{2}} \left(|ge\rangle \otimes |R_{1}\rangle + |eg\rangle \otimes |R_{2}\rangle\right)\)</span>, where <span class="math notranslate nohighlight">\(|ge\rangle\)</span> indicates <span class="math notranslate nohighlight">\(A_{1}\)</span> in the ground state and <span class="math notranslate nohighlight">\(A_{2}\)</span> in the excited state. <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> is highly entangled. Now, we check  if the interference fringes is formed.</p>
+<section id="the-quantum-origin-of-decoherence">
+<h2><span class="section-number">2.4. </span>The quantum origin of decoherence<a class="headerlink" href="#the-quantum-origin-of-decoherence" title="Link to this heading">#</a></h2>
+<p>As we discuss above, the fundamental principles of quantum mechanics defines the state of a system as a vector which is inherently coherent in any basis.  Then, how is the coherence lost?  Actually, we never lose coherence at the fundamental level.  Coherence appears lost only from a perspective of an observer.  Indeed, the observer plays an essential role.  When we observe the radiation field, we talk about the coherence of light.  On the other hand, we also talk about the coherence of wave function in the atoms.  There seems two different coherence depending on what we observe and they looks independent. As we see below, these two separate observations of coherence come from the same origin.</p>
+<p>In order to make a story concrete and suitable for optics, we consider a simple example consisting of a pair of atoms and radiation field.  The pair of atoms is one quantum system and the radiation field is another quantum system.  The presence of multiple quantum systems is the key to understand coherence.</p>
+<p>Each of atom has a ground state <span class="math notranslate nohighlight">\(|g\rangle\)</span> and an excited state <span class="math notranslate nohighlight">\(|e\rangle\)</span>.  We use the product basis</p>
+<div class="math notranslate nohighlight">
+\[
+|gg\rangle = |g\rangle \otimes |g\rangle, \quad |ge\rangle = |g\rangle \otimes |e\rangle, \quad |eg\rangle = |e\rangle \otimes |g\rangle, \quad |ee\rangle = |e\rangle \otimes |e\rangle
+\]</div>
+<p>Now suppose that  the atoms are initially in <span class="math notranslate nohighlight">\(|ee\rangle\)</span>.  Due to the interaction between the atoms and the radiation field, the system may evolve</p>
+<div class="math notranslate nohighlight" id="equation-eq-atom-field-relative-state1">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-atom-field-relative-state1" title="Link to this equation">#</a></span>\[
+|\Psi\rangle =  c_0 |ee\rangle \otimes |\phi_{0}\rangle + c_{1} |ge\rangle \otimes |\phi_{1}\rangle + c_{1}  |eg\rangle \otimes |\phi_{1}^\prime\rangle + c_{2} |gg\rangle \otimes |\phi_{2}\rangle
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(|\phi_{n}\rangle\)</span> indicates the normalized state of field with <span class="math notranslate nohighlight">\(n\)</span> photon. The two states with a different number of photons are orthogonal, i.e., <span class="math notranslate nohighlight">\(\langle\phi_{0}|\phi_{1}\rangle =  \langle\phi_{0}|\phi_{2}\rangle =  \langle\phi_{1}|\phi_{2}\rangle = 0\)</span>.   The two states with the same number of photon, <span class="math notranslate nohighlight">\(|\phi_{1}\rangle\)</span> and <span class="math notranslate nohighlight">\(|\phi_{1}^\prime\rangle\)</span>, represent two different states of the radiation field containing one photon. They are not necessarily orthogonal.  Their difference depends on the distance between the emitters.  When they are very close to each other, <span class="math notranslate nohighlight">\(|\phi_{1}\rangle\)</span> and <span class="math notranslate nohighlight">\(|\phi_{1}^\prime\rangle\)</span> becomes almost identical and thus <span class="math notranslate nohighlight">\(\langle\phi_{1}|\phi_{1}^{\prime}\rangle \approx 1\)</span>. As the separation increases, the difference of two states becomes larger and <span class="math notranslate nohighlight">\(\langle\phi_{1}|\phi_{1}^{\prime}\rangle\)</span> eventually vanishes.</p>
+<p>The type of superposition state <a class="reference internal" href="#equation-eq-atom-field-relative-state1">(2.1)</a> is known as a relative state.  It is in general quantum mechanically entangled.  There is one-to-one relation between the state of atoms and the state of radiation field.</p>
+<p>The system may evolve to a different state</p>
+<div class="math notranslate nohighlight" id="equation-eq-atom-field-relative-state2">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-eq-atom-field-relative-state2" title="Link to this equation">#</a></span>\[
+|\Psi^\prime\rangle =  c_0 |ee\rangle \otimes |\phi_{0}\rangle + \sqrt{2}  c_{1}  \frac{1}{\sqrt{2}}(|ge\rangle + |eg\rangle) \otimes \frac{1}{\sqrt{2}} (|\phi_{1}\rangle +|\phi^{\prime}_{1}\rangle)   + c_{2} |gg\rangle \otimes |\phi_{2}\rangle.
+\]</div>
+<p>which has no entanglement within the subspace of one photon.</p>
+<p>How does an observer see these two states?</p>
+<section id="perspective-of-radiation-field">
+<h3><span class="section-number">2.4.1. </span>Perspective of radiation field<a class="headerlink" href="#perspective-of-radiation-field" title="Link to this heading">#</a></h3>
+<p>We make an observation of the radiation field through the interference experiment.  In other words, we measure the intensity of light at position <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.</p>
+<p>For the first state <a class="reference internal" href="#equation-eq-atom-field-relative-state1">(2.1)</a>, we find</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
 |\Psi(x)|^{2} &amp;= \text{tr}\left[(I \otimes | x \rangle\langle x |) |\Psi\rangle\langle\Psi|\right] \\
-&amp; = \frac{1}{2} \left(|R_{1}(x)|^2 +|R_{2}(x)|^2 
-+ \langle ge|eg\rangle R^{*}_{1}(x) R_{2}(x) + \langle eg|ge\rangle R^{*}_{2}(x) R_{1}(x)\right)\\
-&amp;= \frac{1}{2} \left( |R_{1}(x)|^2 + |R_{2}(x)|^2 \right)
+&amp; = |c_{1}|^2 ( |\phi_{1}(x)|^2 + |\phi_{1}^\prime(x)|^2) + |c_{2}|^2 |\phi_{2}(x)|^2 
 \end{aligned}
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(R_{j}(x) = \langle x | R_{j}\rangle\)</span>.  The orthogonality between <span class="math notranslate nohighlight">\(|ge\rangle\)</span> and <span class="math notranslate nohighlight">\(|eg\rangle\)</span> destroyed the interference terms. The fact that each radiation field <span class="math notranslate nohighlight">\(R_{j}\)</span> is tightly correlated to the corresponding atom <span class="math notranslate nohighlight">\(A_{j}\)</span> is the cause of decoherence.   In quantum information theory, we say  that the emission of the radiation is recorded in each atom.</p>
-<p>We consider another state <span class="math notranslate nohighlight">\(|\Phi\rangle = \frac{1}{\sqrt{2}}(|eg\rangle + |ge\rangle) \otimes \frac{1}{\sqrt{2}}(|R_{1}\rangle + |R_{2}\rangle )\)</span> which has no entanglement between the atoms and the radiations.  No information about which atom emitted which radiation is recorded. The probability distribution for this state is</p>
+<p>where <span class="math notranslate nohighlight">\(|\phi_{n}(\mathbf{x}|^2\)</span> is interpreted as the intensity <span class="math notranslate nohighlight">\(\langle E^{(+}(\mathbf{x})E^{(-)}(\mathbf{x})\rangle\)</span>.  There is no interference.  Why?  The interference term is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle ge|eg\rangle (\phi^\prime_{1}(x))^{*} \phi_{2}(x) + \langle eg|ge\rangle (\phi^\prime_{2}(x))^{*} \phi_{1}(x)
+\]</div>
+<p>which vanishes due to the orthogonality <span class="math notranslate nohighlight">\(\langle ge|eg\rangle = \langle eg|ge\rangle = 0\)</span>.  The observer concludes that the light is incoherent since no interference.  Since the observer does not know the state of the atoms, the lack of interference is mysterious to them.</p>
+<p>For the second state <a class="reference internal" href="#equation-eq-atom-field-relative-state2">(2.2)</a> we obtain</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-|\Phi(x)|^2 &amp;= \text{tr}\left[(I \otimes | x \rangle\langle x |) |\Phi\rangle\langle\Phi|\right] \\
-&amp; = \frac{1}{2} |R_{1}(x)+R_{2}(x)|^2 \\
-&amp; = \frac{1}{2} \left[ |R_{1}(x)|^2 + |R_{2}(x)|^2
-+ R^{*}_{1}(x) R_{2}(x) + R_{1}(x) R^{*}_{2}(x) \right]
+|\Psi^{\prime}(x)|^{2} &amp;= \text{tr}\left[(I \otimes | x \rangle\langle x |) |\Psi^{\prime}\rangle\langle\Psi^{\prime}|\right] \\
+&amp; = |c_{1}|^2 |\phi_{1}(\mathbf{x})|^2  + |c_{1}|^2 |\phi_{1}^\prime(x)|^2)  + |c_{1}|^2 \left( \phi_{1}(\mathbf{x})\phi_{1}^{\prime}(\mathbf{x}) + \phi_{1}(\mathbf{x})\phi_{1}^{\prime}(\mathbf{x}) \right) 
++ |c_{2}|^2 |\phi_{2}(x)|^2
 \end{aligned}
 \end{split}\]</div>
-<p>which shows usual interference fringes.</p>
-<p>These two extreme examples show that even when the whole system is in a pure state (coherent), the interference can vanish depending on the structure of state vectors.   If the state is in a product state, perfect interference is observed.  On the other hand, if the state is entangled, interference is partially or entirely destroyed depending on the type of entanglement.</p>
-<p>For detailed discussion on decoherence beyond optics, see Refs. <span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">5</a>, <a class="reference internal" href="../references/references.html#id54" title="Maximilian Schlosshauser. Decoherence. Springer, 2007. ISBN 9783540357759. doi:10.1007/978-3-540-35775-9.">6</a>, <a class="reference internal" href="../references/references.html#id55" title="Wojciech Hubert Zurek. Decoherence and Quantum Darwinism: From Quantum Foundations to Classical Reality. Cambridge University Press, 2025. ISBN 9781009552899. doi:10.1017/9781009552868.">7</a>]</span>.</p>
-<div class="important admonition" id="adm-decoherence">
-<p class="admonition-title">Decoherence</p>
-<p>The coherence is lost when the system is quantum mechanically entangled with other systems or environments.</p>
+<p>which clearly shows the interference.  The lack of entanglement allows it.  However, the observer has no idea about it and declares that the radiation is coherent.</p>
+<p>So what is the main difference between <span class="math notranslate nohighlight">\(ge\rangle \otimes |\phi_{1}\rangle + |eg\rangle \otimes |\phi_{1}^\prime\rangle\)</span> and <span class="math notranslate nohighlight">\((|ge\rangle + |eg\rangle) \otimes (|\phi_{1}\rangle +|\phi^{\prime}_{1}\rangle)\)</span>   from the perspective of the radiation field.  In the former state, the radiation field knows which atom emit the photon, whereas in the latter state the radiation field can’t say which.  In optics literature, it is said that the detector cannot distinguish the source atoms.</p>
+</section>
+<section id="perspective-of-the-atoms">
+<h3><span class="section-number">2.4.2. </span>Perspective of the atoms<a class="headerlink" href="#perspective-of-the-atoms" title="Link to this heading">#</a></h3>
+<p>In the above example, the orthogonality of the emitter states destroyed the interference in the radiation field.  Next we look at the state of atoms.  Let us look at the interference of the atomic state through the measurement of <span class="math notranslate nohighlight">\(\hat{A}\)</span> discussed earlier. For the state <span class="math notranslate nohighlight">\(|Psi\rangle\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 = \text{tr} \left[ (|a_{1}\rangle\langle a_{1}| \otimes I) |\Psi\rangle\langle \Psi| \right]
+= |\langle a_{1}|ee\rangle|^2 + |\langle a_{1}|eg\rangle|^2  + |\langle a_{1}|ge\rangle|^2 + |\langle a_{1}|gg\rangle|^2 + \langle a_{1}|eg\rangle \langle ge| a_{1}\rangle \langle\phi_{1}^\prime |\phi_{1}\rangle + \langle a_{1}|ge\rangle \langle eg| a_{1}\rangle \langle\phi_{1} |\phi^\prime_{1}\rangle 
+\]</div>
+<p>The interference terms vanish if <span class="math notranslate nohighlight">\(\rangle \langle\phi_{1} |\phi^\prime_{1}\rangle = 0\)</span>. At the opposit limit <span class="math notranslate nohighlight">\(\rangle \langle\phi_{1} |\phi^\prime_{1}\rangle=1\)</span>, we have a perfect interference.  The observer who are seeing only the atoms has no idea about the value of <span class="math notranslate nohighlight">\(\rangle \langle\phi_{1} |\phi^\prime_{1}\rangle\)</span>.   Therefore, coherence is quite mysterious to the observer.</p>
+<p>Now, we look at the perfect coherence viewed from another basis set:</p>
+<div class="math notranslate nohighlight">
+\[
+|gg\rangle, \qquad |s\rangle \equiv \frac{1}{\sqrt{2}} \left(|ge\rangle +  |eg\rangle\right), \qquad |a\rangle \equiv \frac{1}{\sqrt{2}} \left(|ge\rangle -  |eg\rangle\right), \qquad |ee\rangle.
+\]</div>
+<p>In this basis set, the state <span class="math notranslate nohighlight">\(|Psi\rangle\)</span> is expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+|\Psi\rangle =  c_0 |ee\rangle \otimes |\phi_{0}\rangle +  c_{1} |s\rangle \otimes |\phi^{+}_{1}\rangle  + c_{1} |a\rangle \otimes |\phi^{-}_{1}\rangle + c_{2} |gg\rangle \otimes |\phi_{2}\rangle
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+|\phi^{\pm}_{1}\rangle = \frac{1}{\sqrt{2}} \left |\phi_{1}\rangle \pm |\phi_{1}^\prime\rangle \right).
+\]</div>
+<p>The condition for the perfect interference is <span class="math notranslate nohighlight">\(\rangle \langle\phi_{1} |\phi^\prime_{1}\rangle=1\)</span>, which indicates  <span class="math notranslate nohighlight">\(|\phi^\prime_{1}\rangle = |\phi_{1}\rangle\)</span>.  Then, a strange thing happens, <span class="math notranslate nohighlight">\(|\phi^{-}_{1}\rangle = 0\)</span> and the state <span class="math notranslate nohighlight">\(|a\rangle\)</span> completely disappears from <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>.   That means the state <span class="math notranslate nohighlight">\(|a\rangle\)</span> does not interact with the radiation field!  It is called a <em>dark state</em>.</p>
+<p>Look at the state vector again without <span class="math notranslate nohighlight">\(|a\rangle\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+|\Psi\rangle &amp;=  c_0 |ee\rangle \otimes |\phi_{0}\rangle +  c_{1} |s\rangle \otimes |\phi^{+}_{1}\rangle + c_{2} |gg\rangle \otimes |\phi_{2}\rangle\\
+&amp;=  c_0 |ee\rangle \otimes |\phi_{0}\rangle +   c_{1} (|ge\rangle + |eg\rangle) \otimes |\phi_{1}\rangle    + c_{2} |gg\rangle \otimes |\phi_{2}\rangle \\
+&amp;= |\Psi^\prime\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>The second example state <span class="math notranslate nohighlight">\(|\Psi^\prime\rangle\)</span> is just a special case of the first one <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>  with <span class="math notranslate nohighlight">\(|\phi^\prime_{1}\rangle = |\phi_{1}\rangle\)</span>.</p>
+<div class="key admonition" id="adm-coherence-observer">
+<p class="admonition-title">Coherence and observer</p>
+<p>The concept of coherence/decoherece arises when an observer looks at only a subsystem of a larger system.  The origin of decoherence is not in the subsystem itself.  Quantum entanglement between the subsystem and the rest of th world causes decoherence apprent to observers in the subsystem.</p>
 </div>
 </section>
-<section id="subsystems-and-reduced-density-operator">
-<h2><span class="section-number">2.4. </span>Subsystems and reduced density operator<a class="headerlink" href="#subsystems-and-reduced-density-operator" title="Link to this heading">#</a></h2>
-<p>At the beginning of this page, we showed that the off-diagonal elements of the density operator are an good indicator of coherence.  Then, we showed that entanglement between the system and the radiation field is the origin of decoherence.  How do these two conclusions can be reconciled?</p>
-<p>The problem is that the first picture focuses only on the atoms whereas the second view involves both the atoms and the radiation fields.   In other words, the first view is looking at a subsystem.  In the classical systems, the whole system is just a sum of subsystems.  In quantum mechanic, you cannot express a state of the whole system by adding or multiplying the states of subsystems.</p>
-<p>Mathematically speaking a state of a subsystem is defined by a partial trace.  Consider a bipartite system consisting of A and B.  The state of the total system is given by a density matrix <span class="math notranslate nohighlight">\(\rho_{AB}\)</span>.  Then, what is the state of subsystem A?  It is defined by
-a reduced density operator defined by a partial trance <span class="bibtex-citation" id="id5">[<a class="reference internal" href="../references/references.html#id39" title="Jürgen Audretsch. Entangled systems. WILEY-VCH, 2007. doi:10.1002/9783527619153.">8</a>]</span>:</p>
+</section>
+<section id="reduced-density-operator-for-a-subsystem">
+<h2><span class="section-number">2.5. </span>Reduced density operator for a subsystem<a class="headerlink" href="#reduced-density-operator-for-a-subsystem" title="Link to this heading">#</a></h2>
+<p>Based on the the working definition, coherence is mathematically measured by the off-diagonal element of the density matrix.  But this density matrix is viewed by the observer, not the one for the whole system.  How can we reconcile the two views of coherency, the local view vs the global view if you will.   There is a mathematical method to find the density operator of a subsystem from the density operator of the whole system.  Let us continue the previous example.</p>
+<p>The density operator of the whole system is simply <span class="math notranslate nohighlight">\(\rho_{AR} = |\Psi\rangle\langle \Psi|\)</span> where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(R\)</span> stand for the atoms and the radiation field, respectively.
+Mathematically speaking the state of a subsystem is defined by a partial trace. <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id39" title="Jürgen Audretsch. Entangled systems. WILEY-VCH, 2007. doi:10.1002/9783527619153.">5</a>]</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\rho_{A} = \text{tr}_{B} \rho_{AB} = \sum_{j} \left(I_{A} \otimes \langle u_{j} | \right) \rho_{AB} \left(I_{A} \otimes | u_{j} \rangle \right)
+\rho_{A} = \text{tr}_{R} \rho_{AR} = \sum_{j} \left(I_{A} \otimes \langle u_{j} | \right) \rho_{AR} \left(I_{A} \otimes | u_{j} \rangle \right)
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(I_{A}\)</span> is the identity operator in the Hilbert space for A and <span class="math notranslate nohighlight">\(|u_{j}\rangle\)</span> are orthonormal basis kets in the Hilbert space for B.  Any basis set can be used.  Note that the partial trace <span class="math notranslate nohighlight">\(\text{tr}_{B}\)</span>  hides the information stored in the subsystem B.  Thus, we can not get any information on B by lokking at <span class="math notranslate nohighlight">\(\rho_{A}\)</span>.</p>
-<p>Now, we find the reduced density for atoms by tracing over the radiation fields.</p>
-<p>For the entangled case <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>, the reduced density for the atoms</p>
+<p>where <span class="math notranslate nohighlight">\(I_{A}\)</span> is the identity operator in the Hilbert space for A and <span class="math notranslate nohighlight">\(|u_{j}\rangle\)</span> are orthonormal basis vectors in the Hilbert space for R.  Any basis set can be used.
+Performing the partial trace, we find</p>
 <div class="math notranslate nohighlight">
 \[
-\rho_{A} = \text{tr}_{R} |\Psi\rangle\langle\Psi| = |ge\rangle\langle ge| + |eg\rangle\langle eg| + |ge\rangle\langle eg| \langle R_{2} | R_{1}\rangle +
-|ge\rangle\langle ge| \langle R_{1} | R_{2}\rangle
+\rho_{A} = |c_{0}|^{2} |ee\rangle\langle ee| + |c_{1}|^2|eg\rangle\langle eg| + |c_{1}|^2|ge\rangle\langle ge| + |c_{2}|^2|gg\rangle\langle gg| + |c_{1}|^{2} \langle \phi_{1}|\phi_{1}^\prime\rangle |eg\rangle\langle ge| + |c_{1}|^{2} \langle \phi_{1}^\prime|\phi_{1}\rangle |ge\rangle\langle eg|
 \]</div>
-<p>The off-diagonal element is <span class="math notranslate nohighlight">\(\rho_{eg,ge} = \langle R_{1} | R_{2}\rangle &lt; 1\)</span>.  If <span class="math notranslate nohighlight">\(|R_{1}\rangle \)</span> and <span class="math notranslate nohighlight">\(|R_{2}\rangle\)</span> are orthogonal, it completely vanish. Hence, the coherency is entirely lost.  Other wise, the coherency is only partial.</p>
-<p>On the other hand, for the product state <span class="math notranslate nohighlight">\(|\Phi\rangle\)</span>, we have</p>
+<p>or writing in a matrix form with the product basis,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{aligned}
-\rho_{A} &amp;= \text{tr}_{R} |\Phi\rangle\langle\Phi| = \frac{1}{2} \left(|ge\rangle+|eg\rangle\right) \left(\langle ge|+\langle eg|\right) \\
-&amp;=\frac{1}{2}\left(|ge\rangle\langle ge| + |eg\rangle\langle eg| + |ge\rangle\langle eg| + |ge\rangle\langle ge| \right)
-\end{aligned}
+\rho = 
+\begin{pmatrix}
+|c_{0}|^{2} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; |c_{1}|^{2} &amp; |c_{1}|^{2} \langle \phi_{1}|\phi_{1}^\prime\rangle &amp; 0 \\
+0 &amp; |c_{1}|^{2} \langle \phi_{1}^\prime|\phi_{1}\rangle &amp; |c_{1}|^{2} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; |c_{2}|^{2}
+\end{pmatrix}
 \end{split}\]</div>
-<p>which is a pure state and perfectly coherent.</p>
-<p>In conclusion, we found that the off-diagonal elements of the reduced density operator is sensitive to the entanglement and indeed a good indicator of coherency.</p>
+<p>The off-diagonal element <span class="math notranslate nohighlight">\(\rho_{eg,ge} = |c_{1}|^{2} \langle \phi_{1}|\phi_{1}^\prime\rangle\)</span> completely vanishes if <span class="math notranslate nohighlight">\(\langle \phi_{1}|\phi_{1}^\prime\rangle=0\)</span>. When <span class="math notranslate nohighlight">\(\langle \phi_{1}|\phi_{1}^\prime\rangle=1\)</span> we have a perfect coherence.  This is exactly what we have already seen in the above discussion.  Hence, the off-diagonal elements of the reduced density operator retain some information of the radiation field and tell us if the radiation field distinguish the two atoms or not.</p>
+<p>In conclusion, the working definition of coherence does not tell the origin of decoherence but it is consistent with the global view of coherence.</p>
+<p>For detailed discussion on decoherence beyond optics, see Refs. <span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">6</a>, <a class="reference internal" href="../references/references.html#id54" title="Maximilian Schlosshauser. Decoherence. Springer, 2007. ISBN 9783540357759. doi:10.1007/978-3-540-35775-9.">7</a>, <a class="reference internal" href="../references/references.html#id55" title="Wojciech Hubert Zurek. Decoherence and Quantum Darwinism: From Quantum Foundations to Classical Reality. Cambridge University Press, 2025. ISBN 9781009552899. doi:10.1017/9781009552868.">8</a>]</span>.</p>
 </section>
-<section id="decoherence-due-to-dissipation">
-<h2><span class="section-number">2.5. </span>Decoherence due to dissipation<a class="headerlink" href="#decoherence-due-to-dissipation" title="Link to this heading">#</a></h2>
+<section id="methods-of-open-quantum-system">
+<h2><span class="section-number">2.6. </span>Methods of open quantum system<a class="headerlink" href="#methods-of-open-quantum-system" title="Link to this heading">#</a></h2>
+<p>One of the objective of the present lecture note is to calculate the reduced density matrix for the emitters by tracing out the radiation degrees of freedom.  How can we calculate the reduced density in practical applications?  Do we have to compute the while system and take a partial trace?  That needs substantial mathematical and computational power. We cannot use the traditional quantum mechanics for a subsystem since it is developed only for a closed system.</p>
+<p>Fortunately, a method of open quantum system has been developed.  Although it is an approximated method and valid only in certain situation, there are many evidences that the method works quite well for quantum optics.  The method will be introduced in <a class="reference internal" href="../methods/openqm-qme-intro.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.</p>
+</section>
+<section id="types-of-decoherence">
+<h2><span class="section-number">2.7. </span>Types of Decoherence<a class="headerlink" href="#types-of-decoherence" title="Link to this heading">#</a></h2>
+<p>There are several type of decoherence from the local perspective.  Here we shows two types relevant to our discussion.</p>
+<section id="dissipation">
+<h3><span class="section-number">2.7.1. </span>Dissipation<a class="headerlink" href="#dissipation" title="Link to this heading">#</a></h3>
 <p>The energy exchange between the system and environment causes the dissipation. If the atoms are interacting with a thermal radiation field. Their state quickly settles in thermal equilibrium (due to entanglement between the system and the radiation field).<br />
 Hence, there is no coherence between <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span>.   The density matrix decays as</p>
 <div class="math notranslate nohighlight">
@@ -596,7 +684,7 @@ Hence, there is no coherence between <span class="math notranslate nohighlight">
 <p>The disappearance of the off-diagonal elements seems strange.  Without the off-diagonal elements there seems no transition between the orbitals. Even then the quantum dots are emitting light!    So, how does the system go up and down between <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span>?   Recall that the quantum mechanics is probabilistic.  It cannot tell what individual systems are doing.  It can tell only what the ensemble of the systems is doing.  Even when the off-diagonal element is empty, individual systems can have a superposition state for a brief period, which allows the transition and emission of light.  However, the past memory is quickly lost and the transition happens at random. Hence, the phase of the off-diagonal is random.  When the ensemble average is taken, the off-diagonal elements vanish due to the random phase. Because of it, the light emitted from the thermal state is not coherent. (Recall that in classical optics, random phase is attached to the radiation field to mimic this effect.See <a class="reference internal" href="photons.html#ch-photons"><span class="std std-numref">Chapter 1</span></a>.)   Since the dissipation is a part of the optical processes, we cannot remove this decoherence. Our concern is how long the atoms can stay coherent.</p>
 </section>
 <section id="pure-dephasing">
-<h2><span class="section-number">2.6. </span>Pure dephasing<a class="headerlink" href="#pure-dephasing" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.7.2. </span>Pure dephasing<a class="headerlink" href="#pure-dephasing" title="Link to this heading">#</a></h3>
 <p>Dephasing is another type of decoherence. In the pure dephasing, the off-diagonal elements decay but the diagonal elements survives.  They decays as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -606,22 +694,18 @@ Hence, there is no coherence between <span class="math notranslate nohighlight">
 <p>If the emitter is imbedded in a solid, it interacts with phonon.  The scattering of phonon causes the pure dephasing.  If we need to take into account the phonon assisted dephasing, we add a acoustic phonon gas as a second environment. The effect seems week but we shall consider it in certain cases.</p>
 <p>In general the decay times are related as</p>
 <div class="math notranslate nohighlight" id="equation-eq-t1-t2">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-t1-t2" title="Link to this equation">#</a></span>\[
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-eq-t1-t2" title="Link to this equation">#</a></span>\[
 \frac{1}{T_{2}} = \frac{1}{2T_{1}} + \frac{1}{T_{\phi}}
 \]</div>
 <p>In the absence of the dephasing, <span class="math notranslate nohighlight">\(T_{2} = 2 T_{1}\)</span>, which we will discuss in case studies.</p>
-</section>
-<section id="methods-of-open-quantum-system">
-<h2><span class="section-number">2.7. </span>Methods of open quantum system<a class="headerlink" href="#methods-of-open-quantum-system" title="Link to this heading">#</a></h2>
-<p>One of the objective of the present lecture note is to calculate the reduced density matrix for the emitters by tracing out the radiation degrees of freedom.  How can we calculate the reduced density of a subsystem?  Do we have to compute the while system and take a partial trace?  That needs substantial mathematical and computational power. We cannot use the traditional quantum mechanics for a subsystem since it is developed only for a closed system.</p>
-<p>Fortunately, a method of open quantum system has been developed and widely used in quantum optics.  Although it is an approximated method and valid only in certain situation, there are many evidences that the method works quite well for quantum optics The method is widely used.  The method will be introduced in <a class="reference internal" href="../methods/openqm-qme-intro.html#ch-openqm-qme"><span class="std std-numref">Chapter 12</span></a>.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="doc-footnote">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>If there is only one nonvanishing diagonal element, the state is pure and we have no way to determine coherency from it.</p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 
@@ -691,13 +775,21 @@ Hence, there is no coherence between <span class="math notranslate nohighlight">
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-coherence">2.1. Definition of coherence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-vs-superposition">2.2. Coherence vs superposition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3. </a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsystems-and-reduced-density-operator">2.4. Subsystems and reduced density operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoherence-due-to-dissipation">2.5. Decoherence due to dissipation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-dephasing">2.6. Pure dephasing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-open-quantum-system">2.7. Methods of open quantum system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-definition-of-coherence">2.1. Working definition of coherence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-expression">2.2. Mathematical expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-vs-superposition">2.3. Coherence vs superposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quantum-origin-of-decoherence">2.4. The quantum origin of decoherence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-of-radiation-field">2.4.1. Perspective of radiation field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-of-the-atoms">2.4.2. Perspective of the atoms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduced-density-operator-for-a-subsystem">2.5. Reduced density operator for a subsystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-of-open-quantum-system">2.6. Methods of open quantum system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-decoherence">2.7. Types of Decoherence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipation">2.7.1. Dissipation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-dephasing">2.7.2. Pure dephasing</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

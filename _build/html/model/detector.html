@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -186,7 +186,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is coherence?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
@@ -227,8 +227,16 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.4. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -473,7 +481,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dectector">
 <span id="ch-detector"></span><h1><span class="section-number">9. </span>Dectector<a class="headerlink" href="#dectector" title="Link to this heading">#</a></h1>
-<p>It is important understand what physical quantity the detector is measuring. In the standard quantum mechanics, a physical quantity is represented by a self-adjoint operator.  The outcome of the measurement is one of the eigenvalues of the operator. At the end of the measurement, the system state collapses (is projected) to the corresponding eigenvector. The probability to obtain a particular outcome is determined by the Born rule.  This kind of measurement is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics">projective measurement</a>.</p>
+<p>It is important to understand what physical quantity the detector is measuring. In the standard quantum mechanics, a physical quantity is represented by a self-adjoint operator.  The outcome of the measurement is one of the eigenvalues of the operator. At the end of the measurement, the system state collapses (is projected) to the corresponding eigenvector. The probability to obtain a particular outcome is determined by the Born rule.  This kind of measurement is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics">projective measurement</a>.</p>
 <p>Measurement of radiation fields or photons are totally different from the projective measurement. First of all, the photon disappears when it was detected.  Therefore, the projection is not possible.  Secondly, photons do not have position.  Mathematically we cannot define the position operator for photons.
 At the foundamental level, the quantum measurement in the quantum field theory is still debated. We will not discuss it here.</p>
 <p>For most practical applications,  the photon detection model developed by Glauber <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id27" title="Roy J. Glauber. Quantum Theory of Optical Coherence: Selected Papers and Lectures. John Wiley &amp; Sons, 2007. ISBN 9783527609918. doi:10.1002/9783527610075.">15</a>]</span> works quite well.   Briefly stating, a detector can measure only the intensity of radiation field through a record of clicks.  Nothing else.  See also Carmichael <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id34" title="Howard Carmichael. An Open Systems Approach to Quantum Optics. Springer, 1st ed. edition, 1993. ISBN 9783540476207.">16</a>]</span> for the discussion of photodetection.</p>
