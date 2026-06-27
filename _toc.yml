@@ -25,17 +25,16 @@ parts:
       sections:
       -  file: foundations/coherence-g1
       -  file: foundations/coherence-g2
--  caption: Model
+-  caption: Models and Methods
    numbered: 3
    chapters:
    -  file: model/system
-   -  file: model/emitter
-   -  file: model/radiation-field
-   -  file: model/driving
-   -  file: model/detector
-   -  file: model/phonon-bath
--  caption: Methods
-   numbered: 3
+      sections:
+      -  file: model/emitter
+      -  file: model/radiation-field
+      -  file: model/driving
+      -  file: model/detector
+      -  file: model/phonon-bath
    chapters:
    -  file: methods/qutip
    -  file: methods/openqm-qme-intro
