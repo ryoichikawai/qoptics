@@ -20,11 +20,10 @@ parts:
    chapters:
    -  file: foundations/photons
    -  file: foundations/coherence
-   -  file: foundations/bunching
-   -  file: foundations/coherence-func
       sections:
       -  file: foundations/coherence-g1
       -  file: foundations/coherence-g2
+   -  file: foundations/bunching
 -  caption: Models and Methods
    numbered: 3
    chapters:
@@ -32,14 +31,16 @@ parts:
       sections:
       -  file: model/emitter
       -  file: model/radiation-field
+      -  file: model/coupling
       -  file: model/driving
       -  file: model/detector
       -  file: model/phonon-bath
-   chapters:
    -  file: methods/qutip
    -  file: methods/openqm-qme-intro
       sections:
-      -  file: methods/openqm-qme-method
+      -  file: methods/openqm-qme-def
+      -  file: methods/openqm-qme-radiation
+      -  file: methods/openqm-qme-regression
       -  file: methods/openqm-qme-example
    -  file: methods/openqm-jump-intro
       sections:
@@ -61,9 +62,13 @@ parts:
    -  file: dimer2/dimer-case2-intro
       sections:
       -  file: dimer2/dimer-case2-model
-      -  file: dimer2/dimer-case2-qme-g1
-      -  file: dimer2/dimer-case2-qme-g2
-      -  file: dimer2/dimer-case2-jump
+      -  file: dimer2/dimer-case2-supperradiance
+   -  file: dimer3/dimer-case3-intro
+      sections:
+      -  file: dimer3/dimer-case3-model
+      -  file: dimer3/dimer-case3-qme-g1
+      -  file: dimer3/dimer-case3-qme-g2
+      -  file: dimer3/dimer-case3-jump
 -  caption:
    numbered: false
    chapters:
