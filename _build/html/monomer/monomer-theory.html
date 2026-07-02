@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>14.1. QME: Theoretical solution &#8212; Optical coherence from small atomic clusters.</title>
+    <title>8.1. QME: Theoretical solution &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'monomer/monomer-theory';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14.2. QME: Numerical solution" href="monomer-qme.html" />
-    <link rel="prev" title="14. Monomer: Driving and the Rabi oscillation" href="monomer-intro.html" />
+    <link rel="next" title="8.2. QME: Numerical solution" href="monomer-qme.html" />
+    <link rel="prev" title="8. Monomer: Driving and the Rabi oscillation" href="monomer-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,57 +186,62 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">2. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">4. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">4.5. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">4.6. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">4.7. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">4.8. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">4.9. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">4.10. Phonon bath</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">6. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-regression.html">6.3. Quantum regression theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">6.4. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">7.1. Jump method algorithm</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">7.3. A Simple example of the jump method</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">14.1. QME: Theoretical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="monomer-qme.html">14.2. QME: Numerical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="monomer-jump.html">14.3. Quantum Trajectory</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monomer-qme.html">8.2. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monomer-jump.html">8.3. Quantum Trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">9. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">9.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">9.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">9.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">10. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">10.1. The Model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">11. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">11.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">11.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">11.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">11.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -465,13 +470,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">14.1.1. Quantum master equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state-solution">14.1.2. Steady state solution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution">14.1.3. Time evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">8.1.1. Quantum master equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state-solution">8.1.2. Steady state solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution">8.1.3. Time evolution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resonant-fluorescence">Resonant fluorescence</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence">14.1.4. Second-order coherence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence">8.1.4. Second-order coherence</a></li>
 </ul>
             </nav>
         </div>
@@ -484,13 +489,13 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="qme-theoretical-solution">
-<span id="sec-monomer-qme-theory"></span><h1><span class="section-number">14.1. </span>QME: Theoretical solution<a class="headerlink" href="#qme-theoretical-solution" title="Link to this heading">#</a></h1>
+<span id="sec-monomer-qme-theory"></span><h1><span class="section-number">8.1. </span>QME: Theoretical solution<a class="headerlink" href="#qme-theoretical-solution" title="Link to this heading">#</a></h1>
 <p>In this section, we solve the quantum master equation analytically as much as possible and find a closed form expression of the second-order coherence.</p>
 <section id="quantum-master-equation">
-<h2><span class="section-number">14.1.1. </span>Quantum master equation<a class="headerlink" href="#quantum-master-equation" title="Link to this heading">#</a></h2>
-<p>Based on the model introduced in <a class="reference internal" href="../model/emitter.html#ch-emitter"><span class="std std-numref">Chapter 6</span></a> and <a class="reference internal" href="../model/radiation-field.html#ch-radiation-field"><span class="std std-numref">Chapter 7</span></a>, the  time evolution of the state <span class="math notranslate nohighlight">\(\rho\)</span> follows the quantum master equation</p>
+<h2><span class="section-number">8.1.1. </span>Quantum master equation<a class="headerlink" href="#quantum-master-equation" title="Link to this heading">#</a></h2>
+<p>Based on the model introduced in <code class="xref std std-numref docutils literal notranslate"><span class="pre">ch:emitter</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">ch:radiation-field</span></code>, the  time evolution of the state <span class="math notranslate nohighlight">\(\rho\)</span> follows the quantum master equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-monomer-qme">
-<span class="eqno">(14.1)<a class="headerlink" href="#equation-eq-monomer-qme" title="Link to this equation">#</a></span>\[
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-eq-monomer-qme" title="Link to this equation">#</a></span>\[
 \frac{d}{dt} \rho = -\frac{i}{\hbar} \left[H_{S},\rho\right]+ \mathcal{D} \rho
 \]</div>
 <p>where the system Hamiltonian after the rotating wave approximation is</p>
@@ -502,7 +507,7 @@ H_{S} = \frac{\Delta}{2} \sigma^{z} - \frac{\Omega}{2} \sigma^{x}
 \[
 \mathcal{D} \rho = \gamma_0 \left(\sigma^{-}\rho\sigma^{+} - \frac{1}{2} \sigma^{+}\sigma^{-}\rho - \frac{1}{2} \rho \sigma^{+}\sigma^{-} \right)
 \]</div>
-<p>The master equation is an ordinary differential equation (ODE) of the density operator.  It is convenient to write the density operator in a matrix form or a density matrix. and write down the quation of motion for each matrix elements. Using <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span> as basis set, we introduce matrix elements: <span class="math notranslate nohighlight">\(\rho_{gg} = \langle g|\rho|g\rangle\)</span>, <span class="math notranslate nohighlight">\(\rho_{ee}=\langle e|\rho|e\rangle\)</span>, <span class="math notranslate nohighlight">\(\rho_{eg} = \langle e |\rho| g\rangle\)</span>, and <span class="math notranslate nohighlight">\(\rho_{ge} = \langle{g}|\rho|e\rangle\)</span>. The master equation <a class="reference internal" href="#equation-eq-monomer-qme">(14.1)</a> is explicitely written as</p>
+<p>The master equation is an ordinary differential equation (ODE) of the density operator.  It is convenient to write the density operator in a matrix form or a density matrix. and write down the quation of motion for each matrix elements. Using <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span> as basis set, we introduce matrix elements: <span class="math notranslate nohighlight">\(\rho_{gg} = \langle g|\rho|g\rangle\)</span>, <span class="math notranslate nohighlight">\(\rho_{ee}=\langle e|\rho|e\rangle\)</span>, <span class="math notranslate nohighlight">\(\rho_{eg} = \langle e |\rho| g\rangle\)</span>, and <span class="math notranslate nohighlight">\(\rho_{ge} = \langle{g}|\rho|e\rangle\)</span>. The master equation <a class="reference internal" href="#equation-eq-monomer-qme">(8.1)</a> is explicitely written as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -543,19 +548,19 @@ A =
 \end{split}\]</div>
 <p>The master equation is expressed as simpe linear ODE</p>
 <div class="math notranslate nohighlight" id="equation-eq-monomer-ode">
-<span class="eqno">(14.2)<a class="headerlink" href="#equation-eq-monomer-ode" title="Link to this equation">#</a></span>\[
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-eq-monomer-ode" title="Link to this equation">#</a></span>\[
 	\frac{d}{dt} \mathbf{x} = A \mathbf{x} + \mathbf{b}
 \]</div>
 <p>whose solution is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-monomer-ode-solution">
-<span class="eqno">(14.3)<a class="headerlink" href="#equation-eq-monomer-ode-solution" title="Link to this equation">#</a></span>\[
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-eq-monomer-ode-solution" title="Link to this equation">#</a></span>\[
     \mathbf{x}(t) = \mathbf{x}^{ss} + e^{A t} [\mathbf{x}_{0}-\mathbf{x}^{ss} ]
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{x}_{ss}\)</span> is the steady state solution.  The original form of the quantum master equation looks complicated but it is just a simple linear ODEs.</p>
 </section>
 <section id="steady-state-solution">
-<h2><span class="section-number">14.1.2. </span>Steady state solution<a class="headerlink" href="#steady-state-solution" title="Link to this heading">#</a></h2>
-<p>Every solution to the quantum master equations asymptotically approach to a steady state regardless of the initial condition since the every eigenvalue of <span class="math notranslate nohighlight">\(A\)</span> has a negative real part.  Since we are interested in the photon counting in a steady state, it is convenient to have an analytical expression of the steady state. Setting <span class="math notranslate nohighlight">\(\frac{d}{dt} \mathbf{x} = 0\)</span> in <a class="reference internal" href="#equation-eq-monomer-ode">(14.2)</a> and using the inverse matrix</p>
+<h2><span class="section-number">8.1.2. </span>Steady state solution<a class="headerlink" href="#steady-state-solution" title="Link to this heading">#</a></h2>
+<p>Every solution to the quantum master equations asymptotically approach to a steady state regardless of the initial condition since the every eigenvalue of <span class="math notranslate nohighlight">\(A\)</span> has a negative real part.  Since we are interested in the photon counting in a steady state, it is convenient to have an analytical expression of the steady state. Setting <span class="math notranslate nohighlight">\(\frac{d}{dt} \mathbf{x} = 0\)</span> in <a class="reference internal" href="#equation-eq-monomer-ode">(8.2)</a> and using the inverse matrix</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A^{-1} = 	\frac{1}{\gamma_0(\gamma_0^2+2\Omega^2+4\Delta^2)}
@@ -567,7 +572,7 @@ A^{-1} = 	\frac{1}{\gamma_0(\gamma_0^2+2\Omega^2+4\Delta^2)}
 \end{split}\]</div>
 <p>we obtain the steady state</p>
 <div class="math notranslate nohighlight" id="equation-eq-xyz-ss">
-<span class="eqno">(14.4)<a class="headerlink" href="#equation-eq-xyz-ss" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-eq-xyz-ss" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 	X^{ss} &amp;=&amp; \frac{2 \Delta \Omega}{(\gamma_0^2+2\Omega^2+4 \Delta^2)}\\
 	Y^{ss} &amp;=&amp; \frac{\gamma_0 \Omega}{\gamma_0^2 + 2 \Omega^2 + 4 \Delta^2}\\
@@ -587,10 +592,10 @@ A^{-1} = 	\frac{1}{\gamma_0(\gamma_0^2+2\Omega^2+4\Delta^2)}
 <p>Let us look at the solution for a special case. When driving is absent, the system is expected to relax to a thermal state.  To simulate it, let <span class="math notranslate nohighlight">\(\Omega=0\)</span>.  Then, the off-diagonal elements of the steady state density vanishes.  The probability of the system being in the excited state also vanishes since no excitation happens without the driving.</p>
 </section>
 <section id="time-evolution">
-<h2><span class="section-number">14.1.3. </span>Time evolution<a class="headerlink" href="#time-evolution" title="Link to this heading">#</a></h2>
-<p>It is possible to derive the time-evolution of the state from Eq. <a class="reference internal" href="#equation-eq-monomer-ode-solution">(14.3)</a>.  Let <span class="math notranslate nohighlight">\(\lambda_{i}\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>-th eigenvalue of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\mathbf{u}_{i}\)</span> is the corresponding normalized eigenvector.  Then, the solution <a class="reference internal" href="#equation-eq-monomer-ode-solution">(14.3)</a> can be written as</p>
+<h2><span class="section-number">8.1.3. </span>Time evolution<a class="headerlink" href="#time-evolution" title="Link to this heading">#</a></h2>
+<p>It is possible to derive the time-evolution of the state from Eq. <a class="reference internal" href="#equation-eq-monomer-ode-solution">(8.3)</a>.  Let <span class="math notranslate nohighlight">\(\lambda_{i}\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>-th eigenvalue of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\mathbf{u}_{i}\)</span> is the corresponding normalized eigenvector.  Then, the solution <a class="reference internal" href="#equation-eq-monomer-ode-solution">(8.3)</a> can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq-monomer-ode-solution-eigen">
-<span class="eqno">(14.5)<a class="headerlink" href="#equation-eq-monomer-ode-solution-eigen" title="Link to this equation">#</a></span>\[
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-eq-monomer-ode-solution-eigen" title="Link to this equation">#</a></span>\[
 \mathbf{x}(t) = x^{ss} + \sum_{i=1}^{3} e^{\lambda_i t} \mathbf{u}_i ~[\mathbf{u}_i \cdot (\mathbf{x}_{0}-\mathbf{x}^{ss})]
 \]</div>
 <p>The actual expression of the eigenvalues and eigenvectors are a bit messy. Here we show simple cases where analytical calculation is tractable.</p>
@@ -615,7 +620,7 @@ A^{-1} = 	\frac{1}{\gamma_0(\gamma_0^2+2\Omega^2+4\Delta^2)}
 \[
 X^{ss} = 0, \quad Y^{ss}\approx 0, \quad Z^{ss}\approx \frac{1}{2}
 \]</div>
-<p>Now substituting all these approximated values into Eq. <a class="reference internal" href="#equation-eq-monomer-ode-solution-eigen">(14.5)</a>, we obtain</p>
+<p>Now substituting all these approximated values into Eq. <a class="reference internal" href="#equation-eq-monomer-ode-solution-eigen">(8.5)</a>, we obtain</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -628,13 +633,13 @@ Z(t) &amp;=&amp; \frac{1}{2}\left(1 - e^{-\frac{3\gamma}{4} t} \cos(\Omega t) \r
 </section>
 </section>
 <section id="second-order-coherence">
-<h2><span class="section-number">14.1.4. </span>Second-order coherence<a class="headerlink" href="#second-order-coherence" title="Link to this heading">#</a></h2>
-<p>Once we obtain the time-evolution of state starting from the ground state, we can calculate the second-order coherence easily as discussed in <a class="reference internal" href="../methods/openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 12.2</span></a>.   Using the above results, we obtain the second-order coherence under the strong driving as</p>
+<h2><span class="section-number">8.1.4. </span>Second-order coherence<a class="headerlink" href="#second-order-coherence" title="Link to this heading">#</a></h2>
+<p>Once we obtain the time-evolution of state starting from the ground state, we can calculate the second-order coherence easily as discussed in <a class="reference internal" href="../methods/openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 6.4</span></a>.   Using the above results, we obtain the second-order coherence under the strong driving as</p>
 <div class="math notranslate nohighlight" id="equation-eq-monomer-g2-theory">
-<span class="eqno">(14.6)<a class="headerlink" href="#equation-eq-monomer-g2-theory" title="Link to this equation">#</a></span>\[
+<span class="eqno">(8.6)<a class="headerlink" href="#equation-eq-monomer-g2-theory" title="Link to this equation">#</a></span>\[
 g^{(2)}(\tau) = \frac{Z(\tau)}{Z^{ss}} = 1 - e^{-\frac{3\gamma}{4} |t|} \cos(\Omega t)
 \]</div>
-<p>which shows anti-bunching behavior at <span class="math notranslate nohighlight">\(\tau=0\)</span>. Comparing it with the simple thermalization case discussed in {<a class="reference internal" href="../methods/openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 12.2</span></a>,  the Rabi oscillation is clearly seen. For demonstration purpose, we have used very strong coupling <span class="math notranslate nohighlight">\(\Omega &gt; \gamma_0\)</span>.   The following plot shows strong positive correlation near <span class="math notranslate nohighlight">\(\tau = 0\)</span>, suggesting strong bunching effect.</p>
+<p>which shows anti-bunching behavior at <span class="math notranslate nohighlight">\(\tau=0\)</span>. Comparing it with the simple thermalization case discussed in {<a class="reference internal" href="../methods/openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 6.4</span></a>,  the Rabi oscillation is clearly seen. For demonstration purpose, we have used very strong coupling <span class="math notranslate nohighlight">\(\Omega &gt; \gamma_0\)</span>.   The following plot shows strong positive correlation near <span class="math notranslate nohighlight">\(\tau = 0\)</span>, suggesting strong bunching effect.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -700,7 +705,7 @@ g^{(2)}(\tau) = \frac{Z(\tau)}{Z^{ss}} = 1 - e^{-\frac{3\gamma}{4} |t|} \cos(\Om
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Monomer: Driving and the Rabi oscillation</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Monomer: Driving and the Rabi oscillation</p>
       </div>
     </a>
     <a class="right-next"
@@ -708,7 +713,7 @@ g^{(2)}(\tau) = \frac{Z(\tau)}{Z^{ss}} = 1 - e^{-\frac{3\gamma}{4} |t|} \cos(\Om
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14.2. </span>QME: Numerical solution</p>
+        <p class="prev-next-title"><span class="section-number">8.2. </span>QME: Numerical solution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -730,13 +735,13 @@ g^{(2)}(\tau) = \frac{Z(\tau)}{Z^{ss}} = 1 - e^{-\frac{3\gamma}{4} |t|} \cos(\Om
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">14.1.1. Quantum master equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state-solution">14.1.2. Steady state solution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution">14.1.3. Time evolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">8.1.1. Quantum master equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state-solution">8.1.2. Steady state solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution">8.1.3. Time evolution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resonant-fluorescence">Resonant fluorescence</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence">14.1.4. Second-order coherence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence">8.1.4. Second-order coherence</a></li>
 </ul>
   </nav></div>
 

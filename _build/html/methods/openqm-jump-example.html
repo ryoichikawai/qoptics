@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13.3. A Simple example of the jump method &#8212; Optical coherence from small atomic clusters.</title>
+    <title>7.3. A Simple example of the jump method &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'methods/openqm-jump-example';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. Monomer: Driving and the Rabi oscillation" href="../monomer/monomer-intro.html" />
-    <link rel="prev" title="13.1. Jump method algorithm" href="openqm-jump-method.html" />
+    <link rel="next" title="8. Monomer: Driving and the Rabi oscillation" href="../monomer/monomer-intro.html" />
+    <link rel="prev" title="7.1. Jump method algorithm" href="openqm-jump-method.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,57 +186,62 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">2. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">4. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">4.5. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">4.6. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">4.7. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">4.8. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">4.9. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">4.10. Phonon bath</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-qme-intro.html">6. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-radiation.html">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-regression.html">6.3. Quantum regression theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">6.4. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-method.html">7.1. Jump method algorithm</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.3. A Simple example of the jump method</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3. A Simple example of the jump method</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">8.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">8.2. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.3. Quantum Trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">9. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">9.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">9.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">9.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">10. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">10.1. The Model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">11. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">11.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">11.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">11.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">11.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -465,11 +470,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-jumps">13.3.1. Calculating jumps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots-of-quantum-trajectory">13.3.2. Plots of quantum trajectory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-and-statistics">13.3.3. Waiting time distribution and statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-second-order-coherence">13.3.4. Calculation of second-order coherence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-qutip-routines">13.3.5. Using QuTiP routines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-jumps">7.3.1. Calculating jumps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots-of-quantum-trajectory">7.3.2. Plots of quantum trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-and-statistics">7.3.3. Waiting time distribution and statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-second-order-coherence">7.3.4. Calculation of second-order coherence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-qutip-routines">7.3.5. Using QuTiP routines</a></li>
 </ul>
             </nav>
         </div>
@@ -482,10 +487,10 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-simple-example-of-the-jump-method">
-<span id="sec-openqm-jump-example"></span><h1><span class="section-number">13.3. </span>A Simple example of the jump method<a class="headerlink" href="#a-simple-example-of-the-jump-method" title="Link to this heading">#</a></h1>
-<p>Let us calculate a quantum trajectory of thermal fluorescence from a single emitter using the same model as used in the example of quantum master equation. (See <a class="reference internal" href="openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 12.2</span></a>.)</p>
+<span id="sec-openqm-jump-example"></span><h1><span class="section-number">7.3. </span>A Simple example of the jump method<a class="headerlink" href="#a-simple-example-of-the-jump-method" title="Link to this heading">#</a></h1>
+<p>Let us calculate a quantum trajectory of thermal fluorescence from a single emitter using the same model as used in the example of quantum master equation. (See <a class="reference internal" href="openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 6.4</span></a>.)</p>
 <section id="calculating-jumps">
-<h2><span class="section-number">13.3.1. </span>Calculating jumps<a class="headerlink" href="#calculating-jumps" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3.1. </span>Calculating jumps<a class="headerlink" href="#calculating-jumps" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">QuTiP</span></code> has a built-in routine to calculate quantum trajectory.  In order to understand the algorithm, we write our own code. It is too slow for real applications. Use <code class="docutils literal notranslate"><span class="pre">QuTiP</span></code> instead.</p>
 <p>In the following code, the simulation continues until the photon counts reaches the maximum. It takes a while to complete the simulation if a large number of photons are specified.   At each time step, <span class="math notranslate nohighlight">\(\langle \sigma_z \rangle\)</span> is computed and the time a photon is emitted is recorded.  This code takes several minutes or more to complete.</p>
 <div class="cell docutils container">
@@ -597,16 +602,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of emissions  = 1000    rate = 0.0422993951186498
-number of absorption = 1000    rate = 0.0422993951186498
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of emissions  = 1000    rate = 0.04375620791199751
+number of absorption = 999    rate = 0.04371245170408551
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="plots-of-quantum-trajectory">
-<h2><span class="section-number">13.3.2. </span>Plots of quantum trajectory<a class="headerlink" href="#plots-of-quantum-trajectory" title="Link to this heading">#</a></h2>
-<p>First, we plot the quantum trajectory and the spike train of the first 50 photons. Compare the spikes of photon with three statistical types discussed in <a class="reference internal" href="../foundations/bunching.html#ch-bunching-fcs"><span class="std std-numref">Chapter 3</span></a>.</p>
+<h2><span class="section-number">7.3.2. </span>Plots of quantum trajectory<a class="headerlink" href="#plots-of-quantum-trajectory" title="Link to this heading">#</a></h2>
+<p>First, we plot the quantum trajectory and the spike train of the first 50 photons. Compare the spikes of photon with three statistical types discussed in <a class="reference internal" href="../foundations/bunching.html#ch-bunching-fcs"><span class="std std-numref">Chapter 2</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_time</span> <span class="o">=</span> <span class="n">spikes</span><span class="p">[</span><span class="mi">50</span><span class="p">]</span>
@@ -628,12 +633,12 @@ number of absorption = 1000    rate = 0.0422993951186498
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e1cff31cd98a9af7a7ceedc31945cb289d31edb2a6267286ca6652b73b097831.png" src="../_images/e1cff31cd98a9af7a7ceedc31945cb289d31edb2a6267286ca6652b73b097831.png" />
+<img alt="../_images/9fa07bf960f6132878a881d276f104d265f3b02fc1ecbda74717cb9d95d2158a.png" src="../_images/9fa07bf960f6132878a881d276f104d265f3b02fc1ecbda74717cb9d95d2158a.png" />
 </div>
 </div>
 </section>
 <section id="waiting-time-distribution-and-statistics">
-<h2><span class="section-number">13.3.3. </span>Waiting time distribution and statistics<a class="headerlink" href="#waiting-time-distribution-and-statistics" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3.3. </span>Waiting time distribution and statistics<a class="headerlink" href="#waiting-time-distribution-and-statistics" title="Link to this heading">#</a></h2>
 <p>In the above example, we have a very limited sampling.  Nevertheless, we attempt to make a statistical analysis as a practice.  We generate collection of waiting time and evaluate statistical information.  Since the variance is smaller than the mean squared, the distribution is most likely sub-poissonian and thus anti-bunching is expected, in consistent with <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> obtained by the quantum master equation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,23 +668,23 @@ number of absorption = 1000    rate = 0.0422993951186498
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  23.64084084084084
-standard deviation =  19.562615613033845
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  22.87037037037037
+standard deviation =  17.518597667256117
 likely sub-poissonian
 </pre></div>
 </div>
-<img alt="../_images/cef6b07696bb96ee58a06154cdf7bd9770235ff6099c15a5bf043980b9eee30d.png" src="../_images/cef6b07696bb96ee58a06154cdf7bd9770235ff6099c15a5bf043980b9eee30d.png" />
+<img alt="../_images/6b85475783f74c975960eb3aaedaa05d055ca1f046d2650e8f18a32f5efa3401.png" src="../_images/6b85475783f74c975960eb3aaedaa05d055ca1f046d2650e8f18a32f5efa3401.png" />
 </div>
 </div>
 </section>
 <section id="calculation-of-second-order-coherence">
-<h2><span class="section-number">13.3.4. </span>Calculation of second-order coherence<a class="headerlink" href="#calculation-of-second-order-coherence" title="Link to this heading">#</a></h2>
-<p>Calculating <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the spike train of photons is strait forward as discussed in <a class="reference internal" href="../foundations/bunching.html#ch-bunching-fcs"><span class="std std-numref">Chapter 3</span></a>.  For a spike train <span class="math notranslate nohighlight">\(\{t_{1}, t_{2}, \cdots, t_{N}\}\)</span> of <span class="math notranslate nohighlight">\(N\)</span> photons, the number of photons separated by time difference  <span class="math notranslate nohighlight">\(\tau\)</span> is given by [same as Eq. <a class="reference internal" href="../foundations/bunching.html#equation-eq-pair-counting">(3.1)</a>]</p>
+<h2><span class="section-number">7.3.4. </span>Calculation of second-order coherence<a class="headerlink" href="#calculation-of-second-order-coherence" title="Link to this heading">#</a></h2>
+<p>Calculating <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the spike train of photons is strait forward as discussed in <a class="reference internal" href="../foundations/bunching.html#ch-bunching-fcs"><span class="std std-numref">Chapter 2</span></a>.  For a spike train <span class="math notranslate nohighlight">\(\{t_{1}, t_{2}, \cdots, t_{N}\}\)</span> of <span class="math notranslate nohighlight">\(N\)</span> photons, the number of photons separated by time difference  <span class="math notranslate nohighlight">\(\tau\)</span> is given by [same as Eq. <a class="reference internal" href="../foundations/bunching.html#equation-eq-pair-counting">(2.1)</a>]</p>
 <div class="math notranslate nohighlight">
 \[
 n(\tau) = \sum_{i &lt; j} \delta(\tau - t_{j}+t_{i})
 \]</div>
-<p>which is proportional to <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span>.  We must scale <span class="math notranslate nohighlight">\(n(\tau)\)</span> so that  <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> is appropriately normalized.  Due to the presence of delta function,  Equation <a class="reference internal" href="../foundations/bunching.html#equation-eq-pair-counting">(3.1)</a> is numerically not practical. We usually plot it as a histogram, which shows the number of photons per the bin width <span class="math notranslate nohighlight">\(\Delta \tau\)</span>. Since <span class="math notranslate nohighlight">\(g^{(2)}\)</span> is dimensionless, the scaling functor must cancel <span class="math notranslate nohighlight">\(\Delta t\)</span>. Recall that <span class="math notranslate nohighlight">\(\lim_{\tau\rightarrow\infty} g^{(2)}(\tau) = 1\)</span>.  That means there is no correlation at a large <span class="math notranslate nohighlight">\(\tau\)</span>.  Then, <span class="math notranslate nohighlight">\(n(\tau)\)</span> also does not depend on <span class="math notranslate nohighlight">\(\tau\)</span>.  Now, we evaluate <span class="math notranslate nohighlight">\(n\)</span> when there is no correlation. The summation over <span class="math notranslate nohighlight">\(i\)</span> generates <span class="math notranslate nohighlight">\(N\)</span>.   The summation over <span class="math notranslate nohighlight">\(j\)</span> counts the average number of photons with <span class="math notranslate nohighlight">\(\Delta \tau\)</span>, which is <span class="math notranslate nohighlight">\(N \Delta \tau / t_\text{max}\)</span> where <span class="math notranslate nohighlight">\(t_\text{max}\)</span> is total measurement time.  Thus <span class="math notranslate nohighlight">\(n(\infty) \approx N^2 \Delta \tau / t_\text{max}\)</span>. Finally we have a properly normalized <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> as
+<p>which is proportional to <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span>.  We must scale <span class="math notranslate nohighlight">\(n(\tau)\)</span> so that  <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> is appropriately normalized.  Due to the presence of delta function,  Equation <a class="reference internal" href="../foundations/bunching.html#equation-eq-pair-counting">(2.1)</a> is numerically not practical. We usually plot it as a histogram, which shows the number of photons per the bin width <span class="math notranslate nohighlight">\(\Delta \tau\)</span>. Since <span class="math notranslate nohighlight">\(g^{(2)}\)</span> is dimensionless, the scaling functor must cancel <span class="math notranslate nohighlight">\(\Delta t\)</span>. Recall that <span class="math notranslate nohighlight">\(\lim_{\tau\rightarrow\infty} g^{(2)}(\tau) = 1\)</span>.  That means there is no correlation at a large <span class="math notranslate nohighlight">\(\tau\)</span>.  Then, <span class="math notranslate nohighlight">\(n(\tau)\)</span> also does not depend on <span class="math notranslate nohighlight">\(\tau\)</span>.  Now, we evaluate <span class="math notranslate nohighlight">\(n\)</span> when there is no correlation. The summation over <span class="math notranslate nohighlight">\(i\)</span> generates <span class="math notranslate nohighlight">\(N\)</span>.   The summation over <span class="math notranslate nohighlight">\(j\)</span> counts the average number of photons with <span class="math notranslate nohighlight">\(\Delta \tau\)</span>, which is <span class="math notranslate nohighlight">\(N \Delta \tau / t_\text{max}\)</span> where <span class="math notranslate nohighlight">\(t_\text{max}\)</span> is total measurement time.  Thus <span class="math notranslate nohighlight">\(n(\infty) \approx N^2 \Delta \tau / t_\text{max}\)</span>. Finally we have a properly normalized <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> as
 $<span class="math notranslate nohighlight">\(
 g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delta \tau}
 \)</span>$</p>
@@ -731,13 +736,13 @@ g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3cecc33f447091103b26bed62caec5f97d06c6c905ca9ee3b66aae5b3372a65c.png" src="../_images/3cecc33f447091103b26bed62caec5f97d06c6c905ca9ee3b66aae5b3372a65c.png" />
+<img alt="../_images/d28ba99de4bb4fb7e09d01bfb768a46bb25aad2a8835a6b61575994609ce08c3.png" src="../_images/d28ba99de4bb4fb7e09d01bfb768a46bb25aad2a8835a6b61575994609ce08c3.png" />
 </div>
 </div>
 </section>
 <section id="using-qutip-routines">
-<h2><span class="section-number">13.3.5. </span>Using QuTiP routines<a class="headerlink" href="#using-qutip-routines" title="Link to this heading">#</a></h2>
-<p>Let us calcuate the same trajectory using QuTiP routine <code class="docutils literal notranslate"><span class="pre">mcsolve</span></code> generates quantum trajectories.  The arguments are essetially the same used for <code class="docutils literal notranslate"><span class="pre">qmesolv()</span></code>.  See <a class="reference internal" href="qutip.html#ch-qutip"><span class="std std-numref">Chapter 11</span></a> for its usage.</p>
+<h2><span class="section-number">7.3.5. </span>Using QuTiP routines<a class="headerlink" href="#using-qutip-routines" title="Link to this heading">#</a></h2>
+<p>Let us calcuate the same trajectory using QuTiP routine <code class="docutils literal notranslate"><span class="pre">mcsolve</span></code> generates quantum trajectories.  The arguments are essetially the same used for <code class="docutils literal notranslate"><span class="pre">qmesolv()</span></code>.  See <a class="reference internal" href="qutip.html#ch-qutip"><span class="std std-numref">Chapter 5</span></a> for its usage.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -792,8 +797,8 @@ g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of absorptions = 1019  rate = 0.042458333333333334
-Number of emissions   = 1019  rate = 0.042458333333333334
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of absorptions = 1040  rate = 0.043333333333333335
+Number of emissions   = 1040  rate = 0.043333333333333335
 </pre></div>
 </div>
 </div>
@@ -837,7 +842,7 @@ Number of emissions   = 1019  rate = 0.042458333333333334
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13.1. </span>Jump method algorithm</p>
+        <p class="prev-next-title"><span class="section-number">7.1. </span>Jump method algorithm</p>
       </div>
     </a>
     <a class="right-next"
@@ -845,7 +850,7 @@ Number of emissions   = 1019  rate = 0.042458333333333334
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Monomer: Driving and the Rabi oscillation</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Monomer: Driving and the Rabi oscillation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -867,11 +872,11 @@ Number of emissions   = 1019  rate = 0.042458333333333334
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-jumps">13.3.1. Calculating jumps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots-of-quantum-trajectory">13.3.2. Plots of quantum trajectory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-and-statistics">13.3.3. Waiting time distribution and statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-second-order-coherence">13.3.4. Calculation of second-order coherence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-qutip-routines">13.3.5. Using QuTiP routines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-jumps">7.3.1. Calculating jumps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots-of-quantum-trajectory">7.3.2. Plots of quantum trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-and-statistics">7.3.3. Waiting time distribution and statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-second-order-coherence">7.3.4. Calculation of second-order coherence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-qutip-routines">7.3.5. Using QuTiP routines</a></li>
 </ul>
   </nav></div>
 

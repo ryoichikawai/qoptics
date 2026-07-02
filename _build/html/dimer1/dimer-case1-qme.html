@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15.2. QME: Numerical analysis &#8212; Optical coherence from small atomic clusters.</title>
+    <title>9.2. QME: Numerical analysis &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'dimer1/dimer-case1-qme';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15.3. Quantum trajectory" href="dimer-case1-jump.html" />
-    <link rel="prev" title="15.1. Dimer I: Model" href="dimer-case1-model.html" />
+    <link rel="next" title="9.3. Quantum trajectory" href="dimer-case1-jump.html" />
+    <link rel="prev" title="9.1. Dimer I: Model" href="dimer-case1-model.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,57 +186,62 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">2. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">4. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">4.5. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">4.6. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">4.7. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">4.8. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">4.9. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">4.10. Phonon bath</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">6. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-regression.html">6.3. Quantum regression theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">6.4. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">7.1. Jump method algorithm</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">7.3. A Simple example of the jump method</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">8.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">8.2. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.3. Quantum Trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-model.html">15.1. Dimer I: Model</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case1-intro.html">9. Dimer I: Incoherent emitters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-model.html">9.1. Dimer I: Model</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-jump.html">9.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">10. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">10.1. The Model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">11. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">11.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">11.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">11.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">11.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -465,8 +470,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state">15.2.1. Steady state</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-function">15.2.2. Second-order coherence function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state">9.2.1. Steady state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-function">9.2.2. Second-order coherence function</a></li>
 </ul>
             </nav>
         </div>
@@ -479,10 +484,10 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="qme-numerical-analysis">
-<span id="sec-dimer-case1-qme"></span><h1><span class="section-number">15.2. </span>QME: Numerical analysis<a class="headerlink" href="#qme-numerical-analysis" title="Link to this heading">#</a></h1>
-<p>Using the Hamiltonian <a class="reference internal" href="dimer-case1-model.html#equation-eq-dimer-case1-hamiltonian">(15.1)</a> and the disspator <a class="reference internal" href="dimer-case1-model.html#equation-eq-dimer-case1-dissipator">(15.2)</a>, we solve the quantum master equation using <code class="docutils literal notranslate"><span class="pre">QuTiP</span></code>.</p>
+<span id="sec-dimer-case1-qme"></span><h1><span class="section-number">9.2. </span>QME: Numerical analysis<a class="headerlink" href="#qme-numerical-analysis" title="Link to this heading">#</a></h1>
+<p>Using the Hamiltonian <a class="reference internal" href="dimer-case1-model.html#equation-eq-dimer-case1-hamiltonian">(9.1)</a> and the disspator <a class="reference internal" href="dimer-case1-model.html#equation-eq-dimer-case1-dissipator">(9.2)</a>, we solve the quantum master equation using <code class="docutils literal notranslate"><span class="pre">QuTiP</span></code>.</p>
 <section id="steady-state">
-<h2><span class="section-number">15.2.1. </span>Steady state<a class="headerlink" href="#steady-state" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2.1. </span>Steady state<a class="headerlink" href="#steady-state" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -509,63 +514,72 @@
 <span class="c1"># Collapse operators</span>
 <span class="n">c_ops</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma_a</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma_a</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma_e</span><span class="p">)</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma_e</span><span class="p">)</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
 
-<span class="c1"># Liouvillian</span>
-<span class="n">L</span> <span class="o">=</span> <span class="n">liouvillian</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">c_ops</span><span class="p">)</span>
-
 <span class="c1"># Steady state</span>
-<span class="n">rho_ss</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">rho_ss</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">c_ops</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First we check if the steady state follows the Boltzmann distribution.  The numerical results agree with the theory perfectly. Then, we also check if no coherence between <span class="math notranslate nohighlight">\(|eg\rangle\)</span> and <span class="math notranslate nohighlight">\(|ge\rangle\)</span>.   The corresponding matrix element indeed vanished.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Theory</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">2</span><span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">omega0</span><span class="o">/</span><span class="n">temperature</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">omega0</span><span class="o">/</span><span class="n">temperature</span><span class="p">)</span>
+<span class="n">p_ee</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">omega0</span><span class="o">/</span><span class="n">temperature</span><span class="p">)</span><span class="o">/</span><span class="n">p</span>
+<span class="n">p_eg</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">p</span>
+<span class="n">p_ge</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">p</span>
+<span class="n">p_gg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">omega0</span><span class="o">/</span><span class="n">temperature</span><span class="p">)</span><span class="o">/</span><span class="n">p</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** Steady state ***&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;total system&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rho_ss</span><span class="o">.</span><span class="n">full</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;subsystem 1&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rho_ss</span><span class="o">.</span><span class="n">ptrace</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">full</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;subsystem 2&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rho_ss</span><span class="o">.</span><span class="n">ptrace</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">full</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;** Diagonal elements of density operator **&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;          numerical theoretical&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_ee_ee  = </span><span class="si">{0:7.4f}</span><span class="s2">  </span><span class="si">{1:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_ss</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">p_ee</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_eg_eg  = </span><span class="si">{0:7.4f}</span><span class="s2">  </span><span class="si">{1:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_ss</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">p_eg</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_ge_ge  = </span><span class="si">{0:7.4f}</span><span class="s2">  </span><span class="si">{1:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_ss</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">p_ge</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_gg_gg  = </span><span class="si">{0:7.4f}</span><span class="s2">  </span><span class="si">{1:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_ss</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">p_gg</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">** Off-diagonal elements of density operator **&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_eg_ge  = </span><span class="si">{0:7.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_ss</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** Steady state ***
-total system
-[[ 0.07232949+0.j  0.        +0.j  0.        +0.j  0.        +0.j]
- [ 0.        +0.j  0.19661193+0.j -0.        +0.j  0.        +0.j]
- [ 0.        +0.j -0.        +0.j  0.19661193+0.j  0.        +0.j]
- [ 0.        +0.j  0.        +0.j  0.        +0.j  0.53444665+0.j]]
-subsystem 1
-[[0.26894142+0.j 0.        +0.j]
- [0.        +0.j 0.73105858+0.j]]
-subsystem 2
-[[0.26894142+0.j 0.        +0.j]
- [0.        +0.j 0.73105858+0.j]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>** Diagonal elements of density operator **
+          numerical theoretical
+ρ_ee_ee  =  0.0723    0.0723
+ρ_eg_eg  =  0.1966    0.1966
+ρ_ge_ge  =  0.1966    0.1966
+ρ_gg_gg  =  0.5344    0.5344
+
+** Off-diagonal elements of density operator **
+ρ_eg_ge  = -0.0000+0.0000j
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let us check if cross correlation indeed vanishes as we assumed.  The followinfg code confirms it.</p>
+<p>As a further check if cross correlation indeed vanishes as we assumed.  The following code confirms it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">expect</span><span class="p">(</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">rho_ss</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;sigma+_1 sigma-_1&gt; = &quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;sigmap_1 sigmam_1&gt; = </span><span class="si">{0:7.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">x</span><span class="o">=</span><span class="n">expect</span><span class="p">(</span><span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">rho_ss</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;sigma+_2 sigma-_2&gt; = &quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;sigmap_2 sigmam_2&gt; = </span><span class="si">{0:7.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">x</span><span class="o">=</span><span class="n">expect</span><span class="p">(</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">rho_ss</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;sigma+_1 sigma-_2&gt; = &quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;sigmap_1 sigmam_2&gt; = </span><span class="si">{0:7.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sigma+_1 sigma-_1&gt; =  0.2689414213699951
-&lt;sigma+_2 sigma-_2&gt; =  0.2689414213699951
-&lt;sigma+_1 sigma-_2&gt; =  0j
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sigmap_1 sigmam_1&gt; =  0.2689
+&lt;sigmap_2 sigmam_2&gt; =  0.2689
+&lt;sigmap_1 sigmam_2&gt; = 0.0000+0.0000j
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="second-order-coherence-function">
-<h2><span class="section-number">15.2.2. </span>Second-order coherence function<a class="headerlink" href="#second-order-coherence-function" title="Link to this heading">#</a></h2>
-<p>The coherence function measured by a detector does not depend on the location as shown in Eq. <a class="reference internal" href="dimer-case1-model.html#equation-eq-g2-dimer-incoherent">(15.3)</a>.  It is the same as emission counting without interference.  Nevertheless, <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the incoherent pair is not the same as that of a single emitter.  The no-delay coherence is <span class="math notranslate nohighlight">\(g^{(2)}(0)=0.5\)</span> instead of <span class="math notranslate nohighlight">\(0\)</span> as predicted by Eq. <a class="reference internal" href="../foundations/coherence-g2.html#equation-g2-incoherent-n">(4.14)</a>, suggesting that there is a good chance that two photons arrive at the same time.  When a photon emitted by the first emitter, the same emitter can’t emit another photon immediately.  However, another photon from the second emitter can arrive at the same time as the first one since the two photons emitted by different emitters are not independent from each other.  The following code clearly shows it.</p>
+<h2><span class="section-number">9.2.2. </span>Second-order coherence function<a class="headerlink" href="#second-order-coherence-function" title="Link to this heading">#</a></h2>
+<p>The coherence function measured by a detector does not depend on the location as shown in Eq. <a class="reference internal" href="dimer-case1-model.html#equation-eq-g2-dimer-incoherent">(9.3)</a>.  It is the same as emission counting without interference.  Nevertheless, <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the incoherent pair is not the same as that of a single emitter.  The no-delay coherence is <span class="math notranslate nohighlight">\(g^{(2)}(0)=0.5\)</span> instead of <span class="math notranslate nohighlight">\(0\)</span> as predicted by Eq. <code class="xref eq docutils literal notranslate"><span class="pre">eq:g2-incoherent-N</span></code>, suggesting that there is a good chance that two photons arrive at the same time.  When a photon emitted by the first emitter, the same emitter can’t emit the second photon immediately.  However, another photon from the second emitter can arrive at the same time as the first one since the two photons emitted by different emitters are completely independent from each other.  The following code clearly shows it.  In next section, we unravel the process using the jump method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
@@ -598,6 +612,24 @@ subsystem 2
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/9bf8f136e8c1359d959e55e4ec1bf2e9ce7732ad5a815cfb1c737ae3f0543dc9.png" src="../_images/9bf8f136e8c1359d959e55e4ec1bf2e9ce7732ad5a815cfb1c737ae3f0543dc9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quantum object: dims=[[2, 2], [2, 2]], shape=(4, 4), type=&#39;oper&#39;, dtype=CSR, isherm=True
+Qobj data =
+[[0. 0. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 0. 0.]]
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -639,7 +671,7 @@ subsystem 2
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15.1. </span>Dimer I: Model</p>
+        <p class="prev-next-title"><span class="section-number">9.1. </span>Dimer I: Model</p>
       </div>
     </a>
     <a class="right-next"
@@ -647,7 +679,7 @@ subsystem 2
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15.3. </span>Quantum trajectory</p>
+        <p class="prev-next-title"><span class="section-number">9.3. </span>Quantum trajectory</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -669,8 +701,8 @@ subsystem 2
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state">15.2.1. Steady state</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-function">15.2.2. Second-order coherence function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state">9.2.1. Steady state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-function">9.2.2. Second-order coherence function</a></li>
 </ul>
   </nav></div>
 

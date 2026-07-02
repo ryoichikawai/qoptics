@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13.1. Jump method algorithm &#8212; Optical coherence from small atomic clusters.</title>
+    <title>7.1. Jump method algorithm &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'methods/openqm-jump-method';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13.3. A Simple example of the jump method" href="openqm-jump-example.html" />
-    <link rel="prev" title="13. Jump method and Quantum Trajectory" href="openqm-jump-intro.html" />
+    <link rel="next" title="7.3. A Simple example of the jump method" href="openqm-jump-example.html" />
+    <link rel="prev" title="7. Jump method and Quantum Trajectory" href="openqm-jump-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,57 +186,62 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">2. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">4. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">4.5. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">4.6. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">4.7. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">4.8. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">4.9. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">4.10. Phonon bath</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.1. Jump method algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-qme-intro.html">6. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-radiation.html">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-regression.html">6.3. Quantum regression theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">6.4. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.1. Jump method algorithm</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-example.html">7.3. A Simple example of the jump method</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">8.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">8.2. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.3. Quantum Trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">9. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">9.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">9.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">9.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">10. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">10.1. The Model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">11. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">11.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">11.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">11.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">11.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -465,12 +470,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13.1. Jump method algorithm</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basic-idea-of-the-jump-method">13.1.1. The basic idea of the jump method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">13.1.2. Algorithm</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7.1. Jump method algorithm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basic-idea-of-the-jump-method">7.1.1. The basic idea of the jump method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">7.1.2. Algorithm</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-with-the-quantum-master-equation">13.2. Relation with the quantum master equation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-with-the-quantum-master-equation">7.2. Relation with the quantum master equation</a></li>
 </ul>
 
             </nav>
@@ -484,9 +489,9 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="jump-method-algorithm">
-<span id="sec-openqm-jump-method"></span><h1><span class="section-number">13.1. </span>Jump method algorithm<a class="headerlink" href="#jump-method-algorithm" title="Link to this heading">#</a></h1>
+<span id="sec-openqm-jump-method"></span><h1><span class="section-number">7.1. </span>Jump method algorithm<a class="headerlink" href="#jump-method-algorithm" title="Link to this heading">#</a></h1>
 <section id="the-basic-idea-of-the-jump-method">
-<h2><span class="section-number">13.1.1. </span>The basic idea of the jump method<a class="headerlink" href="#the-basic-idea-of-the-jump-method" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1.1. </span>The basic idea of the jump method<a class="headerlink" href="#the-basic-idea-of-the-jump-method" title="Link to this heading">#</a></h2>
 <p>In the standard quantum mechanics, a quantum state the time evolution of <span class="math notranslate nohighlight">\(|psi\rangle\)</span> is determined by the Schrödinger equation <span class="math notranslate nohighlight">\(i\frac{d}{dt}|\psi\rangle = H |\psi\rangle\)</span>, which preserves the normalization.  The amount of information encoded in the state remains the same all time.  This is true as long as the Hamiltonian is self-adjoint, i.e., <span class="math notranslate nohighlight">\(H^{\dagger} = H\)</span>.  The evolution is continuous and smooth.  However, such a unitary evolution alone cannot describe the whole story of quantum evolution.  When measurement is performed on the state, it instantaneously jumps to one of eigenvectors of the observable.  No unitary evolution can describe quantum measurement process.</p>
 <p>Quantum jumps sees in a quantum trajectory are essentially the same as such quantum measurement processes.  The interaction between emitters and radiation field can be interpreted as continuous measurement by the radiation field, which causes the jumps.  Hence, we can’t use the standard  Schrödinger equation to find a quantum trajectory. WE need a non-unitary evolution.</p>
 <p>Suppose that in absence of the radiation field, the emitter evolves unitarily with  Hamiltonian <span class="math notranslate nohighlight">\(H_{S}\)</span>.  When it interacts with the radiation field jump from state <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> to <span class="math notranslate nohighlight">\(|\beta\rangle\)</span>. Such jump is mathematically described by an operator <span class="math notranslate nohighlight">\(C=\sqrt{\gamma} |\beta\rangle\langle \alpha|\)</span> where <span class="math notranslate nohighlight">\(\gamma\)</span> is a rate of jump<span class="math notranslate nohighlight">\(.  \)</span>C$ is called collapse operator.</p>
@@ -497,13 +502,13 @@ H_\text{eff} = H_{S} - \frac{i}{2} C^{\dagger} C
 \]</div>
 <p>Because of the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> in front of the collapse operator, the effective Hamiltonian is not self-adjoint.  Nevertheless, we use this Hamiltonian in the Schrödinger equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-fake-shcroedinger">
-<span class="eqno">(13.1)<a class="headerlink" href="#equation-eq-fake-shcroedinger" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-fake-shcroedinger" title="Link to this equation">#</a></span>\[
 i \frac{d}{dt} |\psi\rangle = H_\text{eff} |\psi\rangle
 \]</div>
 <p>Obviously, the norm is not conserved.  Some information is leaking out of the system. But total information must be constant.  So, the radiation field must be receiving the information, which is photon.  We know that emission happens randomly and instantaneously.  So, the loss of information must happen as a jump.</p>
-<p>Now, we describe this scenario mathematically.  Integrating Eq. <a class="reference internal" href="#equation-eq-fake-unitary">(13.2)</a> for brief time period <span class="math notranslate nohighlight">\(\delta t\)</span>,</p>
+<p>Now, we describe this scenario mathematically.  Integrating Eq. <a class="reference internal" href="#equation-eq-fake-unitary">(7.2)</a> for brief time period <span class="math notranslate nohighlight">\(\delta t\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-eq-fake-unitary">
-<span class="eqno">(13.2)<a class="headerlink" href="#equation-eq-fake-unitary" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-fake-unitary" title="Link to this equation">#</a></span>\[
 |\psi(t+\delta t)\rangle \approx \left(1 - i H_\text{eff} \delta t\right) |\psi(t)\rangle
 \]</div>
 <p>Assuming that the state is initially normalized (<span class="math notranslate nohighlight">\(\langle\psi(t)|\psi(t)\rangle = 1\)</span>), the loss of the normalization is
@@ -518,7 +523,7 @@ $<span class="math notranslate nohighlight">\(
 <p>First of all, <span class="math notranslate nohighlight">\(\delta p\)</span> is clearly non-negative.  If <span class="math notranslate nohighlight">\(|\psi(t)\rangle\)</span> is orthogonal to <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>, <span class="math notranslate nohighlight">\(\delta p = 0\)</span>.  The norm conserves since no transition can happen.  On the opposite limit, if <span class="math notranslate nohighlight">\(\psi(t)\rangle = |\alpha\rangle\)</span> and <span class="math notranslate nohighlight">\(\delta t \gamma=1\)</span>, then <span class="math notranslate nohighlight">\(\delta p = 1\)</span>, that means the norm is completely lost.  Since <span class="math notranslate nohighlight">\(\gamma\)</span> is the rate of jump, if the initial state is <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>, it will jump to <span class="math notranslate nohighlight">\(|\beta\rangle\)</span> within <span class="math notranslate nohighlight">\(\delta t = 1/\gamma\)</span>.  We note that <span class="math notranslate nohighlight">\(\delta p\)</span> behaves like a probability.  If <span class="math notranslate nohighlight">\(\delta p =0\)</span>, then there is no jump.  If <span class="math notranslate nohighlight">\(\delta p = 1\)</span>, a jump certainly takes place.  Based on this observation, we postulate that a jump takes place during time period <span class="math notranslate nohighlight">\(\delta t\)</span> with probability <span class="math notranslate nohighlight">\(\delta p\)</span>.</p>
 </section>
 <section id="algorithm">
-<h2><span class="section-number">13.1.2. </span>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1.2. </span>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">#</a></h2>
 <p>In the above example, we used only one collapse operator.  We can include as many collapse operators as we like:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -567,18 +572,18 @@ C_{j} = \sqrt{\gamma_j} |\beta_{j}\rangle\langle \alpha_{j}|.
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="relation-with-the-quantum-master-equation">
-<h1><span class="section-number">13.2. </span>Relation with the quantum master equation<a class="headerlink" href="#relation-with-the-quantum-master-equation" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7.2. </span>Relation with the quantum master equation<a class="headerlink" href="#relation-with-the-quantum-master-equation" title="Link to this heading">#</a></h1>
 <p>Using the state vector <span class="math notranslate nohighlight">\(|psi(t)\rangle\)</span> obtained by the above jump methods, the density operator evolves as</p>
 <div class="math notranslate nohighlight" id="equation-eq-fake-liouoville">
-<span class="eqno">(13.3)<a class="headerlink" href="#equation-eq-fake-liouoville" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-fake-liouoville" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \frac{d}{dt} \rho(t) &amp;= \left(\frac{d}{dt}|\psi(t)\rangle\right)\langle\psi(t)| + |\psi(t)\rangle\left(\frac{d}{dt} \langle \psi(t)|\right)\\
 &amp; = -i H_\text{eff} |\psi(t)\rangle\langle\psi(t)| + i |\psi(t)\rangle\langle\psi(t)| H^{\dagger}_\text{eff} \\
 &amp; = -i [H_{S},\rho(t)] - \frac{1}{2} C^{\dagger} C \rho(t) - \frac{1}{2} \rho(t) C^{\dagger} C
 \end{aligned}
 \end{split}\]</div>
-<p>SInce this evolution does not include the jumps yet, the norm of <span class="math notranslate nohighlight">\(\rho\)</span> does not conserve. Taking trace of Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(13.3)</a>, we find that the density operator is losing the normalization by <span class="math notranslate nohighlight">\(\langle C^{\dagger} C \rangle\)</span> per unit time.  Hence, we need to add a jump term which compensates the loss.</p>
-<p>Compare  Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(13.3)</a> with the standard form of a quantum master equation, <span class="math notranslate nohighlight">\(C \rho(t) C^{\dagger}\)</span> is missing.  This is exactly the state created by the jump, <span class="math notranslate nohighlight">\(C|\psi\rangle\langle \psi|C^{\dagger}= \gamma |\langle\alpha|\psi\rangle|^2|\beta\rangle\langle \beta|\)</span>. If this is added to Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(13.3)</a>, the loss of the normalization is fully recovered. In fact, we can see that the additional term adds the destination state <span class="math notranslate nohighlight">\(|\beta\rangle\langle \beta|\)</span> with the rate <span class="math notranslate nohighlight">\(\gamma |\langle\alpha|\psi\rangle|^2|\)</span>.  This rate is reasonable since <span class="math notranslate nohighlight">\(\gamma\)</span> is the decay rate of <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> and <span class="math notranslate nohighlight">\(|\langle\alpha|\psi\rangle|^2|\)</span> is the probability that the state is in <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>.</p>
+<p>SInce this evolution does not include the jumps yet, the norm of <span class="math notranslate nohighlight">\(\rho\)</span> does not conserve. Taking trace of Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(7.3)</a>, we find that the density operator is losing the normalization by <span class="math notranslate nohighlight">\(\langle C^{\dagger} C \rangle\)</span> per unit time.  Hence, we need to add a jump term which compensates the loss.</p>
+<p>Compare  Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(7.3)</a> with the standard form of a quantum master equation, <span class="math notranslate nohighlight">\(C \rho(t) C^{\dagger}\)</span> is missing.  This is exactly the state created by the jump, <span class="math notranslate nohighlight">\(C|\psi\rangle\langle \psi|C^{\dagger}= \gamma |\langle\alpha|\psi\rangle|^2|\beta\rangle\langle \beta|\)</span>. If this is added to Eq. <a class="reference internal" href="#equation-eq-fake-liouoville">(7.3)</a>, the loss of the normalization is fully recovered. In fact, we can see that the additional term adds the destination state <span class="math notranslate nohighlight">\(|\beta\rangle\langle \beta|\)</span> with the rate <span class="math notranslate nohighlight">\(\gamma |\langle\alpha|\psi\rangle|^2|\)</span>.  This rate is reasonable since <span class="math notranslate nohighlight">\(\gamma\)</span> is the decay rate of <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> and <span class="math notranslate nohighlight">\(|\langle\alpha|\psi\rangle|^2|\)</span> is the probability that the state is in <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span>.</p>
 <p>Now we conclude that the density operator in a standard quantum master equation includes both the Schrödinger like evolution with <span class="math notranslate nohighlight">\(H_\text{eff}\)</span> and jumps and thus<br />
 the jump method is equivalent to the quantum master equation.  Since the jump method simulates the evolution of a single system rather than the ensemble, it is often said that the jump method unravels the corresponding quantum master equation.</p>
 </section>
@@ -619,7 +624,7 @@ the jump method is equivalent to the quantum master equation.  Since the jump me
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Jump method and Quantum Trajectory</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Jump method and Quantum Trajectory</p>
       </div>
     </a>
     <a class="right-next"
@@ -627,7 +632,7 @@ the jump method is equivalent to the quantum master equation.  Since the jump me
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13.3. </span>A Simple example of the jump method</p>
+        <p class="prev-next-title"><span class="section-number">7.3. </span>A Simple example of the jump method</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -649,12 +654,12 @@ the jump method is equivalent to the quantum master equation.  Since the jump me
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13.1. Jump method algorithm</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basic-idea-of-the-jump-method">13.1.1. The basic idea of the jump method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">13.1.2. Algorithm</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7.1. Jump method algorithm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basic-idea-of-the-jump-method">7.1.1. The basic idea of the jump method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm">7.1.2. Algorithm</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-with-the-quantum-master-equation">13.2. Relation with the quantum master equation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-with-the-quantum-master-equation">7.2. Relation with the quantum master equation</a></li>
 </ul>
 
   </nav></div>

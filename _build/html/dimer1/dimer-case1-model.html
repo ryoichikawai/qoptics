@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15.1. Dimer I: Model &#8212; Optical coherence from small atomic clusters.</title>
+    <title>9.1. Dimer I: Model &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'dimer1/dimer-case1-model';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15.2. QME: Numerical analysis" href="dimer-case1-qme.html" />
-    <link rel="prev" title="15. Dimer I: Incoherent emitters" href="dimer-case1-intro.html" />
+    <link rel="next" title="9.2. QME: Numerical analysis" href="dimer-case1-qme.html" />
+    <link rel="prev" title="9. Dimer I: Incoherent emitters" href="dimer-case1-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,57 +186,62 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">2. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">4. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">4.5. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">4.6. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">4.7. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">4.8. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">4.9. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">4.10. Phonon bath</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">6. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-regression.html">6.3. Quantum regression theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">6.4. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">7.1. Jump method algorithm</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">7.3. A Simple example of the jump method</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">8.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">8.2. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.3. Quantum Trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.1. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case1-intro.html">9. Dimer I: Incoherent emitters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-qme.html">9.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-jump.html">9.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">10. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">10.1. The Model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">11. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">11.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">11.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">11.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">11.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -465,9 +470,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system">15.1.1. System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipator">15.1.2. Dissipator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">15.1.3. Coherence function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system">9.1.1. System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipator">9.1.2. Dissipator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">9.1.3. Coherence function</a></li>
 </ul>
             </nav>
         </div>
@@ -480,33 +485,29 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dimer-i-model">
-<span id="sec-dimer1-model"></span><h1><span class="section-number">15.1. </span>Dimer I: Model<a class="headerlink" href="#dimer-i-model" title="Link to this heading">#</a></h1>
+<span id="sec-dimer1-model"></span><h1><span class="section-number">9.1. </span>Dimer I: Model<a class="headerlink" href="#dimer-i-model" title="Link to this heading">#</a></h1>
 <section id="system">
-<h2><span class="section-number">15.1.1. </span>System<a class="headerlink" href="#system" title="Link to this heading">#</a></h2>
-<p>Each emitter is modeled by a two-level system as defined in <a class="reference internal" href="../model/emitter.html#ch-emitter"><span class="std std-numref">Chapter 6</span></a>.  The Hilbert space of the pair is now four dimensional.  For computational purpose, we use the standard product basis set</p>
+<h2><span class="section-number">9.1.1. </span>System<a class="headerlink" href="#system" title="Link to this heading">#</a></h2>
+<p>Each emitter is modeled by a two-level system as defined in <a class="reference internal" href="../model/emitter.html#sec-emitter"><span class="std std-numref">Chapter 4.5</span></a>.  For computational purpose, we use the standard product basis set <span class="math notranslate nohighlight">\(|gg\rangle\)</span>, <span class="math notranslate nohighlight">\(|ge\rangle\)</span>, <span class="math notranslate nohighlight">\(|eg\rangle\)</span>, and <span class="math notranslate nohighlight">\(|ee\rangle\)</span> (see <a class="reference internal" href="../model/emitter.html#sec-emitter"><span class="std std-numref">Chapter 4.5</span></a> for the definition of the product base.)</p>
+<p>The four-dimensional spin operators are defined by (see <a class="reference internal" href="../model/emitter.html#sec-emitter"><span class="std std-numref">Chapter 4.5</span></a>)</p>
 <div class="math notranslate nohighlight">
 \[
-|gg\rangle = |g\rangle \otimes |g\rangle, \quad |ge\rangle = |g\rangle \otimes |e\rangle, \quad |eg\rangle = |e\rangle \otimes |g\rangle, \quad |ee\rangle = |e\rangle \otimes |e\rangle
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\otimes\)</span> indicates tensor product. We introduce other basis sets such as the Dick basis for theory and also for data analysis.  In particular, we need to define collapse operators for quantum trajectories using an appropriate basis, which we will discuss case by case.</p>
-<p>The four-dimensional spin operators are defined by</p>
-<div class="math notranslate nohighlight">
-\[
-\sigma_{1}^{\mu} = \sigma^{\mu} \otimes I, \qquad \sigma_{2}^{\mu} = I \otimes \sigma^{\mu} , \qquad \mu = x,y,z, \pm
+\sigma_{1}^{\mu} = \sigma^{\mu} \otimes I, \qquad \sigma_{2}^{\mu} = I \otimes \sigma^{\mu} , \qquad \mu = x,y,z, \pm.
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(I\)</span> is the identity operator in the two-dimensional Hilbert space.</p>
 <p>The Hamiltonian of the free system is then expressed as</p>
 <div class="math notranslate nohighlight" id="equation-eq-dimer-case1-hamiltonian">
-<span class="eqno">(15.1)<a class="headerlink" href="#equation-eq-dimer-case1-hamiltonian" title="Link to this equation">#</a></span>\[
+<span class="eqno">(9.1)<a class="headerlink" href="#equation-eq-dimer-case1-hamiltonian" title="Link to this equation">#</a></span>\[
 H_{0} = \sum_{j=1}^{2} \frac{\omega_0}{2} \sigma^{z}_{j}
 \]</div>
 <p>We assume that there is no interaction between the emitters.</p>
 </section>
 <section id="dissipator">
-<h2><span class="section-number">15.1.2. </span>Dissipator<a class="headerlink" href="#dissipator" title="Link to this heading">#</a></h2>
-<p>Each emitter absorbs and emitts photons independently.  The dissipator for the pair is given by</p>
+<h2><span class="section-number">9.1.2. </span>Dissipator<a class="headerlink" href="#dissipator" title="Link to this heading">#</a></h2>
+<p>As discussed in <a class="reference internal" href="../methods/openqm-qme-def.html#sec-openqm-qme-method"><span class="std std-numref">Chapter 6.1</span></a>, the definition of the disppator is ambiguous.  We need to pick collapse operators consistent with the physical situation.   When the emitters are well separated, the radiation field interacts with them individually.  That means jumps take places in each emitter independently.  Hence, there are four jumps.  The collapse operators    for absorption and emission by the <span class="math notranslate nohighlight">\(j\)</span>-th emitter are <span class="math notranslate nohighlight">\(\sqrt{\gamma_{a}} \sigma^{+}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sqrt{\gamma_{e}} \sigma^{-}_{j}\)</span>, respectively.</p>
+<p>Accordingly, the dissipator for the pair is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-dimer-case1-dissipator">
-<span class="eqno">(15.2)<a class="headerlink" href="#equation-eq-dimer-case1-dissipator" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(9.2)<a class="headerlink" href="#equation-eq-dimer-case1-dissipator" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \mathcal{D}(\rho) 
 &amp;=  \frac{1}{2} \gamma_{e} \left(2 \sigma^{-}_{1} \rho \sigma^{+}_{1} - \sigma^{+}_{1}\sigma^{-}_{1} \rho - \rho \sigma^{+}_{1}\sigma^{-}_{1} \right) \\
@@ -515,14 +516,14 @@ H_{0} = \sum_{j=1}^{2} \frac{\omega_0}{2} \sigma^{z}_{j}
 &amp;+  \frac{1}{2} \gamma_{a} \left(2 \sigma^{+}_{2} \rho \sigma^{-}_{2} - \sigma^{-}_{2}\sigma^{+}_{2} \rho - \rho \sigma^{-}_{2}\sigma^{+}_{2} \right)
 \end{aligned}
 \end{split}\]</div>
-<p>where the emission and absorption rates are defined <span class="math notranslate nohighlight">\(\gamma_{e} = \gamma_{0} (N_{T}+1)\)</span> and <span class="math notranslate nohighlight">\(\gamma_{a} = \gamma_{0} N_{T}\)</span>.  See <a class="reference internal" href="../methods/openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 12.2</span></a> for details.</p>
-<p>There is no off-diagonal dissipator.  We have four collapse operators, <span class="math notranslate nohighlight">\(\sqrt{\gamma_{e}}\sigma^{-}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sqrt{\gamma_{a}}\sigma^{+}_{j}\)</span> with <span class="math notranslate nohighlight">\(j=1,2\)</span>.</p>
+<p>where the emission and absorption rates are defined <span class="math notranslate nohighlight">\(\gamma_{e} = \gamma_{0} (N_{T}+1)\)</span> and <span class="math notranslate nohighlight">\(\gamma_{a} = \gamma_{0} N_{T}\)</span>.  See <a class="reference internal" href="../methods/openqm-qme-example.html#sec-openqm-qme-example"><span class="std std-numref">Chapter 6.4</span></a> for details.</p>
+<p>There is no off-diagonal dissipator since <span class="math notranslate nohighlight">\(\sigma^{\pm}_{1}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{\pm}_{2}\)</span> are not correlated.</p>
 </section>
 <section id="coherence-function">
-<h2><span class="section-number">15.1.3. </span>Coherence function<a class="headerlink" href="#coherence-function" title="Link to this heading">#</a></h2>
-<p>We now measure the second-order coherence function by a detector placed at <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>. Using the source field <a class="reference internal" href="../methods/openqm-qme-method.html#equation-eq-g2-src-field">(12.4)</a> and discard the cross correlation between the emitters, we obtain</p>
+<h2><span class="section-number">9.1.3. </span>Coherence function<a class="headerlink" href="#coherence-function" title="Link to this heading">#</a></h2>
+<p>We now measure the second-order coherence function by a detector placed at <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>. Using the source field <a class="reference internal" href="../methods/openqm-qme-radiation.html#equation-eq-g2-src-field">(6.15)</a> and discard the cross correlation between the emitters, we obtain</p>
 <div class="math notranslate nohighlight" id="equation-eq-g2-dimer-incoherent">
-<span class="eqno">(15.3)<a class="headerlink" href="#equation-eq-g2-dimer-incoherent" title="Link to this equation">#</a></span>\[
+<span class="eqno">(9.3)<a class="headerlink" href="#equation-eq-g2-dimer-incoherent" title="Link to this equation">#</a></span>\[
 g^{(2)}(\tau;\mathbf{R}) 
 = \frac{\sum_{ij} \langle\sigma^{+}_{i}(t) \sigma^{+}_{j}(t+\tau)\sigma^{-}_{j}(t+\tau)\sigma^{-}_{i}(t)\rangle_{ss}}{ \left( \sum_{i} \langle\sigma^{+}_{i}(t)\sigma^{-}_{i}(t)\rangle_{ss}\right)^2}.
 \]</div>
@@ -566,7 +567,7 @@ g^{(2)}(\tau;\mathbf{R})
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Dimer I: Incoherent emitters</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Dimer I: Incoherent emitters</p>
       </div>
     </a>
     <a class="right-next"
@@ -574,7 +575,7 @@ g^{(2)}(\tau;\mathbf{R})
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15.2. </span>QME: Numerical analysis</p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>QME: Numerical analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -596,9 +597,9 @@ g^{(2)}(\tau;\mathbf{R})
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system">15.1.1. System</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipator">15.1.2. Dissipator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">15.1.3. Coherence function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system">9.1.1. System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipator">9.1.2. Dissipator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">9.1.3. Coherence function</a></li>
 </ul>
   </nav></div>
 

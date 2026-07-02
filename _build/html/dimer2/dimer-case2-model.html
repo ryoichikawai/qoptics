@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>16.1. The model &#8212; Optical coherence from small atomic clusters.</title>
+    <title>10.1. The Model &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'dimer2/dimer-case2-model';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="16.2. First-order fringes" href="dimer-case2-qme-g1.html" />
-    <link rel="prev" title="16. Dimer II: Coherent driving" href="dimer-case2-intro.html" />
+    <link rel="next" title="11. Dimer II: Coherence by external driving" href="../dimer3/dimer-case3-intro.html" />
+    <link rel="prev" title="10. Dimer II: Coherence by indistinguishability" href="dimer-case2-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,57 +186,62 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">2. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../model/system.html">5. The System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/emitter.html">6. Emitters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/radiation-field.html">7. Radiation field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/detector.html">9. Dectector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/phonon-bath.html">10. Phonon bath</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">4. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">4.5. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">4.6. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">4.7. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">4.8. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">4.9. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">4.10. Phonon bath</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">6. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-regression.html">6.3. Quantum regression theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">6.4. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">7.1. Jump method algorithm</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">7.3. A Simple example of the jump method</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">8.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">8.2. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.3. Quantum Trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">9. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">9.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">9.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">9.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">16.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case2-jump.html">16.4. Full counting statistics</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case2-intro.html">10. Dimer II: Coherence by indistinguishability</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.1. The Model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">11. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">11.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">11.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">11.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">11.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -442,9 +447,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -455,20 +458,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The model</h1>
+    <h1>The Model</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">16.1.1. Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-basis-set">16.1.2. Changing basis set</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -479,75 +473,11 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-model">
-<span id="ch-dimer-case2"></span><h1><span class="section-number">16.1. </span>The model<a class="headerlink" href="#the-model" title="Link to this heading">#</a></h1>
-<p>In <a class="reference internal" href="../dimer1/dimer-case1-intro.html#ch-dimer-case1"><span class="std std-numref">Chapter 15</span></a>, two emitters were completely incoherent.  In this section, we again consider a pair of emitters with no interaction between them. However, they are coherently excited by a single laser beam.  By sharing the same driving source, the emitters establish coherency and the spontaneous emission from them makes interference patterns similar to the double slit experiment. It was first observed by Eechmann <em>et al.</em> <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id51" title="U. Eichmann, J. C. Bergquist, J. J. Bollinger, J. M. Gilligan, W. M. Itano, D. J. Wineland, and M. G. Raizen. Young's interference experiment with light scattered from two atoms. Phys. Rev. Lett., 70:2359–2362, Apr 1993. doi:10.1103/PhysRevLett.70.2359.">35</a>]</span> and theoretically explained by Wang <em>et al.</em> <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id52" title="T. Wong, S. M. Tan, M. J. Collett, and D. F. Walls. Interference of resonance fluorescence from two four-level atoms. Phys. Rev. A, 55:1288–1299, Feb 1997. doi:10.1103/PhysRevA.55.1288.">36</a>]</span>.  In turns out that more interesting  spatio-temporal coherence was theoreticall predicted from the same system <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id48" title="C. Skornia, J. von Zanthier, G. S. Agarwal, E. Werner, and H. Walther. Nonclassical interference effects in the radiation from coherently driven uncorrelated atoms. Phys. Rev. A, 64:063801, Nov 2001. doi:10.1103/PhysRevA.64.063801.">37</a>, <a class="reference internal" href="../references/references.html#id50" title="Christian Schön and Almut Beige. Analysis of a two-atom double-slit experiment based on environment-induced measurements. Phys. Rev. A, 64:023806, Jul 2001. doi:10.1103/PhysRevA.64.023806.">38</a>]</span>. Following these theoretical prediction, the position-dependent bunchin/anti-bunching <span class="bibtex-citation" id="id4">[<a class="reference internal" href="../references/references.html#id19" title="Sebastian Wolf, Stefan Richter, Joachim von Zanthier, and Ferdinand Schmidt-Kaler. Light of two atoms in free space: bunching or antibunching? Phys. Rev. Lett., 124:063603, Feb 2020. doi:10.1103/PhysRevLett.124.063603.">39</a>]</span> and superradiance/subradianece <span class="bibtex-citation" id="id5">[<a class="reference internal" href="../references/references.html#id49" title="Stefan Richter, Sebastian Wolf, Joachim von Zanthier, and Ferdinand Schmidt-Kaler. Collective photon emission of two correlated atoms in free space. Phys. Rev. Res., 5:013163, Mar 2023. doi:10.1103/PhysRevResearch.5.013163.">40</a>]</span> are recently reported.  We will simulate their results.</p>
-<section id="model">
-<h2><span class="section-number">16.1.1. </span>Model<a class="headerlink" href="#model" title="Link to this heading">#</a></h2>
-<p>Consider a pair of QDs located at <span class="math notranslate nohighlight">\(\mathbf{x}_{1}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}_{2}\)</span>, respectively. We use other position vectors as indicated in <a class="reference internal" href="../model/emitter.html#ch-emitter"><span class="std std-numref">Chapter 6</span></a>,  the relative position <span class="math notranslate nohighlight">\(\mathbf{r}_{12} = \mathbf{x}_{1}-\mathbf{x}_2\)</span>, and the position vectors with respect to the midpoint between the QDs <span class="math notranslate nohighlight">\(\mathbf{r}_{1} = \frac{1}{2}\mathbf{r}_{12}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{r}_{2} = -\frac{1}{2}\mathbf{r}_{12}\)</span>.</p>
-<p>The key difference from <a class="reference internal" href="../dimer1/dimer-case1-intro.html#ch-dimer-case1"><span class="std std-numref">Chapter 15</span></a> is the presence of an external driving  by a laser beam. (See <a class="reference internal" href="../model/driving.html#ch-driving"><span class="std std-numref">Chapter 8</span></a>.)  The intensity of the laser is assumed to be <span class="math notranslate nohighlight">\(\Omega &lt; \omega_0\)</span>.  The system Hamiltonian is now given by</p>
+<h1><span class="section-number">10.1. </span>The Model<a class="headerlink" href="#the-model" title="Link to this heading">#</a></h1>
 <div class="math notranslate nohighlight">
 \[
-H_{S} = \sum_{j}\frac{\Delta}{2} \sigma^{z}_{j}   + \frac{\Omega_{L}}{2}\left(e^{i \phi} \sigma^{+}_{1} + e^{-i \phi} \sigma^{-}_{1}\right) 
-+ \frac{\Omega_{L}}{2}\left(e^{-i \phi} \sigma^{+}_{2} + e^{i \phi} \sigma^{-}_{2}\right)
+H_{S} = \sum_{j=1}^{2} \frac{\omega_{0}}{2} \sigma^{z}_{j} + \Omega \left( \sigma^{+}_{1} \sigma^{-}_{2} +  \sigma^{+}_{2} \sigma^{-}_{1} \right).
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\phi = \frac{1}{2} \mathbf{k}_{L} \cdot \mathbf{r}_{12}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{k}_{L}\)</span> is the wave vector of the laser.</p>
-<p>Since the system is driven, we do not need thermal excitation and thus <span class="math notranslate nohighlight">\(N_{T}=0\)</span>.</p>
-<p>The Liouville super operator is now defined by</p>
-<div class="math notranslate nohighlight" id="equation-eq-dimer-case2-liouville">
-<span class="eqno">(16.1)<a class="headerlink" href="#equation-eq-dimer-case2-liouville" title="Link to this equation">#</a></span>\[\begin{split}
-\mathcal{L} \rho =&amp; - i  \left[ H_{S},\rho \right] 
-+ \frac{1}{2}\sum_{j} \gamma_{0}  \left(2 \sigma^{-}_{j} \rho \sigma^{+}_{j} - \sigma^{+}_{j}\sigma^{-}_{j} \rho - \rho \sigma^{+}_{j}\sigma^{-}_{j} \right) \\
-\end{split}\]</div>
-</section>
-<section id="changing-basis-set">
-<h2><span class="section-number">16.1.2. </span>Changing basis set<a class="headerlink" href="#changing-basis-set" title="Link to this heading">#</a></h2>
-<p>In Ref. {cite:p}, the spatial coherence is computed in the product basus.  However, a certain level of coherence between two QDs is expected and thus the product basis may not be the best choice.  On the other hand,  the distance between the dots is not small and there is non-negligible phase difference. Hence, the Dick basis is also not appropriate. Skornia <em>et al.</em><span class="bibtex-citation" id="id6">[<a class="reference internal" href="../references/references.html#id48" title="C. Skornia, J. von Zanthier, G. S. Agarwal, E. Werner, and H. Walther. Nonclassical interference effects in the radiation from coherently driven uncorrelated atoms. Phys. Rev. A, 64:063801, Nov 2001. doi:10.1103/PhysRevA.64.063801.">37</a>]</span> introduced the following basis (we shall call it the Skornia basis.)</p>
-<div class="math notranslate nohighlight" id="equation-eq-skornia-basis">
-<span class="eqno">(16.2)<a class="headerlink" href="#equation-eq-skornia-basis" title="Link to this equation">#</a></span>\[
-|e\rangle = |ee\rangle, \qquad |s\rangle = \frac{1}{\sqrt{2}}\left( e^{-i \phi} |eg\rangle + e^{+i \phi}|ge\rangle\right), \qquad
-|a\rangle = \frac{1}{\sqrt{2}}\left( e^{-i \phi} |eg\rangle - e^{i \phi}|ge\rangle\right), \qquad |g\rangle = |gg\rangle
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\phi = \frac{1}{2} \mathbf{k}_{L} \cdot \mathbf{r}_{12}\)</span>.  <span class="math notranslate nohighlight">\(|s\rangle\)</span> and <span class="math notranslate nohighlight">\(|a\rangle\)</span> are symmetric and anti-symmteric , respectivelly, with respect to the swapping of the QDs. (Do not forget that the swapping changes the sign of phase from <span class="math notranslate nohighlight">\(\pm \phi\)</span> to <span class="math notranslate nohighlight">\(\mp \phi\)</span>.) Since the global phase factor does not change the state, it is sufficient to consider only <span class="math notranslate nohighlight">\(0 \le \phi &lt; \pi\)</span>.  When <span class="math notranslate nohighlight">\(\phi=0\)</span>, we have the Dick basis.</p>
-<p>The master equation was analytically solved in this basis and the diagonal element of the steady state is found to be <span class="bibtex-citation" id="id7">[<a class="reference internal" href="../references/references.html#id48" title="C. Skornia, J. von Zanthier, G. S. Agarwal, E. Werner, and H. Walther. Nonclassical interference effects in the radiation from coherently driven uncorrelated atoms. Phys. Rev. A, 64:063801, Nov 2001. doi:10.1103/PhysRevA.64.063801.">37</a>]</span>:</p>
-<div class="math notranslate nohighlight" id="equation-eq-rho-in-skornia-basis">
-<span class="eqno">(16.3)<a class="headerlink" href="#equation-eq-rho-in-skornia-basis" title="Link to this equation">#</a></span>\[
-\rho_{gg} = \frac{\left(\gamma^2 + \Omega^2\right)^2}{\left(\gamma^2 + 2 \Omega^2\right)^2}, \qquad
-\rho_{ss} = \frac{\Omega^2\left(2 \gamma^2+\Omega^2\right)}{\left(\gamma^2 + 2 \Omega^2\right)^2}, \qquad
-\rho_{aa} = \rho_{ee} = \frac{\Omega^4}{\left(\gamma^2 + 2 \Omega^2\right)^2}
-\]</div>
-<p>It is important to note that the diagonal elements do not depend on the phase <span class="math notranslate nohighlight">\(\phi\)</span> and it is uniquely determined by <span class="math notranslate nohighlight">\(\Omega/\gamma\)</span>.</p>
-<p>Accordingly, we need to change the jump operators.</p>
-<div class="math notranslate nohighlight" id="equation-eq-skornia-ops">
-<span class="eqno">(16.4)<a class="headerlink" href="#equation-eq-skornia-ops" title="Link to this equation">#</a></span>\[
-\eta^{\pm}_{1} &amp;= \frac{1}{\sqrt{2}}\left (e^{ \pm i \phi} \sigma^{\pm}_{1} + e^{\mp i \phi} \sigma^{\pm}_{2} \right), \qquad
-\eta^{\pm}_{2} &amp;= \frac{1}{\sqrt{2}}\left (e^{ \pm i \phi} \sigma^{\pm}_{1} - e^{\mp i \phi} \sigma^{\pm}_{2} \right) 
-\]</div>
-<p>The relation between the old and new jump operators is</p>
-<div class="math notranslate nohighlight">
-\[
-e^{\pm i\phi} \sigma^{\pm}_{1} = \frac{1}{\sqrt{2}}\left(\eta^{\pm}_{1} + \eta^{\pm}_{2}\right), \qquad 
-e^{\mp i\phi} \sigma^{\pm}_{2} = \frac{1}{\sqrt{2}}\left(\eta^{\pm}_{1} - \eta^{\pm}_{2}\right).
-\]</div>
-<p>The new operators represent the jumps <span class="math notranslate nohighlight">\(\eta^{+}_1 |g\rangle = |s\rangle\)</span>, <span class="math notranslate nohighlight">\(\eta^{+}_1 |s\rangle = |e\rangle\)</span>,  <span class="math notranslate nohighlight">\(\eta^{+}_2 |g\rangle = |a\rangle\)</span>, <span class="math notranslate nohighlight">\(\eta^{+}_2 |a\rangle = -|e\rangle\)</span>.</p>
-<p>With these jump operators,  the driving Hamiltonian becomes</p>
-<div class="math notranslate nohighlight">
-\[
-H_{L} = \frac{\Omega}{\sqrt{2}} \left(\eta^{+}_{1} + \eta^{-}_{1}\right)
-\]</div>
-<p>Notice that the second mode <span class="math notranslate nohighlight">\(\eta^{\pm}_{2}\)</span> does not appear in the driving Hamiltonian and thus the driving activates only on channel 1: <span class="math notranslate nohighlight">\(|g\rangle \Leftrightarrow |s\rangle \Leftrightarrow |e\rangle\)</span> and no driving acts on channel 2: <span class="math notranslate nohighlight">\(|g\rangle \nLeftrightarrow |a\rangle \nLeftrightarrow |e\rangle\)</span>.  Only spontaneous emission takes place in the second channel: <span class="math notranslate nohighlight">\(|g\rangle \Leftarrow |a\rangle \Leftarrow |e\rangle\)</span>.  (See <a class="reference internal" href="#fig-dimer-transition-diagram-2"><span class="std std-numref">Fig. 16.1</span></a>.)</p>
-<p>We can solve the master equation in any basis and there is no need to rewrite it with the new operators. If we wish, we can do so. The dissipator remains in the same form with the new jump operators in place of the old one:</p>
-<div class="math notranslate nohighlight">
-\[
-\mathcal{D} \rho = \frac{1}{2}\sum_{j} \gamma_{0}  \left(2 \eta^{-}_{j} \rho \eta^{+}_{j} - \eta^{+}_{j}\eta^{-}_{j} \rho - \rho \eta^{+}_{j}\eta^{-}_{j} \right) .
-\]</div>
-<figure class="align-center" id="fig-dimer-transition-diagram-2">
-<a class="reference internal image-reference" href="../_images/dimer-transition-diagram-2.png"><img alt="Emission and Driving diagram for N=2." src="../_images/dimer-transition-diagram-2.png" style="height: 1.5in;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 16.1 </span><span class="caption-text">Left: Spontaneous emission take places in both channels (blue and red) but driving acts only on left channel.</span><a class="headerlink" href="#fig-dimer-transition-diagram-2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -586,15 +516,15 @@ H_{L} = \frac{\Omega}{\sqrt{2}} \left(\eta^{+}_{1} + \eta^{-}_{1}\right)
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>Dimer II: Coherent driving</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Dimer II: Coherence by indistinguishability</p>
       </div>
     </a>
     <a class="right-next"
-       href="dimer-case2-qme-g1.html"
+       href="../dimer3/dimer-case3-intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">16.2. </span>First-order fringes</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Dimer II: Coherence by external driving</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -604,24 +534,6 @@ H_{L} = \frac{\Omega}{\sqrt{2}} \left(\eta^{+}_{1} + \eta^{-}_{1}\right)
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">16.1.1. Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-basis-set">16.1.2. Changing basis set</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

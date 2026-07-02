@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Emitters &#8212; Optical coherence from small atomic clusters.</title>
+    <title>4.1. Emitters &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'model/emitter';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7. Radiation field" href="radiation-field.html" />
-    <link rel="prev" title="5. The System" href="system.html" />
+    <link rel="next" title="4.2. Radiation field" href="radiation-field.html" />
+    <link rel="prev" title="4. The System" href="system.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,57 +186,61 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../foundations/coherence.html">2. What is quantum coherence?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">2. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">2.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">2.10. The second-order coeherence function</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence-func.html">4. Coherence functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">4.1. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">4.2. The second-order coeherence function</a></li>
 </ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="system.html">5. The System</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Emitters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="radiation-field.html">7. Radiation field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="driving.html">8. External driving</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detector.html">9. Dectector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="phonon-bath.html">10. Phonon bath</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">11. Numerical calculation using QuTip</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">12. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-method.html">12.1. Brief summary of a quantum master equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">12.2. An example: Optical master equation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="system.html">4. The System</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radiation-field.html">4.2. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coupling.html">4.3. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="driving.html">4.4. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detector.html">4.5. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon-bath.html">4.6. Phonon bath</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">13. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">13.1. Jump method algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">6. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">6.3. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">7.1. Jump method algorithm</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">13.3. A Simple example of the jump method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">7.3. A Simple example of the jump method</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">14. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">14.1. QME: Theoretical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">14.2. QME: Numerical solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">14.3. Quantum Trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">8.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">8.2. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.3. Quantum Trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">15. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">15.1. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">15.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">15.3. Quantum trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">9. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">9.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">9.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">9.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">16. Dimer II: Coherent driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">16.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g1.html">16.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme-g2.html">16.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">16.4. Full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">10. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">10.1. The Model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">11. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">11.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">11.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">11.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">11.4. Full counting statistics</a></li>
 </ul>
 </details></li>
 </ul>
@@ -465,15 +469,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-two-level-system">6.1. A single two-level system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-identical-atoms">6.2. <span class="math notranslate nohighlight">\(N\)</span> identical atoms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#location-of-atoms">6.3. Location of atoms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">6.4. Dipole moment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">6.5. Interaction between the atoms</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-dipole-coupling">6.5.1. Dipole-dipole coupling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phonon-mediated-coupling">6.5.2. Phonon-mediated coupling</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-two-level-system">4.1.1. A single two-level system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-identical-atoms">4.1.2. <span class="math notranslate nohighlight">\(N\)</span> identical atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#location-of-atoms">4.1.3. Location of atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">4.1.4. Dipole moment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">4.1.5. Interaction between the atoms</a></li>
 </ul>
             </nav>
         </div>
@@ -486,18 +486,18 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="emitters">
-<span id="ch-emitter"></span><h1><span class="section-number">6. </span>Emitters<a class="headerlink" href="#emitters" title="Link to this heading">#</a></h1>
+<span id="sec-emitter"></span><h1><span class="section-number">4.1. </span>Emitters<a class="headerlink" href="#emitters" title="Link to this heading">#</a></h1>
 <p>The emitter of photons is a group of identical atoms (or quantum dots).Particularly we are interested in a small cluster of atoms, the number of atoms ranging from <span class="math notranslate nohighlight">\(N=1\)</span> through <span class="math notranslate nohighlight">\(N=5\)</span> or so.  We focus on a particular transition between two energy levels and ignore other levels.  Mathematically, the two-level system (TLS) can be treated as a qubit (or a system of spin-1/2).</p>
 <section id="a-single-two-level-system">
-<h2><span class="section-number">6.1. </span>A single two-level system<a class="headerlink" href="#a-single-two-level-system" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1.1. </span>A single two-level system<a class="headerlink" href="#a-single-two-level-system" title="Link to this heading">#</a></h2>
 <p>A single atom has two energy levels, a lower energy state <span class="math notranslate nohighlight">\(|g\rangle\)</span> and a higher energy state <span class="math notranslate nohighlight">\(|e\rangle\)</span> with corresponding energy <span class="math notranslate nohighlight">\(E_{g} &lt; E_{e}\)</span>.  We ignore electron spin. Such a system is called two-level system (TLS).  <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|e\rangle\)</span> form an orthonormal basis set in the two-dimensional Hilbert space. We can consider the system as a qubit and the Pauli operators are defined by</p>
 <div class="math notranslate nohighlight" id="equation-eq-sigma-xyz">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-sigma-xyz" title="Link to this equation">#</a></span>\[
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-sigma-xyz" title="Link to this equation">#</a></span>\[
 \sigma^{x} = | e \rangle\langle g | + | g \rangle\langle e |, \qquad \sigma^{y} =  i (| e \rangle\langle g | -  | g \rangle\langle e |), \qquad \sigma^{z} = | e \rangle\langle e | - | g \rangle\langle g |
 \]</div>
 <p>and raising and lowering operators by</p>
 <div class="math notranslate nohighlight" id="equation-eq-sigma-pm">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-eq-sigma-pm" title="Link to this equation">#</a></span>\[
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-eq-sigma-pm" title="Link to this equation">#</a></span>\[
 \sigma^{+} = \frac{1}{2}\left(\sigma^{x} - i \sigma^{y}\right) = | e \rangle\langle g |, \qquad \sigma^{-} =  \frac{1}{2}\left(\sigma^{x} + i \sigma^{y}\right) = | g \rangle\langle e |.
 \]</div>
 <p>Recall how the raising and lowering operators work:</p>
@@ -514,22 +514,22 @@
 <p>Be careful about this definition since some people define them in in the opposite way.</p>
 <p>Using the these notations, a free Hamiltonian for a single atom is defined by</p>
 <div class="math notranslate nohighlight" id="equation-eq-free-h-single-atom">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-free-h-single-atom" title="Link to this equation">#</a></span>\[
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-eq-free-h-single-atom" title="Link to this equation">#</a></span>\[
 H_{0} = \frac{\omega_0}{2} \sigma^{z}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega_0 = E_{e}-E_{g}\)</span>  (<span class="math notranslate nohighlight">\(\hbar=1\)</span> is assumed.)</p>
 </section>
 <section id="n-identical-atoms">
-<h2><span class="section-number">6.2. </span><span class="math notranslate nohighlight">\(N\)</span> identical atoms<a class="headerlink" href="#n-identical-atoms" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1.2. </span><span class="math notranslate nohighlight">\(N\)</span> identical atoms<a class="headerlink" href="#n-identical-atoms" title="Link to this heading">#</a></h2>
 <p>We assume that all atoms are identically modeled as TLS, with same excitation energy <span class="math notranslate nohighlight">\(\omega_0\)</span> and the same dipole moment <span class="math notranslate nohighlight">\(d\)</span>.  Only the difference is their location.</p>
 <p>The dimension of the Hilbert space is <span class="math notranslate nohighlight">\(2^N\)</span>. For computational purpose, we use the standard product basis set,</p>
 <div class="math notranslate nohighlight" id="equation-eq-product-basis-n">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-product-basis-n" title="Link to this equation">#</a></span>\[
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-eq-product-basis-n" title="Link to this equation">#</a></span>\[
 |s_{1} s_{2} \cdots s_{N}\rangle = |s_{1}\rangle\otimes|s_{2}\rangle\otimes \cdots \otimes |s_{N}\rangle, \qquad |s_{j}\rangle = |g\rangle \text{ or } |e\rangle
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\otimes\)</span> denotes tensor product. For <span class="math notranslate nohighlight">\(N=2\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq-product-basis-2">
-<span class="eqno">(6.5)<a class="headerlink" href="#equation-eq-product-basis-2" title="Link to this equation">#</a></span>\[
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-eq-product-basis-2" title="Link to this equation">#</a></span>\[
 |gg\rangle = |g\rangle \otimes |g\rangle, \quad |ge\rangle = |g\rangle \otimes |e\rangle, \quad |eg\rangle = |e\rangle \otimes |g\rangle, \quad |ee\rangle=|e\rangle \otimes |e\rangle.
 \]</div>
 <p>The spin operator for the $j$-th atom is given by
@@ -540,18 +540,18 @@ H_{0} = \frac{\omega_0}{2} \sigma^{z}
 <p>where <span class="math notranslate nohighlight">\(I\)</span> is the identity operator for the two-dimensional Hilbert space.   For N=2. <span class="math notranslate nohighlight">\(\sigma^{\mu}_{1} = \sigma^{\mu} \otimes I\)</span> and <span class="math notranslate nohighlight">\(\sigma^{\mu}_{2} = I \otimes \sigma^{\mu}\)</span>.</p>
 <p>Then, the free Hamiltonian of the <span class="math notranslate nohighlight">\(N\)</span> atoms is a simple sum</p>
 <div class="math notranslate nohighlight" id="equation-eq-atom-free-hamiltonian">
-<span class="eqno">(6.6)<a class="headerlink" href="#equation-eq-atom-free-hamiltonian" title="Link to this equation">#</a></span>\[
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-eq-atom-free-hamiltonian" title="Link to this equation">#</a></span>\[
 H_{0} = \sum_{j=1}^{N} \frac{\omega_0}{2} \sigma^{z}_{j}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma^{z}_{j}\)</span> is a Pauli operator for <span class="math notranslate nohighlight">\(j\)</span>-th quantum dot.</p>
 </section>
 <section id="location-of-atoms">
-<h2><span class="section-number">6.3. </span>Location of atoms<a class="headerlink" href="#location-of-atoms" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1.3. </span>Location of atoms<a class="headerlink" href="#location-of-atoms" title="Link to this heading">#</a></h2>
 <p>We denote the position of the <span class="math notranslate nohighlight">\(j\)</span>-th atom as <span class="math notranslate nohighlight">\(\mathbf{x}_{j}\)</span>. The relative position <span class="math notranslate nohighlight">\(\mathbf{r}_{ij} = \mathbf{x}_{i} - \mathbf{x}_{j}\)</span> actually takes more important roles.</p>
-<p>The location of atoms does not show up in the free Hamiltonian.  It will appear in the interaction Hamiltonian with radiation fields which will be discussed in <a class="reference internal" href="radiation-field.html#ch-radiation-field"><span class="std std-numref">Chapter 7</span></a>.  The dipole-dipole interaction introduced below is the part of atom-radiation interaction and depends on the relative position.</p>
+<p>The location of atoms does not show up in the free Hamiltonian.  It will appear in the interaction Hamiltonian with radiation fields which will be discussed in <code class="xref std std-numref docutils literal notranslate"><span class="pre">ch:radiation-field</span></code>.  The dipole-dipole interaction introduced below is the part of atom-radiation interaction and depends on the relative position.</p>
 </section>
 <section id="dipole-moment">
-<h2><span class="section-number">6.4. </span>Dipole moment<a class="headerlink" href="#dipole-moment" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1.4. </span>Dipole moment<a class="headerlink" href="#dipole-moment" title="Link to this heading">#</a></h2>
 <p>Each atom carries a dipole moment <span class="math notranslate nohighlight">\(\mathbf{d}\)</span>.  Although we don’t have to make a specific assumption, for mathematical simplicity it is assumed to be a linear dipole moment, which is a real vector.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -560,25 +560,10 @@ H_{0} = \sum_{j=1}^{N} \frac{\omega_0}{2} \sigma^{z}_{j}
 <p>where <span class="math notranslate nohighlight">\(\mathbf{r}_{e}\)</span> is the position of electron with respect to the atom center and <span class="math notranslate nohighlight">\(-e\)</span> is the electron charge.</p>
 </section>
 <section id="interaction-between-the-atoms">
-<h2><span class="section-number">6.5. </span>Interaction between the atoms<a class="headerlink" href="#interaction-between-the-atoms" title="Link to this heading">#</a></h2>
-<p>There are many possible interactions between atoms.  When the wave functions of two neighboring atoms overlap, quantum tunneling, exchange interaction and <a class="reference external" href="https://en.wikipedia.org/wiki/Dexter_electron_transfer">the Dexter energy transfer</a> are possible.  Even in the absence of the overlap, the Förster Resonance Energy Transfer (FRET) and inter-atoms Auger processes can take places.  For quantum dots, the exchange of phonons between the dots can destroy quantum phase (dephasing).</p>
-<section id="dipole-dipole-coupling">
-<h3><span class="section-number">6.5.1. </span>Dipole-dipole coupling<a class="headerlink" href="#dipole-dipole-coupling" title="Link to this heading">#</a></h3>
-<p>In the present lecture note, we consider only the dipole-dipole interaction which is an indirect interaction through the free radiation field. The Hamiltonian for the dipole-dipole interaction is given by</p>
-<div class="math notranslate nohighlight">
-\[
-H_{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i} \sigma^{-}_{j}
-\]</div>
-<p>with the strength of the dipole-dipole interaction <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">14</a>]</span></p>
-<div class="math notranslate nohighlight" id="equation-eq-dd-cupling-strength">
-<span class="eqno">(6.7)<a class="headerlink" href="#equation-eq-dd-cupling-strength" title="Link to this equation">#</a></span>\[
-\Omega_{ij} = \frac{3}{4} \gamma_{0} \left \{- \left[1-\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2}\right] \frac{\cos \xi_{ij}}{\xi_{ij}} + \left[1 - 3\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2}\right]\left(\frac{\sin \xi_{ij}}{\xi_{ij}^2}+\frac{\cos\xi_{ij}}{\xi_{ij}^3}\right)\right\}.
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\gamma_{0} = \frac{4 \omega_{0}^3 d^2}{3 \hbar c^3}\)</span> is the rate of spontaneous emission and <span class="math notranslate nohighlight">\(\xi_{ij}=\omega_0 r_{ij}/c\)</span>.</p>
-<p>If the dipole is linear, <span class="math notranslate nohighlight">\(\frac{\left|\mathbf{d}\cdot\mathbf{r}\right|^2}{|d|^2|r_{12}|^2} = \cos^2\theta\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(\mathbf{d}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{r}_{12}\)</span>.</p>
-</section>
-<section id="phonon-mediated-coupling">
-<h3><span class="section-number">6.5.2. </span>Phonon-mediated coupling<a class="headerlink" href="#phonon-mediated-coupling" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">4.1.5. </span>Interaction between the atoms<a class="headerlink" href="#interaction-between-the-atoms" title="Link to this heading">#</a></h2>
+<p>There are many possible interactions between atoms.  When the wave functions of two neighboring atoms overlap, quantum tunneling, exchange interaction are possible.  Even in the absence of the overlap, the Förster Resonance Energy Transfer (FRET) and inter-atoms Auger processes can take places.   There is an effective coupling, known as the dipole-dipole coupling, mediated by the exchange of photons, which will be introduced in <a class="reference internal" href="../methods/openqm-qme-def.html#sec-openqm-qme-method"><span class="std std-numref">Chapter 6.1</span></a>.  Another coupling mediated by the exchange of phonons causes <a class="reference external" href="https://en.wikipedia.org/wiki/Dephasing">dephasing</a>). For quantum dots, this coupling may play a significant role in certain cases.</p>
+<p>In this lecture note, we take into account only the dipole-dipole coupling.</p>
+<p><strong>Phonon-mediated coupling</strong></p>
 <p>The phonon-mediate coupling between the emitters (quantum dots) is expressed as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -590,7 +575,6 @@ H_{\phi-\phi} = \sum_{i\ne j} \Gamma(\mathbf{x}_{i} - \mathbf{x}_{j}) \sigma^{z}
 \Gamma(\mathbf{x}) = \sum_{\mathbf{q}} \frac{2|g_\mathbf{q}|^2}{\omega_{\mathbf{q}}} \cos(\mathbf{q}\cdot\mathbf{x})
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega_\mathbf{q}\)</span> is the energy of phonon with momentum <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>.</p>
-</section>
 </section>
 </section>
 
@@ -630,7 +614,7 @@ H_{\phi-\phi} = \sum_{i\ne j} \Gamma(\mathbf{x}_{i} - \mathbf{x}_{j}) \sigma^{z}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>The System</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>The System</p>
       </div>
     </a>
     <a class="right-next"
@@ -638,7 +622,7 @@ H_{\phi-\phi} = \sum_{i\ne j} \Gamma(\mathbf{x}_{i} - \mathbf{x}_{j}) \sigma^{z}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Radiation field</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Radiation field</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -660,15 +644,11 @@ H_{\phi-\phi} = \sum_{i\ne j} \Gamma(\mathbf{x}_{i} - \mathbf{x}_{j}) \sigma^{z}
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-two-level-system">6.1. A single two-level system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-identical-atoms">6.2. <span class="math notranslate nohighlight">\(N\)</span> identical atoms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#location-of-atoms">6.3. Location of atoms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">6.4. Dipole moment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">6.5. Interaction between the atoms</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-dipole-coupling">6.5.1. Dipole-dipole coupling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phonon-mediated-coupling">6.5.2. Phonon-mediated coupling</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-two-level-system">4.1.1. A single two-level system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-identical-atoms">4.1.2. <span class="math notranslate nohighlight">\(N\)</span> identical atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#location-of-atoms">4.1.3. Location of atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-moment">4.1.4. Dipole moment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-between-the-atoms">4.1.5. Interaction between the atoms</a></li>
 </ul>
   </nav></div>
 

@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.2. Far-field operator and coherence functions &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'methods/openqm-qme-radiation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.3. Quantum regression theorem" href="openqm-qme-regression.html" />
+    <link rel="prev" title="6.1. Optical quantum master equations" href="openqm-qme-def.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">2. Bunching and full counting statistics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">4. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">4.5. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">4.6. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">4.7. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">4.8. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">4.9. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">4.10. Phonon bath</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-qme-intro.html">6. Quantum master equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-regression.html">6.3. Quantum regression theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">6.4. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-method.html">7.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="openqm-jump-example.html">7.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">8.1. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">8.2. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.3. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">9. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">9.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">9.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">9.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">10. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-model.html">10.1. The Model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">11. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">11.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">11.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">11.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">11.4. Full counting statistics</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/methods/openqm-qme-radiation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Fmethods/openqm-qme-radiation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/methods/openqm-qme-radiation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Far-field operator and coherence functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radiation-field-generated-by-the-emitters">6.2.1. The radiation field generated by the emitters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-of-photons">6.2.2. Detection of photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">6.2.3. Coherence function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">6.2.4. Quantum regression theorem</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="far-field-operator-and-coherence-functions">
+<h1><span class="section-number">6.2. </span>Far-field operator and coherence functions<a class="headerlink" href="#far-field-operator-and-coherence-functions" title="Link to this heading">#</a></h1>
+<p>The quantum master equation gives us a mathematical method to calculate the state of the emitters but it discarded the information of the radiation field.  Hence, the quantum master equation alone cannot describe the light emitted by the emitters.  Only we learn from the maser equation is the state of the emitters.  We need a separate theory for the radiation field generated by the emitters.</p>
+<section id="the-radiation-field-generated-by-the-emitters">
+<h2><span class="section-number">6.2.1. </span>The radiation field generated by the emitters<a class="headerlink" href="#the-radiation-field-generated-by-the-emitters" title="Link to this heading">#</a></h2>
+<p>Suppose that the radiation is emitted at time <span class="math notranslate nohighlight">\(t\)</span> by the <span class="math notranslate nohighlight">\(j\)</span>-th emitter located at <span class="math notranslate nohighlight">\(\mathbf{x}_{j}\)</span>.  That means a transition <span class="math notranslate nohighlight">\(\sigma^{-}_{j}\)</span> took place at <span class="math notranslate nohighlight">\(t\)</span>. The detector is located at <span class="math notranslate nohighlight">\(\mathbf{x}_{d}\)</span>.  Let introduce a relative coordinate to the center of the quantum dot cluster. The detector position is <span class="math notranslate nohighlight">\(\mathbf{R} = \mathbf{x}_d - \frac{1}{N}\sum_{j}\mathbf{x}_{j}\)</span> and the location of <span class="math notranslate nohighlight">\(i\)</span>-th dot is <span class="math notranslate nohighlight">\(\mathbf{r}_i = \mathbf{x}_{i} - \frac{1}{N}\sum_{j}\mathbf{x}_{j}\)</span>. We want to know the electric field that the detector interacts with at time <span class="math notranslate nohighlight">\(t_R = t + R/c\)</span>.
+The net radiation field is a sum of a free field <span class="math notranslate nohighlight">\(\mathbf{E}_{f}\)</span> and a field generated by the source <span class="math notranslate nohighlight">\(\mathbf{E}_{s}\)</span>.  The free field is just the initial radiation field (<a class="reference internal" href="../model/radiation-field.html#equation-eq-free-radiation-field">(4.9)</a>).</p>
+<p>Lehmberg <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">15</a>]</span> derived the source field by solving
+the Heisenberg equation of motion for <span class="math notranslate nohighlight">\(a_{\ell}(t)\)</span> with the Born-Markov approximation, which is the same approximation used to derive the quantum master equation. The result is</p>
+<div class="math notranslate nohighlight" id="equation-eq-source-field">
+<span class="eqno">(6.12)<a class="headerlink" href="#equation-eq-source-field" title="Link to this equation">#</a></span>\[
+\mathbf{E}^{(+)}_{s}(\mathbf{R},t_{R}) = - \frac{\omega_{0}^{2} d}{c^2} \sum_{j} \frac{ \left(\hat{\mathbf{d}} \times \hat{\mathbf{R}}_{j}\right) \times \hat{\mathbf{R}}_{j}}{R_{j}} \, e^{i k_0(R_{j}-R)} \sigma^{-}_{j}(t)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_{0} = \omega_{0}/c\)</span> and <span class="math notranslate nohighlight">\(\mathbf{R}_{j} = \mathbf{R} - \mathbf{r}_{j} = \mathbf{x}_{d} - \mathbf{x}_{j}\)</span>.</p>
+<p>Since the detector is far from the emitter, we can assume <span class="math notranslate nohighlight">\(|\mathbf{r}_{ij}| \ll \mathbf{R}_{j}|\)</span>, then Eq. <a class="reference internal" href="#equation-eq-source-field">(6.12)</a> can be approximated to</p>
+<div class="math notranslate nohighlight" id="equation-eq-source-field-approx">
+<span class="eqno">(6.13)<a class="headerlink" href="#equation-eq-source-field-approx" title="Link to this equation">#</a></span>\[
+\mathbf{E}^{(+)}_{s}(\mathbf{R},t_{R}) \approx  - \hat{\mathbf{e}}_{R} \frac{\omega_{0}^{2}d}{c^2} \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right]^{1/2} \sum_{j} e^{- i k_{0} \hat{\mathbf{R}} \cdot \mathbf{r}_{j}} \sigma^{-}_{j}(t)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{e}_{R}\)</span> is a unit vector in the direction of <span class="math notranslate nohighlight">\(\left(\mathbf{d} \times \mathbf{R} \right)\times \mathbf{R}\)</span>.  Notice that the field strength depends on the direction of the radial vector through the two inner products <span class="math notranslate nohighlight">\(\hat{\mathbf{d}} \cdot \hat{\mathbf{R}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} \cdot \mathbf{r}_{j}\)</span>.  The latter depends the geometric structure of the emitters.  Now the source field is expressed with the operators <span class="math notranslate nohighlight">\(\sigma^{-}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{+}_{j}\)</span> instead of <span class="math notranslate nohighlight">\(a_{\ell}\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}_{\ell}\)</span>.  This allows us to evaluate the coherence functions with <span class="math notranslate nohighlight">\(\sigma^{-}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{+}_{j}\)</span> which we can obtain from the quantum master equation.</p>
+<p>The detector sees both free and source fields.  The signal from the free field is the background noise to the source signal. It is not possible to eliminate the noise.  We assume that the noise from the free field is removed by some experimental process.</p>
+</section>
+<section id="detection-of-photons">
+<h2><span class="section-number">6.2.2. </span>Detection of photons<a class="headerlink" href="#detection-of-photons" title="Link to this heading">#</a></h2>
+<p>In <code class="xref std std-numref docutils literal notranslate"><span class="pre">ch:detector</span></code>, we learned the Glauber’s theory of detection.  A history of clicks recorded by a detector corresponds to the measurement of radiation intensity.  However, a quantum master equation does not have that information.  Folloiwng Lehmberg <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id16" title="R. H. Lehmberg. Radiation from an $n$-atom system. i. general formalism. Phys. Rev. A, 2:883–888, Sep 1970. doi:10.1103/PhysRevA.2.883.">15</a>]</span>,  we can make a connection between the density matrix and intensity through the source radiation field  <a class="reference internal" href="#equation-eq-source-field-approx">(6.13)</a>.    The intensity at the position of detector <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+I(\mathbf{x},t) = \langle E^{(-)}(\mathbf{x},t)E^{(+)}(\mathbf{x},t)\rangle \rangle =  
+\langle J^{+}(\mathbf{R},t) J^{-}(\mathbf{R},t) \rangle
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-jump-operator-r">
+<span class="eqno">(6.14)<a class="headerlink" href="#equation-eq-jump-operator-r" title="Link to this equation">#</a></span>\[
+J^{\pm} (\mathbf{R},t) = \sqrt{\gamma(\mathbf{R})} \sum_{i} e^{ \pm i k_{0} \hat{\mathbf{R}} \cdot \mathbf{r}_{j}} \sigma^{\pm}_{j}(t).
+\]</div>
+<p>with the transition rate</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma(\mathbf{R}) = \left(\frac{\omega_{0}^{2}d}{c^2}\right)^{2} \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right].
+\]</div>
+<p>Recall that in the jump methods, we assume that the state vector jumps to a new state determined by the collapse operator.  Is <span class="math notranslate nohighlight">\(J^{-}(\mathbr{R})\)</span> a collapse operator? The radiation field alone cannot determine it because the field does not know if the light from each emitter is coherent to others. It is determined by the other side, the emitters. (See <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 3</span></a>.)  Since we know the state of the emitters, we can evaluate the expectation value of the intensity and determine the coherency:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+I(\mathbf{x},t) &amp;= \langle J^{+}(\mathbf{R},t) J^{-}(\mathbf{R},t) \rangle \\
+&amp;= \left(\frac{\omega_{0}^{2}d}{c^2}\right)^2 \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right] \sum_{ij} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}} \langle \sigma^{+}_{i} \sigma^{-}_{j}\rangle \\
+\end{aligned}
+\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\langle \sigma^{+}_{i} \sigma_{j}\rangle = 0\)</span> for <span class="math notranslate nohighlight">\(i\ne j\)</span>, then the light from an emitter is not coherent with others.
+In this case, <span class="math notranslate nohighlight">\(\sqrt{\gamma(\mathbf{R})} \sigma^{-}_{j}\)</span> is the collapse operator. In other limit, <span class="math notranslate nohighlight">\(J^{-}(\mathbf{R})\)</span> is the collapse operator.</p>
+<p>It is important note that we are talking about the collapse operator at the detector (we shall call it far-field collapse operator. This is only a small part of the collapse operators for the emitters.  To connect the far-field operators to the collapse operators in the quantum master equation, we need to count all photons emitted in all direction.  Integrating <span class="math notranslate nohighlight">\(\gamma(\mathbf{R})\)</span> over the solid angle</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{0}^{2\pi} \int_{-\pi}^{\pi} \gamma(\mathbf{R}) \sin(\theta) d\theta d\phi = \gamma_0
+\]</div>
+<p>which is the standard rate of spontaneous emission and we obtain the collapse operators <span class="math notranslate nohighlight">\(\sqrt{\gamma_0} \sigma^{-}_{j}\)</span>.</p>
+</section>
+<section id="coherence-function">
+<h2><span class="section-number">6.2.3. </span>Coherence function<a class="headerlink" href="#coherence-function" title="Link to this heading">#</a></h2>
+<p>We now measure the second-order coherence function by a detector placed at <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>.  Using the far-field operators,</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-src-field">
+<span class="eqno">(6.15)<a class="headerlink" href="#equation-eq-g2-src-field" title="Link to this equation">#</a></span>\[
+g^{(2)}(\tau;\mathbf{R}) 
+= \frac{\langle J^{+}(\mathbf{R},t) J^{+}(\mathbf{R},t+\tau) J^{-}(\mathbf{R},t+\tau) J^{-}(\mathbf{R},t)  \rangle_{ss}}{(\langle J^{+}(\mathbf{R},t) J^{-}(\mathbf{R},t)\rangle_{ss})^2} =
+= \frac{\sum_{ij} \sum_{k\ell} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}}e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{k\ell}} \langle\sigma^{+}_{i}(t) \sigma^{+}_{k}(t+\tau)\sigma^{-}_{\ell}(t+\tau)\sigma^{-}_{j}(t)\rangle_{ss}}{ \left( \sum_{ij} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}}\langle\sigma^{+}_{i}(t)\sigma^{-}_{j}(t)\rangle_{ss}\right)^2 }.
+\]</div>
+<p>For the incoherent light, we use  <span class="math notranslate nohighlight">\(\sqrt{\gamma} \sigma^{-}_{j}\)</span> as jump operators and we obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq-g2-src-field-incoherent">
+<span class="eqno">(6.16)<a class="headerlink" href="#equation-eq-g2-src-field-incoherent" title="Link to this equation">#</a></span>\[
+g^{(2)}(\tau;\mathbf{R}) 
+= \frac{\sum_{ij}  \langle\sigma^{+}_{i}(t) \sigma^{+}_{j}(t+\tau)\sigma^{-}_{j}(t+\tau)\sigma^{-}_{i}(t)\rangle_{ss}}{ \left( \sum_{j} \langle\sigma^{+}_{j}(t)\sigma^{-}_{j}(t)\rangle_{ss}\right)^2 }.
+\]</div>
+<p>which does not depend on <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>.</p>
+</section>
+<section id="quantum-regression-theorem">
+<h2><span class="section-number">6.2.4. </span>Quantum regression theorem<a class="headerlink" href="#quantum-regression-theorem" title="Link to this heading">#</a></h2>
+<p>There is a problem with the definitions <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(6.21)</a> and <a class="reference internal" href="openqm-qme-example.html#equation-eq-g1-emission">(6.21)</a>.  We don’t how to calculate the expectation values since two different times are involved. There is a trick that works only when the Born-Markovian approximation is valid as discussed next.</p>
+<p>Suppose that the expectation value of an operator <span class="math notranslate nohighlight">\(A\)</span> evolves in time. It should be written as <span class="math notranslate nohighlight">\(\langle A \rangle_t\)</span> (expectation evaluated at time <span class="math notranslate nohighlight">\(t\)</span>) but  often written as <span class="math notranslate nohighlight">\(\langle A(t) \rangle\)</span> which suggests that <span class="math notranslate nohighlight">\(A\)</span> depends on time. If the system evolution is unitary, then <span class="math notranslate nohighlight">\(A(t)\)</span> can be considered as an operator in the Heisenberg picture and the average is taken with respect to an initial state.  However, when the evolution of the system is not unitary, we can’t define the usual Heisenberg picture. We interpret it as <span class="math notranslate nohighlight">\(\langle A(t) \rangle \equiv \text{tr}(A \rho(t))\)</span>  where the state is evolving in time and the operator is stationary.</p>
+<p>A problem arises when operators depend on two different times.  Fortunately, there is a very usefull theorem, known as the quantum regression theorem, which states that</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A(\tau)B(0) \rangle = \text{tr} [ A e^{\mathcal{L}t} (B \rho(0)) ]
+\]</div>
+<p>Notice that neither <span class="math notranslate nohighlight">\(A\)</span> nor <span class="math notranslate nohighlight">\(B\)</span> depends on time in the right hand side of the equality. <span class="math notranslate nohighlight">\(B \rho(0)\)</span> is evaluated at <span class="math notranslate nohighlight">\(t=0\)</span> and evolves to t=<span class="math notranslate nohighlight">\(\tau\)</span>.  Then we take the trace. It is a kind of surprising that the same evolution operator <span class="math notranslate nohighlight">\(e^{\mathcal{L}t}\)</span> can be used to evolve <span class="math notranslate nohighlight">\(B\rho\)</span>.  We can calculate <span class="math notranslate nohighlight">\(e^{\mathcal{L} t} (B \rho(0))\)</span> by solving the quantum master equation with the initial condition  <span class="math notranslate nohighlight">\(\eta(0) = B\rho(0)\)</span>.</p>
+<p>As an example, the four-operator correlation in <code class="xref eq docutils literal notranslate"><span class="pre">(eq:g2-src-field</span></code> can be computed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle\sigma^{+}_{i}(0) \sigma^{+}_{k}(\tau)\sigma^{-}_{\ell}(\tau)\sigma^{-}_{j}(0)\rangle_{ss} &amp;=
+\text{tr}\left[\sigma^{+}_{i}(0) \sigma^{+}_{k}(\tau)\sigma^{-}_{\ell}(\tau)\sigma^{-}_{j}(0) \rho_{ss}\right] \\
+&amp;= \text{tr}\left[\sigma^{+}_{k}(\tau)\sigma^{-}_{\ell}(\tau)\sigma^{-}_{j}(0) \rho_{ss} \sigma^{+}_{i}(0)\right]\\
+&amp; = \text{tr}\left[\sigma^{+}_{k}\sigma^{-}_{\ell} e^{\mathcal{L}\tau} \left(\sigma^{-}_{j} \rho_{ss} \sigma^{+}_{i}\right)\right]
+\end{aligned}
+\end{split}\]</div>
+<p>where we started with the Heisenberg picture and switched to the Schrodinger picture at the end.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            name: "book",
+            path: "./methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="openqm-qme-def.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.1. </span>Optical quantum master equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="openqm-qme-regression.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Quantum regression theorem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radiation-field-generated-by-the-emitters">6.2.1. The radiation field generated by the emitters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-of-photons">6.2.2. Detection of photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-function">6.2.3. Coherence function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-regression-theorem">6.2.4. Quantum regression theorem</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
