@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9.3. Dimer QME: Diagonalization &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dimer-model/dimer-qme-diagonalization';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Dimer I: Incoherent emitters" href="../dimer1/dimer-case1-intro.html" />
+    <link rel="prev" title="9.2. Dimer QME: Dissipator" href="dimer-qme-dissipator.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">1. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">2. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">2.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">2.10. The second-order coeherence function</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">3. Bunching and full counting statistics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">4. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">4.1. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">4.2. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">4.3. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">4.4. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">4.5. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">4.6. Phonon bath</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">5. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">6. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">6.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">6.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">6.3. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">7. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">7.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">7.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">8. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-model.html">8.1. Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">8.2. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">8.3. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.4. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-intro.html">9. The model of a dimer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dimer-qme-unitary.html">9.1. Dimer QME:  The unitary part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-qme-dissipator.html">9.2. Dimer QME: Dissipator</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.3. Dimer QME: Diagonalization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">10. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">10.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">10.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">10.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">11. Dimer II: Coherence by indistinguishability</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">12. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">12.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">12.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">12.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">12.4. Full counting statistics</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/dimer-model/dimer-qme-diagonalization.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Fdimer-model/dimer-qme-diagonalization.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/dimer-model/dimer-qme-diagonalization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dimer QME: Diagonalization</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalization">9.3.1. Diagonalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingerpretation-of-the-collapse-operators">9.3.2. Ingerpretation of the collapse operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dark-state">9.3.3. The dark state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-between-channels">9.3.4. Coherence between channels.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dimer-qme-diagonalization">
+<h1><span class="section-number">9.3. </span>Dimer QME: Diagonalization<a class="headerlink" href="#dimer-qme-diagonalization" title="Link to this heading">#</a></h1>
+<p>In the previous section, we numerically evaluated the dissipator with off-diagonal terms.  We can simplify the dissipator before numerical calculation by diagonalizing  <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span>.</p>
+<section id="diagonalization">
+<h2><span class="section-number">9.3.1. </span>Diagonalization<a class="headerlink" href="#diagonalization" title="Link to this heading">#</a></h2>
+<p>First, we diagonalize <span class="math notranslate nohighlight">\(\mathcal{D}^{e}\)</span>.</p>
+<p>Consider the matrix</p>
+<div class="math notranslate nohighlight" id="equation-eq-gamma-matrix">
+<span class="eqno">(9.11)<a class="headerlink" href="#equation-eq-gamma-matrix" title="Link to this equation">#</a></span>\[\begin{split}
+\Gamma = \begin{pmatrix} \Gamma_{11} &amp; \Gamma_{12} \\ \Gamma{21} &amp; \Gamma_{22} \end{pmatrix} = \begin{pmatrix} \gamma_{0} &amp; \Gamma_{12} \\ \Gamma{21} &amp; \gamma_0 \end{pmatrix}
+\end{split}\]</div>
+<p>The basis vectors are</p>
+<div class="math notranslate nohighlight" id="equation-eq-basis-sigma">
+<span class="eqno">(9.12)<a class="headerlink" href="#equation-eq-basis-sigma" title="Link to this equation">#</a></span>\[\begin{split}
+\sigma^{-}_{1} = \begin{pmatrix} 1 \\0 \end{pmatrix}, \qquad \sigma^{-}_{2} = \begin{pmatrix} 0 \\1 \end{pmatrix}. 
+\end{split}\]</div>
+<p>It is trivial to diagonalize <a class="reference internal" href="#equation-eq-gamma-matrix">(9.11)</a>.  The eigenvalues are <span class="math notranslate nohighlight">\(\lambda_{\pm} = \gamma_{0}\pm \Gamma_{12}\)</span> and the corresponding eigenvectors are <span class="math notranslate nohighlight">\(u_{\pm} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ \pm 1\end{pmatrix}\)</span>.  Here we used <span class="math notranslate nohighlight">\(\Gamma_{12} = \Gamma_{21}\)</span>.</p>
+<p>From Eq. <a class="reference internal" href="#equation-eq-basis-sigma">(9.12)</a>, we obtain the new collapse vectors:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+\eta^{-}_{1} = \frac{1}{\sqrt{2}} \left (\sigma^{-}_{1} + \sigma^{-}_{2}\right), \qquad \eta^{-}_{2} = \frac{1}{\sqrt{2}} \left (\sigma^{-}_{1} - \sigma^{-}_{2}\right)
+$$.\\
+Similarly for dissipator $\mathcal{D}^{a}$, we have the same eigenvalues and eigenvectors from which we obtain the new collapse operators\end{aligned}\end{align} \]</div>
+<p>\eta^{+}<em>{1} = \frac{1}{\sqrt{2}} \left (\sigma^{+}</em>{1} + \sigma^{+}<em>{2}\right), \qquad \eta^{+}</em>{2} = \frac{1}{\sqrt{2}} \left (\sigma^{+}<em>{1} - \sigma^{+}</em>{2}\right)
+$$</p>
+<p>With these collapse operators, the dissipators can be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\mathcal{D}^{e} (\rho) &amp;= (\gamma_{0}+\Gamma_{12}) (N_{T}+1) \left( \eta^{-}_{1} \rho \eta^{+}_{1} - \frac{1}{2} \left\{\eta^{+}_{1}\eta^{-}_{1}, \rho\right\} \right) + (\Gamma_{11}-\Gamma_{12})(N_{T}+1) \left( \eta^{+}_{2} \rho \eta^{-}_{2} - \frac{1}{2} \left\{\eta^{-}_{2}\eta^{+}_{2}, \rho\right\} \right) \\
+\mathcal{D}^{a} (\rho) &amp;= (\gamma_{0}+\Gamma_{12}) N_{T} \left( \eta^{+}_{1} \rho \eta^{-}_{1} - \frac{1}{2} \left\{\eta^{-}_{1}\eta^{+}_{1}, \rho\right\} \right) + (\Gamma_{11}-\Gamma_{12}) N_{T}\left( \eta^{-}_{2} \rho \eta^{+}_{2} - \frac{1}{2} \left\{\eta^{-}_{2}\eta^{+}_{2}, \rho\right\} \right).
+\end{aligned}
+\end{split}\]</div>
+<p>We just change the basis and thus no new physics is introduced.  Both the product basis and the Dicke basis produce exactly the same density matrix as a solution to the master equation.  However, we have two different views of the same processes.</p>
+</section>
+<section id="ingerpretation-of-the-collapse-operators">
+<h2><span class="section-number">9.3.2. </span>Ingerpretation of the collapse operators<a class="headerlink" href="#ingerpretation-of-the-collapse-operators" title="Link to this heading">#</a></h2>
+<p>The collapse operators <span class="math notranslate nohighlight">\(\sigma^{\pm}_{j}\)</span> describe the transitions between <span class="math notranslate nohighlight">\(|e\rangle\)</span> and <span class="math notranslate nohighlight">\(|g\rangle\)</span> in each emitter. What transitions the new collapse operators <span class="math notranslate nohighlight">\(\eta^{\pm}_{j}\)</span> describe?   Using the Dicke basis set <a class="reference internal" href="dimer-qme-unitary.html#equation-eq-sa-basis">(9.2)</a>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\eta^{-}_{1} &amp;= |g\rangle\langle s| + |s\rangle\langle e|, \qquad \eta^{-}_{2} = |g\rangle\langle a| + |a\rangle\langle e| \\
+\eta^{+}_{1} &amp;= |s\rangle\langle g| + |e\rangle\langle s|, \qquad \eta^{+}_{2} = |a\rangle\langle g| + |e\rangle\langle a|
+\end{aligned}
+\end{split}\]</div>
+<p>which can be interpreted as follows.  The collapse operator <span class="math notranslate nohighlight">\(\eta^{-}_{1}\)</span> represents two transitions, one from <span class="math notranslate nohighlight">\(|e\rangle\)</span> to <span class="math notranslate nohighlight">\(|s\rangle\)</span> and the other from <span class="math notranslate nohighlight">\(|s\rangle\)</span> to <span class="math notranslate nohighlight">\(|g\rangle\)</span>.  These two processes form emission channel 1: <span class="math notranslate nohighlight">\(|e\rangle\Rightarrow|s\rangle\Rightarrow|g\rangle\)</span> (blue arrows in the right panel of <a class="reference internal" href="#fig-dimer-emission-channels"><span class="std std-numref">Fig. 9.1</span></a>).  Similarly, <span class="math notranslate nohighlight">\(eta^{-}_{2}\)</span> represents emission channel 2: <span class="math notranslate nohighlight">\(|e\rangle\Rightarrow|a\rangle\Rightarrow|g\rangle\)</span> (read arrows in the right panel of <a class="reference internal" href="#fig-dimer-emission-channels"><span class="std std-numref">Fig. 9.1</span></a>).  Compare them with the emission channels expressed in the product basis.  In the product basis, each channel involves both <span class="math notranslate nohighlight">\(\sigma^{-}_{1}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{-}_{2}\)</span>, which creates interference between <span class="math notranslate nohighlight">\(\sigma^{-}_{1}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{-}_{2}\)</span>.  That is the origin of the off-diagonal term <span class="math notranslate nohighlight">\(\Gamma_{12}\)</span>.  In the Dicke basis, however, the channels are independent and the off-diagonal terms are absent.</p>
+<p>The other collapse operator <span class="math notranslate nohighlight">\(\eta^{+}_{j}\)</span> is the Hermite conjugate of <span class="math notranslate nohighlight">\(\eta^{-}_{j}\)</span>.  Hence, <span class="math notranslate nohighlight">\(\eta^{+}_{j}\)</span> represents the time-reversal of <span class="math notranslate nohighlight">\(\eta^{-}_{j}\)</span>.  Just revere the direction of the arrows in <a class="reference internal" href="#fig-dimer-emission-channels"><span class="std std-numref">Fig. 9.1</span></a>.</p>
+<figure class="align-center" id="fig-dimer-emission-channels">
+<a class="reference internal image-reference" href="../_images/dimer-emission-channels.webp"><img alt="Emission and Driving diagram for N=2." src="../_images/dimer-emission-channels.webp" style="height: 1.5in;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Left: Spontaneous emission channels expressed in the product basis.  Right: Spontaneous emission channels expressed in the Dicke basis. When <span class="math notranslate nohighlight">\(\Gamma_{12}=\gamma_{0}\)</span>, the red channel disappears.</span><a class="headerlink" href="#fig-dimer-emission-channels" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-dark-state">
+<h2><span class="section-number">9.3.3. </span>The dark state<a class="headerlink" href="#the-dark-state" title="Link to this heading">#</a></h2>
+<p>In the product basis view, the intensity of radiation from the two channels is identical.  In the Dicke basis view, channel 1 has emission rate <span class="math notranslate nohighlight">\(\gamma_{0}+\Gamma_{12}\)</span> and channel 2 has <span class="math notranslate nohighlight">\(\gamma_{0}-\Gamma_{12}\)</span>.  Hence,  channel 1 has stronger emission than channel 2.  The difference is small when the two emitters are far apart since <span class="math notranslate nohighlight">\(\Gamma_{12} = 0\)</span>. On the other limit, <span class="math notranslate nohighlight">\(\Gamma_{12} \rightarrow \gamma_{0}\)</span>.  Interestingly channel 2 vanishes in this limit.  This means the state <span class="math notranslate nohighlight">\(|a\rangle\)</span> cannot be reached by emission or absorption.  No light is emitted via channel 2 and thus the state is called a dark state.  WE will discuss the details in <a class="reference internal" href="../dimer2/dimer-case2-intro.html#ch-dimer-case2"><span class="std std-numref">Chapter 11</span></a>.</p>
+</section>
+<section id="coherence-between-channels">
+<h2><span class="section-number">9.3.4. </span>Coherence between channels.<a class="headerlink" href="#coherence-between-channels" title="Link to this heading">#</a></h2>
+<p>In the following code, we construct a quantum master equation using <span class="math notranslate nohighlight">\(\eta^{\pm}_{j}\)</span> with the corresponding transition rate as collapse operators.  Then, solve it using QuTiP. Unlike the previous case with <span class="math notranslate nohighlight">\(\sigma^{\pm}_{j}\)</span>, we don’t have to construct a Liouvillian super operator since the off-diagonal term is absent.  Although the expression of the master equation is different, mathematically it is the same as the one used in <a class="reference internal" href="dimer-qme-dissipator.html#sec-dimer-qme-off-diagonal"><span class="std std-numref">Chapter 9.2</span></a>.  Hence, we should get the exactly the same steady state density matrix. By plotting the off-diagonal element <span class="math notranslate nohighlight">\(\rho_{eg,ge}\)</span>, we confirm that the density matrix is the same as before.  Then, we switch to the Dicke basis. The off-diagonal element <span class="math notranslate nohighlight">\(\rho_{sq}\)</span> between <span class="math notranslate nohighlight">\(|s\rangle\)</span> and <span class="math notranslate nohighlight">\(|a\rangle\)</span> is always 0 regardless of the distance <span class="math notranslate nohighlight">\(r_{12}\)</span>.  Hence, <span class="math notranslate nohighlight">\(|s\rangle\)</span> and <span class="math notranslate nohighlight">\(|a\rangle\)</span> are completely incoherent.  This is consistent with the fact that there is no off-diagonal terms in the dissipators with <span class="math notranslate nohighlight">\(\eta^{\pm}_{j}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code block defines functions to be used in the later code</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qutip</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># parameter values</span>
+<span class="n">omega0</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">gamma0</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">omega12</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">omega0</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">NT</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">omega0</span><span class="o">/</span><span class="n">temperature</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  
+
+<span class="c1"># define operators in 4d Hilbert space</span>
+<span class="n">i2</span> <span class="o">=</span> <span class="n">qeye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sz</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmaz</span><span class="p">(),</span><span class="n">i2</span><span class="p">),</span><span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span><span class="n">sigmaz</span><span class="p">())]</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmap</span><span class="p">(),</span><span class="n">i2</span><span class="p">),</span><span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span><span class="n">sigmap</span><span class="p">())]</span>
+<span class="n">sm</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmam</span><span class="p">(),</span><span class="n">i2</span><span class="p">),</span><span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span><span class="n">sigmam</span><span class="p">())]</span>
+
+<span class="c1"># product basis</span>
+<span class="n">u</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)))</span>
+<span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)))</span>
+<span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+
+<span class="c1"># Dicke basis</span>
+<span class="n">v</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># define the Hamiltonian with dipole-dipole coupling</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">system_hamiltonian</span><span class="p">(</span><span class="n">omega0</span><span class="p">,</span><span class="n">omega12</span><span class="p">):</span>
+    
+    <span class="n">H</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">omega0</span><span class="o">*</span><span class="p">(</span><span class="n">sz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">sz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">H</span> <span class="o">+=</span> <span class="n">omega12</span><span class="o">*</span><span class="p">(</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">sm</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">H</span>
+
+<span class="c1"># define the dissipator with off-diagonal terms </span>
+<span class="k">def</span><span class="w"> </span><span class="nf">collaps_ops</span><span class="p">(</span><span class="n">omega0</span><span class="p">,</span><span class="n">gamma0</span><span class="p">,</span><span class="n">gamma12</span><span class="p">,</span><span class="n">temperatur</span><span class="p">):</span>
+
+    <span class="n">gamma_s</span> <span class="o">=</span> <span class="n">gamma0</span> <span class="o">+</span> <span class="n">gamma12</span>
+    <span class="n">gamma_a</span> <span class="o">=</span> <span class="n">gamma0</span> <span class="o">-</span> <span class="n">gamma12</span>
+    <span class="n">ep</span> <span class="o">=</span> <span class="p">[(</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),(</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+    <span class="n">em</span> <span class="o">=</span> <span class="p">[(</span><span class="n">sm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),(</span><span class="n">sm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+    <span class="n">c_ops</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma_s</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">NT</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma_a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">NT</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+    <span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma_s</span><span class="p">)</span><span class="o">*</span><span class="n">NT</span><span class="o">*</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma_a</span><span class="p">)</span><span class="o">*</span><span class="n">NT</span><span class="o">*</span><span class="n">ep</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">c_ops</span>
+
+<span class="c1"># define Gamma_12</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Gamma12</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span><span class="n">theta</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r12</span>
+    <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the off-diagonal element of steady state</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rho_prod</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rho_dicke</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">201</span><span class="p">):</span>
+    <span class="n">r12</span><span class="o">=</span><span class="n">k</span><span class="o">/</span><span class="mi">1000</span>
+    <span class="n">gamma12</span> <span class="o">=</span> <span class="n">Gamma12</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">gamma0</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">system_hamiltonian</span><span class="p">(</span><span class="n">omega0</span><span class="p">,</span><span class="n">omega12</span><span class="p">)</span>
+    <span class="n">c_ops</span> <span class="o">=</span> <span class="n">collaps_ops</span><span class="p">(</span><span class="n">omega0</span><span class="p">,</span><span class="n">gamma0</span><span class="p">,</span><span class="n">gamma12</span><span class="p">,</span><span class="n">temperature</span><span class="p">)</span>
+    <span class="n">psi0</span><span class="o">=</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">result</span><span class="o">=</span><span class="n">mesolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">psi0</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">)</span>
+    <span class="n">rho_p</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1">#    rho_p = steadystate(H,c_ops)</span>
+    <span class="n">rho_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+            <span class="n">rho_d</span><span class="p">[[</span><span class="n">i</span><span class="p">],[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">rho_p</span><span class="o">.</span><span class="n">matrix_element</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+    
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r12</span><span class="p">)</span>
+    <span class="n">rho_prod</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rho_p</span><span class="p">)</span>
+    <span class="n">rho_dicke</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rho_d</span><span class="p">)</span>
+
+<span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="o">/</span><span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">real</span> <span class="k">for</span> <span class="n">matrix</span> <span class="ow">in</span> <span class="n">rho_prod</span><span class="p">]</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="o">/</span><span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">real</span> <span class="k">for</span> <span class="n">matrix</span> <span class="ow">in</span> <span class="n">rho_dicke</span><span class="p">]</span>
+<span class="c1"># plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Coherence in product vs Dicke basis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y0</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;product basis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y1</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Dicke basis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$r_</span><span class="si">{12}</span><span class="s2">/\lambda_</span><span class="si">{0}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\rho_</span><span class="si">{12}</span><span class="s2">/\rho_</span><span class="si">{11}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/dc23db85459424b268fdb9fe28b162621c72eda8d2f62c5e788d05bb111c9333.png" src="../_images/dc23db85459424b268fdb9fe28b162621c72eda8d2f62c5e788d05bb111c9333.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            name: "book",
+            path: "./dimer-model"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dimer-qme-dissipator.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>Dimer QME: Dissipator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../dimer1/dimer-case1-intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Dimer I: Incoherent emitters</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalization">9.3.1. Diagonalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingerpretation-of-the-collapse-operators">9.3.2. Ingerpretation of the collapse operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dark-state">9.3.3. The dark state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-between-channels">9.3.4. Coherence between channels.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

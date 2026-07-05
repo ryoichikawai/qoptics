@@ -227,10 +227,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">8.4. Quantum Trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer-intro/dimer-intro.html">9. A pair of emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-intro/dimer-qme-unitary.html">9.1. Dimer QME:  The unitary part</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-intro/dimer-qme-dissipator.html">9.2. Dimer QME: Dissipator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-intro/dimer-qme-diagonalization.html">9.3. Dimer QME: Diagonalization</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer-model/dimer-intro.html">9. The model of a dimer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-unitary.html">9.1. Dimer QME:  The unitary part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-dissipator.html">9.2. Dimer QME: Dissipator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">9.3. Dimer QME: Diagonalization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case1-intro.html">10. Dimer I: Incoherent emitters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -558,9 +558,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emission jumps in system 1 = 551
-Number of emission jumps in system 2 = 547
-Total number of emission jumps       = 1098
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emission jumps in system 1 = 543
+Number of emission jumps in system 2 = 559
+Total number of emission jumps       = 1102
 </pre></div>
 </div>
 </div>
@@ -589,7 +589,7 @@ Total number of emission jumps       = 1098
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e9e2302b0a0b87222d5f6b0f07fe80b5520ab86207102b0d039d9ff7320465f3.png" src="../_images/e9e2302b0a0b87222d5f6b0f07fe80b5520ab86207102b0d039d9ff7320465f3.png" />
+<img alt="../_images/03ad5106b5689984c70f91e787841b24f80a059056f64647c8b567b3ac05d929.png" src="../_images/03ad5106b5689984c70f91e787841b24f80a059056f64647c8b567b3ac05d929.png" />
 </div>
 </div>
 </section>
@@ -635,18 +635,18 @@ Total number of emission jumps       = 1098
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>** System 1 **
-mean waiting time  =  22.943056823044525
-standard deviation =  17.811218893796106
+mean waiting time  =  23.257534361611448
+standard deviation =  18.241205413841342
 likely sub-poissonian
 
 ** System 2 **
-mean waiting time  =  23.115359342297538
-standard deviation =  17.72652920661667
+mean waiting time  =  22.55385980765184
+standard deviation =  17.98537260346575
 likely sub-poissonian
 
 ** All Systems **
-mean waiting time  =  11.513522622584198
-standard deviation =  9.64186391950637
+mean waiting time  =  11.44921310081145
+standard deviation =  9.619693687669507
 likely sub-poissonian
 </pre></div>
 </div>
@@ -684,7 +684,7 @@ likely sub-poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12b85a6111dcadee7eb964d0077c32e80d35348c58a674f516a5865af2e1fc83.png" src="../_images/12b85a6111dcadee7eb964d0077c32e80d35348c58a674f516a5865af2e1fc83.png" />
+<img alt="../_images/96626d5f1d6b5d0981e237653393fdcea60aa5e3af83eee14f4000556226ebe9.png" src="../_images/96626d5f1d6b5d0981e237653393fdcea60aa5e3af83eee14f4000556226ebe9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -784,7 +784,7 @@ likely sub-poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25c31970fa071e0d3e34392e23a75677a23d952b1ca6d34ad90152ae26ae6e55.png" src="../_images/25c31970fa071e0d3e34392e23a75677a23d952b1ca6d34ad90152ae26ae6e55.png" />
+<img alt="../_images/c2a6922ab66d4a69d42d4f1df9ea53e50f082275abca97e62e794c67800af83e.png" src="../_images/c2a6922ab66d4a69d42d4f1df9ea53e50f082275abca97e62e794c67800af83e.png" />
 </div>
 </div>
 <p>In the above plots, the orange curve is showing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> for a single system.  The quantum trajectory from each system agrees with it.  However, the coherence function obtained from the combined data differs from it. The data still very noisy but the curve seems going to 0.5 at <span class="math notranslate nohighlight">\(\tau=0\)</span>.</p>
