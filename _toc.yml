@@ -40,7 +40,7 @@ parts:
       sections:
       -  file: methods/openqm-qme-def
       -  file: methods/openqm-qme-radiation
-      -  file: methods/openqm-qme-regression
+#      -  file: methods/openqm-qme-regression
       -  file: methods/openqm-qme-example
    -  file: methods/openqm-jump-intro
       sections:
@@ -51,18 +51,24 @@ parts:
    chapters:
    -  file: monomer/monomer-intro
       sections:
+      -  file: monomer/monomer-model
       -  file: monomer/monomer-theory
       -  file: monomer/monomer-qme
       -  file: monomer/monomer-jump
+   -  file: dimer-intro/dimer-intro
+      sections:
+      -  file: dimer-intro/dimer-qme-unitary
+      -  file: dimer-intro/dimer-qme-dissipator
+      -  file: dimer-intro/dimer-qme-diagonalization
    -  file: dimer1/dimer-case1-intro
       sections:
       -  file: dimer1/dimer-case1-model
       -  file: dimer1/dimer-case1-qme
       -  file: dimer1/dimer-case1-jump
    -  file: dimer2/dimer-case2-intro
-      sections:
-      -  file: dimer2/dimer-case2-model
-      -  file: dimer2/dimer-case2-supperradiance
+#      sections:
+#      -  file: dimer2/dimer-case2-model
+#      -  file: dimer2/dimer-case2-supperradiance
    -  file: dimer3/dimer-case3-intro
       sections:
       -  file: dimer3/dimer-case3-model
