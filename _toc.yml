@@ -18,6 +18,7 @@ parts:
 -  caption: Basics
    numbered: 3
    chapters:
+   -  file: foundations/qmstates
    -  file: foundations/photons
    -  file: foundations/coherence
       sections:
