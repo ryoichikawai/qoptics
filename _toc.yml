@@ -67,9 +67,9 @@ parts:
       -  file: dimer1/dimer-case1-qme
       -  file: dimer1/dimer-case1-jump
    -  file: dimer2/dimer-case2-intro
-#      sections:
-#      -  file: dimer2/dimer-case2-model
-#      -  file: dimer2/dimer-case2-supperradiance
+      sections:
+      -  file: dimer2/dimer-case2-theory
+      -  file: dimer2/dimer-case2-qme
    -  file: dimer3/dimer-case3-intro
       sections:
       -  file: dimer3/dimer-case3-model

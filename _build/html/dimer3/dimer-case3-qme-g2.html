@@ -185,7 +185,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states and measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">2. Photons and quantum radiation fields</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
@@ -240,7 +240,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Asymptotic limit</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case3-intro.html">13. Dimer II: Coherence by external driving</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="dimer-case3-model.html">13.1. The model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
@@ -496,7 +500,7 @@
 g^{(2)}(\tau;\mathbf{R}_1,\mathbf{R}_2) 
 = \frac{\sum_{ij} \sum_{k\ell} e^{i k_0 \hat{\mathbf{R}}_1\cdot \mathbf{r}_{ij}}e^{i k_0 \hat{\mathbf{R}}_2\cdot \mathbf{r}_{k\ell}} \langle\sigma^{+}_{i}(t) \sigma^{+}_{k}(t+\tau)\sigma^{-}_{\ell}(t+\tau)\sigma^{-}_{j}(t)\rangle_{ss}}{ \left( \sum_{ij} e^{i k_0 \hat{\mathbf{R}}_1\cdot \mathbf{r}_{ij}}\langle\sigma^{+}_{i}(t)\sigma^{-}_{j}(t)\rangle_{ss}\right) \left(\sum_{k\ell} e^{i k_0 \hat{\mathbf{R}}_2\cdot \mathbf{r}_{k\ell}}  \langle \sigma^{+}_{k}(t)\sigma^{-}_{\ell}(t)\rangle_{ss}\right)}
 \]</div>
-<p>Skornia <em>et al.</em><span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id48" title="C. Skornia, J. von Zanthier, G. S. Agarwal, E. Werner, and H. Walther. Nonclassical interference effects in the radiation from coherently driven uncorrelated atoms. Phys. Rev. A, 64:063801, Nov 2001. doi:10.1103/PhysRevA.64.063801.">41</a>]</span> as able to find an analytical expression, which is a bit too long to be shown here.  For <span class="math notranslate nohighlight">\(\tau=0\)</span>, it takes a simple form</p>
+<p>Skornia <em>et al.</em><span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id48" title="C. Skornia, J. von Zanthier, G. S. Agarwal, E. Werner, and H. Walther. Nonclassical interference effects in the radiation from coherently driven uncorrelated atoms. Phys. Rev. A, 64:063801, Nov 2001. doi:10.1103/PhysRevA.64.063801.">38</a>]</span> as able to find an analytical expression, which is a bit too long to be shown here.  For <span class="math notranslate nohighlight">\(\tau=0\)</span>, it takes a simple form</p>
 <div class="math notranslate nohighlight">
 \[
 g^{(2)}(0;\mathbf{R}_1,\mathbf{R}_2) = \frac{s^2 \cos^2(\theta(\mathbf{R}_1)-\theta(\mathbf{R}_2))}{[s+ \cos(\theta(\mathbf{R}_1))][s+ \cos(\theta(\mathbf{R}_2))]}
@@ -616,7 +620,7 @@ g^{(2)}(0;\mathbf{R}_1,\mathbf{R}_2) = \frac{s^2 \cos^2(\theta(\mathbf{R}_1)-\th
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ed9cb40674f4fce76627724304cf765548e0f1edc50e7d65dad1bd264ec6ec1b.png" src="../_images/ed9cb40674f4fce76627724304cf765548e0f1edc50e7d65dad1bd264ec6ec1b.png" />
+<img alt="../_images/b7d34d8f0740cadf3de9cf0ecfb86c145cc11b3f70c1e3bd6d7871d75592cdd1.png" src="../_images/b7d34d8f0740cadf3de9cf0ecfb86c145cc11b3f70c1e3bd6d7871d75592cdd1.png" />
 </div>
 </div>
 <p>The above results are remarkable. When <span class="math notranslate nohighlight">\(\theta(\mathbf{R})=0\)</span>, <span class="math notranslate nohighlight">\(g^{(2)}(0;\mathbf{R},\mathbf{R}) &lt; 1\)</span> suggesting photon antibunching.  At <span class="math notranslate nohighlight">\(\theta(\mathbf{R})=\pi\)</span>, <span class="math notranslate nohighlight">\(g^{(2)}(0;\mathbf{R},\mathbf{R}) &gt; 1\)</span> indicating photon bunching.  In the middle (<span class="math notranslate nohighlight">\(\theta(\mathbf{R})=\pi/2\)</span>), <span class="math notranslate nohighlight">\(g^{(2)}(0;\mathbf{R},\mathbf{R}) = 1\)</span>, which means the full counting statistics should be Poissonian.  In some directions, anti-bunching is observed and in some other directions, bunching is seen.  In the between, we have Poissonian spiking.</p>
@@ -673,7 +677,7 @@ g^{(2)}(0;\mathbf{R}_1,\mathbf{R}_2) = \frac{s^2 \cos^2(\theta(\mathbf{R}_1)-\th
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/97a7a243187183c03c6eb4bb0fd505d782dfd274aca5e492fd4bb978697f064a.png" src="../_images/97a7a243187183c03c6eb4bb0fd505d782dfd274aca5e492fd4bb978697f064a.png" />
+<img alt="../_images/bb9e55fae4caac8441d2bfefe7330039b24581cdde97846c3ae4163ae69fb82e.png" src="../_images/bb9e55fae4caac8441d2bfefe7330039b24581cdde97846c3ae4163ae69fb82e.png" />
 </div>
 </div>
 </section>
@@ -761,7 +765,7 @@ g^{(2)}(0;\mathbf{R}_1,\mathbf{R}_2) = \frac{s^2 \cos^2(\theta(\mathbf{R}_1)-\th
   return np.asanyarray(x, float)
 </pre></div>
 </div>
-<img alt="../_images/381bb3a0a748a2ecd2f157dc9b499a098166a3113032d15863ce808fa330763b.png" src="../_images/381bb3a0a748a2ecd2f157dc9b499a098166a3113032d15863ce808fa330763b.png" />
+<img alt="../_images/49426d544648ff44a34876aefae77646c7285161082cc2de7c8ac543a1a6a547.png" src="../_images/49426d544648ff44a34876aefae77646c7285161082cc2de7c8ac543a1a6a547.png" />
 </div>
 </div>
 <p>When the first detector is at <span class="math notranslate nohighlight">\(\theta_1=0\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is an integer, the second detector sees only antibunching.  However, when the first detector moves to <span class="math notranslate nohighlight">\(\theta_1=\pi/2\)</span>, the second detector begins to see bunching in certain places. When the first detector further moves to <span class="math notranslate nohighlight">\(\theta_1=\pi/2\)</span>, the amplitude of the fringes gets bigger and strong bunching can be seen.  In terstingly, the phase of the fringes flipped as the first detector moved from <span class="math notranslate nohighlight">\(\theta_1=0\)</span> to <span class="math notranslate nohighlight">\(\theta_1=\pi/2\)</span>.  The second detector initially observes a perfect antibunching (<span class="math notranslate nohighlight">\(g^{(2)}(0)=0\)</span>) at <span class="math notranslate nohighlight">\(\theta_2 = \pi\)</span>. As the first detector moves, the second detector observes a very strong bunching at the same place <span class="math notranslate nohighlight">\(\theta_2 = \pi\)</span>.  Hence, the first detector acts as a switch to flip between bunching/antibunching.</p>

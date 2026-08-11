@@ -185,7 +185,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states and measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">2. Photons and quantum radiation fields</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
@@ -240,7 +240,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Asymptotic limit</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
@@ -496,7 +500,18 @@
 <span id="sec-openqm-jump-method"></span><h1><span class="section-number">8.1. </span>Jump method algorithm<a class="headerlink" href="#jump-method-algorithm" title="Link to this heading">#</a></h1>
 <section id="the-basic-idea-of-the-jump-method">
 <h2><span class="section-number">8.1.1. </span>The basic idea of the jump method<a class="headerlink" href="#the-basic-idea-of-the-jump-method" title="Link to this heading">#</a></h2>
-<p>In the standard quantum mechanics, a quantum state the time evolution of <span class="math notranslate nohighlight">\(|psi\rangle\)</span> is determined by the Schrödinger equation <span class="math notranslate nohighlight">\(i\frac{d}{dt}|\psi\rangle = H |\psi\rangle\)</span>, which preserves the normalization.  The amount of information encoded in the state remains the same all time.  This is true as long as the Hamiltonian is self-adjoint, i.e., <span class="math notranslate nohighlight">\(H^{\dagger} = H\)</span>.  The evolution is continuous and smooth.  However, such a unitary evolution alone cannot describe the whole story of quantum evolution.  When measurement is performed on the state, it instantaneously jumps to one of eigenvectors of the observable.  No unitary evolution can describe quantum measurement process.</p>
+<p>In the standard quantum mechanics, a quantum state the time evolution of <span class="math notranslate nohighlight">\(|psi\rangle\)</span> is determined by the Schrödinger equation <span class="math notranslate nohighlight">\(i\frac{d}{dt}|\psi\rangle = H |\psi\rangle\)</span>, which preserves the normalization.  The amount of information encoded in the state remains the same all time.  This is true as long as the Hamiltonian is self-adjoint, i.e., <span class="math notranslate nohighlight">\(H^{\dagger} = H\)</span>.  This unitary evolution is continuous and smooth.  However, such a continuous evolution alone cannot describe the “trajectory” of a quantum system.  When measurement is performed on the state, it instantaneously jumps to one of eigenvectors of the observable according to the von Nuemann’s projection-valued measurement (PVM). A new unitary evolution follows starting from the projected state.  Hence a quantum trajectory  consists of smooth unitary evolutions and instantaneous jumps.</p>
+<p>No unitary evolution can describe such a jump. At present, we don’t know how the jump happens.  In quantum optics, we resort to a phenomenological stochastic approach.  Until a click is detected by a detector, the while system continuously evolves.  At the moment of click, the state of the whole system jumps to a new state.   But to which state?  The answer depends on the characteristics of particular detector used by the measurement.</p>
+<p>Let us use a hypothetical state <a class="reference internal" href="../foundations/coherence.html#equation-eq-atom-field-relative-state1">(3.1)</a> used in <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 3</span></a>. When a photon is detected, one photon is absorbed and thus one less photons in the radiation field.  The state jumps as followed</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+ &amp; c_0 |ee\rangle \otimes |\phi_{0}\rangle + c_{1} |ge\rangle \otimes |\phi_{1}\rangle + c_{1}  |eg\rangle \otimes |\phi_{1}^\prime\rangle + c_{2} |gg\rangle \otimes |\phi_{2}\rangle \\
+ &amp; \qquad \Rightarrow  c_{1}^\prime \left( |ge\rangle  + |eg\rangle \right)  \otimes |\varphi_{0} \rangle + c_{2}^\prime |gg\rangle \otimes |\varphi_{1}\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_{n}^\prime = \displaystyle \frac{c_{n}}{1-|c_{0}|^2}\)</span> and <span class="math notranslate nohighlight">\(\varphi_{n}\)</span> is a state of radiation field with <span class="math notranslate nohighlight">\(n\)</span> photons.
+This jump is not a PVM.  The PVM cannot be used for photons since a photon disappeared.  We must use the <a class="reference external" href="https://en.wikipedia.org/wiki/POVM">positive operator-valued measurement (POVM)</a>.   Fro the perspetive of the emitters, the state immediately after the click is either <span class="math notranslate nohighlight">\((|ge\rangle  + |eg\rangle)/\sqrt{2}\)</span> or <span class="math notranslate nohighlight">\(|gg\rangle\)</span> with probabilily <span class="math notranslate nohighlight">\(2 |c_{1}^\prime|^2\)</span> and <span class="math notranslate nohighlight">\(|c_{2}\^2\)</span>, respectively.</p>
 <p>Quantum jumps sees in a quantum trajectory are essentially the same as such quantum measurement processes.  The interaction between emitters and radiation field can be interpreted as continuous measurement by the radiation field, which causes the jumps.  Hence, we can’t use the standard  Schrödinger equation to find a quantum trajectory. WE need a non-unitary evolution.</p>
 <p>Suppose that in absence of the radiation field, the emitter evolves unitarily with  Hamiltonian <span class="math notranslate nohighlight">\(H_{S}\)</span>.  When it interacts with the radiation field jump from state <span class="math notranslate nohighlight">\(|\alpha\rangle\)</span> to <span class="math notranslate nohighlight">\(|\beta\rangle\)</span>. Such jump is mathematically described by an operator <span class="math notranslate nohighlight">\(C=\sqrt{\gamma} |\beta\rangle\langle \alpha|\)</span> where <span class="math notranslate nohighlight">\(\gamma\)</span> is a rate of jump<span class="math notranslate nohighlight">\(.  \)</span>C$ is called collapse operator.</p>
 <p>Next, we consider an effective Hamiltonian</p>

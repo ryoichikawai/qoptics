@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Quantum states &#8212; Optical coherence from small atomic clusters.</title>
+    <title>1. Quantum states and measurement &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'foundations/qmstates';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -183,7 +185,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Quantum states</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Quantum states and measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="photons.html">2. Photons and quantum radiation fields</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="coherence-g1.html">3.9. First-order coherence function</a></li>
@@ -238,7 +240,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Asymptotic limit</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
@@ -449,7 +455,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -460,11 +468,20 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quantum states</h1>
+    <h1>Quantum states and measurement</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-psi-rangle-means">1.1. What <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> means?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ensemble-after-a-measurement">1.2. The ensemble after a measurement</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -474,9 +491,59 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quantum-states">
-<span id="ch-qmstates"></span><h1><span class="section-number">1. </span>Quantum states<a class="headerlink" href="#quantum-states" title="Link to this heading">#</a></h1>
-<p>To be written.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-states-and-measurement">
+<span id="ch-qmstates"></span><h1><span class="section-number">1. </span>Quantum states and measurement<a class="headerlink" href="#quantum-states-and-measurement" title="Link to this heading">#</a></h1>
+<p>In the standard description of quantum mechanics states that the state of a quantum system is a vector in a Hilbert space and the Schrödinger equation determines the time evolution of the state.  However, it does not provide the whole picture of quantum states and their evolution.  In this chapter, first  a summary of the more complete picture of quantum states is given.  Secondly, we describe their time evolution beyond the Schrödinger equation.</p>
+<section id="what-psi-rangle-means">
+<h2><span class="section-number">1.1. </span>What <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> means?<a class="headerlink" href="#what-psi-rangle-means" title="Link to this heading">#</a></h2>
+<p>When we say an electron is in a state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, which is a ket vector in a Hilbert space, what does it actually mean?  It has been debated more than 100 years since the inception of quantum mechanics that what is the ontology of a wave function. Even now, we are still debating.  In the standard theory of quantum mechanics, While it is said that <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> contains all the information about the state of the quantum object, it does not give us a unique outcome when we observe the object.  Instead the outcome of a measurement is stochastic.  More specifically, when we measure an <em>observable</em> <span class="math notranslate nohighlight">\(\hat{A}\)</span> which is an operator in the same Hilber space as <span class="math notranslate nohighlight">\(|psi\rangle\)</span>, the outcome is one of the eigenvalues of <span class="math notranslate nohighlight">\(\hat{A}\)</span>.  The probability to obtain a particular eigenvalue <span class="math notranslate nohighlight">\(a_{n}\)</span> is given by the Born rule <span class="math notranslate nohighlight">\(p_{n} = |\langle a_{n}|\psi\rangle|^2\)</span>.  Thus, the state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> provides us the probability.  Here we are using the standard theory of quantum measurement  for the sake of understanding the concept of quantum states.  However, the quantum measurement of photons are quite different and a bit more complicated.  We will discuss it in a separate section.</p>
+<p>Now, we turn to the standard interpretation of the quantum probability.  We consider an ensemble of the infinitely many identical quantum objects prepared exactly in the  same way.   We pick one member of the ensemble and measure <span class="math notranslate nohighlight">\(\hat{A}\)</span>.  The chance that we obtain outcome <span class="math notranslate nohighlight">\(a_{n}\)</span> is <span class="math notranslate nohighlight">\(p_{n}\)</span>.  If you pick <span class="math notranslate nohighlight">\(N\)</span> members from the ensemble  approximately, <span class="math notranslate nohighlight">\(p_{n}N\)</span> produces <span class="math notranslate nohighlight">\(a_{n}\)</span>.  Hence, the <span class="math notranslate nohighlight">\(\psi\)</span> should be assigned to the ensemble.  When we say that an electron is in a state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, it means that the electron belongs to the ensemble <span class="math notranslate nohighlight">\(\psi\)</span>.</p>
+<p>Since all members in the ensemble are identically  prepared, they also evolve exactly in the same way, <span class="math notranslate nohighlight">\(|\psi(t)\rangle = e^{-i H t} |\psi(0)\rangle\)</span> where <span class="math notranslate nohighlight">\(H\)</span> is the Hamiltonian.  Hence, the Schrödinger equation actually determines the evolution of the ensemble.
+The theory of quantum mechanics can’t tell what individual particles are evolving.  It tells only the statistical behavior of the ensemble.  We can’t describe the behavior of a particular particle using the quantum mechanics.</p>
+<p>Now, this interpretation raises several questions.  Here I list three, which is relevant to the current</p>
+<ol class="arabic simple">
+<li><p>What happens to the ensemble after the measurement?</p></li>
+<li><p>What kind of time evolution is the measurement?  It looks like a jump from <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> to <span class="math notranslate nohighlight">\(|a_{n}\rangle\)</span>.</p></li>
+<li><p>What happens if we just continuously look at a particular member of the ensemble?  (Current technology allows us to monitor a single quantum object.)</p></li>
+</ol>
+</section>
+<section id="the-ensemble-after-a-measurement">
+<h2><span class="section-number">1.2. </span>The ensemble after a measurement<a class="headerlink" href="#the-ensemble-after-a-measurement" title="Link to this heading">#</a></h2>
+<p>Consider an ensemble <span class="math notranslate nohighlight">\(\psi\)</span> consisting of <span class="math notranslate nohighlight">\(N\)</span> members which are all identical. The size of the ensemble <span class="math notranslate nohighlight">\(N\)</span> is assumed to be very (or infinitely) large   Such an ensemble represent a <em>pure state</em>.  We measure an observable <span class="math notranslate nohighlight">\(\hat{A}\)</span> whose eigenvalues and corresponding eigen vectors are denoted as <span class="math notranslate nohighlight">\(a_{n}\)</span> and <span class="math notranslate nohighlight">\(|a_{n}\rangle\)</span>, respectively.  Upon the measurement, the state of some members instantaneously jumps to <span class="math notranslate nohighlight">\(|a_{1}\rangle\)</span>, the state of another group jumps to <span class="math notranslate nohighlight">\(a_{1}\)</span>, and and so on.  After measuring all <span class="math notranslate nohighlight">\(N\)</span> members, the ensemble <span class="math notranslate nohighlight">\(\psi\)</span> is empty and there are many small ensembles, <span class="math notranslate nohighlight">\(a_{1}\)</span>, <span class="math notranslate nohighlight">\(a_{1}\)</span>, <span class="math notranslate nohighlight">\(\cdots\)</span>  The size of the ensembles are <span class="math notranslate nohighlight">\(p_{1} N\)</span>, <span class="math notranslate nohighlight">\(p{2}N\)</span>, <span class="math notranslate nohighlight">\(\cdots\)</span> where <span class="math notranslate nohighlight">\(p_{n} = |\langle a_{n}|\psi\rangle|^2\)</span>.  Each ensemble <span class="math notranslate nohighlight">\(a_{n}\)</span> represents a pure state.    Now, we consider an ensemble containing original <span class="math notranslate nohighlight">\(N\)</span> members. Obviously, the ensemble is not <span class="math notranslate nohighlight">\(\psi\)</span> but consists of subensembles <span class="math notranslate nohighlight">\(\{a_{1},a_{2},\cdots\}\)</span>.  When an ensemble contains more than one pure state subensembles, it represents a <em>mixed state</em>.  The measurement transformed a pure state ensemble <span class="math notranslate nohighlight">\(\psi\)</span> to a mixed state ensemble <span class="math notranslate nohighlight">\(\{a_{1},a_{2},\cdots\}\)</span>. (See <a class="reference internal" href="#fig-mixed-ensemble"><span class="std std-numref">Fig. 1.1</span></a>)</p>
+<p>It is possible to merge two pure ensembles <span class="math notranslate nohighlight">\(\psi\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> to form a mixed ensemble <span class="math notranslate nohighlight">\(\{\psi,\phi\}\)</span>. <span class="math notranslate nohighlight">\(|psi\rangle\)</span> and <span class="math notranslate nohighlight">\(|phi\rangle\)</span> do not have to be orthogonal.</p>
+<figure class="align-default" id="fig-mixed-ensemble">
+<img alt="Mixed Ensemble" src="../_images/mixed-ensemble.webp" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Quantum measurement transforms a pure ensemble <span class="math notranslate nohighlight">\(\psi\)</span> to a mixed ensemble <span class="math notranslate nohighlight">\(\{a_{1},a_{2}\}\)</span>.  The weight of subensemble is <span class="math notranslate nohighlight">\(p_{1} = 5/8\)</span> for <span class="math notranslate nohighlight">\(a_{1}\)</span> and <span class="math notranslate nohighlight">\(p_{1} = 3/8\)</span> for <span class="math notranslate nohighlight">\(a_{2}\)</span>.</span><a class="headerlink" href="#fig-mixed-ensemble" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now a question is how to mathematically describe the mixed ensemble. Listing subensembles as <span class="math notranslate nohighlight">\(\{\psi_{1},\psi_{2},\cdots\}\)</span> with the corresponding probability <span class="math notranslate nohighlight">\(\{p_{1},p_{2}.\cdots \}\)</span> is sufficient but inconvenient.  There is a better way, the density matrix defined by</p>
+<div class="math notranslate nohighlight">
+\[
+\rho = p_{1} |\psi_{1}\rangle\langle \psi_{1}| +  p_{2} |\psi_{2}\rangle\langle \psi_{2}| + \cdots
+\]</div>
+<p>which must satisfy</p>
+<ol class="arabic simple">
+<li><p>positivity: <span class="math notranslate nohighlight">\(\rho \ge 0\)</span>.  This means all the eigenvalues of <span class="math notranslate nohighlight">\(\rho\)</span> is non-negative.</p></li>
+<li><p>normalization: <span class="math notranslate nohighlight">\(\text{tr}\rho = 1\)</span>.  This guarantees that the normalization of the probability, <span class="math notranslate nohighlight">\(\sum_{n} p_{n} = 1\)</span>.</p></li>
+</ol>
+<p>When there is only one term, that is <span class="math notranslate nohighlight">\(\rho = |\psi \rangle\langle \psi|\)</span>, we say that the system is in a pure state. Otherwise, the system is in a mixed state<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.  There is an easy way  to check if a given system is mixed or pure. Calculate <em>purinty</em> <span class="math notranslate nohighlight">\(\text{tr} \rho^2 \le 1\)</span>.  If it is <span class="math notranslate nohighlight">\(1\)</span>, then the state is pure and if less than <span class="math notranslate nohighlight">\(1\)</span>, it is mixed.</p>
+<p>The expectation value of <span class="math notranslate nohighlight">\(\hat{A}\)</span> for a pure state is given by <span class="math notranslate nohighlight">\(\langle A \rangle = \langle \psi | \hat{A} | \psi \rangle\)</span> as we know it.  Using the density matrix, it can be written as <span class="math notranslate nohighlight">\(\text{tr} (\hat{A} \rho)\)</span>.   To get the expectation value for a mixed state, first we evaluate quantum mechanical expectation value for each subensemble <span class="math notranslate nohighlight">\(\langle \psi_{1} | \hat{A} | \psi_{1} \rangle\)</span>, <span class="math notranslate nohighlight">\(\langle \psi_{2} | \hat{A} | \psi_{2} \rangle\)</span>, <span class="math notranslate nohighlight">\(\cdots\)</span>.  Taking another average over the classical probability <span class="math notranslate nohighlight">\(p_{n}\)</span>, we obtain <span class="math notranslate nohighlight">\(\langle A \rangle = \sum_{n} p_{n} \langle \psi_{n} | \hat{A} | \psi_{n} \rangle\)</span> which turns out to be exactly <span class="math notranslate nohighlight">\(\text{tr} (\hat{A} \rho)\)</span>.   Therefore, we can calculate the expectation value using the same formula for both pure and mixed states.</p>
+<p>The probability <span class="math notranslate nohighlight">\(p_{n}\)</span> is given <span class="math notranslate nohighlight">\(p_{n} = \text{tr}(|\psi_{n}\rangle\langle\psi_{n}| \rho )\)</span>, which is the expectation value of <span class="math notranslate nohighlight">\(|\psi_{n}\rangle\langle\psi_{n}|\)</span>.  A matrix element of an operator <span class="math notranslate nohighlight">\(\hat{A}\)</span> is given by <span class="math notranslate nohighlight">\(\text{tr} (|u\rangle \langle v| \rho) = \langle v | \rho |u \rangle\)</span>.  Another useful use of the density operator is the von Neumann entropy <span class="math notranslate nohighlight">\(S_{N} = - \text{tr} (\rho \ln \rho)\)</span> which measures the amount of information stored in the state.</p>
+<p>The time evolution of state vector <span class="math notranslate nohighlight">\(\psi\rangle\)</span> is determined by the Schrödinger equation or equivalently <span class="math notranslate nohighlight">\(|\psi(t)\rangle = e^{-i H (t-t_{0}} |\psi(t_{0})\rangle\)</span>.  Then, the corresponding density operator evolves as <span class="math notranslate nohighlight">\(\rho(t) = e^{-i H (t-t_{0}} \rho(t_{0}) e^{i H (t-t_{0}}\)</span> from which we find the equation of motion</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{t}{dt} \rho = -i [H, \rho]
+\]</div>
+<p>which is known as the Liouville-von Neumann equation.  This equation of motion is valid also for mixed states.   Since the Liouville-von Neumann equation is equivalent to the Schrödinger equation, it represents a unitary evolution of the system.  In fact, taking the trace of the Liouville-von Neumann equation, we can show that <span class="math notranslate nohighlight">\(\text{tr} \rho\)</span> is invariant and thus the norm is conserved.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The same mathematical expression of mixed states is used in a different situation.  In order to avoid confusion, the mixed state based on the mixed ensemble is called <em>proper</em> mixed state and other mixed states are <em>improper</em>.</p>
+</aside>
+</aside>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -533,6 +600,24 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-psi-rangle-means">1.1. What <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> means?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ensemble-after-a-measurement">1.2. The ensemble after a measurement</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

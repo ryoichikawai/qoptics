@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. What is coherence?" href="coherence.html" />
-    <link rel="prev" title="1. Quantum states" href="qmstates.html" />
+    <link rel="prev" title="1. Quantum states and measurement" href="qmstates.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -185,7 +185,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="qmstates.html">1. Quantum states</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qmstates.html">1. Quantum states and measurement</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Photons and quantum radiation fields</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="coherence-g1.html">3.9. First-order coherence function</a></li>
@@ -240,7 +240,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Asymptotic limit</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
@@ -474,10 +478,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-photon">2.1. What is a photon?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-radiation-field">2.2. Classical radiation field</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#field-quantization-and-photons">2.3. Field quantization and photons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-of-radiation-field">2.4. Measurement of radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-radiation-field">2.1. Classical radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#field-quantization-and-photons">2.2. Field quantization and photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherent-states">2.3. Coherent states</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantized-radiation-field">2.4. Quantized radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-of-radiation-field">2.5. Measurement of radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-of-photons">2.6. Measurement of photons</a></li>
 </ul>
             </nav>
         </div>
@@ -491,34 +497,8 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="photons-and-quantum-radiation-fields">
 <span id="ch-photons"></span><h1><span class="section-number">2. </span>Photons and quantum radiation fields<a class="headerlink" href="#photons-and-quantum-radiation-fields" title="Link to this heading">#</a></h1>
-<section id="what-is-a-photon">
-<h2><span class="section-number">2.1. </span>What is a photon?<a class="headerlink" href="#what-is-a-photon" title="Link to this heading">#</a></h2>
-<p>Classical light is described by electromagnetic fields that are continuous both in space and time. Quantum light is also described by electromagnetic fields, but they are quantum fields. The quantum fields are also continuous. So, where is the “quantumness” in quantum light? Photons immediately pop up in our heads. But what are they? Unfortunately, they are poorly defined in the literature and misused by many people.</p>
-<p>It is often said that Planck envented photon but is misleading. He did not quantize the radiation. In his theory the discreteness in the atom was responsible for the discrete energy the radiation.  It was Einstein who quantized the radiation in the theory of photoelectric effect.</p>
-<p>The word “photon” was coined by G. N. Lewis in 1926. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id71" title="G. N. Lewis. The conservation of photons. Nature, 118(2981):874–875, 1926. doi:10.1038/118874a0.">1</a>]</span> In his words,</p>
-<blockquote>
-<div><p>It would seem inappropriate to speak of one of these hypothetical entities as a particle of light, a corpuscle of light, a light quantum, or a light quant, if we are to assume that it spends only a minute fraction of its existence as a carrier of radiant energy, while the rest of the time it remains as an important structural element within the atom.  It would also cause confusion to call it merely a quantum, for later it will be necessary to distinguish between the number of these entities present in an atom and the so-called quantum number.  I therefore take the liberty of proposing for this hypothetical new atom which is not light but plays an essential part in every process of radiation, the name <em>photon</em>.</p>
-</div></blockquote>
-<p>He was clearly struggling to define what photon is.</p>
-<p>In 1951, Albert Einstein said:</p>
-<blockquote>
-<div><p>All these fifty years of conscious brooding have brought me no nearer to the answer to the question ‘What are light quanta?’ Nowadays every Tom, Dick and Harry thinks he knows it, but he is mistaken.”<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id45" title="A. P. French. Einstein: A Centenary Volume. Harvard University Press, Cambridge, 1979. ISBN 978-0674242302.">2</a>]</span></p>
-</div></blockquote>
-<p>Since the correct use of the photon concept is so difficult, W. E. Lamb suggested that</p>
-<blockquote>
-<div><p>A license be required for use of the word photon.<span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id44" title="W. E. Lamb. Anti-photon. Applied Physics B, 60(2–3):77–84, February 1995. doi:10.1007/BF01135846.">3</a>]</span></p>
-</div></blockquote>
-<p>Roy J. Glauber, who was given a license, defined the photon by stating:</p>
-<blockquote>
-<div><p>A photon is what a photodetector detects and also A photon is where the photodetector detects it</p>
-</div></blockquote>
-<p>rather than defining a photon as a pre-existing “particle” in space. When four Nobel laureates in quantum optics spoke like these, the meaning of photons must be very difficult for laymen to understand.</p>
-<p>We should not imagine that a photon travels along a trajectory like a classical particle. The position of a photon does not have a clear meaning. No position operator can even be defined for a photon, and thus we cannot measure its position. Recall that for another quantum particle, the electron, the position can be measured. So, the situation of the photon is quite different from that of other quantum particles. Nevertheless, we assume that the speed of a photon is the same as the speed of classical light <span class="math notranslate nohighlight">\(c\)</span>.<a class="footnote-reference brackets" href="#id6" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
-<p>Although we don’t have a license, we shall use the word “photon” in these lecture notes, but only within a limited scope. We use the word in two instances: we say “A photon is emitted” when a quantum of energy is transferred from the emitter to the radiation field, and “A photon is detected” when the detector clicks (received a quantum of energy from the field). The mathematical definition of photons will be given below.</p>
-<p>If you are interested in a deeper discussion of <em>What is a photon?</em>, read Ref.<span class="bibtex-citation" id="id5">[<a class="reference internal" href="../references/references.html#id43" title="Chandra Roychoudhuri, A. F. Kracklauer, and Kathy Creath, editors. Nature of Light What Is a Photon? CRC Press, 2017. ISBN 9781351835831. doi:10.1201/9781420044256.">4</a>]</span>.</p>
-</section>
 <section id="classical-radiation-field">
-<h2><span class="section-number">2.2. </span>Classical radiation field<a class="headerlink" href="#classical-radiation-field" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>Classical radiation field<a class="headerlink" href="#classical-radiation-field" title="Link to this heading">#</a></h2>
 <p>Classical radiation fields are described by electromagnetic waves. An electromagnetic wave is a solution to Maxwell’s equations, and it represents a vector in an infinite-dimensional Hilbert space. Hence, the solution can always be expressed as a linear combination of basis functions <span class="math notranslate nohighlight">\(\{u_{i}(\mathbf{x})\}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-field-decomposition">
 <span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-field-decomposition" title="Link to this equation">#</a></span>\[
@@ -540,27 +520,35 @@ I(\mathbf{x}) = \langle \mathbf{E}^{(-)}(\mathbf{x},t) \cdot \mathbf{E}^{(+)}(\m
 <p>where <span class="math notranslate nohighlight">\(\langle \cdots \rangle\)</span> denotes an ensemble average over the probability distribution of the random phase. This ensemble average is usually replaced with a temporal average in practical applications.</p>
 </section>
 <section id="field-quantization-and-photons">
-<h2><span class="section-number">2.3. </span>Field quantization and photons<a class="headerlink" href="#field-quantization-and-photons" title="Link to this heading">#</a></h2>
-<p>Quantizing radiation field <a class="reference internal" href="#equation-eq-classical-fields">(2.2)</a> is straightforward. The coefficients <span class="math notranslate nohighlight">\(a_{j}\)</span> and <span class="math notranslate nohighlight">\(a^{*}_{j}\)</span> become the annihilation operator <span class="math notranslate nohighlight">\(\hat{a}_{j}\)</span> and the creation operator <span class="math notranslate nohighlight">\(\hat{a}^{\dagger}_{j}\)</span> of a photon, respectively. They satisfy the usual commutation relation <span class="math notranslate nohighlight">\([\hat{a}_{i},\hat{a}^{\dagger}_{j}] = \delta_{ij}\)</span> and follow the usual operator algebra of a harmonic oscillator.
-We define photons using these creation and annihilation operators. Defining the vacuum state by <span class="math notranslate nohighlight">\(a_{j}|0\rangle=0\)</span>, we create a photon in  <span class="math notranslate nohighlight">\(j\)</span>-th mode by <span class="math notranslate nohighlight">\(|1_j\rangle = a^{\dagger}_{j}|0\rangle\)</span>. The operator <span class="math notranslate nohighlight">\(n_{j} = a^\dagger_{j}a_{j}\)</span> is the number operator, as usual.
-We can say that a photon is created or destroyed, and we can also count photons.  That is all we can say about photons.</p>
+<h2><span class="section-number">2.2. </span>Field quantization and photons<a class="headerlink" href="#field-quantization-and-photons" title="Link to this heading">#</a></h2>
+<p>Quantizing radiation field <a class="reference internal" href="#equation-eq-classical-fields">(2.2)</a> is straightforward. The coefficients <span class="math notranslate nohighlight">\(a_{j}\)</span> and <span class="math notranslate nohighlight">\(a^{*}_{j}\)</span> become the annihilation operator <span class="math notranslate nohighlight">\(\hat{a}_{j}\)</span> and the creation operator <span class="math notranslate nohighlight">\(\hat{a}^{\dagger}_{j}\)</span> of a photon, respectively. They satisfy the usual commutation relation <span class="math notranslate nohighlight">\([\hat{a}_{j},\hat{a}^{\dagger}_{j}] = 1\)</span> and follow the usual operator algebra of a harmonic oscillator.  When the basis functions <span class="math notranslate nohighlight">\(u_{i}(\mathbf{x})\)</span> and <span class="math notranslate nohighlight">\(u_{j}(\mathbf{x})\)</span> are orthogonal, <span class="math notranslate nohighlight">\([\hat{a}_{i},\hat{a}^{\dagger}_{j}] = 0\)</span>.  In real experimental condition, the basis functions may not be orthogonal, then the commutation does not vanishes.  Such cases will be discussed later.  Until then, we assume that the modes are orthogonal to each other.</p>
+<p>We define photons using these creation and annihilation operators. Defining the vacuum state by <span class="math notranslate nohighlight">\(a_{j}|0_{j}\rangle=0\)</span>, we create a photon in  <span class="math notranslate nohighlight">\(j\)</span>-th mode as <span class="math notranslate nohighlight">\(|1_{j}\rangle = a^{\dagger}_{j}|0_{j}\rangle\)</span>. The operator <span class="math notranslate nohighlight">\(n_{j} = a^\dagger_{j}a_{j}\)</span> is the number operator and <span class="math notranslate nohighlight">\(\langle n_{j} |a^\dagger_{j}a_{j} |n_{j}\rangle = n_{j}\)</span> is the number of photons in the <span class="math notranslate nohighlight">\(j\)</span>-th mode.   A general state of photons in the mode is given by a superposition <span class="math notranslate nohighlight">\(|\phi_{j}\rangle = \sum_{n_j} c_{n_j} |n_{j}\rangle\)</span>.
+For the system with multiple modes,  the state of photons is a superposition of <span class="math notranslate nohighlight">\(|\Phi\rangle = \sum_{n_1,n_2,\cdots} c_{n_1,n_2,\cdots} |n_1, n_2, \cdots \rangle\)</span>.</p>
+<p>We can say that a photon is created or destroyed, and we can also count photons. That is all we can say about photons.  It is very important to keep in our mind that each photon is associated with a given mode.  A state <span class="math notranslate nohighlight">\(|1\rangle\)</span> does not mean that there is one photon in the whole space. Until a mode is specified, <span class="math notranslate nohighlight">\(|1\rangle\)</span> does not make a sense.</p>
 <p>The free Hamiltonian of the radiation field is given by <span class="math notranslate nohighlight">\(\sum_{j} \frac{\omega_{j}}{2} \left(a^{\dagger}_{j} a_{j} + \frac{1}{2}\right)\)</span> where <span class="math notranslate nohighlight">\(\omega_{j}\)</span> is the energy of a photon in the <span class="math notranslate nohighlight">\(j\)</span>-th mode.</p>
 <p>In the relativistic world, the number of photons is not invariant under a Lorentz transformation.  Hence, it is difficult to consider them as particles.   Some people even call the photon a pseudo particle.  This is why Glauber said “a photon is what a photodetector detects”, which implies that we should not think about photons traveling around in the space. Ultimately, we consider the quantum electromagnetic fields to be fundamental whereas photons are emergent.</p>
 <p>When an electron in an emitter jumps from a higher energy state to a lower energy state, we say a photon is emitted.  What this statement mean is that the electron deposits a quantum of energy into the field, and then the energy stored in the field somehow travels to the detector and triggers a click. That is all we need for now. Photons reveal their existence only when the energy quanta is emitted to the field or absorbed from the field.</p>
+</section>
+<section id="coherent-states">
+<h2><span class="section-number">2.3. </span>Coherent states<a class="headerlink" href="#coherent-states" title="Link to this heading">#</a></h2>
+<p>To be written.</p>
+</section>
+<section id="quantized-radiation-field">
+<h2><span class="section-number">2.4. </span>Quantized radiation field<a class="headerlink" href="#quantized-radiation-field" title="Link to this heading">#</a></h2>
 <p>Here we consider the radiation field in a free space. It is natural to expand the field with the plane wave basis set. Then, the electric field at position <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and time <span class="math notranslate nohighlight">\(t\)</span> is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-quantum-free-field">
 <span class="eqno">(2.4)<a class="headerlink" href="#equation-eq-quantum-free-field" title="Link to this equation">#</a></span>\[
-\mathbf{E}(\mathbf{x}) = \sum_{\ell} \mathbf{e}_{\ell} \left( \mathcal{E}_{\ell} a_{\ell} e^{i \mathbf{k}_{\ell} \cdot \mathbf{x}} +  \mathcal{E}^{*}_{\ell} a^{\dagger}_{\ell} e^{-i \mathbf{k}_{\ell} \cdot \mathbf{x}}\right )
+\mathbf{E}(\mathbf{x},t) = \sum_{j} \mathbf{e}_{j} \left( \mathcal{E}_{j} a_{j} e^{-i (\omega_{j}t -  \mathbf{k}_{j} \cdot \mathbf{x}) } +  \mathcal{E}^{*}_{\ell} a^{\dagger}_{j} e^{i (\omega_{j}t - \mathbf{k}_{j} \cdot \mathbf{x})}\right )
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{E}_{\ell} = i \sqrt{\frac{\hbar \omega_{\ell}}{2 \epsilon_{0} V}}\)</span> and <span class="math notranslate nohighlight">\(\epsilon_{\ell}\)</span> is the polarization vector for the <span class="math notranslate nohighlight">\(\ell\)</span>-th mode.</p>
-<p>We also use another popular notation which splits the field to the two parts:</p>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{E}_{\ell} = i \sqrt{\frac{\hbar \omega_{\ell}}{2 \epsilon_{0} V}}\)</span> and <span class="math notranslate nohighlight">\(\epsilon_{\ell}\)</span> is the polarization vector for the <span class="math notranslate nohighlight">\(\ell\)</span>-th mode. The creation  and annihilation operators are in the Schrödinger picture. While it is a mathematically legitimate  solution, the solution <a class="reference internal" href="#equation-eq-quantum-free-field">(2.4)</a> has an issue with its physical interpretation.   The term with <span class="math notranslate nohighlight">\(e^{-i \omega_j t}\)</span> propagates to the future, which make a sense,  but the other term with <span class="math notranslate nohighlight">\(e^{+i \omega_{j} t}\)</span> propagates in the opposite direction of time.  Such a backward propagation is unphysical and usually ignored.</p>
+<p>In order to avoid the difficulty, we splits the field to the two parts, the retarded field <span class="math notranslate nohighlight">\(\mathbf{E}^{(+)}(\mathbf{x},t)\)</span> and the advanced field <span class="math notranslate nohighlight">\(\mathbf{E}^{(-)}(\mathbf{x},t)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-quantum-free-field-pm">
 <span class="eqno">(2.5)<a class="headerlink" href="#equation-eq-quantum-free-field-pm" title="Link to this equation">#</a></span>\[
-\mathbf{E}^{(+)}(\mathbf{x}) = \sum_{\ell} \mathbf{e}_{\ell} \mathcal{E}_{\ell} a_{\ell} e^{i \mathbf{k}_{\ell} \cdot \mathbf{x}}, \qquad
-\mathbf{E}^{(-)}(\mathbf{x}) = \sum_{\ell} \mathbf{e}_{\ell} \mathcal{E}^{*}_{\ell} a^{\dagger}_{\ell} e^{-i \mathbf{k}_{\ell} \cdot \mathbf{x}}.
+\mathbf{E}^{(+)}(\mathbf{x},t) = \sum_{j} \mathbf{e}_{j} \mathcal{E}_{j} a_{j} e^{-i(\omega_{j} t - \mathbf{k}_{\ell} \cdot \mathbf{x})}, \qquad
+\mathbf{E}^{(-)}(\mathbf{x},t) = \sum_{j} \mathbf{e}_{j} \mathcal{E}^{*}_{j} a^{\dagger}_{j} e^{i (\omega_{j} t - \mathbf{k}_{\ell} \cdot \mathbf{x})}.
 \]</div>
 <p>Remember that the electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is a quantum mechanical operator.  If the Heisenberg picture is used, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(a^\dagger\)</span> are time-dependent and thus <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is time-dependent.  If the Schrödinger picture is used, then <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> does not depend on time.  We will choose a convenient picture depending on the situation.</p>
-<p>The quantum expectation value of an observable <span class="math notranslate nohighlight">\(\hat{A}\)</span> is defined as <span class="math notranslate nohighlight">\(\langle A(t) \rangle = \text{tr}(A(t) \rho)\)</span> in the Heisenberg picture or <span class="math notranslate nohighlight">\(\text{tr}(A \rho(t))\)</span> in the Schrödinger picture, where <span class="math notranslate nohighlight">\(\rho\)</span> is a density operator.</p>
+<p>In theoretical calculations, we usually use the Heisenberg picture and thus the operators absorbe the time as <span class="math notranslate nohighlight">\(a_{j}(t) = a_{j} e^{-i \omega_{j} t}\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}_{j}(t) = a^{\dagger}_{j} e^{i \omega_{j} t}\)</span>. The quantum expectation value of an observable <span class="math notranslate nohighlight">\(\hat{A}\)</span> is defined as <span class="math notranslate nohighlight">\(\langle A(t) \rangle = \text{tr}(A(t) \rho)\)</span> in the Heisenberg picture or <span class="math notranslate nohighlight">\(\text{tr}(A \rho(t))\)</span> in the Schrödinger picture, where <span class="math notranslate nohighlight">\(\rho\)</span> is a density operator.</p>
 <p>The mean intensity of light is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-radiation-intensity">
 <span class="eqno">(2.6)<a class="headerlink" href="#equation-eq-radiation-intensity" title="Link to this equation">#</a></span>\[
@@ -572,7 +560,8 @@ I(\mathbf{x},t) = \langle \mathbf{E}^{(-)} \cdot\mathbf{E}^{(+)}\rangle = \sum_{
 <p>We also need to be careful about  <span class="math notranslate nohighlight">\(\mathbf{E}^{(\pm)}\)</span>.  They are not self-adjoint and thus not physical observables.  Measuring <span class="math notranslate nohighlight">\(\mathbf{E}^{(\pm)}\)</span> is not possible.</p>
 </section>
 <section id="measurement-of-radiation-field">
-<h2><span class="section-number">2.4. </span>Measurement of radiation field<a class="headerlink" href="#measurement-of-radiation-field" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>Measurement of radiation field<a class="headerlink" href="#measurement-of-radiation-field" title="Link to this heading">#</a></h2>
+<p>For massive particles such as electrons, we can measure many physical quantities, position, momentum, energy, …..</p>
 <p>In classical optics, the intensity of light is often defined as</p>
 <div class="math notranslate nohighlight" id="equation-eq-intensity-fullterms">
 <span class="eqno">(2.7)<a class="headerlink" href="#equation-eq-intensity-fullterms" title="Link to this equation">#</a></span>\[\begin{split}
@@ -593,15 +582,14 @@ I &amp;= \langle \mathbf{E}\cdot \mathbf{E} \rangle \nonumber \\
 <p>We need to be careful about  <span class="math notranslate nohighlight">\(\mathbf{E}^{(\pm)}\)</span>.  They are not self-adjoint and thus not physical observable.  Measuring <span class="math notranslate nohighlight">\(\mathbf{E}^{(\pm)}\)</span> is not possible.  Any observable quantity must be a product of the same number of <span class="math notranslate nohighlight">\(\mathbf{E}^{(+)}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{E}^{(-)}\)</span>.</p>
 <p>In classical optics, the electric field is a measurable quantity.  In quantum field theory, the observation of electric field is quite different.  If the state of radiation field is an eigenstate of the photon number operator, the expectation value of the field vanishes, i.e., <span class="math notranslate nohighlight">\(\langle \mathbf{E}\rangle=0\)</span>  despite <span class="math notranslate nohighlight">\(\langle \mathbf{E}^2 \rangle\)</span> diverges even when there is no photon as we discussed above.</p>
 <p>The classical-like electric field can be seen when photons are in a <em>coherent state</em>, a superposition of different photon numbers. The state of laser beam is an example.  In this lecture note, we are dealing with a weak radiation field so that we can count the number of photons arriving  at the detector.</p>
+</section>
+<section id="measurement-of-photons">
+<h2><span class="section-number">2.6. </span>Measurement of photons<a class="headerlink" href="#measurement-of-photons" title="Link to this heading">#</a></h2>
+<p>The measurement of a radiation field shown above ends up in the measurement of photons in relevant modes.  Actually photodetectors detect only the absorption of photons.  When a single photon arrived, it clicks.  From the recorded clicks, we can evaluate the intensity of the field, which we discuss later.  At the fundamental level, the mechanism of photon measurement is still unknown.  There are many issues which cannot be resolved with the current quantum mechanics and quantum field theory.  We will not discucss the profound issues here.</p>
+<p>Since the photons are quantum object, it must follow the postulates of quantum measurement.  Since the quantum theory of photon measurement is still under development, we just apply the current understanding.  When a photon is detected, it is absorbed by the detector.  If the detector is monitoring a mode <span class="math notranslate nohighlight">\(j\)</span>, the number of photons in the mode decreases by one.  The detection of photons is stochastic and we can only talk about the detection rate or a probability that a photon is detected during a given time window.</p>
+<p>For practical appications, it is important to identify the modes  photons are occupying.  To make story concrete, we consider a measurement of photons coming from two emitters.</p>
 <hr class="docutils" />
 <p>Updated on 7-5-2026 by R. Kawai</p>
-<hr class="footnotes docutils" />
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">1</a><span class="fn-bracket">]</span></span>
-<p>Think how the speed of photon can be experimentally measured. Strictly speaking, we can only infer it.</p>
-</aside>
-</aside>
 </section>
 </section>
 
@@ -641,7 +629,7 @@ I &amp;= \langle \mathbf{E}\cdot \mathbf{E} \rangle \nonumber \\
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Quantum states</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Quantum states and measurement</p>
       </div>
     </a>
     <a class="right-next"
@@ -671,10 +659,12 @@ I &amp;= \langle \mathbf{E}\cdot \mathbf{E} \rangle \nonumber \\
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-photon">2.1. What is a photon?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-radiation-field">2.2. Classical radiation field</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#field-quantization-and-photons">2.3. Field quantization and photons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-of-radiation-field">2.4. Measurement of radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-radiation-field">2.1. Classical radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#field-quantization-and-photons">2.2. Field quantization and photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherent-states">2.3. Coherent states</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantized-radiation-field">2.4. Quantized radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-of-radiation-field">2.5. Measurement of radiation field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-of-photons">2.6. Measurement of photons</a></li>
 </ul>
   </nav></div>
 

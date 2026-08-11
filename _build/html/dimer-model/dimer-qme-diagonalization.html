@@ -185,7 +185,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states and measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">2. Photons and quantum radiation fields</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
@@ -240,7 +240,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Asymptotic limit</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
@@ -534,8 +538,8 @@
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\eta^{-}_{1} &amp;= |g\rangle\langle s| + |s\rangle\langle e|, \qquad \eta^{-}_{2} = |g\rangle\langle a| + |a\rangle\langle e| \\
-\eta^{+}_{1} &amp;= |s\rangle\langle g| + |e\rangle\langle s|, \qquad \eta^{+}_{2} = |a\rangle\langle g| + |e\rangle\langle a|
+\eta^{-}_{1} &amp;= |g\rangle\langle s| + |s\rangle\langle e|, \qquad \eta^{-}_{2} = |g\rangle\langle a| - |a\rangle\langle e| \\
+\eta^{+}_{1} &amp;= |s\rangle\langle g| + |e\rangle\langle s|, \qquad \eta^{+}_{2} = |a\rangle\langle g| - |e\rangle\langle a|
 \end{aligned}
 \end{split}\]</div>
 <p>which can be interpreted as follows.  The collapse operator <span class="math notranslate nohighlight">\(\eta^{-}_{1}\)</span> represents two transitions, one from <span class="math notranslate nohighlight">\(|e\rangle\)</span> to <span class="math notranslate nohighlight">\(|s\rangle\)</span> and the other from <span class="math notranslate nohighlight">\(|s\rangle\)</span> to <span class="math notranslate nohighlight">\(|g\rangle\)</span>.  These two processes form emission channel 1: <span class="math notranslate nohighlight">\(|e\rangle\Rightarrow|s\rangle\Rightarrow|g\rangle\)</span> (blue arrows in the right panel of <a class="reference internal" href="#fig-dimer-emission-channels"><span class="std std-numref">Fig. 10.1</span></a>).  Similarly, <span class="math notranslate nohighlight">\(eta^{-}_{2}\)</span> represents emission channel 2: <span class="math notranslate nohighlight">\(|e\rangle\Rightarrow|a\rangle\Rightarrow|g\rangle\)</span> (read arrows in the right panel of <a class="reference internal" href="#fig-dimer-emission-channels"><span class="std std-numref">Fig. 10.1</span></a>).  Compare them with the emission channels expressed in the product basis.  In the product basis, each channel involves both <span class="math notranslate nohighlight">\(\sigma^{-}_{1}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{-}_{2}\)</span>, which creates interference between <span class="math notranslate nohighlight">\(\sigma^{-}_{1}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{-}_{2}\)</span>.  That is the origin of the off-diagonal term <span class="math notranslate nohighlight">\(\Gamma_{12}\)</span>.  In the Dicke basis, however, the channels are independent and the off-diagonal terms are absent.</p>
@@ -660,7 +664,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dc23db85459424b268fdb9fe28b162621c72eda8d2f62c5e788d05bb111c9333.png" src="../_images/dc23db85459424b268fdb9fe28b162621c72eda8d2f62c5e788d05bb111c9333.png" />
+<img alt="../_images/afefa5ff94a77f8d7c3f9d44a58b50c59707296145cf5eea468ae2701ca4eebb.png" src="../_images/afefa5ff94a77f8d7c3f9d44a58b50c59707296145cf5eea468ae2701ca4eebb.png" />
 </div>
 </div>
 </section>
