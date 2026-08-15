@@ -636,8 +636,8 @@ Furthermore, when cascading emission happens in the symmetric channel, two photo
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.04s
 ** Jump counts  **
- symmetric channel: emission count=  33   absorption count=  33
-asymmetric channel: emission count=   2   absorption count=   2
+ symmetric channel: emission count=  44   absorption count=  41
+asymmetric channel: emission count=   2   absorption count=   4
 </pre></div>
 </div>
 </div>
@@ -662,7 +662,7 @@ asymmetric channel: emission count=   2   absorption count=   2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fb963ee940498a6eb314c38eb336be657ee13ce7c179388e9d06487f76424261.png" src="../_images/fb963ee940498a6eb314c38eb336be657ee13ce7c179388e9d06487f76424261.png" />
+<img alt="../_images/935b2be2d4d6ecd31b7a8a01faa995cdd2bd2a01fb34c5c3d6ed792c8677a1dd.png" src="../_images/935b2be2d4d6ecd31b7a8a01faa995cdd2bd2a01fb34c5c3d6ed792c8677a1dd.png" />
 </div>
 </div>
 </section>
@@ -687,7 +687,7 @@ asymmetric channel: emission count=   2   absorption count=   2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aa08ba0149400cb1100c6b0f4da454a1302e83f2f246f98ced7230b57d6f1173.png" src="../_images/aa08ba0149400cb1100c6b0f4da454a1302e83f2f246f98ced7230b57d6f1173.png" />
+<img alt="../_images/e540918ac657737553643af727287dc5ca3d165cf3ce094521ee3aa4c355dde0.png" src="../_images/e540918ac657737553643af727287dc5ca3d165cf3ce094521ee3aa4c355dde0.png" />
 </div>
 </div>
 </section>
@@ -704,7 +704,7 @@ the agreement is independent of <span class="math notranslate nohighlight">\(\Ga
 <span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 <span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
 
-<span class="n">result2</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="n">ntraj</span><span class="p">)</span>   <span class="c1"># res.expect is averaged</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="n">ntraj</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;progress_bar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>   <span class="c1"># res.expect is averaged</span>
 
 <span class="c1"># thermal populations, Dicke order [e, s, a, g]</span>
 <span class="n">Zerg</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
@@ -740,45 +740,12 @@ the agreement is independent of <span class="math notranslate nohighlight">\(\Ga
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0%. Run time:   0.28s. Est. time left: 00:00:00:02
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0%. Run time:   0.57s. Est. time left: 00:00:00:02
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0%. Run time:   0.87s. Est. time left: 00:00:00:02
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.0%. Run time:   1.15s. Est. time left: 00:00:00:01
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0%. Run time:   1.44s. Est. time left: 00:00:00:01
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.0%. Run time:   1.72s. Est. time left: 00:00:00:01
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70.0%. Run time:   2.02s. Est. time left: 00:00:00:00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80.0%. Run time:   2.29s. Est. time left: 00:00:00:00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.0%. Run time:   2.58s. Est. time left: 00:00:00:00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0%. Run time:   2.87s. Est. time left: 00:00:00:00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   2.88s
-</pre></div>
-</div>
-<img alt="../_images/f51f157dbee4ea8828e87248845772aacea4c972ac39a28548666c60a41986e4.png" src="../_images/f51f157dbee4ea8828e87248845772aacea4c972ac39a28548666c60a41986e4.png" />
+<img alt="../_images/f8cef87e6f06e56e080c6b1c6ddcf38e22c251657785e19e4c21da40697ef87a.png" src="../_images/f8cef87e6f06e56e080c6b1c6ddcf38e22c251657785e19e4c21da40697ef87a.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dicke     MCWF   (std. dev.)    thermal
-  e      0.0759  (  0.0122)      0.0723
-  s      0.1956  (  0.0187)      0.1966
-  a      0.1896  (  0.0159)      0.1966
-  g      0.5389  (  0.0226)      0.5344
+  e      0.0698  (  0.0119)      0.0723
+  s      0.1982  (  0.0194)      0.1966
+  a      0.1892  (  0.0200)      0.1966
+  g      0.5429  (  0.0283)      0.5344
 </pre></div>
 </div>
 </div>
@@ -825,7 +792,7 @@ the reduced partition function <span class="math notranslate nohighlight">\(Z = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ea06460299e27b505eeaed1f7079b6573064ab60c4e4f242216712ec0b6a8aec.png" src="../_images/ea06460299e27b505eeaed1f7079b6573064ab60c4e4f242216712ec0b6a8aec.png" />
+<img alt="../_images/10ac79ac5d61d815b1f38d91755429adf8c290decddc15d480234eecb8319e44.png" src="../_images/10ac79ac5d61d815b1f38d91755429adf8c290decddc15d480234eecb8319e44.png" />
 </div>
 </div>
 <p>Starting from <span class="math notranslate nohighlight">\(|s\rangle\)</span>, the
@@ -855,10 +822,10 @@ the reduced partition function <span class="math notranslate nohighlight">\(Z = 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dicke     MCWF   (std. dev.)    thermal
-  e      0.0906  (  0.0127)      0.0900
-  s      0.2410  (  0.0198)      0.2447
+  e      0.0910  (  0.0125)      0.0900
+  s      0.2455  (  0.0210)      0.2447
   a      0.0000  (  0.0000)      0.0000
-  g      0.6684  (  0.0181)      0.6652
+  g      0.6635  (  0.0213)      0.6652
 </pre></div>
 </div>
 </div>
@@ -915,10 +882,10 @@ suppression is the time-domain face of the antibunching we quantify next with
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e39799c2e32fb2e9c71682fef71e4e5f6f3165bf964fb39876bb66d44c4312b8.png" src="../_images/e39799c2e32fb2e9c71682fef71e4e5f6f3165bf964fb39876bb66d44c4312b8.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>emitted photons: 67822
-mean waiting time  =  11.643078680053174
-standard deviation =  12.499744419165525
+<img alt="../_images/6a1ae7fdaecdc60ae1691ea93ea3497c2a04f9f701dd72b53991a2d072093efb.png" src="../_images/6a1ae7fdaecdc60ae1691ea93ea3497c2a04f9f701dd72b53991a2d072093efb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>emitted photons: 67292
+mean waiting time  =  11.722425047230509
+standard deviation =  12.711496483241998
 likely super-poissonian
 </pre></div>
 </div>
@@ -1022,8 +989,8 @@ the exact steady-state result and the analytic <span class="math notranslate noh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b7461e553cae97e3b0a2615e8bbc55e55f1da027fd812038353d9ad9758796ac.png" src="../_images/b7461e553cae97e3b0a2615e8bbc55e55f1da027fd812038353d9ad9758796ac.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g2(0):  clicks (bin 0) = 0.9076
+<img alt="../_images/922c40f2cc4836e56d730cd696fc677a943411ad63152e9346ec35a4941cbef9.png" src="../_images/922c40f2cc4836e56d730cd696fc677a943411ad63152e9346ec35a4941cbef9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g2(0):  clicks (bin 0) = 0.9259
         exact steady-state = 0.8026
         analytic 1 - phi^2/4 = 0.8026
 </pre></div>
@@ -1108,10 +1075,10 @@ after changing the model or parameters.</p>
 [PASS] non-ergodic Boltzmann state is stationary (||L rho|| = 0)   ||L rho|| = 0.00e+00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] MCWF ensemble ~ thermal state (400 traj)   max deviation 0.014
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] MCWF ensemble ~ thermal state (400 traj)   max deviation 0.010
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WARN] click g2(0) ~ 1 - phi^2/4   clicks 0.9485  theory 0.8026
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WARN] click g2(0) ~ 1 - phi^2/4   clicks 1.0162  theory 0.8026
 
 DETERMINISTIC CHECKS PASSED
 </pre></div>
