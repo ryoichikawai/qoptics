@@ -242,10 +242,12 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Asymptotic limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.4. Dimer II: Quantum trajectories</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case3-intro.html">13. Dimer II: Coherence by external driving</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="dimer-case3-model.html">13.1. The model</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">13.2. First-order fringes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dimer-case3-qme-g2.html">13.3. Second-order coherence</a></li>
@@ -502,7 +504,7 @@
 <span class="eqno">(13.5)<a class="headerlink" href="#equation-eq-source-field-2" title="Link to this equation">#</a></span>\[
 \mathbf{E}^{(+)}_{s}(\mathbf{R},t_{R}) \approx  - \hat{\mathbf{e}}_{R} \frac{\omega_{0}^{2}d}{c^2} \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right]^{1/2} \left[ e^{- i k_{L} \hat{\mathbf{R}} \cdot \mathbf{r}_{1}} \sigma^{-}_{1}(t)+  e^{- i k_{L} \hat{\mathbf{R}} \cdot \mathbf{r}_{2}} \sigma^{-}_{2}(t) \right]
 \]</div>
-<p>In order to investigate interference fringes obtained by Eichmann <em>et al.</em> <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id51" title="U. Eichmann, J. C. Bergquist, J. J. Bollinger, J. M. Gilligan, W. M. Itano, D. J. Wineland, and M. G. Raizen. Young's interference experiment with light scattered from two atoms. Phys. Rev. Lett., 70:2359–2362, Apr 1993. doi:10.1103/PhysRevLett.70.2359.">36</a>]</span>, we calculate the first-order correlation function</p>
+<p>In order to investigate interference fringes obtained by Eichmann <em>et al.</em> <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id51" title="U. Eichmann, J. C. Bergquist, J. J. Bollinger, J. M. Gilligan, W. M. Itano, D. J. Wineland, and M. G. Raizen. Young's interference experiment with light scattered from two atoms. Phys. Rev. Lett., 70:2359–2362, Apr 1993. doi:10.1103/PhysRevLett.70.2359.">39</a>]</span>, we calculate the first-order correlation function</p>
 <div class="math notranslate nohighlight" id="equation-eq-dimer-case2-g1">
 <span class="eqno">(13.6)<a class="headerlink" href="#equation-eq-dimer-case2-g1" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{align}
@@ -511,7 +513,7 @@ G^{(1)}(\mathbf{R}) &amp;= \langle \mathbf{E}^{(-)}_{s}(\mathbf{R},t_{R}) \cdot 
 &amp; = \left(\frac{\omega_{0}^{2}d}{c^2}\right)^2 \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right] \left[1 + \cos \theta(\mathbf{R})\right] \left(\rho_{ee}+\rho_{ss}\right) + \left[1 - \cos \theta(\mathbf{R})\right] \left(\rho_{ee}+\rho_{aa}\right)
 \end{align}
 \end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(\theta(\mathbf{R}) = k_{L}(\hat{\mathbf{R}}_{L} - \hat{\mathbf{R}})\cdot\mathbf{r}_{12} = (\mathbf{k}_\text{in} - \mathbf{k}_\text{out})\cdot \mathbf{r}_{12}\)</span> where <span class="math notranslate nohighlight">\(\hat{\mathbf{R}}_{L}\)</span> is the unit vector in the direction of laser beam, and <span class="math notranslate nohighlight">\(\mathbf{k}_\text{in}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{k}_\text{out}\)</span> are the wave vector of incoming and outgoing light.  Here we used the theoretical results <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id48" title="C. Skornia, J. von Zanthier, G. S. Agarwal, E. Werner, and H. Walther. Nonclassical interference effects in the radiation from coherently driven uncorrelated atoms. Phys. Rev. A, 64:063801, Nov 2001. doi:10.1103/PhysRevA.64.063801.">38</a>]</span></p>
+<p>with <span class="math notranslate nohighlight">\(\theta(\mathbf{R}) = k_{L}(\hat{\mathbf{R}}_{L} - \hat{\mathbf{R}})\cdot\mathbf{r}_{12} = (\mathbf{k}_\text{in} - \mathbf{k}_\text{out})\cdot \mathbf{r}_{12}\)</span> where <span class="math notranslate nohighlight">\(\hat{\mathbf{R}}_{L}\)</span> is the unit vector in the direction of laser beam, and <span class="math notranslate nohighlight">\(\mathbf{k}_\text{in}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{k}_\text{out}\)</span> are the wave vector of incoming and outgoing light.  Here we used the theoretical results <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id48" title="C. Skornia, J. von Zanthier, G. S. Agarwal, E. Werner, and H. Walther. Nonclassical interference effects in the radiation from coherently driven uncorrelated atoms. Phys. Rev. A, 64:063801, Nov 2001. doi:10.1103/PhysRevA.64.063801.">41</a>]</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-dimer-case2-cross-correlation">
 <span class="eqno">(13.7)<a class="headerlink" href="#equation-eq-dimer-case2-cross-correlation" title="Link to this equation">#</a></span>\[
 \langle \sigma^{+}_{j}\sigma^{-}_{j}\rangle_{ss} = \rho_{ee} + \frac{1}{2}(\rho_{ss}+\rho_{aa}), \qquad \langle \sigma^{+}_{1} \sigma^{-}_{2}\rangle_{ss} = \frac{1}{2} e^{2 i \phi} (\rho_{ss}-\rho_{aa}).

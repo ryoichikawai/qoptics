@@ -66,7 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'dimer2/dimer-case2-qme';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13. Dimer II: Coherence by external driving" href="../dimer3/dimer-case3-intro.html" />
+    <link rel="next" title="12.4. Dimer II: Quantum trajectories" href="dimer-case2-jump.html" />
     <link rel="prev" title="12.1. Dimer II: Theory" href="dimer-case2-theory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -244,9 +244,10 @@
 <li class="toctree-l2"><a class="reference internal" href="dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="dimer-case2-jump.html">12.4. Dimer II: Quantum trajectories</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.3. Second-order coherence</a></li>
@@ -485,6 +486,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-dependence-on-chi">12.2.3. Second-order coherence: dependence on <span class="math notranslate nohighlight">\(\chi\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-dependence-on-r-12">12.2.4. Second-order coherence: dependence on <span class="math notranslate nohighlight">\(r_{12}\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-the-case-ergodicity-is-broken">12.2.5. In the case ergodicity is broken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-check-numerics-vs-analytic-theory">12.2.6. Self-check: numerics vs. analytic theory</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.3. </a></li>
@@ -502,14 +504,14 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dimer-ii-qme-indistinguishability-and-broken-ergodicity">
 <h1><span class="section-number">12.2. </span>Dimer II: QME - Indistinguishability and broken ergodicity<a class="headerlink" href="#dimer-ii-qme-indistinguishability-and-broken-ergodicity" title="Link to this heading">#</a></h1>
-<p>In this section, we investigate the properties of radiation where steady state is defined as <span class="math notranslate nohighlight">\(\rho_{ss} \displaystyle\lim_{r_{12}\rightarrow 0} \displaystyle\lim_{t \rightarrow \infty} \rho(t)\)</span>. At the end, we discuss the case the ergodicity is broken by reversing the order of the limits.</p>
+<p>In this section, we investigate the properties of radiation where the steady state is defined as <span class="math notranslate nohighlight">\(\rho_{ss} = \displaystyle\lim_{r_{12}\rightarrow 0} \displaystyle\lim_{t \rightarrow \infty} \rho(t)\)</span>. At the end, we discuss the case where the ergodicity is broken by reversing the order of the limits.</p>
 <section id="preparation-for-numerical-calculation">
 <h2><span class="section-number">12.2.1. </span>Preparation for numerical calculation<a class="headerlink" href="#preparation-for-numerical-calculation" title="Link to this heading">#</a></h2>
 <p>The following code cell defines constants</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code block defines parameters, opertors, </span>
-<span class="c1"># and functions to be used in the later code cell</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code block defines parameters, operators, </span>
+<span class="c1"># and functions to be used in the later code cells</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">qutip</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -587,7 +589,7 @@
     <span class="n">G2</span> <span class="o">+=</span> <span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">rho_ss</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">ep</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;me&quot;</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="o">**</span><span class="mi">2</span>
     <span class="n">G2</span> <span class="o">+=-</span><span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">rho_ss</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;me&quot;</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="o">**</span><span class="mi">2</span>
     <span class="n">G2</span> <span class="o">+=</span> <span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">rho_ss</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ep</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;me&quot;</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">G2</span> <span class="o">+=</span> <span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">rho_ss</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ep</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;me&quot;</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">G2</span> <span class="o">+=</span> <span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">rho_ss</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">ep</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;me&quot;</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="o">**</span><span class="mi">2</span>
     <span class="n">G2</span> <span class="o">+=-</span><span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">rho_ss</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ep</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;me&quot;</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="o">**</span><span class="mi">2</span>
     <span class="n">G2</span> <span class="o">+=</span> <span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">rho_ss</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;me&quot;</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
     <span class="n">G2</span> <span class="o">+=-</span><span class="n">correlation_3op_1t</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">rho_ss</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">ep</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;me&quot;</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
@@ -604,7 +606,7 @@
 </section>
 <section id="steady-states">
 <h2><span class="section-number">12.2.2. </span>Steady states<a class="headerlink" href="#steady-states" title="Link to this heading">#</a></h2>
-<p>The following code compute the steady state for given parameters.  We check</p>
+<p>The following code computes the steady state for given parameters.  We check</p>
 <ol class="arabic simple">
 <li><p>if the steady state is the thermal state</p></li>
 <li><p>coherence in the product basis</p></li>
@@ -613,7 +615,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># parameters </span>
-<span class="n">r12</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># disnance relative to wave length</span>
+<span class="n">r12</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># distance relative to wavelength</span>
 <span class="n">chi</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>  <span class="c1"># angle between R and r_12</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>   <span class="c1"># angle between dipole moment and r_12</span>
 <span class="n">phi</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r12</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">chi</span><span class="p">)</span>
@@ -648,14 +650,14 @@
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
         <span class="n">rho_d</span><span class="p">[[</span><span class="n">i</span><span class="p">],[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">rho_ss</span><span class="o">.</span><span class="n">matrix_element</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">*** steady state in the Dick basis ***&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">*** steady state in the Dicke basis ***&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_ee = </span><span class="si">{0:7.4f}</span><span class="s2">  (</span><span class="si">{1:7.4f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_d</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">pee</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_ss = </span><span class="si">{0:7.4f}</span><span class="s2">  (</span><span class="si">{1:7.4f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_d</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">pss</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_ss = </span><span class="si">{0:7.4f}</span><span class="s2">  (</span><span class="si">{1:7.4f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_d</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">paa</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_aa = </span><span class="si">{0:7.4f}</span><span class="s2">  (</span><span class="si">{1:7.4f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_d</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">paa</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_gg = </span><span class="si">{0:7.4f}</span><span class="s2">  (</span><span class="si">{1:7.4f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_d</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">pgg</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">*** coherence in the Dick basis***&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">*** coherence in the Dicke basis***&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ρ_sa = </span><span class="si">{0:7.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rho_d</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
 </pre></div>
 </div>
@@ -670,13 +672,13 @@
 *** coherence in the product basis***
 ρ_eg,ge = 0.0000+0.0000j
 
-*** steady state in the Dick basis ***
+*** steady state in the Dicke basis ***
 ρ_ee =  0.0723  ( 0.0723)
 ρ_ss =  0.1966  ( 0.1966)
-ρ_ss =  0.1966  ( 0.1966)
+ρ_aa =  0.1966  ( 0.1966)
 ρ_gg =  0.5344  ( 0.5344)
 
-*** coherence in the Dick basis***
+*** coherence in the Dicke basis***
 ρ_sa = -0.0000+0.0000j
 </pre></div>
 </div>
@@ -685,8 +687,8 @@
 </section>
 <section id="second-order-coherence-dependence-on-chi">
 <h2><span class="section-number">12.2.3. </span>Second-order coherence: dependence on <span class="math notranslate nohighlight">\(\chi\)</span><a class="headerlink" href="#second-order-coherence-dependence-on-chi" title="Link to this heading">#</a></h2>
-<p>We fix <span class="math notranslate nohighlight">\(r_{12}/\lambda_0 = 0.2\)</span> and change the angle <span class="math notranslate nohighlight">\(\chi\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(\pi/2\)</span>.  As the detector moves, the second-order coherence changes.  For <span class="math notranslate nohighlight">\(\chi=\pi/2\)</span>, no anti-bunching is observed.  Instead, some bunching with small time delay is observed, which disappears as <span class="math notranslate nohighlight">\(\chi\)</span> is reduced.  Instead anti-bunching increases.  It approaches the incoherent limit obtained in <a class="reference internal" href="../dimer1/dimer-case1-intro.html#ch-dimer-case1"><span class="std std-numref">Chapter 11</span></a>.</p>
-<p>The theoretical value <a class="reference internal" href="dimer-case2-theory.html#equation-eq-g2-0-dimer-case2">(12.3)</a> agrees with the QuTiP result, suggesting the validity of numerical calculation.</p>
+<p>We fix <span class="math notranslate nohighlight">\(r_{12}/\lambda_0 = 0.2\)</span> and change the angle <span class="math notranslate nohighlight">\(\chi\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(\pi/2\)</span>.  As the detector moves, the second-order coherence changes.  For <span class="math notranslate nohighlight">\(\chi=\pi/2\)</span>, no anti-bunching is observed; instead, some bunching with a small time delay appears.  This bunching disappears as <span class="math notranslate nohighlight">\(\chi\)</span> is reduced, and the anti-bunching increases.  It approaches the incoherent limit obtained in <a class="reference internal" href="../dimer1/dimer-case1-intro.html#ch-dimer-case1"><span class="std std-numref">Chapter 11</span></a>.</p>
+<p>The theoretical value <a class="reference internal" href="dimer-case2-theory.html#equation-eq-g2-0-dimer-case2">(12.3)</a> agrees with the QuTiP result, confirming the validity of the numerical calculation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r12</span> <span class="o">=</span> <span class="mf">0.2</span>
@@ -713,7 +715,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">g2_0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="c1"># chi = pi/4</span>
+<span class="c1"># chi = 0</span>
 <span class="n">chi</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span><span class="n">theta</span><span class="p">)</span>
 <span class="n">rho_ss</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">c_ops</span><span class="p">)</span>
@@ -732,12 +734,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7954c4be64685a122d2abe47a2ce82c6b498d0449175a665e07acef9ba207d76.png" src="../_images/7954c4be64685a122d2abe47a2ce82c6b498d0449175a665e07acef9ba207d76.png" />
+<img alt="../_images/9e697edc858ca45bcc85091cb8ffd17be26a91388ff588ae915ef3f70b2a1cf1.png" src="../_images/9e697edc858ca45bcc85091cb8ffd17be26a91388ff588ae915ef3f70b2a1cf1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** g^2(0): comparison bettwen QuTiP and theory ***&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** g^2(0): comparison between QuTiP and theory ***&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  QuTiP    Theory&quot;</span><span class="p">)</span>
 <span class="n">phi</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r12</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:7.4f}</span><span class="s2">   </span><span class="si">{1:7.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g2_0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="o">-</span><span class="n">phi</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
@@ -749,7 +751,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** g^2(0): comparison bettwen QuTiP and theory ***
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** g^2(0): comparison between QuTiP and theory ***
   QuTiP    Theory
  1.0000    1.0000
  0.8026    0.8026
@@ -761,7 +763,7 @@
 </section>
 <section id="second-order-coherence-dependence-on-r-12">
 <h2><span class="section-number">12.2.4. </span>Second-order coherence: dependence on <span class="math notranslate nohighlight">\(r_{12}\)</span><a class="headerlink" href="#second-order-coherence-dependence-on-r-12" title="Link to this heading">#</a></h2>
-<p>We fix <span class="math notranslate nohighlight">\(\chi\)</span> at <span class="math notranslate nohighlight">\(\pi/4\)</span> and changes <span class="math notranslate nohighlight">\(r_{12}\)</span> from <span class="math notranslate nohighlight">\(0.2\)</span> to <span class="math notranslate nohighlight">\(0.05\)</span>.  As <span class="math notranslate nohighlight">\(r_{12}\)</span> approaches 0, the decay rate of the <span class="math notranslate nohighlight">\(|a\rangle\)</span> state diverges.  Hence, the correlation time also diverges. As a consequence <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> stays above 1 even at <span class="math notranslate nohighlight">\(\tau \gg 1\)</span>.  The following calculation clearly shows the trend.  We need to calculate <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> differently for <span class="math notranslate nohighlight">\(\r_{12}=0\)</span>.</p>
+<p>We fix <span class="math notranslate nohighlight">\(\chi\)</span> at <span class="math notranslate nohighlight">\(\pi/4\)</span> and change <span class="math notranslate nohighlight">\(r_{12}\)</span> from <span class="math notranslate nohighlight">\(0.2\)</span> to <span class="math notranslate nohighlight">\(0.05\)</span>.  As <span class="math notranslate nohighlight">\(r_{12}\)</span> approaches 0, the decay rate of the <span class="math notranslate nohighlight">\(|a\rangle\)</span> state vanishes (it becomes subradiant).  Hence, the correlation time diverges. As a consequence <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> stays above 1 even at <span class="math notranslate nohighlight">\(\tau \gg 1\)</span>.  The following calculation clearly shows the trend.  We need to calculate <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> differently for <span class="math notranslate nohighlight">\(r_{12}=0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
@@ -807,12 +809,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aadd6bc792253184e9d8ceb717f427fb8911b2b747687697b379d262378cf562.png" src="../_images/aadd6bc792253184e9d8ceb717f427fb8911b2b747687697b379d262378cf562.png" />
+<img alt="../_images/4d219ef5864312a96a97612abe02ae30a4dc0cbfa4c1532b13c8f8cea8f5c01a.png" src="../_images/4d219ef5864312a96a97612abe02ae30a4dc0cbfa4c1532b13c8f8cea8f5c01a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** g^2(0): comparison bettwen QuTiP and theory ***&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** g^2(0): comparison between QuTiP and theory ***&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  QuTiP    Theory&quot;</span><span class="p">)</span>
 <span class="n">r12</span><span class="o">=</span><span class="mf">0.2</span>
 <span class="n">phi</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r12</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
@@ -827,7 +829,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** g^2(0): comparison bettwen QuTiP and theory ***
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** g^2(0): comparison between QuTiP and theory ***
   QuTiP    Theory
  0.8026    0.8026
  0.9507    0.9507
@@ -842,7 +844,7 @@
 <p>When the ergodicity is broken, we construct a steady state manually by excluding <span class="math notranslate nohighlight">\(|a\rangle\)</span>.  See <a class="reference internal" href="dimer-case2-theory.html#ssec-broken-ergodicity"><span class="std std-numref">Chapter 12.1.2</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boltzmann distribution with out |a&gt;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boltzmann distribution without |a&gt;</span>
 <span class="n">Z</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">omega0</span><span class="o">/</span><span class="n">temperature</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">omega0</span><span class="o">/</span><span class="n">temperature</span><span class="p">)</span>
 <span class="n">pe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">omega0</span><span class="o">/</span><span class="n">temperature</span><span class="p">)</span><span class="o">/</span><span class="n">Z</span>
 <span class="n">ps</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Z</span>
@@ -862,7 +864,7 @@
 <span class="n">g2_0</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">q</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$g^{(2)}(\tau)$ under broekn ergodicity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$g^{(2)}(\tau)$ under broken ergodicity&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\tau$&#39;</span><span class="p">)</span>
@@ -876,7 +878,97 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/68b4a57dc17680cb5f8496a6018d679f77c500799088302ec1eb985e3aa90a26.png" src="../_images/68b4a57dc17680cb5f8496a6018d679f77c500799088302ec1eb985e3aa90a26.png" />
+<img alt="../_images/0f0beb0e422dd644ddec0552f6a5e347ff43d3d85f688bb410fd72cfc83f74f2.png" src="../_images/0f0beb0e422dd644ddec0552f6a5e347ff43d3d85f688bb410fd72cfc83f74f2.png" />
+</div>
+</div>
+</section>
+<section id="self-check-numerics-vs-analytic-theory">
+<h2><span class="section-number">12.2.6. </span>Self-check: numerics vs. analytic theory<a class="headerlink" href="#self-check-numerics-vs-analytic-theory" title="Link to this heading">#</a></h2>
+<p>The cell below re-derives the analytic predictions and compares them against the QuTiP calculation, printing <code class="docutils literal notranslate"><span class="pre">PASS</span></code>/<code class="docutils literal notranslate"><span class="pre">FAIL</span></code> for each item and raising an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> if anything disagrees.  It validates three things:</p>
+<ol class="arabic simple">
+<li><p>the ergodic steady state equals the thermal (Boltzmann) state <a class="reference internal" href="dimer-case2-theory.html#equation-eq-dimer-case2-steady-state">(12.1)</a>, with no residual coherence in the Dicke basis;</p></li>
+<li><p>the zero-delay coherence obeys <span class="math notranslate nohighlight">\(g^{(2)}(0) = 1 - \phi^2/4\)</span> for <span class="math notranslate nohighlight">\(r_{12} &gt; 0\)</span>;</p></li>
+<li><p>under broken ergodicity, <span class="math notranslate nohighlight">\(g^{(2)}(0) = 1 - q/(1+q)^2\)</span> with <span class="math notranslate nohighlight">\(q = e^{-\omega_0/T}\)</span>.</p></li>
+</ol>
+<p>Re-run it after any change to the model or parameters; if a check fails, the notebook stops with an error instead of producing a plausible-looking but wrong figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># =====================================================================</span>
+<span class="c1"># Self-check: compare the QuTiP numerics against the analytic theory.</span>
+<span class="c1"># Prints PASS/FAIL for each item and raises AssertionError if any check</span>
+<span class="c1"># fails, so a broken re-run cannot pass silently.</span>
+<span class="c1"># Depends only on the definitions above (system_dimer, coherence2, v, ...).</span>
+<span class="c1"># =====================================================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_report</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">{:4}</span><span class="s2">] </span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;PASS&quot;</span> <span class="k">if</span> <span class="n">ok</span> <span class="k">else</span> <span class="s2">&quot;FAIL&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span>
+                               <span class="s2">&quot;   &quot;</span> <span class="o">+</span> <span class="n">detail</span> <span class="k">if</span> <span class="n">detail</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">ok</span>
+
+<span class="n">all_ok</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">omega0</span> <span class="o">/</span> <span class="n">temperature</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span>
+
+<span class="c1"># --- 1. Ergodic steady state == thermal (Boltzmann) state, no Dicke coherence ---</span>
+<span class="n">Zerg</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">thermal</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ee&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">Zerg</span><span class="p">,</span> <span class="s2">&quot;ss&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">Zerg</span><span class="p">,</span>
+           <span class="s2">&quot;aa&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">Zerg</span><span class="p">,</span>   <span class="s2">&quot;gg&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">Zerg</span><span class="p">}</span>          <span class="c1"># Dicke order: ee, ss, aa, gg</span>
+<span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">)</span>
+<span class="n">rd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">rho</span><span class="o">.</span><span class="n">matrix_element</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+<span class="n">pops</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ee&quot;</span><span class="p">:</span> <span class="n">rd</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s2">&quot;ss&quot;</span><span class="p">:</span> <span class="n">rd</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s2">&quot;aa&quot;</span><span class="p">:</span> <span class="n">rd</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s2">&quot;gg&quot;</span><span class="p">:</span> <span class="n">rd</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">}</span>
+<span class="n">dev</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">pops</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">thermal</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">thermal</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">_report</span><span class="p">(</span><span class="s2">&quot;ergodic steady state = thermal state&quot;</span><span class="p">,</span> <span class="n">dev</span> <span class="o">&lt;</span> <span class="mf">1e-4</span><span class="p">,</span>
+                  <span class="s2">&quot;max deviation </span><span class="si">{:.2e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dev</span><span class="p">))</span>
+<span class="n">offdiag</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">rd</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">_report</span><span class="p">(</span><span class="s2">&quot;no coherence in the Dicke basis&quot;</span><span class="p">,</span> <span class="n">offdiag</span> <span class="o">&lt;</span> <span class="mf">1e-8</span><span class="p">,</span>
+                  <span class="s2">&quot;max |off-diagonal| </span><span class="si">{:.2e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">offdiag</span><span class="p">))</span>
+
+<span class="c1"># --- 2. g2(0) = 1 - phi^2/4 for r12 &gt; 0 (ergodic case) ---</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">tt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>   <span class="c1"># a length-2 tlist is enough; we only read tau = 0</span>
+<span class="k">for</span> <span class="n">r12</span><span class="p">,</span> <span class="n">chi</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)]:</span>
+    <span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">rho</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">g2</span> <span class="o">=</span> <span class="n">coherence2</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">r12</span><span class="p">,</span> <span class="n">chi</span><span class="p">,</span> <span class="n">tt</span><span class="p">)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r12</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">chi</span><span class="p">)</span>
+    <span class="n">theory</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">phi</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span>
+    <span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">_report</span><span class="p">(</span><span class="s2">&quot;g2(0) = 1 - phi^2/4   (r12=</span><span class="si">{:.2f}</span><span class="s2">, chi=</span><span class="si">{:.4f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">chi</span><span class="p">),</span>
+                      <span class="nb">abs</span><span class="p">(</span><span class="n">g2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">theory</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-4</span><span class="p">,</span>
+                      <span class="s2">&quot;QuTiP </span><span class="si">{:.6f}</span><span class="s2">  theory </span><span class="si">{:.6f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theory</span><span class="p">))</span>
+
+<span class="c1"># --- 3. Broken ergodicity: g2(0) = 1 - q/(1+q)^2 ---</span>
+<span class="n">Znon</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
+<span class="n">rho_ne</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">Znon</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> \
+       <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">Znon</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> \
+       <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">Znon</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span>
+<span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">g2</span> <span class="o">=</span> <span class="n">coherence2</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">rho_ne</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tt</span><span class="p">)</span>
+<span class="n">theory</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">q</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">_report</span><span class="p">(</span><span class="s2">&quot;broken-ergodicity g2(0) = 1 - q/(1+q)^2&quot;</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">theory</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-4</span><span class="p">,</span>
+                  <span class="s2">&quot;QuTiP </span><span class="si">{:.6f}</span><span class="s2">  theory </span><span class="si">{:.6f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theory</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;ALL CHECKS PASSED&quot;</span> <span class="k">if</span> <span class="n">all_ok</span> <span class="k">else</span> <span class="s2">&quot;SOME CHECKS FAILED&quot;</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">all_ok</span><span class="p">,</span> <span class="s2">&quot;Self-check failed: QuTiP results disagree with the analytic theory.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] ergodic steady state = thermal state   max deviation 7.49e-16
+[PASS] no coherence in the Dicke basis   max |off-diagonal| 1.39e-17
+[PASS] g2(0) = 1 - phi^2/4   (r12=0.20, chi=1.5708)   QuTiP 1.000000  theory 1.000000
+[PASS] g2(0) = 1 - phi^2/4   (r12=0.20, chi=0.7854)   QuTiP 0.802608  theory 0.802608
+[PASS] g2(0) = 1 - phi^2/4   (r12=0.20, chi=0.0000)   QuTiP 0.605216  theory 0.605216
+[PASS] g2(0) = 1 - phi^2/4   (r12=0.10, chi=0.7854)   QuTiP 0.950652  theory 0.950652
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] g2(0) = 1 - phi^2/4   (r12=0.05, chi=0.7854)   QuTiP 0.987663  theory 0.987663
+[PASS] broken-ergodicity g2(0) = 1 - q/(1+q)^2   QuTiP 0.803388  theory 0.803388
+
+ALL CHECKS PASSED
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -925,11 +1017,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../dimer3/dimer-case3-intro.html"
+       href="dimer-case2-jump.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Dimer II: Coherence by external driving</p>
+        <p class="prev-next-title"><span class="section-number">12.4. </span>Dimer II: Quantum trajectories</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -957,6 +1049,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-dependence-on-chi">12.2.3. Second-order coherence: dependence on <span class="math notranslate nohighlight">\(\chi\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-dependence-on-r-12">12.2.4. Second-order coherence: dependence on <span class="math notranslate nohighlight">\(r_{12}\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-the-case-ergodicity-is-broken">12.2.5. In the case ergodicity is broken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-check-numerics-vs-analytic-theory">12.2.6. Self-check: numerics vs. analytic theory</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.3. </a></li>

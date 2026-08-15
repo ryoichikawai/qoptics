@@ -1,0 +1,1245 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12.4. Dimer II: Quantum trajectories &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dimer2/dimer-case2-jump';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="13. Dimer III: Coherence by external driving" href="../dimer3/dimer-case3-intro.html" />
+    <link rel="prev" title="12.2. Dimer II: QME - Indistinguishability and broken ergodicity" href="dimer-case2-qme.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states and measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">2. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">4. Bunching and full counting statistics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">5. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">5.1. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">5.2. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">5.3. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">5.4. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">5.5. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">5.6. Phonon bath</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">6. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">7. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">7.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">7.3. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">8. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">8.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">8.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">9. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-model.html">9.1. Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">9.2. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">9.3. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">9.4. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer-model/dimer-intro.html">10. Dimer: The model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-unitary.html">10.1. Dimer QME:  The unitary part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-dissipator.html">10.2. Dimer QME: Dissipator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.3. Dimer QME: Diagonalization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case2-qme.html">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.4. Dimer II: Quantum trajectories</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">13.4. Full counting statistics</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/dimer2/dimer-case2-jump.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Fdimer2/dimer-case2-jump.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/dimer2/dimer-case2-jump.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dimer II: Quantum trajectories</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">12.4.1. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-quantum-trajectory">12.4.2. A single quantum trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectories">12.4.3. Quantum trajectories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-average-of-state-population">12.4.4. Ensemble average of state population</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broken-ergodicity-the-dark-antisymmetric-state">12.4.5. Broken ergodicity: the dark antisymmetric state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-of-emitted-photons">12.4.6. Waiting-time distribution of emitted photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-g-2-tau-from-the-photon-clicks">12.4.7. Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-check-mcwf-vs-analytic-theory">12.4.8. Self-check: MCWF vs. analytic theory</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dimer-ii-quantum-trajectories">
+<span id="sec-dimer-case2-jump"></span><h1><span class="section-number">12.4. </span>Dimer II: Quantum trajectories<a class="headerlink" href="#dimer-ii-quantum-trajectories" title="Link to this heading">#</a></h1>
+<p>On the previous page we solved the dimer with the Lindblad master equation (<code class="docutils literal notranslate"><span class="pre">steadystate</span></code> and <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>).  Here we solve the <em>same</em> open-system dynamics with the <strong>Monte Carlo wavefunction (MCWF)</strong> (or quantum trajectory, quantum jump) method (<code class="docutils literal notranslate"><span class="pre">mcsolve</span></code> in QuTip).  Instead of propagating a density matrix, the state follows a stochastic <em>pure-state</em> trajectory: it evolves under a non-Hermitian effective Hamiltonian and, at random times, undergoes a <strong>quantum jump</strong> through one of the collapse operators.  The ensemble average over trajectories reproduces the master-equation density matrix, so every result of the previous page must re-emerge here.</p>
+<p>The jump picture makes the physics of the theory page vivid:</p>
+<ol class="arabic simple">
+<li><p>a single trajectory hops between Dicke states, and the ensemble relaxes to the thermal (Boltzmann) state — the steady state <a class="reference internal" href="dimer-case2-theory.html#equation-eq-dimer-case2-steady-state">(12.1)</a>;</p></li>
+<li><p>as <span class="math notranslate nohighlight">\(r_{12}\to 0\)</span> the antisymmetric state <span class="math notranslate nohighlight">\(|a\rangle\)</span> becomes <strong>dark</strong> and traps a trajectory forever — broken ergodicity <a class="reference internal" href="dimer-case2-theory.html#ssec-broken-ergodicity"><span class="std std-ref">Broken Ergodicity</span></a> seen directly;</p></li>
+<li><p>the record of emission jumps is a simulated photon-click stream, from which we reconstruct <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> and recover <span class="math notranslate nohighlight">\(1-\phi^2/4\)</span>.</p></li>
+</ol>
+<section id="setup">
+<h2><span class="section-number">12.4.1. </span>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<p>The model is identical to the QME page.  We add projectors onto the four Dicke states so
+that a single <code class="docutils literal notranslate"><span class="pre">mcsolve</span></code> run reports the Dicke populations along each trajectory, and a
+helper that drops the vanishing (dark) collapse operators when <span class="math notranslate nohighlight">\(r_{12}\to 0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qutip</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># ---- constants (identical to the QME page) ----</span>
+<span class="n">omega0</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">gamma0</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">NT</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">omega0</span> <span class="o">/</span> <span class="n">temperature</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">omega0</span> <span class="o">/</span> <span class="n">temperature</span>
+
+<span class="c1"># ---- single-atom operators on the two-atom Hilbert space ----</span>
+<span class="n">i2</span> <span class="o">=</span> <span class="n">qeye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sz</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmaz</span><span class="p">(),</span> <span class="n">i2</span><span class="p">),</span> <span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span> <span class="n">sigmaz</span><span class="p">())]</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmap</span><span class="p">(),</span> <span class="n">i2</span><span class="p">),</span> <span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span> <span class="n">sigmap</span><span class="p">())]</span>
+<span class="n">sm</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmam</span><span class="p">(),</span> <span class="n">i2</span><span class="p">),</span> <span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span> <span class="n">sigmam</span><span class="p">())]</span>
+
+<span class="c1"># ---- product basis |ee&gt;, |eg&gt;, |ge&gt;, |gg&gt; ----</span>
+<span class="n">u</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+     <span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+     <span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+     <span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))]</span>
+
+<span class="c1"># ---- Dicke (symmetric / antisymmetric) channel operators ----</span>
+<span class="n">ep</span> <span class="o">=</span> <span class="p">[(</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">em</span> <span class="o">=</span> <span class="p">[(</span><span class="n">sm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">sm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">sm</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+
+<span class="c1"># ---- Dicke basis |e&gt;, |s&gt;, |a&gt;, |g&gt; ----</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">u</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+<span class="n">dicke_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">]</span>
+
+<span class="c1"># projectors used as e_ops to read off Dicke populations along a trajectory</span>
+<span class="n">P</span> <span class="o">=</span> <span class="p">[</span><span class="n">ket2dm</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">v</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">G12</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+    <span class="n">xi</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r12</span>
+    <span class="k">if</span> <span class="n">xi</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">gamma0</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">/</span> <span class="n">xi</span>
+         <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">/</span> <span class="n">xi</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="o">/</span> <span class="n">xi</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">g</span> <span class="o">*</span> <span class="n">gamma0</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">drop_dark</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;(H, c_ops) for the dimer, identical to the QME page.</span>
+
+<span class="sd">    The collapse operators are ordered</span>
+<span class="sd">        0: symmetric emission      sqrt(gamma_s (N+1)) eta1^-   (detected photon)</span>
+<span class="sd">        1: antisymmetric emission  sqrt(gamma_a (N+1)) eta2^-   (detected photon)</span>
+<span class="sd">        2: symmetric absorption    sqrt(gamma_s N)     eta1^+   (thermal)</span>
+<span class="sd">        3: antisymmetric absorption sqrt(gamma_a N)    eta2^+   (thermal)</span>
+<span class="sd">    so col_which == 0 or 1 flags an emission.  With drop_dark=True the collapse</span>
+<span class="sd">    operators whose rate vanishes (the a-channel at r12 -&gt; 0) are removed, so</span>
+<span class="sd">    mcsolve does not carry null jump operators. </span>
+<span class="sd">    When the rate is smaller than tol, it is considered as vanished.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="c1"># ---- unitary part of Hamiltonian</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">omega0</span> <span class="o">*</span> <span class="p">(</span><span class="n">sz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">sz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># ---- decay rates</span>
+    <span class="n">gamma12</span> <span class="o">=</span> <span class="n">G12</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">gamma_s</span> <span class="o">=</span> <span class="n">gamma0</span> <span class="o">+</span> <span class="n">gamma12</span>
+    <span class="n">gamma_a</span> <span class="o">=</span> <span class="n">gamma0</span> <span class="o">-</span> <span class="n">gamma12</span>
+
+<span class="c1"># ---- collapse operators </span>
+    <span class="n">specs</span> <span class="o">=</span> <span class="p">[(</span><span class="n">gamma_s</span> <span class="o">*</span> <span class="p">(</span><span class="n">NT</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">em</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+             <span class="p">(</span><span class="n">gamma_a</span> <span class="o">*</span> <span class="p">(</span><span class="n">NT</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">em</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+             <span class="p">(</span><span class="n">gamma_s</span> <span class="o">*</span> <span class="n">NT</span><span class="p">,</span>       <span class="n">ep</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+             <span class="p">(</span><span class="n">gamma_a</span> <span class="o">*</span> <span class="n">NT</span><span class="p">,</span>       <span class="n">ep</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+    <span class="n">c_ops</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span> <span class="o">*</span> <span class="n">op</span> <span class="k">for</span> <span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span> <span class="ow">in</span> <span class="n">specs</span>
+             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">drop_dark</span> <span class="ow">and</span> <span class="n">rate</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">)]</span>
+    
+    <span class="k">return</span> <span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-single-quantum-trajectory">
+<h2><span class="section-number">12.4.2. </span>A single quantum trajectory<a class="headerlink" href="#a-single-quantum-trajectory" title="Link to this heading">#</a></h2>
+<p>Because the Hamiltonian is diagonal in the Dicke basis and every collapse operator maps a
+Dicke state to another Dicke state, a trajectory started in a Dicke eigenstate <em>stays</em> a
+Dicke eigenstate until a jump between Dicke states <span class="math notranslate nohighlight">\(\{|g\rangle, |s\rangle,
+|a\rangle, |e\rangle\}\)</span> takes place.  Each vertical line below is a quantum jump, blue in the symmetric channel and red in the asymmetric channel.
+The solid lines indicate emission and the dashed ones absorption.  A thick line is actually two lines too close to be visually distinguished.</p>
+<p>Note that clicks detected by the measurement device are emission.  We cannot detect absorption in the actual optical experiment.  Nevertheless, plotting the abosrption jumps helps to identify the types of transition.  If there is no dashed line between two adjacent solid lines, no absorption happened between the two emissions, which indicates cascading transition from <span class="math notranslate nohighlight">\(|e\rangle\)</span> to <span class="math notranslate nohighlight">\(|g\rangle\)</span> took place, either through the symmetric state or the asymmetric state.   (If you don’t see cascading emission, run the code until you see it.  It will happens.)</p>
+<p>First of all, we note that the symmetric channel (solid blue line in the plot) emits photons at higher rate than the asymmetric channel (red solid line) as predicted by the theory (<a class="reference internal" href="dimer-case2-theory.html#sec-dimer-case2-theory"><span class="std std-numref">Chapter 12.1</span></a>).
+Furthermore, when cascading emission happens in the symmetric channel, two photons are emitted almost at the same time (no gap between two blue lines). That means the second transition from <span class="math notranslate nohighlight">\(|s\rangle\)</span> to <span class="math notranslate nohighlight">\(|g\rangle\)</span> take places immediately after the first transition from <span class="math notranslate nohighlight">\(|e\rangle\)</span> to <span class="math notranslate nohighlight">\(|s\rangle\)</span>, indicating that two photons tend to arrive at the same time (bunching).  On the other hand, the cascade in the asymmetric channel takes longer time.  After the first transition, the system stays in <span class="math notranslate nohighlight">\(|a\rangle\)</span> for some time before emitting the second photon.   This difference is a key to understand the second-order coherence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span>          <span class="c1"># dipole orientation, as on the QME page</span>
+<span class="n">r12</span> <span class="o">=</span> <span class="mf">0.2</span>                  <span class="c1"># r12 / lambda0</span>
+<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+
+<span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+
+<span class="c1"># one trajectory; with ntraj=1 the &quot;average&quot; IS the single run.</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;keep_runs_results&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+<span class="c1"># jump record for the single trajectory (QuTiP 5: lists indexed by trajectory)</span>
+<span class="n">t_jump</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">result1</span><span class="o">.</span><span class="n">col_times</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ch_jump</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">result1</span><span class="o">.</span><span class="n">col_which</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">t_emission_s</span> <span class="o">=</span> <span class="n">t_jump</span><span class="p">[</span><span class="n">ch_jump</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">t_emission_a</span> <span class="o">=</span> <span class="n">t_jump</span><span class="p">[</span><span class="n">ch_jump</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">t_absorption_s</span> <span class="o">=</span> <span class="n">t_jump</span><span class="p">[</span><span class="n">ch_jump</span><span class="o">==</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">t_absorption_a</span> <span class="o">=</span> <span class="n">t_jump</span><span class="p">[</span><span class="n">ch_jump</span><span class="o">==</span><span class="mi">3</span><span class="p">]</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;** Jump counts  **&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; symmetric channel: emission count=</span><span class="si">{0:4d}</span><span class="s2">   absorption count=</span><span class="si">{1:4d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">t_emission_s</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">t_absorption_s</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;asymmetric channel: emission count=</span><span class="si">{0:4d}</span><span class="s2">   absorption count=</span><span class="si">{1:4d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">t_emission_a</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">t_absorption_a</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0%. Run time:   0.00s. Est. time left: 00:00:00:00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.04s
+** Jump counts  **
+ symmetric channel: emission count=  38   absorption count=  33
+asymmetric channel: emission count=   3   absorption count=   7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
+
+<span class="c1"># emissions: detector clicks</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">t_emission_s</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;emission ch. s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">t_emission_a</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;emission ch. a&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">t_absorption_s</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;absorption ch. s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">t_absorption_a</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;absorption ch. a&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;emission clicks&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.30</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fa416ddebfc2770324631f0646d36834187e6d9967ca684c441f4db521cc184f.png" src="../_images/fa416ddebfc2770324631f0646d36834187e6d9967ca684c441f4db521cc184f.png" />
+</div>
+</div>
+</section>
+<section id="quantum-trajectories">
+<h2><span class="section-number">12.4.3. </span>Quantum trajectories<a class="headerlink" href="#quantum-trajectories" title="Link to this heading">#</a></h2>
+<p>In the MCWF method, the wave function jumps from a Dicke state to another at a random time.  The time evolution of the wave function between jumps is unitary. Since the Dicke states are eigen states of the Hamiltonian, the system stays in a Dicke state until a jump happens.  In a single trajectory calculation, the occupation of the Dicke states is either <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span>. Only one state has <span class="math notranslate nohighlight">\(1\)</span> at each moment and the rests are <span class="math notranslate nohighlight">\(0\)</span>.  When a jump happened, “<span class="math notranslate nohighlight">\(1\)</span>” moves from a state to another.  The following code plots such a trajectory.</p>
+<p>Notice that transitions between <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|s\rangle\)</span> dominates.  Jump to <span class="math notranslate nohighlight">\(|a\rangle\)</span> is not as frequent as other jumps.  However, once <span class="math notranslate nohighlight">\(|a\rangle\)</span> is occupied, the system stays in it for longer time.  This is again due to the small decay rate of the asymmetric channel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">result1</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span><span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">*</span><span class="mf">0.8</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">k</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\rho_{</span><span class="si">%s</span><span class="s2">}$&quot;</span> <span class="o">%</span> <span class="n">dicke_labels</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.15</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8cb54f2a112e9f0e05986851790a2945b40fd6e90e834f0574ca478179193c9c.png" src="../_images/8cb54f2a112e9f0e05986851790a2945b40fd6e90e834f0574ca478179193c9c.png" />
+</div>
+</div>
+</section>
+<section id="ensemble-average-of-state-population">
+<h2><span class="section-number">12.4.4. </span>Ensemble average of state population<a class="headerlink" href="#ensemble-average-of-state-population" title="Link to this heading">#</a></h2>
+<p>In the master equation approach, the population of states averaged over the ensemble is obtained from the diagonal elements of the density matrix.  In the jump method, at each moment of time, we have a state vector, from which we can calculate probability to obtain a particular state.  However, the state vector fluctuates from one trajectory to another. Hence, we need to obtain many trajectories and take average over them.   Averaging many trajectories must reproduce the master-equation result. In the following code, we take average over <span class="math notranslate nohighlight">\(400\)</span> trajectories.<br />
+The statistical error of a trajectory average falls as <span class="math notranslate nohighlight">\(1/\sqrt{N_{\rm traj}}\)</span>.  (Increase the number of samplings to get better statistics.)<br />
+The solid curves are the MCWF ensemble averages of probability <span class="math notranslate nohighlight">\(p_k(t) = |\langle k | \Psi(t)\rangle|^2\)</span> where <span class="math notranslate nohighlight">\(k = \{e,s,a,g\}\)</span>. The dashed lines are the thermal
+(Boltzmann) populations <a class="reference internal" href="dimer-case2-theory.html#equation-eq-dimer-case2-steady-state">(12.1)</a>.  They agree at long times, and
+the agreement is independent of <span class="math notranslate nohighlight">\(\Gamma_{12}\)</span> — exactly as the theory page argued, since thermal equilibrium depends only on the energies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ntraj</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+
+<span class="n">result2</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="n">ntraj</span><span class="p">)</span>   <span class="c1"># res.expect is averaged</span>
+
+<span class="c1"># thermal populations, Dicke order [e, s, a, g]</span>
+<span class="n">Zerg</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">thermal</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Zerg</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Zerg</span><span class="p">,</span>
+           <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Zerg</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">Zerg</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span> <span class="n">result2</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">k</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\rho_{</span><span class="si">%s</span><span class="s2">}$&quot;</span> <span class="o">%</span> <span class="n">dicke_labels</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">thermal</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">k</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ensemble-averaged populations&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ensemble average (solid) vs thermal state (dashed)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.30</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;center right&quot;</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.15</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">tail</span> <span class="o">=</span> <span class="n">tlist</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">tlist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ss1</span> <span class="o">=</span> <span class="p">[</span><span class="n">result2</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">tail</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ss2</span> <span class="o">=</span> <span class="p">[</span><span class="n">ss1</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ss1_mean</span> <span class="o">=</span> <span class="p">[</span><span class="n">ss1</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ss2_mean</span> <span class="o">=</span> <span class="p">[</span><span class="n">ss2</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ss_dev</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ss2_mean</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">ss1_mean</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dicke     MCWF   (std. dev.)    thermal&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{0:3s}</span><span class="s2">  </span><span class="si">{1:8.4f}</span><span class="s2">  (</span><span class="si">{2:8.4f}</span><span class="s2">)    </span><span class="si">{3:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">dicke_labels</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">ss1_mean</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">ss_dev</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">thermal</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0%. Run time:   0.27s. Est. time left: 00:00:00:02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0%. Run time:   0.55s. Est. time left: 00:00:00:02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0%. Run time:   0.84s. Est. time left: 00:00:00:01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.0%. Run time:   1.12s. Est. time left: 00:00:00:01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0%. Run time:   1.40s. Est. time left: 00:00:00:01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.0%. Run time:   1.69s. Est. time left: 00:00:00:01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70.0%. Run time:   1.97s. Est. time left: 00:00:00:00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80.0%. Run time:   2.26s. Est. time left: 00:00:00:00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.0%. Run time:   2.54s. Est. time left: 00:00:00:00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.0%. Run time:   2.82s. Est. time left: 00:00:00:00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   2.83s
+</pre></div>
+</div>
+<img alt="../_images/df7fbc225336c972edd2775b1c5b1798779b8509121f92b22c116abc8a4d9da0.png" src="../_images/df7fbc225336c972edd2775b1c5b1798779b8509121f92b22c116abc8a4d9da0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dicke     MCWF   (std. dev.)    thermal
+  e      0.0782  (  0.0154)      0.0723
+  s      0.2016  (  0.0174)      0.1966
+  a      0.1901  (  0.0144)      0.1966
+  g      0.5301  (  0.0221)      0.5344
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="broken-ergodicity-the-dark-antisymmetric-state">
+<h2><span class="section-number">12.4.5. </span>Broken ergodicity: the dark antisymmetric state<a class="headerlink" href="#broken-ergodicity-the-dark-antisymmetric-state" title="Link to this heading">#</a></h2>
+<p>Set <span class="math notranslate nohighlight">\(r_{12}\to 0\)</span>.  Then <span class="math notranslate nohighlight">\(\Gamma_{12}\to\gamma_0\)</span>, so <span class="math notranslate nohighlight">\(\gamma_a=\gamma_0-\Gamma_{12}\to 0\)</span>
+and the antisymmetric collapse operators vanish: <span class="math notranslate nohighlight">\(|a\rangle\)</span> is completely decoupled from
+the field and is an eigenstate of <span class="math notranslate nohighlight">\(H\)</span>.  In the trajectory picture this is unmistakable:</p>
+<ul class="simple">
+<li><p>a trajectory started in <span class="math notranslate nohighlight">\(|a\rangle\)</span> <strong>never jumps</strong> — it is frozen for all time;</p></li>
+<li><p>a trajectory started outside <span class="math notranslate nohighlight">\(|a\rangle\)</span> <strong>never enters</strong> it, and relaxes among
+<span class="math notranslate nohighlight">\(\{|gg\rangle, |s\rangle, |ee\rangle\}\)</span>.</p></li>
+</ul>
+<p>Hence the ensemble depends on the initial condition — the definition of broken ergodicity
+— and, starting with no <span class="math notranslate nohighlight">\(|a\rangle\)</span> population, it reaches the non-ergodic steady state
+<a class="reference internal" href="dimer-case2-theory.html#equation-eq-dimer-case2-steady-state-non-ergodic">(12.2)</a> rather than the thermal one.</p>
+<p>In the following the system evolves from <span class="math notranslate nohighlight">\(|s\rangle\)</span>.  Notice that <span class="math notranslate nohighlight">\(|a\rangle\)</span> never be occupied as the quantum trajectory indicates.</p>
+<p>Starting from <span class="math notranslate nohighlight">\(|s\rangle\)</span> (no <span class="math notranslate nohighlight">\(|a\rangle\)</span> component), the
+trajectory average converges to the <strong>non-ergodic</strong> steady state with <span class="math notranslate nohighlight">\(\rho_{aa}=0\)</span>.   It is thermal equilibrium within a reduced Hilbert space orthogonal to <span class="math notranslate nohighlight">\(|a\rangle\)</span> with
+the reduced partition function <span class="math notranslate nohighlight">\(Z = 1 + e^{-\omega_0/T} + e^{+\omega_0/T}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H0</span><span class="p">,</span> <span class="n">c0</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">drop_dark</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># a-channel removed</span>
+<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+
+<span class="c1"># (a) start in |a&gt;: dark, frozen.   (b) start in |ee&gt;: relaxes, never visits |a&gt;.</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H0</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;keep_runs_results&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="s2">&quot;progress_bar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">result3</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span><span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">*</span><span class="mf">0.8</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">k</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\rho_{</span><span class="si">%s</span><span class="s2">}$&quot;</span> <span class="o">%</span> <span class="n">dicke_labels</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.15</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/803ea875fc3fadfe9d11437f73d021cc65439831ac2ee1964d0222d32f3ad2b4.png" src="../_images/803ea875fc3fadfe9d11437f73d021cc65439831ac2ee1964d0222d32f3ad2b4.png" />
+</div>
+</div>
+<p>Starting from <span class="math notranslate nohighlight">\(|s\rangle\)</span>, the
+trajectory average converges to the <strong>non-ergodic</strong> steady state with <span class="math notranslate nohighlight">\(\rho_{aa}=0\)</span>.   It is thermal equilibrium within a reduced Hilbert space orthogonal to <span class="math notranslate nohighlight">\(|a\rangle\)</span> with
+the reduced partition function <span class="math notranslate nohighlight">\(Z = 1 + e^{-\omega_0/T} + e^{+\omega_0/T}\)</span>.   The ensemble average of the MCWF simulation agrees with theoretical prediction within the statistical error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ntraj</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H0</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="n">ntraj</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;progress_bar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+
+<span class="n">Znon</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
+<span class="n">noneq</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Znon</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">Znon</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Znon</span><span class="p">]</span>   <span class="c1"># [e, s, a, g]</span>
+
+<span class="n">tail</span> <span class="o">=</span> <span class="n">tlist</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">tlist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ss1</span> <span class="o">=</span> <span class="p">[</span><span class="n">result4</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">tail</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ss2</span> <span class="o">=</span> <span class="p">[</span><span class="n">ss1</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ss1_mean</span> <span class="o">=</span> <span class="p">[</span><span class="n">ss1</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ss2_mean</span> <span class="o">=</span> <span class="p">[</span><span class="n">ss2</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ss_dev</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ss2_mean</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> <span class="n">ss1_mean</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dicke     MCWF   (std. dev.)    thermal&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">{0:3s}</span><span class="s2">  </span><span class="si">{1:8.4f}</span><span class="s2">  (</span><span class="si">{2:8.4f}</span><span class="s2">)    </span><span class="si">{3:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">dicke_labels</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">ss1_mean</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">ss_dev</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">noneq</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dicke     MCWF   (std. dev.)    thermal
+  e      0.0842  (  0.0120)      0.0900
+  s      0.2439  (  0.0194)      0.2447
+  a      0.0000  (  0.0000)      0.0000
+  g      0.6719  (  0.0217)      0.6652
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="waiting-time-distribution-of-emitted-photons">
+<h2><span class="section-number">12.4.6. </span>Waiting-time distribution of emitted photons<a class="headerlink" href="#waiting-time-distribution-of-emitted-photons" title="Link to this heading">#</a></h2>
+<p>The emission jumps (collapse operators 0 and 1) are the photon-detection events.  The
+distribution of delays between consecutive emissions is suppressed at short <span class="math notranslate nohighlight">\(\Delta t\)</span>:
+after an emission the dimer must be re-excited before it can emit again.  That short-time
+suppression is the time-domain face of the antibunching we quantify next with
+<span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r12</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">)</span>
+<span class="n">ntraj</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="p">[],</span> <span class="n">ntraj</span><span class="o">=</span><span class="n">ntraj</span><span class="p">,</span>
+              <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;keep_runs_results&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="s2">&quot;progress_bar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+
+<span class="n">waits</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntraj</span><span class="p">):</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">col_times</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">cw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">col_which</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">emit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">ct</span><span class="p">[(</span><span class="n">cw</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">cw</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">emit</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">waits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">emit</span><span class="p">))</span>
+<span class="n">waits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">waits</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">waits</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;waiting time $\Delta t$ between emitted photons&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;probability density&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Photon waiting-time distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;emitted photons: </span><span class="si">{:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">waits</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">waits</span><span class="p">)))</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">waits</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">dev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">waits</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">mean</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mean waiting time  = &quot;</span><span class="p">,</span><span class="n">mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;standard deviation = &quot;</span><span class="p">,</span><span class="n">dev</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">dev</span> <span class="o">&lt;</span> <span class="mf">0.95</span><span class="o">*</span><span class="n">mean</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;likely sub-poissonian&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">dev</span> <span class="o">&gt;</span> <span class="mf">1.05</span><span class="o">*</span><span class="n">mean</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;likely super-poissonian&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;likely poissonian&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9f906d70093541c1875ab74a3f9d153161091f358394dc13629f9a6906ff386a.png" src="../_images/9f906d70093541c1875ab74a3f9d153161091f358394dc13629f9a6906ff386a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>emitted photons: 67654
+mean waiting time  =  11.655706067389113
+standard deviation =  12.552592123023228
+likely super-poissonian
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reconstructing-g-2-tau-from-the-photon-clicks">
+<h2><span class="section-number">12.4.7. </span>Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks<a class="headerlink" href="#reconstructing-g-2-tau-from-the-photon-clicks" title="Link to this heading">#</a></h2>
+<p>A detector at angle <span class="math notranslate nohighlight">\(\chi\)</span> measures the far-field operator <span class="math notranslate nohighlight">\(D^-=\sigma_1^- + e^{i\phi}
+\sigma_2^-\)</span> with <span class="math notranslate nohighlight">\(\phi = k_0 r_{12}\cos\chi\)</span>.  From the intensity of the previous page,
+the symmetric (<span class="math notranslate nohighlight">\(\eta_1\)</span>) and antisymmetric (<span class="math notranslate nohighlight">\(\eta_2\)</span>) emissions contribute to the detected
+signal with geometric weights</p>
+<div class="math notranslate nohighlight">
+\[ w_s = 2 - \tfrac{\phi^2}{2}, \qquad w_a = \tfrac{\phi^2}{2}. \]</div>
+<p>We treat each emission jump as a weighted click and build the normalised delay-coincidence
+histogram <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span>; its zero-delay bin is <span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span>.</p>
+<p><strong>A caveat worth stating for students.</strong>  <code class="docutils literal notranslate"><span class="pre">mcsolve</span></code> jumps in the decay eigen-channels
+<span class="math notranslate nohighlight">\(\eta_1,\eta_2\)</span>, whose rates <span class="math notranslate nohighlight">\(\gamma_s\neq\gamma_a\)</span> differ, so this weighted-click model is
+an <em>incoherent</em> approximation to the true coherent detector <span class="math notranslate nohighlight">\(D^-\)</span> and reproduces
+<span class="math notranslate nohighlight">\(1-\phi^2/4\)</span> only to leading order in <span class="math notranslate nohighlight">\(\phi\)</span>.  We therefore also compute the <strong>exact</strong>
+<span class="math notranslate nohighlight">\(g^{(2)}(0)\)</span> directly from the steady state,
+<span class="math notranslate nohighlight">\(g^{(2)}(0)=(4-\phi^2)\rho_{ee}^{ss}/[4(\rho_{ee}^{ss}+\rho_{ss}^{ss})^2]=1-\phi^2/4\)</span>,
+as the rigorous anchor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">g2_0_exact</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">chi</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Deterministic g2(0) from the steady state (the rigorous reference).&quot;&quot;&quot;</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r12</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">chi</span><span class="p">)</span>
+    <span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">rho</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">)</span>
+    <span class="n">ree</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rho</span><span class="p">)</span>
+    <span class="n">rss</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rho</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">4</span> <span class="o">-</span> <span class="n">phi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">ree</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">ree</span> <span class="o">+</span> <span class="n">rss</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">phi</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">g2_from_clicks</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">chi</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">400.0</span><span class="p">,</span> <span class="n">nt</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span>
+                   <span class="n">tau_max</span><span class="o">=</span><span class="mf">40.0</span><span class="p">,</span> <span class="n">dtau</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">psi0</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;g2(tau) reconstructed from the weighted emission-click record.&quot;&quot;&quot;</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r12</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">chi</span><span class="p">)</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">phi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="n">phi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">}</span>     <span class="c1"># s-channel, a-channel</span>
+    <span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="n">r12</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">nt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">psi0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">psi0</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="p">[],</span> <span class="n">ntraj</span><span class="o">=</span><span class="n">ntraj</span><span class="p">,</span>
+                  <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;keep_runs_results&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="s2">&quot;progress_bar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+
+    <span class="n">edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">tau_max</span> <span class="o">+</span> <span class="n">dtau</span><span class="p">,</span> <span class="n">dtau</span><span class="p">)</span>
+    <span class="n">coinc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">edges</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">wsum</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntraj</span><span class="p">):</span>
+        <span class="n">ct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">col_times</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+        <span class="n">cw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">col_which</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+        <span class="n">keep</span> <span class="o">=</span> <span class="p">(</span><span class="n">cw</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">cw</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">ct</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">weight</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cw</span><span class="p">[</span><span class="n">keep</span><span class="p">]])</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">order</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="n">order</span><span class="p">]</span>
+        <span class="n">wsum</span> <span class="o">+=</span> <span class="n">w</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>                      <span class="c1"># ordered pairs, positive delay</span>
+            <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">in_win</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">&lt;</span> <span class="n">tau_max</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">in_win</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">dt</span><span class="p">[</span><span class="n">in_win</span><span class="p">]</span> <span class="o">/</span> <span class="n">dtau</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">coinc</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:][</span><span class="n">in_win</span><span class="p">])</span>
+
+    <span class="n">total_T</span> <span class="o">=</span> <span class="n">ntraj</span> <span class="o">*</span> <span class="n">T</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="n">wsum</span> <span class="o">/</span> <span class="n">total_T</span>                            <span class="c1"># mean weighted singles rate</span>
+    <span class="n">g2</span> <span class="o">=</span> <span class="n">coinc</span> <span class="o">/</span> <span class="p">(</span><span class="n">rate</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">total_T</span> <span class="o">*</span> <span class="n">dtau</span><span class="p">)</span>          <span class="c1"># -&gt; 1 for uncorrelated clicks</span>
+    <span class="n">tau</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="k">return</span> <span class="n">tau</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">phi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reconstruct the curve at <span class="math notranslate nohighlight">\(\chi=\pi/4\)</span> and compare the zero-delay value with both
+the exact steady-state result and the analytic <span class="math notranslate nohighlight">\(1-\phi^2/4\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">tau</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">g2_from_clicks</span><span class="p">(</span><span class="n">r12</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">chi</span><span class="o">=</span><span class="n">chi</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">400.0</span><span class="p">)</span>
+<span class="n">g2_exact</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">g2_0_exact</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">chi</span><span class="p">)</span>
+<span class="n">theory</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">phi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;clicks (MCWF)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">theory</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;C3&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$1-\phi^2/4$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;0.7&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\tau$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$g^{(2)}(\tau)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$g^{(2)}(\tau)$ from photon clicks, $\chi=\pi/4$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;g2(0):  clicks (bin 0) = </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g2</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        exact steady-state = </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g2_exact</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        analytic 1 - phi^2/4 = </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theory</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/73c56fd230666f1fc1af3b7d909d81ec85e380afdd3e50250bc0c542fe89290b.png" src="../_images/73c56fd230666f1fc1af3b7d909d81ec85e380afdd3e50250bc0c542fe89290b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g2(0):  clicks (bin 0) = 0.9061
+        exact steady-state = 0.8026
+        analytic 1 - phi^2/4 = 0.8026
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="self-check-mcwf-vs-analytic-theory">
+<h2><span class="section-number">12.4.8. </span>Self-check: MCWF vs. analytic theory<a class="headerlink" href="#self-check-mcwf-vs-analytic-theory" title="Link to this heading">#</a></h2>
+<p>The cell below verifies the page against the theory.  The <strong>deterministic</strong> identities
+(steady state <span class="math notranslate nohighlight">\(=\)</span> thermal state; exact <span class="math notranslate nohighlight">\(g^{(2)}(0)=1-\phi^2/4\)</span>; non-ergodic steady state)
+are hard assertions.  The <strong>stochastic</strong> MCWF estimates are reported with a Monte-Carlo
+tolerance and warn rather than abort, since they carry <span class="math notranslate nohighlight">\(1/\sqrt{N_{\rm traj}}\)</span> noise.  Rerun
+after changing the model or parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_report</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">hard</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;PASS&quot;</span> <span class="k">if</span> <span class="n">ok</span> <span class="k">else</span> <span class="p">(</span><span class="s2">&quot;FAIL&quot;</span> <span class="k">if</span> <span class="n">hard</span> <span class="k">else</span> <span class="s2">&quot;WARN&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">{:4}</span><span class="s2">] </span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;   &quot;</span> <span class="o">+</span> <span class="n">detail</span> <span class="k">if</span> <span class="n">detail</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">ok</span>
+
+<span class="n">ok_hard</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># --- deterministic: exact g2(0) = 1 - phi^2/4 for several (r12, chi) ---</span>
+<span class="k">for</span> <span class="n">r12_</span><span class="p">,</span> <span class="n">chi_</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)]:</span>
+    <span class="n">g2e</span><span class="p">,</span> <span class="n">phi_</span> <span class="o">=</span> <span class="n">g2_0_exact</span><span class="p">(</span><span class="n">r12_</span><span class="p">,</span> <span class="n">chi_</span><span class="p">)</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g2e</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">phi_</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">1e-4</span>
+    <span class="n">ok_hard</span> <span class="o">&amp;=</span> <span class="n">_report</span><span class="p">(</span><span class="s2">&quot;exact g2(0) = 1 - phi^2/4  (r12=</span><span class="si">{:.2f}</span><span class="s2">, chi=</span><span class="si">{:.4f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r12_</span><span class="p">,</span> <span class="n">chi_</span><span class="p">),</span>
+                       <span class="n">ok</span><span class="p">,</span> <span class="s2">&quot;exact </span><span class="si">{:.6f}</span><span class="s2">  theory </span><span class="si">{:.6f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g2e</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">phi_</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># --- deterministic: ergodic steady state == thermal state ---</span>
+<span class="n">Hs</span><span class="p">,</span> <span class="n">cs</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">Hs</span><span class="p">,</span> <span class="n">cs</span><span class="p">)</span>
+<span class="n">Zerg</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">therm</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Zerg</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Zerg</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Zerg</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">Zerg</span><span class="p">]</span>
+<span class="n">dev</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">expect</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">rho</span><span class="p">)</span> <span class="o">-</span> <span class="n">therm</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ok_hard</span> <span class="o">&amp;=</span> <span class="n">_report</span><span class="p">(</span><span class="s2">&quot;steady state = thermal state&quot;</span><span class="p">,</span> <span class="n">dev</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">,</span>
+                   <span class="s2">&quot;max deviation </span><span class="si">{:.2e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dev</span><span class="p">))</span>
+
+<span class="c1"># --- deterministic: non-ergodic steady state is stationary (a-channel removed) ---</span>
+<span class="c1"># steadystate() is NOT unique here (|a&gt; is a decoupled dark state), so we build the</span>
+<span class="c1"># non-ergodic state by hand and verify L[rho] = 0 through the Lindblad right-hand side.</span>
+<span class="n">Hn</span><span class="p">,</span> <span class="n">cn</span> <span class="o">=</span> <span class="n">system_dimer</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">drop_dark</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Znon</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span>
+<span class="n">noneq</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Znon</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">Znon</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Znon</span><span class="p">]</span>   <span class="c1"># [ee, s, a, gg]</span>
+<span class="n">rho_ne</span> <span class="o">=</span> <span class="n">noneq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">P</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">noneq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">noneq</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">P</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_lindblad_rhs</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="p">(</span><span class="n">H</span> <span class="o">*</span> <span class="n">rho</span> <span class="o">-</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">H</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">c_ops</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">c</span> <span class="o">*</span> <span class="n">rho</span> <span class="o">+</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="n">drift</span> <span class="o">=</span> <span class="n">_lindblad_rhs</span><span class="p">(</span><span class="n">Hn</span><span class="p">,</span> <span class="n">cn</span><span class="p">,</span> <span class="n">rho_ne</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+<span class="n">ok_hard</span> <span class="o">&amp;=</span> <span class="n">_report</span><span class="p">(</span><span class="s2">&quot;non-ergodic Boltzmann state is stationary (||L rho|| = 0)&quot;</span><span class="p">,</span>
+                   <span class="n">drift</span> <span class="o">&lt;</span> <span class="mf">1e-8</span><span class="p">,</span> <span class="s2">&quot;||L rho|| = </span><span class="si">{:.2e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">drift</span><span class="p">))</span>
+
+<span class="c1"># --- stochastic: MCWF ensemble reaches the thermal state (soft) ---</span>
+<span class="n">tl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">r_e</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">Hs</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tl</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">e_ops</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;progress_bar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">tailm</span> <span class="o">=</span> <span class="n">tl</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">tl</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">dev_mc</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">r_e</span><span class="o">.</span><span class="n">expect</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">tailm</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">therm</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">_report</span><span class="p">(</span><span class="s2">&quot;MCWF ensemble ~ thermal state (400 traj)&quot;</span><span class="p">,</span> <span class="n">dev_mc</span> <span class="o">&lt;</span> <span class="mf">0.02</span><span class="p">,</span>
+        <span class="s2">&quot;max deviation </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dev_mc</span><span class="p">),</span> <span class="n">hard</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># --- stochastic: click g2(0) near theory (soft; leading-order model) ---</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">g2c</span><span class="p">,</span> <span class="n">phic</span> <span class="o">=</span> <span class="n">g2_from_clicks</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">ntraj</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mf">300.0</span><span class="p">)</span>
+<span class="n">_report</span><span class="p">(</span><span class="s2">&quot;click g2(0) ~ 1 - phi^2/4&quot;</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g2c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">phic</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="s2">&quot;clicks </span><span class="si">{:.4f}</span><span class="s2">  theory </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">g2c</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">phic</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span> <span class="n">hard</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;DETERMINISTIC CHECKS PASSED&quot;</span> <span class="k">if</span> <span class="n">ok_hard</span> <span class="k">else</span> <span class="s2">&quot;DETERMINISTIC CHECKS FAILED&quot;</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">ok_hard</span><span class="p">,</span> <span class="s2">&quot;Self-check failed: a deterministic identity disagrees with the theory.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] exact g2(0) = 1 - phi^2/4  (r12=0.20, chi=1.5708)   exact 1.000000  theory 1.000000
+[PASS] exact g2(0) = 1 - phi^2/4  (r12=0.20, chi=0.7854)   exact 0.802608  theory 0.802608
+[PASS] exact g2(0) = 1 - phi^2/4  (r12=0.20, chi=0.0000)   exact 0.605216  theory 0.605216
+[PASS] exact g2(0) = 1 - phi^2/4  (r12=0.10, chi=0.7854)   exact 0.950652  theory 0.950652
+[PASS] steady state = thermal state   max deviation 1.39e-16
+[PASS] non-ergodic Boltzmann state is stationary (||L rho|| = 0)   ||L rho|| = 0.00e+00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] MCWF ensemble ~ thermal state (400 traj)   max deviation 0.004
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] click g2(0) ~ 1 - phi^2/4   clicks 0.8665  theory 0.8026
+
+DETERMINISTIC CHECKS PASSED
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./dimer2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dimer-case2-qme.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">12.2. </span>Dimer II: QME - Indistinguishability and broken ergodicity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../dimer3/dimer-case3-intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Dimer III: Coherence by external driving</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">12.4.1. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-quantum-trajectory">12.4.2. A single quantum trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectories">12.4.3. Quantum trajectories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-average-of-state-population">12.4.4. Ensemble average of state population</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broken-ergodicity-the-dark-antisymmetric-state">12.4.5. Broken ergodicity: the dark antisymmetric state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-of-emitted-photons">12.4.6. Waiting-time distribution of emitted photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-g-2-tau-from-the-photon-clicks">12.4.7. Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-check-mcwf-vs-analytic-theory">12.4.8. Self-check: MCWF vs. analytic theory</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

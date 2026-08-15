@@ -242,10 +242,12 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Asymptotic limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.4. Dimer II: Quantum trajectories</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer II: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.3. Second-order coherence</a></li>
@@ -502,7 +504,7 @@
 <p>Consider the matrix</p>
 <div class="math notranslate nohighlight" id="equation-eq-gamma-matrix">
 <span class="eqno">(10.11)<a class="headerlink" href="#equation-eq-gamma-matrix" title="Link to this equation">#</a></span>\[\begin{split}
-\Gamma = \begin{pmatrix} \Gamma_{11} &amp; \Gamma_{12} \\ \Gamma{21} &amp; \Gamma_{22} \end{pmatrix} = \begin{pmatrix} \gamma_{0} &amp; \Gamma_{12} \\ \Gamma{21} &amp; \gamma_0 \end{pmatrix}
+\Gamma = \begin{pmatrix} \Gamma_{11} &amp; \Gamma_{12} \\ \Gamma_{21} &amp; \Gamma_{22} \end{pmatrix} = \begin{pmatrix} \gamma_{0} &amp; \Gamma_{12} \\ \Gamma_{21} &amp; \gamma_0 \end{pmatrix}
 \end{split}\]</div>
 <p>The basis vectors are</p>
 <div class="math notranslate nohighlight" id="equation-eq-basis-sigma">
@@ -525,9 +527,9 @@
 \[\begin{split}
 \begin{aligned}
 \mathcal{D}^{e} (\rho) =&amp; (\gamma_{0}+\Gamma_{12}) (N_{T}+1) \left( \eta^{-}_{1} \rho \eta^{+}_{1} - \frac{1}{2} \left\{\eta^{+}_{1}\eta^{-}_{1}, \rho\right\} \right)\\
-&amp; + (\Gamma_{11}-\Gamma_{12})(N_{T}+1) \left( \eta^{+}_{2} \rho \eta^{-}_{2} - \frac{1}{2} \left\{\eta^{-}_{2}\eta^{+}_{2}, \rho\right\} \right) \\
+&amp; + (\gamma_{0}-\Gamma_{12})(N_{T}+1) \left( \eta^{+}_{2} \rho \eta^{-}_{2} - \frac{1}{2} \left\{\eta^{-}_{2}\eta^{+}_{2}, \rho\right\} \right) \\
 \mathcal{D}^{a} (\rho) =&amp; (\gamma_{0}+\Gamma_{12}) N_{T} \left( \eta^{+}_{1} \rho \eta^{-}_{1} - \frac{1}{2} \left\{\eta^{-}_{1}\eta^{+}_{1}, \rho\right\} \right)\\
-&amp;+ (\Gamma_{11}-\Gamma_{12}) N_{T}\left( \eta^{-}_{2} \rho \eta^{+}_{2} - \frac{1}{2} \left\{\eta^{-}_{2}\eta^{+}_{2}, \rho\right\} \right).
+&amp;+ (\gamma_{0}-\Gamma_{12}) N_{T}\left( \eta^{-}_{2} \rho \eta^{+}_{2} - \frac{1}{2} \left\{\eta^{-}_{2}\eta^{+}_{2}, \rho\right\} \right).
 \end{aligned}
 \end{split}\]</div>
 <p>We just change the basis and thus no new physics is introduced.  Both the product basis and the Dicke basis produce exactly the same density matrix as a solution to the master equation.  However, we have two different views of the same processes.</p>
