@@ -77,6 +77,11 @@ parts:
       -  file: dimer3/dimer-case3-qme-g1
       -  file: dimer3/dimer-case3-qme-g2
       -  file: dimer3/dimer-case3-jump
+   -  file: trimer0/trimer-theory
+   -  file: trimer1/trimer-case1-intro
+      sections:
+      -  file: trimer1/trimer-case1-qme
+      -  file: trimer1/trimer-case1-jump
 -  caption:
    numbered: false
    chapters:
