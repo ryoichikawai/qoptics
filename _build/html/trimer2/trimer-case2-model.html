@@ -1,0 +1,861 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>16.1. Trimer: Case II - Model &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'trimer2/trimer-case2-model';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="16.2. Trimer Case2: Shared codes" href="trimer-case2-functions.html" />
+    <link rel="prev" title="16. Trimer Case II: Full S₃ symmetry" href="trimer-case2-intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states and measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">2. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">4. Bunching and full counting statistics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">5. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">5.1. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">5.2. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">5.3. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">5.4. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">5.5. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">5.6. Phonon bath</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">6. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">7. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">7.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">7.3. An example: Optical master equation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">8. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">8.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">8.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">9. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-model.html">9.1. Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">9.2. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">9.3. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">9.4. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer-model/dimer-intro.html">10. Dimer: The model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-unitary.html">10.1. Dimer QME:  The unitary part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-dissipator.html">10.2. Dimer QME: Dissipator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.3. Dimer QME: Diagonalization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.1. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.2. QME: Numerical analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.4. Dimer II: Quantum trajectories</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">13.4. Full counting statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../trimer0/trimer-theory.html">14. Trimer:  Theoretical model</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../trimer1/trimer-case1-intro.html">15. Trimer Case 1:  Incoherent cluster</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-qme.html">15.1. Trimer Case I: QME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-jump.html">15.2. Trimer Case I: MCWF</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="trimer-case2-intro.html">16. Trimer Case II:  Full S₃ symmetry</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">16.1. Trimer: Case II - Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trimer-case2-functions.html">16.2. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trimer-case2-qme.html">16.3. Trimer Case II:  QME</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/trimer2/trimer-case2-model.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Ftrimer2/trimer-case2-model.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/trimer2/trimer-case2-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Trimer: Case II - Model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian">16.1.1. Hamiltonian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipator">16.1.2. Dissipator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cascading-emission-channels">16.1.3. Cascading emission channels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-operators-and-coherence-functions">16.1.4. Detection operators and coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">16.1.5. Coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-counts-by-a-single-detector">16.1.6. Detection counts by a single detector</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="trimer-case-ii-model">
+<h1><span class="section-number">16.1. </span>Trimer: Case II - Model<a class="headerlink" href="#trimer-case-ii-model" title="Link to this heading">#</a></h1>
+<p>We consider a case where the distance between every pair of emitters is identical (the edge length of the triangle is <span class="math notranslate nohighlight">\(a \equiv r_{12} = r_{23} = r_{31}\)</span>), and that the dipole moments are all identical and perpendicular to the plane of the triangle.  As discussed in <a class="reference internal" href="../trimer0/trimer-theory.html#ch-trimer-model"><span class="std std-numref">Chapter 14</span></a>, the system belongs to <span class="math notranslate nohighlight">\(D_{3h}\)</span> point group and <span class="math notranslate nohighlight">\(S_3\)</span> permutation group, for which the Decke basis works perfectly.</p>
+<section id="hamiltonian">
+<h2><span class="section-number">16.1.1. </span>Hamiltonian<a class="headerlink" href="#hamiltonian" title="Link to this heading">#</a></h2>
+<p>We assume that the dipole moment is perpendicular to the plane and thus <span class="math notranslate nohighlight">\(\mathbf{d}\cdot\mathbf{r}_{ij}=0\)</span>  for all edges of the triangle.</p>
+<p>Taking into account the dipole-dipole interaction, the Hamiltonian is</p>
+<div class="math notranslate nohighlight">
+\[
+H = \frac{\omega}{2} \sum_{i=1}^{3} \sigma^{z}_{i} + \sum_{i\ne j} \Omega \sigma^{+}_{i}\sigma^{-}_{j}
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-omega-s3">
+<span class="eqno">(16.1)<a class="headerlink" href="#equation-eq-omega-s3" title="Link to this equation">#</a></span>\[
+\Omega(a) \equiv \Omega_{12} = \Omega_{23} = \Omega_{31} = - \frac{3}{4} \gamma_0 \left[\frac{\cos\xi}{\xi} \left(1-\frac{1}{\xi^2} \right) - \frac{\sin\xi}{\xi^2} \right]
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\xi = k_{0} a\)</span>.   We focus on weak coupling case where the energy shift due to the coupling is much smaller than the transition energy.</p>
+<p>Based on the group theory introduced in <a class="reference internal" href="../trimer0/trimer-theory.html#ch-trimer-model"><span class="std std-numref">Chapter 14</span></a>, the eigenvectors of the Hamiltonian and the corresponding eigenvalues, which is the Decke basis, are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+|u_{1}\rangle &amp;= |eee\rangle  &amp;&amp;\equiv |\tfrac32,\tfrac32\rangle \qquad &amp;&amp;E_{1}=\frac{3}{2}\omega_{0} \\
+|u_{2}\rangle &amp;=\frac{1}{\sqrt{3}} \left(|eeg\rangle + |ege\rangle + |gee\rangle \right) &amp;&amp;\equiv |\tfrac32,\tfrac12\rangle \qquad &amp;&amp;E_{2} = \frac{1}{2}\omega_{0} + 2 \Omega\\
+|u_{3}\rangle &amp;=\frac{1}{\sqrt{6}} \left(2|eeg\rangle - |ege\rangle - |gee\rangle \right) &amp;&amp;\equiv |\tfrac12,\tfrac12\rangle_a \qquad &amp;&amp;E_{3} = \frac{1}{2}\omega_{0}-\Omega\\
+|u_{4}\rangle &amp;= \frac{1}{\sqrt{2}}\left(|gee\rangle - |ege\rangle\right) &amp;&amp;\equiv |\tfrac12,\tfrac12\rangle_b \qquad &amp;&amp;E_{4} = \frac{1}{2}\omega_{0}-\Omega\\
+|u_{5}\rangle &amp;= \frac{1}{\sqrt{3}}\left(|egg\rangle + |geg\rangle + |gge\rangle\right) &amp;&amp;\equiv |\tfrac32,-\tfrac12\rangle \qquad &amp;&amp;E_{5} = -\frac{1}{2}\omega_0 + 2 \Omega\\
+|u_{6}\rangle &amp;= \frac{1}{\sqrt{6}}\left(2|egg\rangle - |geg\rangle - |gge\rangle\right) &amp;&amp;\equiv |\tfrac12,-\tfrac12\rangle_a\qquad &amp;&amp;E_{6} = -\frac{1}{2}\omega_{0}-\Omega\\
+|u_{7}\rangle &amp;= \frac{1}{\sqrt{2}}\left(|gge\rangle - |geg\rangle\right) &amp;&amp;\equiv |\tfrac12,-\tfrac12\rangle_b \qquad &amp;&amp;E_{7} = -\frac{1}{2}\omega-\Omega\\
+|u_{8}\rangle &amp;= |ggg\rangle &amp;&amp;\equiv |\tfrac32,-\tfrac32\rangle \qquad &amp;&amp;E_{8}= -\frac{3}{2}\omega_{0}
+\end{aligned}
+\end{split}\]</div>
+<p>The energy is ordered from high to low assuming that <span class="math notranslate nohighlight">\(\Omega &gt; 0\)</span>.  However, <span class="math notranslate nohighlight">\(\Omega\)</span> can be negative depending on the orientation of the dipole moment.   Notice that <span class="math notranslate nohighlight">\(|u_{3}\rangle\)</span> and <span class="math notranslate nohighlight">\(|u_{4}\rangle\)</span> are degenerate and thus any linear combination of them is a valid eigenvector with the same eigenvalue.  This is the <span class="math notranslate nohighlight">\(U(2)\)</span> gauge freedom discussed in <a class="reference internal" href="../trimer0/trimer-theory.html#ch-trimer-model"><span class="std std-numref">Chapter 14</span></a>.  Similarly <span class="math notranslate nohighlight">\(|u_{6}\rangle\)</span> and <span class="math notranslate nohighlight">\(|u_{7}\rangle\)</span> are degenerate due to the <span class="math notranslate nohighlight">\(U(2)\)</span> gauge freedom.  Since the Dicke basis is the energy eigenvector, we use it in this chapter.</p>
+</section>
+<section id="dissipator">
+<h2><span class="section-number">16.1.2. </span>Dissipator<a class="headerlink" href="#dissipator" title="Link to this heading">#</a></h2>
+<p>The Lehmberg-Agawal coefficients are given by
+$<span class="math notranslate nohighlight">\(
+\gamma^\prime \equiv \Gamma_{12}=\Gamma_{23}=\Gamma_{31}= \frac{3}{2}\gamma_{0} \left[ \frac{\sin\xi}{\xi}\left(1 - \frac{1}{\xi^2}\right) + \frac{\cos\xi}{\xi^2} \right]
+\)</span>$(eq:Gamma_ij-S3)</p>
+<p>where <span class="math notranslate nohighlight">\(\xi = k_{0} a\)</span> where <span class="math notranslate nohighlight">\(a\)</span> is the edge length of the equilateral triangle.  The eigenvectors and corresponding eigenvalues of the <span class="math notranslate nohighlight">\(\Gamma\)</span> matrix are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned} 
+v_{1} &amp;= \frac{1}{\sqrt{3}}  \begin{pmatrix} 1 \\  1 \\  1 \end{pmatrix}, \qquad  &amp;&amp;\gamma_{1} = \gamma_{0} + 2 \gamma^\prime \\
+v_{2} &amp;= \frac{1}{\sqrt{2}}  \begin{pmatrix} 1 \\ -1 \\  0 \end{pmatrix}, \qquad  &amp;&amp;\gamma_{2} = \gamma_{0} - \gamma^\prime \\
+v_{3} &amp;= \frac{1}{\sqrt{2}}  \begin{pmatrix} 1 \\  0 \\ -1 \end{pmatrix}, \qquad  &amp;&amp;\gamma_{3} = \gamma_{0} - \gamma^\prime 
+\end{aligned}
+\end{split}\]</div>
+<p>The dissipator in the diagonal form is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D} (\rho) = \sum_{j=1}^{3} \gamma_{i} (N_{T}+1)  \left (L_{j} \rho L^{\dagger}_{j} - \frac{1}{2} \left\{L^{\dagger}_{j} L_{j},\rho\right\} \right)
++ \sum_{j=1}^{3} \gamma_{i} N_{T} \left (L^{\dagger}_{j} \rho L_{j} - \frac{1}{2} \left\{L_{j} L^{\dagger}_{j},\rho\right\} \right)
+\]</div>
+<p>and the jump operators are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+L_{1} = \frac{1}{\sqrt{3}} \left(\sigma^{-}_{1} + \sigma^{-}_{2} + \sigma^{-}_{3} \right)  \\
+L_{2} = \frac{1}{\sqrt{3}} \left(e^{-i 2\pi/3} \sigma^{-}_{1} + e^{i 2\pi/3}\sigma^{-}_{2} + \sigma^{-}_{3} \right) \\
+L_{3} = \frac{1}{\sqrt{3}} \left(e^{i 2\pi/3}\sigma^{-}_{1} + e^{-i 2\pi/3} \sigma^{-}_{2} + \sigma^{-}_{3} \right)
+\end{split}\]</div>
+<p>Recall that <span class="math notranslate nohighlight">\(\lim_{a \rightarrow 0} \gamma^\prime = \gamma^{0}\)</span> and thus the decay rate for the superrandiant is <span class="math notranslate nohighlight">\(3\gamma_{0}\)</span> and the rate for the subradiance completely vanishes.</p>
+<p>The eigenvectors of</p>
+</section>
+<section id="cascading-emission-channels">
+<h2><span class="section-number">16.1.3. </span>Cascading emission channels<a class="headerlink" href="#cascading-emission-channels" title="Link to this heading">#</a></h2>
+<p>The jump operator <span class="math notranslate nohighlight">\(L_{j}\)</span> forms a cascading emission channel which we shall call channel <span class="math notranslate nohighlight">\(j\)</span>.   Similarly, <span class="math notranslate nohighlight">\(L^{\dagger}_{j}\)</span> forms cascading absorption channel.
+The channel 1 has a decay rate <span class="math notranslate nohighlight">\(\gamma_{0} + 2 \Gamma\)</span> and the remaining two channels have <span class="math notranslate nohighlight">\(\gamma_{0}-\Gamma\)</span>.  Clearly, channel 1 decays faster than the others.  Hence we identify channel 1 superradiant and channels 2 and 3 subradiant. As <span class="math notranslate nohighlight">\(r_{12} \rightarrow 0\)</span>, the subradiant channels become totally dark.</p>
+<p>Now, we find the actual channel.  Applying <span class="math notranslate nohighlight">\(L_{j}\)</span> to <span class="math notranslate nohighlight">\(|eee\rangle = |\tfrac32,\tfrac32\rangle\)</span>, we can find a cascade down to the ground state <span class="math notranslate nohighlight">\(|ggg\rangle = |\tfrac32,-\tfrac32\rangle\)</span> along each emission channel.  We use the Dicke basis notation.  Since the jump operators are not unitary transformation and the norm of vector is not conserved, we ignore any constant factor.</p>
+<p><strong>channel 1</strong>
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+L_{1} |\tfrac32,\tfrac32\rangle &amp;\propto |\tfrac32,\tfrac12\rangle \\
+L_{1} |\tfrac32,\tfrac12\rangle &amp;\propto \textstyle\frac{2}{\sqrt{3}} |\tfrac32,-\tfrac12\rangle \\
+L_{1} |\tfrac32,-\tfrac12\rangle &amp;\propto |\tfrac32,-\tfrac32\rangle
+\end{aligned}
+\)</span>$</p>
+<p>Hence the cascade along the channel 1 is  <span class="math notranslate nohighlight">\(|\tfrac32,\tfrac32\rangle \Rightarrow |\tfrac32,\tfrac12\rangle \Rightarrow |\tfrac32,-\tfrac12\rangle \Rightarrow |\tfrac32,-\tfrac32\rangle\)</span>.</p>
+<p><strong>channel 2</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+L_{2} |\tfrac32,\tfrac32\rangle &amp;\propto  \left( |\tfrac12,\tfrac12\rangle_{a} - i  |\tfrac12,\tfrac12\rangle_{b}\right) \\
+L_{2} \left( |\tfrac12,\tfrac12\rangle_{a} - i  |\tfrac12,\tfrac12\rangle_{b}\right) &amp;\propto  \left(|\tfrac12,-\tfrac12\rangle_{a} - i |\tfrac12,-\tfrac12\rangle_{b}\right) \\
+L_{2} \left( |\tfrac12,-\tfrac12\rangle_{a} - i |\tfrac12,-\tfrac12\rangle_{b}\right) &amp;\propto |\tfrac32,-\tfrac32\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>The cascade along the channel 2 is <span class="math notranslate nohighlight">\(|\tfrac32,\tfrac32\rangle \Rightarrow |\tfrac12,\tfrac12\rangle \Rightarrow |\tfrac12,-\tfrac12\rangle \Rightarrow |\tfrac32,-\tfrac32\rangle\)</span>.</p>
+<p><strong>channel 3</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+L_{3} |\tfrac32,\tfrac32\rangle &amp;\propto  \left( |\tfrac12,\tfrac12\rangle_{a} + i  |\tfrac12,\tfrac12\rangle_{b}\right) \\
+L_{3} \left( |\tfrac12,\tfrac12\rangle_{a} + i  |\tfrac12,\tfrac12\rangle_{b}\right) &amp;\propto  \left(|\tfrac12,-\tfrac12\rangle_{a} + i |\tfrac12,-\tfrac12\rangle_{b}\right) \\
+L_{3} \left( |\tfrac12,-\tfrac12\rangle_{a} + i |\tfrac12,-\tfrac12\rangle_{b}\right) &amp;\propto |\tfrac32,-\tfrac32\rangle
+\end{aligned}
+\end{split}\]</div>
+<p>The channel 3 is just a <span class="math notranslate nohighlight">\(U(2)\)</span> rotation of the channel 2. Thus the cascade along the channel 3 is identical to that of the channel 2.
+Notice that <span class="math notranslate nohighlight">\(L_{1}\)</span> conserves the total angular momentum.  On the other hand, <span class="math notranslate nohighlight">\(L_{2}\)</span> and <span class="math notranslate nohighlight">\(L_{3}\)</span> jump out from <span class="math notranslate nohighlight">\(J=\tfrac32\)</span> to <span class="math notranslate nohighlight">\(J=\tfrac12\)</span>.</p>
+<figure class="align-default" id="id1">
+<img alt="../_images/cascades-trimer-case2.webp" src="../_images/cascades-trimer-case2.webp" />
+<figcaption>
+<p><span class="caption-number">Fig. 16.2 </span><span class="caption-text">:alt: Emission cascades for S3
+:align: center
+:name: fig:cascades-trimer-case2</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<div class="legend">
+<p>Emission cascades for a <span class="math notranslate nohighlight">\(S_3\)</span> trimer.  The thick blue lines indicate doubly degenerate states. The red arrows shows superradiant (channel 1) cascade and the blue arrows subradiant (channesl 2 &amp; 3) cascades.</p>
+</div>
+</figcaption>
+</figure>
+</section>
+<section id="detection-operators-and-coherence-functions">
+<h2><span class="section-number">16.1.4. </span>Detection operators and coherence functions<a class="headerlink" href="#detection-operators-and-coherence-functions" title="Link to this heading">#</a></h2>
+<p>Let us assume that the detector cannot distinguish the sources of light.  Then, the detection operator is given by</p>
+<div class="math notranslate nohighlight">
+\[
+D(\hat{\mathbf{n}},t_1) \sum_{j=1}^{3} = e^{-i k_{0} \hat{\mathbf{n}} \cdot \mathbf{r}_{j}} \sigma^{-}_{j},
+\]</div>
+<p>which depends on the location of the detector with respect to the center of the trimer. The unit vector <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}\)</span> denotes the direction from the center to the detector. Using the spherical cordinates <span class="math notranslate nohighlight">\((\theta,\phi)\)</span>, <span class="math notranslate nohighlight">\(\hat{\mathbf{n}} = (\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)\)</span>.</p>
+<p>We can evaluate the intensity can be obtained by</p>
+<div class="math notranslate nohighlight">
+\[
+I(\hat{\mathbf{n}},t) = W(\hat{\mathbf{n}}) \langle D^{\dagger}(\mathbf{n},t) D(\hat{\mathbf{n}},t) \rangle = W(\hat{\mathbf{n}}) \sum_{i,j} e^{i k_{0} \hat{\mathbf{n}} \cdot (\mathbf{r}_{j}-\mathbf{r}_{j})} \langle\sigma^{+}_{j} \sigma^{-}_{i}\rangle
+\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[
+W(\hat{\mathbf{n}}) \equiv \frac{3\gamma_0}{8\pi}\left[1 - \left(\hat{\mathbf{n}}\cdot\hat{\mathbf{d}}\right)^2\right] = \frac{3\gamma_0}{8\pi} \sin^2\theta
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{d}}\)</span>.  Obviously, the intensity vanishes when the detector is placed right above the triangle since the dipole moment points to the detector.</p>
+<p>Suppose that the detector is place in the plane of the triangle (<span class="math notranslate nohighlight">\(\theta=\pi/2\)</span>) and then the intensity is measured along <span class="math notranslate nohighlight">\(\phi\)</span>, what interference pattern will be observed?  It should reflect the three fold rotational symmetry.  Let us calculate it.</p>
+<div class="math notranslate nohighlight">
+\[
+I(\phi) = I_{0} \langle D^{\dagger}(\phi) D(\phi) \rangle = \sum_{i,j} e^{i k_0 \hat{\mathbf{n}} \cdot (\mathbf{r}_{i} - \mathbf{r}_{j})} \langle \sigma^{+}_{i}\sigma^{-}_{j}\rangle = 3 p + 2c F(\phi)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_{0}=\frac{3\gamma_0}{8\pi}\)</span>, <span class="math notranslate nohighlight">\(p=\langle \sigma^{+}_{i}\sigma^{-}_{i}\rangle \)</span> and <span class="math notranslate nohighlight">\(c = \langle \sigma^{+}_{i}\sigma^{-}_{j\ne i}\rangle\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[
+F(\phi) = \sum_{i&lt;j} \cos[k_0 \hat{\mathbf{n}} \cdot (\mathbf{r}_{i} - \mathbf{r}_{j})] = \cos\left(\xi\cos\phi\right) + \cos\left[\xi\cos(\phi-\tfrac13\pi)\right]+\cos\left[\xi\cos(\phi+\tfrac13\pi)\right]
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\xi = k_{0} a\)</span> as before.  Expanding <span class="math notranslate nohighlight">\(F(\phi)\)</span> with respect to <span class="math notranslate nohighlight">\(\xi\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+F(\phi) = 3 − \tfrac34 \xi^2 +\tfrac{3}{64} \xi^4 − \tfrac{1}{768}\xi^6 −\tfrac{1}{7680} \xi^6 \cos(⁡6ϕ) + O(\xi^8)
+\]</div>
+<p>Interestingly, the angular dependency appears only <span class="math notranslate nohighlight">\(\xi^6\)</span> or higher order.  The first angular dependency <span class="math notranslate nohighlight">\(\cos(6\phi)\)</span> precisely shows the three-fold rotational symmetry.  The the highest intensity is obtained at <span class="math notranslate nohighlight">\(\phi = 0,\tfrac{\pi}{3},\tfrac{2\pi}{3}\)</span> and the lowest intensity at <span class="math notranslate nohighlight">\(\phi = \tfrac{\pi}{6},\tfrac{\pi}{2}\)</span>.  Thus the maximum and minimu intensities are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+I_{\min} &amp;= I_{0} \left\{ 3p+ 2c\left[ \cos \xi +2 \cos(\tfrac{1}{2}\xi) \right] \right\} \\
+I_{\max} &amp;= I_{0} \left\{ 3p+ 2c\left[ 1+2\cos\left(\tfrac{\sqrt3}{2}\xi\right) \right] \right\}
+\end{aligned}
+\end{split}\]</div>
+<p>and their difference is</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta I = I_{\max}-I_{\min} \simeq I_{0} |c|\tfrac{1}{1920}\xi^{6}
+\]</div>
+<p>which is quite small for <span class="math notranslate nohighlight">\(\xi \le 1\)</span> as shown in this table:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c|c}
+\xi &amp; (F_{\max}-F_{\min})/F_{\rm average}\\ \hline 0.5 &amp; \sim1.4\times10^{-6}\\ 1.0 &amp; \sim1.1\times10^{-4}\\ 1.5 &amp; \sim1.8\times10^{-3}\\ 2.0 &amp; \sim2.1\times10^{-2} 
+\end{array}.
+\end{split}\]</div>
+<p>Actually, this table is irrelevant for the current model (weak dipole-dipole interaction limit), since we have <span class="math notranslate nohighlight">\(c=0\)</span> for any type (symmetry) of triangle.  Thus, the intensity is <span class="math notranslate nohighlight">\(I(\phi) = 3p\)</span>. Now, we conclude that</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">note</span><span class="p">}</span>
+<span class="n">An</span> <span class="n">equilateral</span> <span class="n">three</span><span class="o">-</span><span class="n">atom</span> <span class="n">system</span> <span class="n">looks</span> <span class="n">a</span> <span class="n">circle</span> <span class="ow">in</span> <span class="n">its</span> <span class="ow">in</span><span class="o">-</span><span class="n">plane</span> <span class="n">intensity</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="coherence-functions">
+<h2><span class="section-number">16.1.5. </span>Coherence functions<a class="headerlink" href="#coherence-functions" title="Link to this heading">#</a></h2>
+<p>Using the detector operator, the coherence functions are
+$<span class="math notranslate nohighlight">\(
+g^{(1)}(\hat{\mathbf{n}}_{1},t;\hat{\mathbf{n}}_{2},t+\tau) = \frac{\langle D^{\dagger}(\hat{\mathbf{n}}_{1},t) D(\hat{\mathbf{n}}_{2},t+\tau)\rangle}{\langle D^{\dagger}(\hat{\mathbf{n}}_{1},t) D(\hat{\mathbf{n}}_{2},t)\rangle}
+= \frac{\text{tr} \left\{D(\hat{\mathbf{n}}_{2}) e^{\mathcal{L} \tau}\left[\rho_{ss} D^{\dagger}(\hat{\mathbf{n}}_{1})\right]\right\}}{\text{tr} \left[D^{\dagger}(\hat{\mathbf{n}}_{1})D(\hat{\mathbf{n}}_{2}) \rho_{ss}\right]}
+\)</span>$</p>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+g^{(2)}(\hat{\mathbf{n}}_{1},t;\hat{\mathbf{n}}_{2},t+\tau) = \frac{\langle D^{\dagger}(\hat{\mathbf{n}}_{1},t) D^{\dagger}(\hat{\mathbf{n}}_{2},t+\tau)  D(\hat{\mathbf{n}}_{2},t+\tau)D(\hat{\mathbf{n}}_{1},t)\rangle}{\langle D^{\dagger}(\hat{\mathbf{n}}_{1},t)D(\hat{\mathbf{n}}_{1},t)\rangle \langle D^{\dagger}(\hat{\mathbf{n}}_{2},t)D(\hat{\mathbf{n}}_{2},t)\rangle}
+= \frac{\text{tr} \left\{D^{\dagger}(\hat{\mathbf{n}}_{2}) D(\hat{\mathbf{n}}_{2}) e^{\mathcal{L} \tau}\left[D(\hat{\mathbf{n}}_{1}) \rho(t) D^{\dagger}(\hat{\mathbf{n}}_{1})\right]\right\}}{\text{tr}\left[ D^{\dagger}(\hat{\mathbf{n}}_{2})D(\hat{\mathbf{n}}_{2})\rho_{ss}\right]\text{tr}\left[ D^{\dagger}(\hat{\mathbf{n}}_{1})D(\hat{\mathbf{n}}_{1})\rho_{ss}\right]}
+\]</div>
+<p>In particular, we are interested in no-delay coherence measured at a single point.  First, we simplify <span class="math notranslate nohighlight">\(D^2\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+D^2 = \sum_{ij} e^{-i (phi_{i}+\phi_{j}} \sigma^{-}_{i} \sigma^{-}_{j} = 2 \sum_{i&gt;j} \sigma^{-}_{i} \sigma^{-}_{j}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\langle D^{\dagger} D^{\dagger} D D \rangle = 4 \sum_{i&gt;j} \sum_{k&gt;\ell} e^{i (\phi_{k} + \phi_{\ell} - \phi_{i} - \phi_{j})} \langle \sigma^{+}_{k} \sigma^{+}_{\ell} \sigma^{-}_{i} \sigma^{-}_{j}\rangle = 4 \sum_{i&gt;j}  \langle \sigma^{+}_{j} \sigma^{+}_{i} \sigma^{-}_{i} \sigma^{-}_{j}\rangle 
+=4 \sum_{i&gt;j}  \langle \sigma^{+}_{j}  \sigma^{-}_{j}\rangle \langle \sigma^{+}_{i} \sigma^{-}_{i} \rangle  = 12 p^2
+\]</div>
+<p>where we used the fact that there is no coherence between the emitters which makes <span class="math notranslate nohighlight">\(k=j\)</span> and <span class="math notranslate nohighlight">\(\ell=i\)</span>.  Using this expectation value and the intensity <span class="math notranslate nohighlight">\(I=3p\)</span>, we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+g^{(2)}(0) = \frac{\langle D^{\dagger}(\hat{\mathbf{n}}) D^{\dagger}(\hat{\mathbf{n}})  D(\hat{\mathbf{n}})D(\hat{\mathbf{n}})\rangle}{I^2} = \frac{12 p^2}{(3p)^2} = \frac{4}{3}
+\]</div>
+<p>The no-delay coherence function is <span class="math notranslate nohighlight">\(g^{(2)}(0) = \tfrac43\)</span> regardless of the location of detectors and also independent from the size of the triangle.  This suggests that photon bunching can be seen any direction, even above the triangle plane where the intensity is very small.  The difference between the present result and <a class="reference internal" href="../trimer1/trimer-case1-qme.html#sec-trimer-case1-qme"><span class="std std-numref">Chapter 15.1</span></a> is not due to the symmetry itself.  In either example, the emitters do not have coherence.  We have used a different detection operator here.  In other words, we are looking at a different optical mode.</p>
+</section>
+<section id="detection-counts-by-a-single-detector">
+<h2><span class="section-number">16.1.6. </span>Detection counts by a single detector<a class="headerlink" href="#detection-counts-by-a-single-detector" title="Link to this heading">#</a></h2>
+<p>A detector is placed in the direction specified by a normal vector <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}\)</span> pointing from the center of the triangle to the detector.  The effective rate that the detector detects a photon is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma_{d} = \eta W(\hat{\mathbf{n}}) \Delta \Omega = \eta \frac{3 \gamma_{0}}{8 \pi} \sin^2 \theta \Delta \Omega
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta\Omega\)</span> is the size of detector aperture in solid angle, and <span class="math notranslate nohighlight">\(\eta\)</span> is the detection efficiency.  The detector sees only a fraction of photons and other photons are undetected.  We need to include those undetected photons in the stochastic evolution of the emitters.  To do so, collapse operators must take into account the undetected photons.</p>
+<p>The collpse operator for the detected photons is given by</p>
+<div class="math notranslate nohighlight">
+\[
+C_{d} = \sqrt{\gamma_{d}} \sum_{j=1}^{3} e^{-i k_0 \hat{\mathbf{n}} \cdot \mathbf{r}_{j}} \sigma^{-}_{j}
+\]</div>
+<p>The emission rate of undetected photons are determined by</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\prime_{ij}(\hat{\mathbf{n}}) = \Gamma_{ij} - \gamma_{d} e^{-i k_0 \hat{\mathbf{n}} \cdot (\mathbf{r}_{j}-\mathbf{r}_{i})}
+\]</div>
+<p>Since this matrix depends on the position of the detector, the matrix <span class="math notranslate nohighlight">\(\Gamma^\prime_{ij}\)</span> does not carry the original symmetry and we must diagonalize to construct the collapse operators for undetected photons.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{v}^{j}\)</span> and <span class="math notranslate nohighlight">\(\lambda^{j}\)</span> be the <span class="math notranslate nohighlight">\(j\)</span>-th eigenvector and the corresponding eigenvalue of <span class="math notranslate nohighlight">\(\Gamma^\prime\)</span>.  Then, we have three collapse operators for undetected photons as</p>
+<div class="math notranslate nohighlight">
+\[
+C_{j} = \sqrt{\lambda^{j}} \sum_{i=1}^{s} v^{j}_{i} \sigma^{-}_{i}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(v^{j}_{i}\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>-th component of the eigenvector <span class="math notranslate nohighlight">\(\mathbf{v}^{j}\)</span>.</p>
+<p>Using the collapse operators <span class="math notranslate nohighlight">\(\{C_{d},C_{1},C_{2},C_{3}\}\)</span> we obtain the evolution of wavefunction consistent with the density matrix obtained from the quantum master equation.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            name: "book",
+            path: "./trimer2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="trimer-case2-intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Trimer Case II:  Full S₃ symmetry</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="trimer-case2-functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">16.2. </span>Trimer Case2:  Shared codes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonian">16.1.1. Hamiltonian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dissipator">16.1.2. Dissipator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cascading-emission-channels">16.1.3. Cascading emission channels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-operators-and-coherence-functions">16.1.4. Detection operators and coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">16.1.5. Coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-counts-by-a-single-detector">16.1.6. Detection counts by a single detector</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

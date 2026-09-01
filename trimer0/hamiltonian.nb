@@ -1,0 +1,231 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      7914,        221]
+NotebookOptionsPosition[      7209,        200]
+NotebookOutlinePosition[      7606,        216]
+CellTagsIndexPosition[      7563,        213]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"H", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"3", " ", 
+       RowBox[{"\[Omega]", "/", "2"}]}], ",", "0", ",", "0", ",", "0", ",", 
+      "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", " ", 
+      RowBox[{"\[Omega]", "/", "2"}], ",", " ", "\[CapitalOmega]", ",", "0", ",",
+       "\[CapitalOmega]", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "\[CapitalOmega]", ",", 
+      RowBox[{"\[Omega]", "/", "2"}], ",", "0", ",", "\[CapitalOmega]", ",", 
+      "0", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", 
+      RowBox[{
+       RowBox[{"-", "\[Omega]"}], "/", "2"}], ",", "0", ",", 
+      "\[CapitalOmega]", ",", "\[CapitalOmega]", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "\[CapitalOmega]", ",", "\[CapitalOmega]", ",", "0", ",", 
+      RowBox[{"\[Omega]", "/", "2"}], ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "\[CapitalOmega]", ",", "0", ",", 
+      RowBox[{
+       RowBox[{"-", "\[Omega]"}], "/", "2"}], ",", "\[CapitalOmega]", ",", 
+      "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0", ",", "0", ",", "0", ",", "\[CapitalOmega]", ",", "0", ",", 
+      "\[CapitalOmega]", ",", 
+      RowBox[{
+       RowBox[{"-", "\[Omega]"}], "/", "2"}], ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+      RowBox[{
+       RowBox[{"-", "3"}], 
+       RowBox[{"\[Omega]", "/", "2"}]}]}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.996851230571504*^9, 3.996851271598194*^9}, {
+   3.996851471141171*^9, 3.996851779049851*^9}, 3.996851946523094*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"a79e2df0-2813-4e2d-8ce5-e2e26751180c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"3", " ", "\[Omega]"}], "2"], ",", "0", ",", "0", ",", "0", ",",
+      "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     FractionBox["\[Omega]", "2"], ",", "\[CapitalOmega]", ",", "0", ",", 
+     "\[CapitalOmega]", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[CapitalOmega]", ",", 
+     FractionBox["\[Omega]", "2"], ",", "0", ",", "\[CapitalOmega]", ",", "0",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox["\[Omega]", "2"]}], ",", "0", ",", "\[CapitalOmega]", ",", 
+     "\[CapitalOmega]", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[CapitalOmega]", ",", "\[CapitalOmega]", ",", "0", ",", 
+     FractionBox["\[Omega]", "2"], ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "\[CapitalOmega]", ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox["\[Omega]", "2"]}], ",", "\[CapitalOmega]", ",", "0"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "\[CapitalOmega]", ",", "0", ",", 
+     "\[CapitalOmega]", ",", 
+     RowBox[{"-", 
+      FractionBox["\[Omega]", "2"]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"3", " ", "\[Omega]"}], "2"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.9968519482794447`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"83125257-bc55-4eb0-be7f-fbdbf284e46e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigensystem", "[", "H", "]"}]], "Input",
+ CellChangeTimes->{{3.996851787340437*^9, 3.996851823308689*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"e9f19139-8108-44eb-b41c-de80f3ed61aa"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"3", " ", "\[Omega]"}], "2"]}], ",", 
+     FractionBox[
+      RowBox[{"3", " ", "\[Omega]"}], "2"], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "\[Omega]"}], "-", 
+        RowBox[{"2", " ", "\[CapitalOmega]"}]}], ")"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "\[Omega]"}], "-", 
+        RowBox[{"2", " ", "\[CapitalOmega]"}]}], ")"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"\[Omega]", "-", 
+        RowBox[{"2", " ", "\[CapitalOmega]"}]}], ")"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"\[Omega]", "-", 
+        RowBox[{"2", " ", "\[CapitalOmega]"}]}], ")"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "\[Omega]"}], "+", 
+        RowBox[{"4", " ", "\[CapitalOmega]"}]}], ")"}]}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"\[Omega]", "+", 
+        RowBox[{"4", " ", "\[CapitalOmega]"}]}], ")"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+       "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+       "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",",
+        "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}], ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+        "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", 
+       "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "0", ",", "1", ",", "1", ",", "0", ",", "1", ",", "0", ",", "0", ",", 
+       "0"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9968517918077917`*^9, 3.996851824540037*^9, 3.9968518674284678`*^9, {
+   3.9968519299938107`*^9, 3.996851958552459*^9}},
+ CellLabel->"Out[9]=",ExpressionUUID->"59d935c8-c44b-47f0-b046-148d088df028"]
+}, Open  ]]
+},
+WindowSize->{606, 683.25},
+WindowMargins->{{Automatic, -687}, {50.25, Automatic}},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c8cd03d3-1636-4bbd-be48-c6585c6da555"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 1907, 44, 97, "Input",ExpressionUUID->"a79e2df0-2813-4e2d-8ce5-e2e26751180c"],
+Cell[2486, 68, 1726, 41, 211, "Output",ExpressionUUID->"83125257-bc55-4eb0-be7f-fbdbf284e46e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4249, 114, 208, 3, 30, "Input",ExpressionUUID->"e9f19139-8108-44eb-b41c-de80f3ed61aa"],
+Cell[4460, 119, 2733, 78, 257, "Output",ExpressionUUID->"59d935c8-c44b-47f0-b046-148d088df028"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

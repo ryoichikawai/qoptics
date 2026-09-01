@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'trimer0/trimer-theory';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -256,6 +258,12 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../trimer1/trimer-case1-intro.html">15. Trimer Case 1:  Incoherent cluster</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-qme.html">15.1. Trimer Case I: QME</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-jump.html">15.2. Trimer Case I: MCWF</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../trimer2/trimer-case2-intro.html">16. Trimer Case II:  Full S₃ symmetry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-model.html">16.1. Trimer: Case II - Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-functions.html">16.2. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-qme.html">16.3. Trimer Case II:  QME</a></li>
 </ul>
 </details></li>
 </ul>
@@ -487,8 +495,25 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="trimer-theoretical-model">
-<h1><span class="section-number">14. </span>Trimer:  Theoretical model<a class="headerlink" href="#trimer-theoretical-model" title="Link to this heading">#</a></h1>
-<p>To be writte.</p>
+<span id="ch-trimer-model"></span><h1><span class="section-number">14. </span>Trimer:  Theoretical model<a class="headerlink" href="#trimer-theoretical-model" title="Link to this heading">#</a></h1>
+<p><span style="color:red"><strong>This page is still under construction.</strong></span></p>
+<p>We consider a case where the distance between every pair of emitters is identical, that is <span class="math notranslate nohighlight">\(r_{12} = r_{23} = r_{31}\)</span>.  Hence, geometrically the structure belongs to <span class="math notranslate nohighlight">\(D_{3h}\)</span> symmetry group.  However, the symmetry of the whole system including the radiation field can be quite different depending on the orientation of the dipole moment.  We also need to recall that the orientation of the dipole moment is identical to all emitters.</p>
+<p>When the dipole moment is perpendicular to the plane of the triangle (See <a class="reference internal" href="../trimer2/trimer-case2-intro.html#fig-equilateral-tirangle-d-3"><span class="std std-numref">Fig. 16.1</span></a>), the space inversion with respect to <span class="math notranslate nohighlight">\(z=0\)</span> reverse the direction of the dipole moment.  Hence its symmetry is <span class="math notranslate nohighlight">\(D_{3}\)</span> which is isomorphic to <span class="math notranslate nohighlight">\(S_3\)</span>.</p>
+<figure class="align-center" id="fig-equilateral-tirangle-d-3">
+<a class="reference internal image-reference" href="../_images/equilateral-triangle-D_3.webp"><img alt="An equilateral triangle with dipole moment perpendicular to the plane" src="../_images/equilateral-triangle-D_3.webp" style="width: 3in;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 14.1 </span><span class="caption-text">When the dipole moment is perpendicular to the plane, the inversion symmetry with respect to <span class="math notranslate nohighlight">\(z=0\)</span> is lost.  Hence, the symmetry group is <span class="math notranslate nohighlight">\(D_3\)</span> rather than <span class="math notranslate nohighlight">\(D_{3h}\)</span>.</span><a class="headerlink" href="#fig-equilateral-tirangle-d-3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If the dipole moment is in-plane, it is not possible to have a high symmetry such as <span class="math notranslate nohighlight">\(S_{3}\)</span>, <span class="math notranslate nohighlight">\(D_{3}\)</span> nor <span class="math notranslate nohighlight">\(C_{3}\)</span>. When the moment is parallel to a symmetric axis (the left triangle in <a class="reference internal" href="#fig-equilateral-tirangle-c-2"><span class="std std-numref">Fig. 14.2</span></a>),  mirror symmetry with respect to <span class="math notranslate nohighlight">\(y\)</span> axis is preserved.  Hence, it has <span class="math notranslate nohighlight">\(C_{2}\)</span> symmetry.  Otherwise, there is no symmetry and it belong to <span class="math notranslate nohighlight">\(C_{1}\)</span> group.  Hence, it is similar to a scalene triangle.</p>
+<figure class="align-center" id="fig-equilateral-tirangle-c-2">
+<a class="reference internal image-reference" href="../_images/equilateral-triangle-C_2.webp"><img alt="An equilateral triangle with dipole moment in the plane" src="../_images/equilateral-triangle-C_2.webp" style="width: 6in;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 14.2 </span><span class="caption-text"><em>Left</em>: the dipole moment is in-plane and parallel to a symmetric axis. Its symmetry is equivalent to an isosceles triangle (<span class="math notranslate nohighlight">\(C_2\)</span>).  <em>Right</em>:   The dipole moment is not parallel to any symmetric axis.  There is no symmtry and the situation is similar to a scalene triangle.</span><a class="headerlink" href="#fig-equilateral-tirangle-c-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 
     <script type="text/x-thebe-config">

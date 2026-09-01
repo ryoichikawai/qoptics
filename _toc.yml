@@ -82,6 +82,12 @@ parts:
       sections:
       -  file: trimer1/trimer-case1-qme
       -  file: trimer1/trimer-case1-jump
+   -  file: trimer2/trimer-case2-intro
+      sections:
+      -  file: trimer2/trimer-case2-model
+      -  file: trimer2/trimer-case2-functions
+      -  file: trimer2/trimer-case2-qme
+
 -  caption:
    numbered: false
    chapters:
