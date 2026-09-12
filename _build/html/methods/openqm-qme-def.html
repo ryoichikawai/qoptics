@@ -188,8 +188,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states and measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">2. Photons and quantum radiation fields</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.11. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.12. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">4. Bunching and full counting statistics</a></li>
@@ -209,7 +209,10 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-qme-intro.html">7. Quantum master equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">7.1. Optical quantum master equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">7.3. An example: Optical master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-scaling.html">7.3. Parameter values and normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-rotating-frame.html">7.4. Rotating frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-GKSL.html">7.5. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">7.6. An example: Single emitter</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="openqm-jump-intro.html">8. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -229,15 +232,15 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer-model/dimer-intro.html">10. Dimer: The model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-unitary.html">10.1. Dimer QME:  The unitary part</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-dissipator.html">10.2. Dimer QME: Dissipator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.3. Dimer QME: Diagonalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-unitary.html">10.5. Dimer QME:  The unitary part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-dissipator.html">10.6. Dimer QME: Dissipator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.7. Dimer QME: Diagonalization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Incoherent emitters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.1. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Thermal fluorescence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.3. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.4. Diner Case I: QME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.5. Quantum trajectory</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -494,11 +497,12 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-hamiltonian">7.1.1. Full Hamiltonian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation-a-general-form">7.1.2. Quantum master equation: A general form</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-master-equation">7.1.3. Optical master equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-diploe-coupling">7.1.4. Dipole-diploe coupling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-rates">7.1.5. Decay rates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phonon-scattering">7.1.6. Phonon scattering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguity">7.1.7. Ambiguity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguity">7.1.3. Ambiguity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalization">7.1.4. Diagonalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-master-equation">7.1.5. Optical master equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-diploe-coupling">7.1.6. Dipole-diploe coupling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-rates">7.1.7. Decay rates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phonon-scattering">7.1.8. Phonon scattering</a></li>
 </ul>
             </nav>
         </div>
@@ -511,7 +515,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optical-quantum-master-equations">
-<span id="sec-openqm-qme-method"></span><h1><span class="section-number">7.1. </span>Optical quantum master equations<a class="headerlink" href="#optical-quantum-master-equations" title="Link to this heading">#</a></h1>
+<span id="sec-openqm-qme-optical"></span><h1><span class="section-number">7.1. </span>Optical quantum master equations<a class="headerlink" href="#optical-quantum-master-equations" title="Link to this heading">#</a></h1>
 <section id="full-hamiltonian">
 <h2><span class="section-number">7.1.1. </span>Full Hamiltonian<a class="headerlink" href="#full-hamiltonian" title="Link to this heading">#</a></h2>
 <p>In order to investigate the optical properties of emitters, we need a Hamiltonian consisting of three parts, <span class="math notranslate nohighlight">\(H_{S}\)</span> for the system of emitters, <span class="math notranslate nohighlight">\(H_{R}\)</span> for the radiation field, and $H_{SR} for the coupling between them.  They are already introduced in <a class="reference internal" href="../model/emitter.html#sec-emitter"><span class="std std-numref">Chapter 5.1</span></a>, <a class="reference internal" href="../model/radiation-field.html#sec-radiation-field"><span class="std std-numref">Chapter 5.2</span></a>}, and <a class="reference internal" href="../model/coupling.html#sec-e1-coupling"><span class="std std-numref">Chapter 5.3</span></a>.</p>
@@ -528,46 +532,113 @@
 <p>The first term in the right hand side is the unitary part, which includes additional Hamiltonian <span class="math notranslate nohighlight">\(H^\prime_{S}\)</span>.   The second term is the dissipator expressed as a super operator which takes a general form:</p>
 <div class="math notranslate nohighlight" id="equation-eq-dissipator-general">
 <span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-dissipator-general" title="Link to this equation">#</a></span>\[
-\mathcal{D} (\rho) = \sum_{j} \gamma_{j} \left[L_{j} \rho L_{j}^\dagger - \frac{1}{2} \left\{L_{j}^\dagger L_{j}, \rho\right\} \right]
+\mathcal{D} (\rho) = \sum_{ij} \Gamma_{ij} \left[L_{i} \rho L_{j}^\dagger - \frac{1}{2} \left\{L_{j}^\dagger L_{i}, \rho\right\} \right]
 \]</div>
-<p>where the anticommutator <span class="math notranslate nohighlight">\(\{A,B\} = AB + BA\)</span> is used.  The operator <span class="math notranslate nohighlight">\(L_{j}\)</span> is known as Lindblad operator and <span class="math notranslate nohighlight">\(\gamma\)</span> is the rate of dissipation.  It is a common practice to use <span class="math notranslate nohighlight">\(C = \sqrt{\gamma_{j}} L_{j}\)</span> in numerical approach, which is known as collapse operator or jump operator. With the collapse operators, the master equation is written as</p>
-<div class="math notranslate nohighlight" id="equation-eq-dissipator-collapse">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-dissipator-collapse" title="Link to this equation">#</a></span>\[
-\mathcal{D} (\rho) = \sum_{j} \left[C_{j} \rho C_{j}^\dagger - \frac{1}{2} \left\{C_{j}^\dagger C_{j}, \rho\right\} \right].
+<p>where <span class="math notranslate nohighlight">\(\{A,B\} = AB + BA\)</span> is the anticommutator.  The operator <span class="math notranslate nohighlight">\(L_{j}\)</span> is known as Lindblad operator or jump operator<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>  and <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span> is the transition rate.</p>
+<p>We can always diagonalize <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span> and make the disspator in a diagonal form:</p>
+<div class="math notranslate nohighlight" id="equation-eq-dissipator-diagonal">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-dissipator-diagonal" title="Link to this equation">#</a></span>\[
+\mathcal{D} (\rho) = \sum_{j} \Gamma_{j} \left[\tilde{L}_{j} \rho \tilde{L}_{j}^\dagger - \frac{1}{2} \left\{\tilde{L}_{j}^\dagger \tilde{L}_{j}, \rho\right\} \right]
 \]</div>
-<p>There can be several different dissipators in a single quantum master equation.</p>
-<p>The specific expression of the dissipator depends on the Hamiltonian <span class="math notranslate nohighlight">\(H_{S}\)</span>.</p>
+<p>For small systems, group theory helps to diagonalize the matrix but for larger ones, we may need numerical diagonalization.</p>
 </section>
-<section id="optical-master-equation">
-<h2><span class="section-number">7.1.3. </span>Optical master equation<a class="headerlink" href="#optical-master-equation" title="Link to this heading">#</a></h2>
-<p>As introduced in <a class="reference internal" href="../model/emitter.html#sec-emitter"><span class="std std-numref">Chapter 5.1</span></a>, <a class="reference internal" href="../model/radiation-field.html#sec-radiation-field"><span class="std std-numref">Chapter 5.2</span></a>, and <a class="reference internal" href="../model/coupling.html#sec-e1-coupling"><span class="std std-numref">Chapter 5.3</span></a>, the Hamiltonian of the whole system is given by <span class="math notranslate nohighlight">\(H=H_{0}+H_{R}+H_{SR}\)</span>, we obtain the quantum master equation for the emitters coupled to the radiation field as</p>
+<section id="ambiguity">
+<span id="ssub-dissipator-ambiguity"></span><h2><span class="section-number">7.1.3. </span>Ambiguity<a class="headerlink" href="#ambiguity" title="Link to this heading">#</a></h2>
+<p>The expression of a quantum master equation is not unique.  It is invariant under many transformation.  Suppose that the dissipator is given by</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{d}{dt} \rho = -i [H_{S} + H_\text{Lamb} + H_{dd},\rho] + \mathcal{D} (\rho)
+\mathcal{D}(\rho) = \sum_{ij} \Gamma^{A}_{ij} \left(A_{j} \rho A^{\dagger}_{i} - \frac{1}{2} \left \{A^{\dagger}_{i}A_{j},\rho\right\}\right)
 \]</div>
-<p>with the Lamb shift <span class="math notranslate nohighlight">\(H_\text{Lamb}\)</span> and the dipole-dipole interaction</p>
-<div class="math notranslate nohighlight" id="equation-eq-h-dd">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-h-dd" title="Link to this equation">#</a></span>\[
-H_\text{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i}\sigma^{-}_{j}.
-\]</div>
-<p>The Lamb shift diverges in the non-relativistic quantum mechanics. The renormalization of electron mass and charge in QFT resolves this issue. It turns out that the shift is very small and thus we shall ignore it.</p>
-<p>The microscopic derivation of the quantum master equation finds the following dissipator:</p>
-<div class="math notranslate nohighlight" id="equation-eq-optical-dissipator">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-optical-dissipator" title="Link to this equation">#</a></span>\[\begin{split}
+<p>Introducing a set of new operators using a unitary transformation <span class="math notranslate nohighlight">\(U\)</span> such that <span class="math notranslate nohighlight">\(A_{i} = \sum_{k} U_{ik} B_{k}\)</span>, the dissipator is transformed to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}
-\mathcal{D}(\rho) &amp;= \sum_{i,j} \Gamma_{ij}\, (N_T+1) \left[\sigma^{-}_{j} \rho \sigma^{+}_{i} - \frac{1}{2}\left\{\sigma^{+}_{i}\sigma^{-}_{j}, \rho\right\} \right] \\
-&amp;+ \sum_{i,j}\Gamma_{ij}\, N_T \left[\sigma^{+}_{j} \rho \sigma^{-}_{i} - \frac{1}{2}\left\{\sigma^{-}_{i}\sigma^{+}_{j}, \rho\right\} \right]
+\mathcal{D}(\rho) &amp;= \sum_{ij} \Gamma^{A}_{ij} \left[ \left(\sum_{k} U_{jk} B_{k}\right) \rho \left(\sum_{\ell} U^{*}_{i\ell} B^{\dagger}_{\ell}\right) - \frac{1}{2} \left \{\left(\sum_{\ell} U^{*}_{i\ell} B^{\dagger}_{\ell}\right) \left(\sum_{k} U_{jk} B_{k}\right),\rho\right\}\right] \\
+&amp;= \sum_{k\ell} \Gamma^{B}_{k\ell} \left(B_{k} \rho B^{\dagger}_{\ell} - \frac{1}{2} \left \{B^{\dagger}_{\ell}B_{k},\rho\right\}\right)
 \end{aligned}
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(N_T = \frac{1}{e^{\omega_0/T - 1}}\)</span> is the mean thermal photon number at temperature <span class="math notranslate nohighlight">\(T\)</span>.  The first term in the right hand side corresponds to the emission and the second term to the absorption.</p>
-<p>From the perspective of the dissipators, <span class="math notranslate nohighlight">\(\sigma^{\pm}_{j}\)</span> represents an optical transition in the <span class="math notranslate nohighlight">\(j\)</span>-th emitter. The diagonal terms with <span class="math notranslate nohighlight">\(\Gamma_{jj}\)</span> correspond to  emission or absorption taking place in the <span class="math notranslate nohighlight">\(j\)</span>-th emitter.  The cross terms with <span class="math notranslate nohighlight">\(\Gamma_{i\ne j}\)</span> correspond to the interference between transitions in the <span class="math notranslate nohighlight">\(i\)</span>- and <span class="math notranslate nohighlight">\(j\)</span>-th emitters.  However, we must be careful about this kind of interpretation.  The operator <span class="math notranslate nohighlight">\(\sigma^{\pm}_{j}\)</span> describes the transition between two basis states <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(e\rangle\)</span> but not necessarily between two energy eigenstates of the system.  The problem is that the expression of a disspator is not unique as shown in <a class="reference internal" href="#ssub-dissipator-ambiguity"><span class="std std-numref">Chapter 7.1.7</span></a>.  We must pick one that fits to the actual physics.</p>
-<p>It is important to mention that the quantum master equation is an approximation.  It not always gives a correct answer.  Its blind use is dangerous.  For example,  if wrong collapse operators are used, the system does not reach a correct thermal state or we could get wrong optical processes.  The bottom line is that the dissipator must be consistent with the physical processes under the investigation. We shall be careful about it.</p>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^{B}_{k\ell} = \sum_{ij} U_{k,i}  \Gamma^{A}_{ij} U^{*}_{i,\ell}.
+\]</div>
+<p>Even under a simple shift <span class="math notranslate nohighlight">\(A_{j} = B_{j} + \alpha_{j}\)</span> where <span class="math notranslate nohighlight">\(\alpha_{j}\)</span> is a constant, the dissipator is invariant.  Hence, any isomtric transformation preserves the dissipator and there are infinitely many expression of the same quantum master equation.</p>
+</section>
+<section id="diagonalization">
+<h2><span class="section-number">7.1.4. </span>Diagonalization<a class="headerlink" href="#diagonalization" title="Link to this heading">#</a></h2>
+<p>Utilizing the above freedom, we can always digaonalize the dissipator.</p>
+<p>Let <span class="math notranslate nohighlight">\(\lambda_{i}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}_{i}\)</span> be eigenvalues and corresponding eigenvectors of <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span>.   The diagonalization is done by the unitary transformation <span class="math notranslate nohighlight">\(U = [\mathbf{v}_{1}, \mathbf{v}_{2}, \cdots, \mathbf{v}_{N}]\)</span>. The new transition rate matrix is <span class="math notranslate nohighlight">\(\Gamma^{B} = U^{\dagger} \Gamma^{A} U = \text{diag}(\lambda_1, \lambda_2, \cdots, \lambda_N)\)</span>.  At the same time, the operator is transformed as <span class="math notranslate nohighlight">\(B_{k} = \sum_{j} U^{\dagger}_{kj} A_{j} = \sum_{j}  v^{k}_{j} A_{j}\)</span> where <span class="math notranslate nohighlight">\(v^{k}_{j}\)</span> is the <span class="math notranslate nohighlight">\(k\)</span>-th component of the <span class="math notranslate nohighlight">\(j\)</span>-th eigenvector <span class="math notranslate nohighlight">\(\mathbf{v}_{j}\)</span>.</p>
+<p>Since the transformation does not change the dissipator, either expression generates the same solution.  The diagonal form has a slight computational advantage[^].</p>
+<p>As an example, consider a pair of two-level emitters.  The dissipator is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D} \rho = \sum_{ij} \Gamma_{ij}  \left( \sigma^{+}_{j} \rho \sigma^{-}_{i} - \frac{1}{2} \left\{\sigma^{-}_{i}\sigma^{+}_{j}, \rho\right\} \right).
+\]</div>
+<p>The matrix of transition rates is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Gamma = \begin{pmatrix} \Gamma_{11} &amp; \Gamma_{12} \\ \Gamma_{21} &amp; \Gamma_{22} \end{pmatrix} =  \begin{pmatrix} a &amp; b \\ b &amp; a \end{pmatrix}
+\end{split}\]</div>
+<p>where we used the symmetric property (permutation symmetry) <span class="math notranslate nohighlight">\(a \equiv \Gamma_{11} = \Gamma{22}\)</span> and <span class="math notranslate nohighlight">\(b=\Gamma_{12}=\Gamma_{21}\)</span>.  The eigenvalues are <span class="math notranslate nohighlight">\(\lambda_{1} = a+b\)</span> and <span class="math notranslate nohighlight">\(\lambda_{2} = a-b\)</span> and the corresponding eigenvectors are <span class="math notranslate nohighlight">\(\mathbf{v}_{1} = \tfrac{1}{\sqrt{2}} \begin{pmatrix}1 \\ 1\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}_{2} = \tfrac{1}{\sqrt{2}} \begin{pmatrix}1 \\ -1\end{pmatrix}\)</span>.  USeing the eivenvectors, we  obtain new operators</p>
+<div class="math notranslate nohighlight" id="equation-eq-dissipator-sigma">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-dissipator-sigma" title="Link to this equation">#</a></span>\[
+\eta^{\pm}_{1} = (\sigma^{\pm}_{1} + \sigma^{\pm}_{2})/\sqrt{2}, \qquad \eta^{\pm}_{2} = (\sigma^{\pm}_{1} - \sigma^{\pm}_{2})/\sqrt{2}
+\]</div>
+<p>The original dissipator is transformed to</p>
+<div class="math notranslate nohighlight" id="equation-eq-dissipator-eta">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-dissipator-eta" title="Link to this equation">#</a></span>\[
+\mathcal{D} (\rho) = (\Gamma_{11}+\Gamma_{12}) \left( \eta^{+}_{1} \rho \eta^{-}_{1} - \frac{1}{2} \left\{\eta^{-}_{1}\eta^{+}_{1}, \rho\right\} \right) + (\Gamma_{11}-\Gamma_{12}) \left( \eta^{+}_{2} \rho \eta^{-}_{2} - \frac{1}{2} \left\{\eta^{-}_{2}\eta^{+}_{2}, \rho\right\} \right).
+\]</div>
+<p>Notice that there is no cross terms between <span class="math notranslate nohighlight">\(\eta^{\pm}_{1}\)</span> and <span class="math notranslate nohighlight">\(\eta^{\mp}_{2}\)</span>.</p>
+<p>This transformation does not change the Hamiltonian and we have not changed the basis set for the Hilbert space.  However, since we took into account the permutation symmetry to get the diagonal form of the dissipator, it is nicer to use a symmetry adopted basis set.  In the current example, the Hamiltonian is given by</p>
+<div class="math notranslate nohighlight">
+\[
+H = \frac{\omega_{0}}{2} \left(\sigma^{z}_{1} + \sigma^{z}_{2} \right) + \Omega \left(\sigma^{+}_{1}\sigma^{-}_{2} + \sigma^{+}_{2}\sigma^{-}_{1}\right)
+\]</div>
+<p>which is invariant under permutation symmetry <span class="math notranslate nohighlight">\(S_{2}\)</span>.  Hence, the symmetry adopted basis set <span class="math notranslate nohighlight">\(|e\rangle = |ee\rangle\)</span>, <span class="math notranslate nohighlight">\(|s\rangle = \frac{1}{\sqrt{2}}\left(|eg\rangle+|ge\rangle\right)\)</span>, <span class="math notranslate nohighlight">\(|a\rangle = \frac{1}{\sqrt{2}}\left(|eg\rangle-|ge\rangle\right)\)</span>, and <span class="math notranslate nohighlight">\(|g\rangle = |gg\rangle\)</span> are the energy eigenvectors of the system.</p>
+<p>While  <span class="math notranslate nohighlight">\(\Gamma\)</span> is <span class="math notranslate nohighlight">\(2\times2\)</span>, the Hamiltonian is <span class="math notranslate nohighlight">\(4 \times 4\)</span>. The number of eigenvectors are different. However, since both the Hamiltonian and the dissipator belong to the same symmetry group, we can diagonalize both using the group theory.  We will discuss the details in a later section.</p>
+</section>
+<section id="optical-master-equation">
+<h2><span class="section-number">7.1.5. </span>Optical master equation<a class="headerlink" href="#optical-master-equation" title="Link to this heading">#</a></h2>
+<p>As introduced in <a class="reference internal" href="../model/emitter.html#sec-emitter"><span class="std std-numref">Chapter 5.1</span></a>, <a class="reference internal" href="../model/radiation-field.html#sec-radiation-field"><span class="std std-numref">Chapter 5.2</span></a>, and <a class="reference internal" href="../model/coupling.html#sec-e1-coupling"><span class="std std-numref">Chapter 5.3</span></a>, the Hamiltonian of the whole system is given by <span class="math notranslate nohighlight">\(H=H_{0}+H_{R}+H_{SR}\)</span>, we obtain the quantum master equation for the emitters coupled to the radiation field by tracing out the degrees of freedom of radiation fields.</p>
+<p>First, two terms are added to the free Hamiltonian <span class="math notranslate nohighlight">\(H_{0}\)</span>.  The net Hamiltonian is</p>
+<div class="math notranslate nohighlight">
+\[
+H_{S} = H_{0} + H_\text{LS} + V_{dd}
+\]</div>
+<p>with the Lamb shift <span class="math notranslate nohighlight">\(H_\text{LS}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-h-ls">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-eq-h-ls" title="Link to this equation">#</a></span>\[
+H_\text{LS} = \sum_{j} \Omega_{jj} \sigma^{+}_{j}\sigma^{-}_{j}
+\]</div>
+<p>and the dipole-dipole interaction</p>
+<div class="math notranslate nohighlight" id="equation-eq-h-dd">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-eq-h-dd" title="Link to this equation">#</a></span>\[
+V_\text{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i}\sigma^{-}_{j}.
+\]</div>
+<p>The matrix <span class="math notranslate nohighlight">\(\Omega_{ij}\)</span> is defined in the next subsections.  The Lamb shift (<span class="math notranslate nohighlight">\(\Omega_{jj}\)</span>) diverges in the non-relativistic quantum mechanics. The renormalization of electron mass and charge in QFT resolves this issue. It turns out that the shift is very small and thus we shall ignore it.</p>
+<p>Secondly, we obtain a dissipator:</p>
+<div class="math notranslate nohighlight" id="equation-eq-optical-dissipator">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-eq-optical-dissipator" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+\mathcal{D}(\rho) &amp;= \sum_{i,j} \Gamma_{ij} \left[N(\omega_{0})+1\right] \left[\sigma^{-}_{j} \rho \sigma^{+}_{i} - \frac{1}{2}\left\{\sigma^{+}_{i}\sigma^{-}_{j}, \rho\right\} \right] \\
+&amp;+ \sum_{i,j}\Gamma_{ij} N(\omega_{0}) \left[\sigma^{+}_{j} \rho \sigma^{-}_{i} - \frac{1}{2}\left\{\sigma^{-}_{i}\sigma^{+}_{j}, \rho\right\} \right]
+\end{aligned}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N(\omega) = \frac{1}{e^{\omega/T}-1}\)</span> is the mean thermal photon number at temperature <span class="math notranslate nohighlight">\(T\)</span>.<br />
+The first term in the right hand side corresponds to the emission and the second term to the absorption.  The explicit definition of <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span> is given later in this page.</p>
+<p>Combining all new terms, we find an optical master equation</p>
+<div class="math notranslate nohighlight" id="equation-eq-optical-qme">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-eq-optical-qme" title="Link to this equation">#</a></span>\[
+\frac{d}{dt} \rho = -i [H_{S} + H_\text{LS} + V_{dd},\rho] + \mathcal{D} (\rho)
+\]</div>
+<p>We will be using this master equation through out this lecture.</p>
 </section>
 <section id="dipole-diploe-coupling">
-<h2><span class="section-number">7.1.4. </span>Dipole-diploe coupling<a class="headerlink" href="#dipole-diploe-coupling" title="Link to this heading">#</a></h2>
-<p>The coefficient of the H<span class="math notranslate nohighlight">\(_{dd}\)</span> <a class="reference internal" href="#equation-eq-h-dd">(7.4)</a> is given by</p>
+<h2><span class="section-number">7.1.6. </span>Dipole-diploe coupling<a class="headerlink" href="#dipole-diploe-coupling" title="Link to this heading">#</a></h2>
+<p>The coefficient of the H<span class="math notranslate nohighlight">\(_{dd}\)</span> <a class="reference internal" href="#equation-eq-h-dd">(7.7)</a> is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-omega-ij">
-<span class="eqno">(7.6)<a class="headerlink" href="#equation-eq-omega-ij" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-eq-omega-ij" title="Link to this equation">#</a></span>\[
 \Omega_{i\ne j} = - \frac{3\gamma_0}{4} \left[ \left(1 - \cos^2 \theta_{ij}\right) \frac{\cos(k_0 r_{ij})}{k_0 r_{ij}}
 + \left(1-3 \cos^2 \theta_{ij} \right) \left (\frac{\sin(k_0 r_{ij})}{(k_0 r_{ij})^2} -  \frac{\cos(k_0 r_{ij})}{(k_0 r_{ij})^3} \right) \right]
 \]</div>
@@ -576,12 +647,10 @@ H_\text{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i}\sigma^{-}_{j}.
 \[
 \gamma^{0} = \frac{4 \omega_{0}^{3} |\vec{d}|^2}{3\hbar c^3}.
 \]</div>
-<p><span class="math notranslate nohighlight">\(\Omega_{ij}\)</span> diverges as <span class="math notranslate nohighlight">\(r_{ij} \rightarrow 0\)</span> by the same as the dirvergence of the Lamb shift.   We cannot the dipole-dipole interaction when the two emitters are too close.</p>
-<p>The main role of this coupling is to shift the energy eigenvalue of the emitters.  Without the <span class="math notranslate nohighlight">\(H_{dd}\)</span>, the spectra of <span class="math notranslate nohighlight">\(H_{S}\)</span> is
-<span class="math notranslate nohighlight">\(E_{ee}=\omega_0\)</span>, <span class="math notranslate nohighlight">\(E_{eg}=E_{ge}=0\)</span>, and <span class="math notranslate nohighlight">\(E_{gg}=-\omega_0\)</span>, and the corresponding eigenvectors are just the product basis kets.  When <span class="math notranslate nohighlight">\(H_{dd}\)</span> is added, the degeneracy is lifted and the new energy eigenvalues are <span class="math notranslate nohighlight">\(E_{e} = \omega_{0}\)</span>, <span class="math notranslate nohighlight">\(E_{s} = \Omega_{12}\)</span>, <span class="math notranslate nohighlight">\(E_{a} = - \Omega_{12}\)</span> and <span class="math notranslate nohighlight">\(E_{g} = -\Omega_{0}\)</span>.  The corresponding eigenstates are <span class="math notranslate nohighlight">\(|e\rangle = |ee\rangle\)</span>, <span class="math notranslate nohighlight">\(|s\rangle = (|eg\rangle + |ge\rangle)/\sqrt{2}\)</span>, <span class="math notranslate nohighlight">\(|a\rangle = (|eg\rangle - |ge\rangle)/\sqrt{2}\)</span> and <span class="math notranslate nohighlight">\(|g\rangle = |ee\rangle\)</span>.  Hence, the optical transitions take place between these states and the collapse operators in the dissipator must be consistent with them.  Or otherwise we will get wrong physics.</p>
-<hr class="docutils" />
-<p><strong>Figure</strong>:  Strength of the dipole-dipole coupling.</p>
-<p>The following code plots the strength of the dipole-dipole coupling.  It is smaller than <span class="math notranslate nohighlight">\(\gamma_0\)</span> except for <span class="math notranslate nohighlight">\(r_{12} \ll \lambda_{0}\)</span>. Hence, it does not play a significant role in realistic applications.</p>
+<p><span class="math notranslate nohighlight">\(\Omega_{ij}\)</span> diverges as <span class="math notranslate nohighlight">\(r_{ij} \rightarrow 0\)</span> by the same as the divergence of the Lamb shift.   We cannot the dipole-dipole interaction when the two emitters are too close.</p>
+<p>The main role of this coupling is to shift the energy eigenvalue of the emitters.  For a pair of emitters, the spectra of <span class="math notranslate nohighlight">\(H_{S}\)</span> is
+<span class="math notranslate nohighlight">\(E_{ee}=\omega_0\)</span>, <span class="math notranslate nohighlight">\(E_{eg}=E_{ge}=0\)</span>, and  <span class="math notranslate nohighlight">\(E_{gg}=-\omega_0\)</span> in absence of <span class="math notranslate nohighlight">\(H_{dd}\)</span>. The corresponding energy eigenvectors are just the product basis vectors.  When <span class="math notranslate nohighlight">\(H_{dd}\)</span> is added, the degeneracy is lifted and the new energy eigenvalues are <span class="math notranslate nohighlight">\(E_{e} = \omega_{0}\)</span>, <span class="math notranslate nohighlight">\(E_{s} = \Omega_{12}\)</span>, <span class="math notranslate nohighlight">\(E_{a} = - \Omega_{12}\)</span> and <span class="math notranslate nohighlight">\(E_{g} = -\omega_{0}\)</span>.  The corresponding eigenstates are <span class="math notranslate nohighlight">\(|e\rangle = |ee\rangle\)</span>, <span class="math notranslate nohighlight">\(|s\rangle = (|eg\rangle + |ge\rangle)/\sqrt{2}\)</span>, <span class="math notranslate nohighlight">\(|a\rangle = (|eg\rangle - |ge\rangle)/\sqrt{2}\)</span> and <span class="math notranslate nohighlight">\(|g\rangle = |ee\rangle\)</span>.  Hence, the optical transitions take place between these energy eigenstates.  The energy shift also creates coherence between <span class="math notranslate nohighlight">\(|eg\rangle\)</span> and |ge\rangle$, which plays important roles.</p>
+<p>The following code plots the strength of the dipole-dipole coupling with respect to the transition energy <span class="math notranslate nohighlight">\(\omega_0\)</span>.  The method is valid only when <span class="math notranslate nohighlight">\(\Omega \ll \omega_0\)</span>. Hence,  <span class="math notranslate nohighlight">\(r_{12}/\lambda_{0} &lt; 0.1\)</span> must be avoided.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -590,9 +659,9 @@ H_\text{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i}\sigma^{-}_{j}.
 <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">theta</span><span class="p">):</span>
     <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span>
-
-<span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">x1</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x0</span>
+   
+<span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># distance as r/lambda_0</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>   <span class="c1"># distance as k_0*r</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">y2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">y3</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
@@ -601,35 +670,31 @@ H_\text{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i}\sigma^{-}_{j}.
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\theta=0$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\theta=\pi/4$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\theta=\pi/2$&quot;</span><span class="p">)</span>
+<span class="c1">#plt.ylim([-30,30])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$r_</span><span class="si">{12}</span><span class="s2">/\lambda_</span><span class="si">{0}</span><span class="s2">$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\Omega_</span><span class="si">{12}</span><span class="s2">/\gamma_</span><span class="si">{0}</span><span class="s2">$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="c1">#plt.axvline(x=0.1, color=&#39;grey&#39;, linestyle=&#39;-.&#39;)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/171ea33c6e30c224d77aeb9ff37790acfa405d72b8b180b09c038f68bf91ffe4.png" src="../_images/171ea33c6e30c224d77aeb9ff37790acfa405d72b8b180b09c038f68bf91ffe4.png" />
+<img alt="../_images/0b1a1f5f6f0c711fc7667cdb698471f5273921d529c7fa625f1d14cd9eb1143a.png" src="../_images/0b1a1f5f6f0c711fc7667cdb698471f5273921d529c7fa625f1d14cd9eb1143a.png" />
 </div>
 </div>
-<p>There is a big problem with the above formula. As the separation of two emitters vanishes, <span class="math notranslate nohighlight">\(\Omega_{12}\)</span> diverges.  Equation <a class="reference internal" href="#equation-eq-omega-ij">(7.6)</a> is derived under the assumption that the emitter is a point particle, which causes the divergence.  Using a finite size of radius <span class="math notranslate nohighlight">\(a\)</span>, the following formula avoid the divergence near <span class="math notranslate nohighlight">\(r_{12} \sim 0\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-\Omega_{i\ne j}(\vec{r}) = \frac{3\gamma_{0}}{4} \left(1-3 \cos^2 \theta_{ij}  \right) \left(\frac{1}{r_{ij}k_{0}} \right)^3 \left[\text{erf}\left(\frac{r_{ij}}{\sqrt{2} a }\right) - \sqrt{\frac{2}{\pi}} \frac{ r_{ij}}{a} e^{-\frac{r_{ij}^2}{2a^2}} \right]
-\]</div>
+<p>There is a big problem with the above formula. As the separation of two emitters vanishes, <span class="math notranslate nohighlight">\(\Omega_{12}\)</span> diverges.   For <span class="math notranslate nohighlight">\(r_{12} &gt; 0.01 \lambda_0\)</span>, the error is known to be less than 10%.  When the distance is so small, two emitters nearly in contact and thus we cannot identify each emitter any longer.  Therefore, we don’t worry about such short distance in realistic application.  For some theoretical interest, we may take so-called the Decke limit <span class="math notranslate nohighlight">\(r_{ij} \rightarrow 0\)</span>.  In that case, we just use a finite value.</p>
 </section>
 <section id="decay-rates">
-<h2><span class="section-number">7.1.5. </span>Decay rates<a class="headerlink" href="#decay-rates" title="Link to this heading">#</a></h2>
-<p>The diagonal coefficients in the dissipator <a class="reference internal" href="#equation-eq-optical-dissipator">(7.5)</a> are simply <span class="math notranslate nohighlight">\(\Gamma_{ii} = \gamma_{0}\)</span> and the off-diagonal coefficients are defined by</p>
+<h2><span class="section-number">7.1.7. </span>Decay rates<a class="headerlink" href="#decay-rates" title="Link to this heading">#</a></h2>
+<p>The diagonal coefficients in the dissipator <a class="reference internal" href="#equation-eq-optical-dissipator">(7.8)</a> are simply <span class="math notranslate nohighlight">\(\Gamma_{ii} = \gamma_{0}\)</span> and the off-diagonal coefficients are defined by</p>
 <div class="math notranslate nohighlight" id="equation-eq-gamma-ij">
-<span class="eqno">(7.7)<a class="headerlink" href="#equation-eq-gamma-ij" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.11)<a class="headerlink" href="#equation-eq-gamma-ij" title="Link to this equation">#</a></span>\[
 \Gamma_{i\ne j} &amp; =  \frac{3\gamma_0}{2} \left[ \left(1 - \cos^2 \theta_{ij}\right) \frac{\cos(k_0 r_{ij})}{k_0 r_{ij}}
 + \left(1-3 \cos^2 \theta_{ij} \right) \left (\frac{\sin(k_0 r_{ij})}{(k_0 r_{ij})^2} -  \frac{\cos(k_0 r_{ij})}{(k_0 r_{ij})^2} \right) \right]
 \]</div>
-<p>As the following plot indicates, <span class="math notranslate nohighlight">\(Gamma_{12}\)</span> vanishes when <span class="math notranslate nohighlight">\(r_{ij}/\lambda_{0} \gg 1\)</span> and approaches <span class="math notranslate nohighlight">\(\gaam_0\)</span> when <span class="math notranslate nohighlight">\(r_{ij}/\lambda_{0} \ll 1\)</span>,  where <span class="math notranslate nohighlight">\(\lambda_{0} = 2\pi/k_{0} = 2 \pi c/\omega_0\)</span>.</p>
-<hr class="docutils" />
-<p><strong>Figure</strong>:  <span class="math notranslate nohighlight">\(\Gamma_{12}\)</span> as a function of distance.</p>
+<p>As the following plot indicates, <span class="math notranslate nohighlight">\(\Gamma_{12}\)</span> vanishes when <span class="math notranslate nohighlight">\(r_{ij}/\lambda_{0} \gg 1\)</span> and approaches <span class="math notranslate nohighlight">\(\gamma_0\)</span> when <span class="math notranslate nohighlight">\(r_{ij}/\lambda_{0} \ll 1\)</span>,  where <span class="math notranslate nohighlight">\(\lambda_{0} = 2\pi/k_{0} = 2 \pi c/\omega_0\)</span>.</p>
 <p>The following code plots <span class="math notranslate nohighlight">\(\Gamma_{i\ne j}\)</span> as the function of <span class="math notranslate nohighlight">\(r_{ij}/\lambda_{0}\)</span>.  The plot clearly shows that as <span class="math notranslate nohighlight">\(r_{ij} \rightarrow 0\)</span>, <span class="math notranslate nohighlight">\(\Gamma_{i\ne j} \rightarrow \gamma_0\)</span>, which indicates that when the radiation field cannot distinguish the emitters, all the coefficients are just <span class="math notranslate nohighlight">\(\gamma_0\)</span>.  On the other hand, if <span class="math notranslate nohighlight">\(r_{ij} \gg \lambda_0\)</span>, <span class="math notranslate nohighlight">\(\Gamma_{i\ne j} \approx 0\)</span>, which indicate that the cross correlation between the emitters <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> vanishes.  In conclusion, the indistinguishability of emitters by the radiation field is reflected in <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -640,12 +705,13 @@ H_\text{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i}\sigma^{-}_{j}.
     <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">y</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span>
 
-<span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">x1</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x0</span>
+<span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># distance as r/lambda_0</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>   <span class="c1"># distance as k_0*r</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">y2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">y3</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Off-diagonale element $\Gamma_</span><span class="si">{ij}</span><span class="s2">$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\theta=0$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\theta=\pi/4$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\theta=\pi/2$&quot;</span><span class="p">)</span>
@@ -658,12 +724,12 @@ H_\text{dd} = \sum_{i \ne j} \Omega_{ij} \sigma^{+}_{i}\sigma^{-}_{j}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3ebf5b7ea7b1ff27c39d519a0e8f9ae4612da30bbcd240338c9e80d6b9d70256.png" src="../_images/3ebf5b7ea7b1ff27c39d519a0e8f9ae4612da30bbcd240338c9e80d6b9d70256.png" />
+<img alt="../_images/d45b625eb08a3da290419f9057b395516ea7c1c538ce215c0ee9f9f0405af924.png" src="../_images/d45b625eb08a3da290419f9057b395516ea7c1c538ce215c0ee9f9f0405af924.png" />
 </div>
 </div>
 </section>
 <section id="phonon-scattering">
-<h2><span class="section-number">7.1.6. </span>Phonon scattering<a class="headerlink" href="#phonon-scattering" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1.8. </span>Phonon scattering<a class="headerlink" href="#phonon-scattering" title="Link to this heading">#</a></h2>
 <p>Interaction with phonon may cause a significant impact on coherence for quantum dots. The quantum master equation acuires additional terms from the interaction Hamiltonian <a class="reference internal" href="../model/phonon-bath.html#equation-eq-h-phi">(5.17)</a>.  First, there is a new dissipator</p>
 <div class="math notranslate nohighlight">
 \[
@@ -683,44 +749,11 @@ H_{\phi-\phi} = \sum_{i\ne j} \Gamma(\mathbf{x}_{i} - \mathbf{x}_{j}) \sigma^{z}
 <p>where <span class="math notranslate nohighlight">\(\omega_\mathbf{q}\)</span> is the energy of phonon with momentum <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>.</p>
 <p>Since this term commutes with <span class="math notranslate nohighlight">\(H_{0}\)</span>, no energy exchange is involved.  They expected to induce pure dephasing.
 However, it seems that the effect of dephasing is not significant in many applications since competing couplings such as quantum tunneling is stronger.</p>
-</section>
-<section id="ambiguity">
-<span id="ssub-dissipator-ambiguity"></span><h2><span class="section-number">7.1.7. </span>Ambiguity<a class="headerlink" href="#ambiguity" title="Link to this heading">#</a></h2>
-<p>The expression of a quantum master equation is not unique.  It is invariant under many transformation.  Suppose that the dissipator is given by</p>
-<div class="math notranslate nohighlight">
-\[
-\mathcal{D}\rho = \sum_{j} \left(A_{j} \rho A^{\dagger}_{j} - \frac{1}{2} \left \{A^{\dagger}_{j}A_{j},\rho\right\}\right)
-\]</div>
-<p>Introducing a set of new operators using a unitary transformation <span class="math notranslate nohighlight">\(U\)</span> such that <span class="math notranslate nohighlight">\(B_{j} = \sum_{k} U_{jk} A_{k}\)</span>, the dispator is transformed to</p>
-<div class="math notranslate nohighlight">
-\[
-\mathcal{D}\rho = \sum_{j} \left(B_{j} \rho B^{\dagger}_{j}- \frac{1}{2} \left \{B^{\dagger}_{j}B_{j},\rho\right\}\right)
-\]</div>
-<p>Even under a simple shift <span class="math notranslate nohighlight">\(B_{j} = A_{j} + \alpha_{j}\)</span> where <span class="math notranslate nohighlight">\(\alpha_{j}\)</span> is a constant, the dissipator is invariant.  Hence, there are infinitely many expression of the same quantum master equation.</p>
-<p><strong>Example</strong></p>
-<p>Consider the following dissipator:</p>
-<div class="math notranslate nohighlight">
-\[
-\mathcal{D} \rho = \sum_{ij} \Gamma_{ij}  \left( \sigma^{+}_{j} \rho \sigma^{-}_{i} - \frac{1}{2} \left\{\sigma^{-}_{i}\sigma^{+}_{j}, \rho\right\} \right).
-\]</div>
-<p>We introduce introducing new operators:</p>
-<div class="math notranslate nohighlight" id="equation-eq-dissipator-sigma">
-<span class="eqno">(7.8)<a class="headerlink" href="#equation-eq-dissipator-sigma" title="Link to this equation">#</a></span>\[
-\eta^{\pm}_{1} = (\sigma^{\pm}_{1} + \sigma^{\pm}_{2})/\sqrt{2}, \qquad \eta^{\pm}_{2} = (\sigma^{\pm}_{1} - \sigma^{\pm}_{2})/\sqrt{2}
-\]</div>
-<p>This transformation does not change <span class="math notranslate nohighlight">\(H_{S}\)</span>.  The original dissipator is transformed to</p>
-<div class="math notranslate nohighlight" id="equation-eq-dissipator-eta">
-<span class="eqno">(7.9)<a class="headerlink" href="#equation-eq-dissipator-eta" title="Link to this equation">#</a></span>\[
-\mathcal{D} (\rho) = (\Gamma_{11}+\Gamma_{12}) \left( \eta^{+}_{1} \rho \eta^{-}_{1} - \frac{1}{2} \left\{\eta^{-}_{1}\eta^{+}_{1}, \rho\right\} \right) + (\Gamma_{11}-\Gamma_{12}) \left( \eta^{+}_{2} \rho \eta^{-}_{2} - \frac{1}{2} \left\{\eta^{-}_{2}\eta^{+}_{2}, \rho\right\} \right).
-\]</div>
-<p>Notice that there is no cross terms between <span class="math notranslate nohighlight">\(\eta^{\pm}_{1}\)</span> and <span class="math notranslate nohighlight">\(\eta^{\mp}_{2}\)</span>.  We just diagonalized <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span> and <span class="math notranslate nohighlight">\(\Gamma_{11}\pm \Gamma_{12}\)</span> are the eigenvalues of the matrix.   An interesting situation arises when the distance between the two emitters is small. As <span class="math notranslate nohighlight">\(r_{12}\)</span> vanishes, <span class="math notranslate nohighlight">\(\Gamma_{12} \rightarrow \Gamma_{11}\)</span> and thus the second term in <a class="reference internal" href="#equation-eq-dissipator-eta">(7.9)</a> vanishes.  At the same time the decay rate of the first term is doubled.  This is the mechanism of superradiant which we discuss later.</p>
-<p>The dissipator <a class="reference internal" href="#equation-eq-dissipator-eta">(7.9)</a> has a slight computational advantage.</p>
-<p>Although the expression changed, the density operator is invariant under the transformation. So, if we are interested in only the state of the emitter, there seems no problem.  The expectation value of any observabale in the emitter’s Hilbert space is indeed invariant. While mathematically the two dissipators <a class="reference internal" href="#equation-eq-dissipator-sigma">(7.8)</a> and <a class="reference internal" href="#equation-eq-dissipator-eta">(7.9)</a> are equivalent, they use different collapse operators, which has different physical interpretation.<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> The collapse operator <span class="math notranslate nohighlight">\(\sigma^{-}_{j}\)</span> describes the transition from <span class="math notranslate nohighlight">\(|e\rangle\)</span> to <span class="math notranslate nohighlight">\(|g\rangle\)</span> in the <span class="math notranslate nohighlight">\(j\)</span>-th emitter. On the other hand, <span class="math notranslate nohighlight">\(\eta^{-}_{j}\)</span> represents collective deexcitation involving both emitters. Which one is better?  From the perspective of the emitters it does not matter.  However, the radiation field sees them differently.  When we trace out the radiation field to obtain the quantum master equation, the communication between the emitters and the radiation field is lost, which seems the origin of the ambiguity in the quantum master equation. We will find out more details when we discuss the perspective of the radiation field.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>The dissipator <a class="reference internal" href="#equation-eq-dissipator-eta">(7.9)</a> has a slight computational advantage, especially when <code class="docutils literal notranslate"><span class="pre">mesolve</span></code> in <code class="docutils literal notranslate"><span class="pre">QuTiP</span></code> is used.</p>
+<p>In some literature, it is also called <em>collapse operator</em>.  However, we reserve this name for <span class="math notranslate nohighlight">\(C_j = \sqrt{\Gamma_{j}} L_{j}\)</span>.</p>
 </aside>
 </aside>
 </section>
@@ -794,11 +827,12 @@ However, it seems that the effect of dephasing is not significant in many applic
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-hamiltonian">7.1.1. Full Hamiltonian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation-a-general-form">7.1.2. Quantum master equation: A general form</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-master-equation">7.1.3. Optical master equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-diploe-coupling">7.1.4. Dipole-diploe coupling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-rates">7.1.5. Decay rates</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phonon-scattering">7.1.6. Phonon scattering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguity">7.1.7. Ambiguity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguity">7.1.3. Ambiguity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalization">7.1.4. Diagonalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-master-equation">7.1.5. Optical master equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dipole-diploe-coupling">7.1.6. Dipole-diploe coupling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-rates">7.1.7. Decay rates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phonon-scattering">7.1.8. Phonon scattering</a></li>
 </ul>
   </nav></div>
 

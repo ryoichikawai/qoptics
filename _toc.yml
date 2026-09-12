@@ -41,7 +41,9 @@ parts:
       sections:
       -  file: methods/openqm-qme-def
       -  file: methods/openqm-qme-radiation
-#      -  file: methods/openqm-qme-regression
+      -  file: methods/openqm-qme-scaling
+      -  file: methods/openqm-qme-rotating-frame
+      -  file: methods/openqm-qme-GKSL
       -  file: methods/openqm-qme-example
    -  file: methods/openqm-jump-intro
       sections:

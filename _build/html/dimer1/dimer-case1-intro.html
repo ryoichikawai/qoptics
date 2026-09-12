@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11. Dimer I: Incoherent emitters &#8212; Optical coherence from small atomic clusters.</title>
+    <title>11. Dimer I: Thermal fluorescence &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'dimer1/dimer-case1-intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11.1. Dimer I: Model" href="dimer-case1-model.html" />
-    <link rel="prev" title="10.3. Dimer QME: Diagonalization" href="../dimer-model/dimer-qme-diagonalization.html" />
+    <link rel="next" title="11.3. Dimer I: Model" href="dimer-case1-model.html" />
+    <link rel="prev" title="10.7. Dimer QME: Diagonalization" href="../dimer-model/dimer-qme-diagonalization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -188,8 +188,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states and measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">2. Photons and quantum radiation fields</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.9. First-order coherence function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.10. The second-order coeherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.11. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.12. The second-order coeherence function</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">4. Bunching and full counting statistics</a></li>
@@ -209,7 +209,10 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">7. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">7.1. Optical quantum master equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">7.3. An example: Optical master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-scaling.html">7.3. Parameter values and normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-rotating-frame.html">7.4. Rotating frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-GKSL.html">7.5. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">7.6. An example: Single emitter</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">8. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -229,15 +232,15 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer-model/dimer-intro.html">10. Dimer: The model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-unitary.html">10.1. Dimer QME:  The unitary part</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-dissipator.html">10.2. Dimer QME: Dissipator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.3. Dimer QME: Diagonalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-unitary.html">10.5. Dimer QME:  The unitary part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-dissipator.html">10.6. Dimer QME: Dissipator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.7. Dimer QME: Diagonalization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">11. Dimer I: Incoherent emitters</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-model.html">11.1. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-qme.html">11.2. QME: Numerical analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case1-jump.html">11.3. Quantum trajectory</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">11. Dimer I: Thermal fluorescence</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-model.html">11.3. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-qme.html">11.4. Diner Case I: QME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case1-jump.html">11.5. Quantum trajectory</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -469,7 +472,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -480,11 +485,20 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Dimer I: Incoherent emitters</h1>
+    <h1>Dimer I: Thermal fluorescence</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-values">11.1. Parameter values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection">11.2. Detection</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -494,11 +508,22 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dimer-i-incoherent-emitters">
-<span id="ch-dimer-case1"></span><h1><span class="section-number">11. </span>Dimer I: Incoherent emitters<a class="headerlink" href="#dimer-i-incoherent-emitters" title="Link to this heading">#</a></h1>
-<p>In <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 3</span></a>, we discussed the origin of decoherence.  When the radiation field can’t distinguish the emitters (<span class="math notranslate nohighlight">\(\langle \phi_{1} | \phi_{1}^\prime\rangle \approx 1\)</span>), coherence is observed in the subsystem.  Otherwise (<span class="math notranslate nohighlight">\(\langle \phi_{1} |\phi_{1}^\prime\rangle \ll 1\)</span>), we don’t see coherence.   The field very close to the emitters (near field) can obviously see individual emitters.    However, the field far from the emitters (far field) may not be able to see them separately.  Recall that the far field is expressed by Eq.<a class="reference internal" href="../methods/openqm-qme-radiation.html#equation-eq-source-field-approx">(7.11)</a> in which the location of the emitters appears in the phase factor, <span class="math notranslate nohighlight">\(e^{- i k_{0} \hat{\mathbf{R}} \cdot \mathbf{r}_{12}}\)</span>.   Roughly speaking, if <span class="math notranslate nohighlight">\(r_{12} k_{0} \ll 1\)</span>, then the phase difference vanishes and the far field can’t distinguish the emitters.  Otherwise, the detector can distinguish the individual emitters.  From the standpoint of the emitters, the same information is included in <span class="math notranslate nohighlight">\(\Gamma_{i\ne j}\)</span>. (See <a class="reference internal" href="../methods/openqm-qme-def.html#equation-eq-gamma-ij">(7.7)</a>.)</p>
-<p>In this chapter, we investigate the coherence properties of thermal fluorescence emitted from a pair of emitters (we shall call them a dimer) separated by a large distance <span class="math notranslate nohighlight">\(r_{12} k_{0} \gg 1\)</span>.</p>
-<p>See Ref. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id14" title="Z. Ficek and R. Tanaś. Entangled states and collective nonclassical effects in two-atom systems. Physics Reports, 372(5):369-443, 2002. doi:https://doi.org/10.1016/S0370-1573(02)00368-X.">37</a>]</span> for a comprehensive review of two-atom systems.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="dimer-i-thermal-fluorescence">
+<span id="ch-dimer-case1"></span><h1><span class="section-number">11. </span>Dimer I: Thermal fluorescence<a class="headerlink" href="#dimer-i-thermal-fluorescence" title="Link to this heading">#</a></h1>
+<p>We consider Kirchhoff radiation, a hypothetical situation mainly for learning purpose.  Consider a pair of two-level emitters with a transition energy in infrared region <span class="math notranslate nohighlight">\(\sim 0.1 \)</span> eV. The pair is placed in a very hot photon gas at temperature about <span class="math notranslate nohighlight">\(1000 \)</span> K <span class="math notranslate nohighlight">\( \sim 0.086 \)</span> eV.   The temperature is high enough to excite the emitters which in turn spontaneously emits infrared radiation.   The pair is well separated such that a detector can distinguish the source of radiation.  We are interested in the coherence properties, which depends on the detection methods.  WE try two different models of detection operators, one distinguishes the source and the other not.  The latter exhibits the Hanbury Brown and Twiss (HBT) effect.</p>
+<section id="parameter-values">
+<h2><span class="section-number">11.1. </span>Parameter values<a class="headerlink" href="#parameter-values" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\omega_{0} = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T = 0.86\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{0} = 10^{-8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r_{12} = 2 \lambda_0\)</span></p></li>
+</ul>
+</section>
+<section id="detection">
+<h2><span class="section-number">11.2. </span>Detection<a class="headerlink" href="#detection" title="Link to this heading">#</a></h2>
+<p>The two emitters are well separated and the detector can distinguish them.  We consider two cases, in one measurement, the detector monitors photons from each emitter separately and combine the two photon counts after the measurements, meaning that there is no interference between the radiations from different source.  In the second case, the photons from two sources are navigated to a detector with a narrow aperture so that their phase relation remains constant within the detector.  There is no reason that the coherency is lost in this case.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -539,7 +564,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10.3. </span>Dimer QME: Diagonalization</p>
+        <p class="prev-next-title"><span class="section-number">10.7. </span>Dimer QME: Diagonalization</p>
       </div>
     </a>
     <a class="right-next"
@@ -547,7 +572,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11.1. </span>Dimer I: Model</p>
+        <p class="prev-next-title"><span class="section-number">11.3. </span>Dimer I: Model</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -557,6 +582,24 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-values">11.1. Parameter values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detection">11.2. Detection</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
