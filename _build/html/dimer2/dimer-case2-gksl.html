@@ -641,6 +641,7 @@ Off-diagonal elements
 <span class="n">g1</span> <span class="o">=</span> <span class="n">G1</span><span class="o">/</span><span class="n">I1</span>
 <span class="n">g1_th</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Detector Model I&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1_th</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;weak&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span><span class="n">g1_th</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;strong&quot;</span><span class="p">)</span>
@@ -653,7 +654,7 @@ Off-diagonal elements
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0be5c89c855ec5ccdfc901ca0cdbf257c825669e9f7b3cd1789c36eea94163a8.png" src="../_images/0be5c89c855ec5ccdfc901ca0cdbf257c825669e9f7b3cd1789c36eea94163a8.png" />
+<img alt="../_images/d3c1d2dcfff3152ba04978080fae645aa4c67b362c0b0d8ffe4562864c987851.png" src="../_images/d3c1d2dcfff3152ba04978080fae645aa4c67b362c0b0d8ffe4562864c987851.png" />
 </div>
 </div>
 </section>
@@ -675,6 +676,7 @@ Off-diagonal elements
 <span class="n">g1</span> <span class="o">=</span> <span class="n">G1</span><span class="o">/</span><span class="n">I2</span>
 <span class="n">g1_weak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Detector Model II&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1_weak</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;weak&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span><span class="n">g1_weak</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;strong&quot;</span><span class="p">)</span>
@@ -687,7 +689,7 @@ Off-diagonal elements
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/56ef4dfb4317eccd037dd6c1b12071f418835d230be1b476592310e7131e9f30.png" src="../_images/56ef4dfb4317eccd037dd6c1b12071f418835d230be1b476592310e7131e9f30.png" />
+<img alt="../_images/8a05a5d59472e6df7185c9c26634ff0696d11619c3ccbf334b6b20888f0102d9.png" src="../_images/8a05a5d59472e6df7185c9c26634ff0696d11619c3ccbf334b6b20888f0102d9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -704,7 +706,9 @@ Off-diagonal elements
 <span class="n">g2</span> <span class="o">=</span> <span class="n">G2</span><span class="o">/</span><span class="n">I1</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">nbar0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">omega0</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">g2_weak</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">nbar0</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">times</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Detector Model I&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2_weak</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;weak&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2_weak</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;strong&#39;</span><span class="p">)</span>
@@ -721,7 +725,7 @@ Off-diagonal elements
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8107340fc99a153cd7879faca4d5df8f51de16e2be56946b3cc8c64594b9ab97.png" src="../_images/8107340fc99a153cd7879faca4d5df8f51de16e2be56946b3cc8c64594b9ab97.png" />
+<img alt="../_images/1f1cccf8ce3cdf87ad94900c576eabbafac72f266ceeae6ee5c315557470681b.png" src="../_images/1f1cccf8ce3cdf87ad94900c576eabbafac72f266ceeae6ee5c315557470681b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -733,7 +737,9 @@ Off-diagonal elements
 
 <span class="n">g2</span> <span class="o">=</span> <span class="n">G2</span><span class="o">/</span><span class="n">I2</span><span class="o">**</span><span class="mi">2</span>
 <span class="n">g2_weak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Detector Model II&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2_weak</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;weak&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2_weak</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">g2</span><span class="p">),</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;strong&#39;</span><span class="p">)</span>
@@ -748,7 +754,7 @@ Off-diagonal elements
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b386c53055464decac1fac5e4e7b352a2fcf14b28b5bc618ad46a2816cfb0221.png" src="../_images/b386c53055464decac1fac5e4e7b352a2fcf14b28b5bc618ad46a2816cfb0221.png" />
+<img alt="../_images/2de9f24583b4f40d328879a88e8d2edc6f126050c8ae62b7b3841fe11bfc2c06.png" src="../_images/2de9f24583b4f40d328879a88e8d2edc6f126050c8ae62b7b3841fe11bfc2c06.png" />
 </div>
 </div>
 </section>
