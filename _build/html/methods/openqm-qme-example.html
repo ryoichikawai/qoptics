@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8. Jump method and Quantum Trajectory" href="openqm-jump-intro.html" />
-    <link rel="prev" title="7.5. Davies-GKSL master equation" href="openqm-qme-GKSL.html" />
+    <link rel="prev" title="7.5. Rotating frame" href="openqm-qme-rotating-frame.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -209,9 +209,9 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-qme-intro.html">7. Quantum master equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-def.html">7.1. Optical quantum master equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-scaling.html">7.3. Parameter values and normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-rotating-frame.html">7.4. Rotating frame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-GKSL.html">7.5. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-GKSL.html">7.3. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-scaling.html">7.4. Parameter values and normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-rotating-frame.html">7.5. Rotating frame</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">7.6. An example: Single emitter</a></li>
 </ul>
 </details></li>
@@ -237,17 +237,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.7. Dimer QME: Diagonalization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Thermal fluorescence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Weak coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.3. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.4. Diner Case I: QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-functions.html">11.4. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.5. Diner Case I: QME with rotating frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.6. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Strong coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-functions.html">12.2. Dimer Case2:  Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.3. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.4. Dimer II: Quantum trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.5. Dimer II: Quantum trajectories</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -529,28 +531,28 @@
 \]</div>
 <p>The final form of the quantum master equation  is</p>
 <div class="math notranslate nohighlight" id="equation-eq-qme-optical">
-<span class="eqno">(7.22)<a class="headerlink" href="#equation-eq-qme-optical" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.25)<a class="headerlink" href="#equation-eq-qme-optical" title="Link to this equation">#</a></span>\[
 \frac{d}{dt} \rho = -i \frac{\omega_{0}}{2} [\sigma^{z},\rho] + \mathcal{D}^{\uparrow} \rho  + \mathcal{D}^{\downarrow} \rho 
 \]</div>
 <p>which is simply an ordinary differential equation of <span class="math notranslate nohighlight">\(2\times2\)</span> matrix.  This is simple enough to solve analytically.</p>
 </section>
 <section id="bloch-equations">
 <h2><span class="section-number">7.6.2. </span>Bloch equations<a class="headerlink" href="#bloch-equations" title="Link to this heading">#</a></h2>
-<p>There are many ways to solve Eq. <a class="reference internal" href="#equation-eq-qme-optical">(7.22)</a>.  There is a special method that works only for the two-dimensional Hilbert space.  Recalling that the identity matrix <span class="math notranslate nohighlight">\(I\)</span> and the Pauli matrices <span class="math notranslate nohighlight">\(\sigma_{i}\)</span> form a basis set. Expanding the density operator in the basis set,</p>
+<p>There are many ways to solve Eq. <a class="reference internal" href="#equation-eq-qme-optical">(7.25)</a>.  There is a special method that works only for the two-dimensional Hilbert space.  Recalling that the identity matrix <span class="math notranslate nohighlight">\(I\)</span> and the Pauli matrices <span class="math notranslate nohighlight">\(\sigma_{i}\)</span> form a basis set. Expanding the density operator in the basis set,</p>
 <div class="math notranslate nohighlight">
 \[
 \rho(t) = \frac{1}{2}\left(I + \vec{r}(t) \cdot \vec{\sigma} \right)
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\vec{\sigma} = (\sigma^{x}, \sigma^{y}, \sigma^{z})\)</span> and <span class="math notranslate nohighlight">\(\vec{r}(t) = (r_{1}(t),r_{2}(t),r_{3}(t))\)</span> is the Bloch vector, which uniquely determine the density operator.<span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">3</a>, <a class="reference internal" href="../references/references.html#id38" title="Peter Lambropoulos. Fundamentals of Quantum Optics and Quantum Information. Springer, 2007. doi:10.1007/978-3-540-34572-5.">23</a>]</span>  Since the density operator is self-adjoint, <span class="math notranslate nohighlight">\(\vec{r}\)</span> is real.  In fact, it is easy to show that <span class="math notranslate nohighlight">\(\vec{r} = \langle \vec{\sigma}\rangle = \text{tr}\left[\vec{\sigma}\rho(t)\right]\)</span>.  Multiply <span class="math notranslate nohighlight">\(\vec{\sigma}\)</span> to Eq. <a class="reference internal" href="#equation-eq-qme-optical">(7.22)</a> and taking trace, we obtain the equation of motion for the Bloch vector is given by</p>
+<p>where <span class="math notranslate nohighlight">\(\vec{\sigma} = (\sigma^{x}, \sigma^{y}, \sigma^{z})\)</span> and <span class="math notranslate nohighlight">\(\vec{r}(t) = (r_{1}(t),r_{2}(t),r_{3}(t))\)</span> is the Bloch vector, which uniquely determine the density operator.<span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">3</a>, <a class="reference internal" href="../references/references.html#id38" title="Peter Lambropoulos. Fundamentals of Quantum Optics and Quantum Information. Springer, 2007. doi:10.1007/978-3-540-34572-5.">23</a>]</span>  Since the density operator is self-adjoint, <span class="math notranslate nohighlight">\(\vec{r}\)</span> is real.  In fact, it is easy to show that <span class="math notranslate nohighlight">\(\vec{r} = \langle \vec{\sigma}\rangle = \text{tr}\left[\vec{\sigma}\rho(t)\right]\)</span>.  Multiply <span class="math notranslate nohighlight">\(\vec{\sigma}\)</span> to Eq. <a class="reference internal" href="#equation-eq-qme-optical">(7.25)</a> and taking trace, we obtain the equation of motion for the Bloch vector is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-bloch-eq">
-<span class="eqno">(7.23)<a class="headerlink" href="#equation-eq-bloch-eq" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(7.26)<a class="headerlink" href="#equation-eq-bloch-eq" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \frac{d}{dt} \langle \sigma^{x}(t)\rangle &amp;= \omega_0 \langle \sigma^{y} (t)\rangle - \frac{\gamma}{2} \langle \sigma^{x}(t)\rangle \\
 \frac{d}{dt} \langle \sigma^{y}(t)\rangle &amp;= \omega_0 \langle \sigma^{x} (t)\rangle - \frac{\gamma}{2} \langle \sigma^{y}(t)\rangle \\
 \frac{d}{dt} \langle \sigma^{z}(t)\rangle &amp;= - \gamma \langle \sigma^{x} (t)\rangle  - \gamma_{0}
 \end{aligned}
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\gamma = \gamma_0 (2\bar{n}+1)\)</span>.  Equation <a class="reference internal" href="#equation-eq-bloch-eq">(7.23)</a> is called the Bloch equation.<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">3</a>, <a class="reference internal" href="../references/references.html#id37" title="Pierre Meystre. Elements of Quantum Optics. Springer, 4th ed. edition, 2007. doi:10.1007/978-3-540-74211-1.">24</a>]</span></p>
+<p>where <span class="math notranslate nohighlight">\(\gamma = \gamma_0 (2\bar{n}+1)\)</span>.  Equation <a class="reference internal" href="#equation-eq-bloch-eq">(7.26)</a> is called the Bloch equation.<span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">3</a>, <a class="reference internal" href="../references/references.html#id37" title="Pierre Meystre. Elements of Quantum Optics. Springer, 4th ed. edition, 2007. doi:10.1007/978-3-540-74211-1.">24</a>]</span></p>
 <p>By letting the left hand side 0, we can immediately find the steady state.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -558,7 +560,7 @@
 \]</div>
 <p>The probability to find the atom in the excited state is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-p-e-ss">
-<span class="eqno">(7.24)<a class="headerlink" href="#equation-eq-p-e-ss" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.27)<a class="headerlink" href="#equation-eq-p-e-ss" title="Link to this equation">#</a></span>\[
 p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac{\bar{n}}{2\bar{n}+1} = \frac{1}{Z_R}e^{-\beta \omega_0}
 \]</div>
 <p>which is just the thermal equilibrium state.  Hence, the system is relaxed to the thermal state.</p>
@@ -574,7 +576,7 @@ p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac
 \]</div>
 <p>The solution is</p>
 <div class="math notranslate nohighlight" id="equation-eq-qme-bloch-solution">
-<span class="eqno">(7.25)<a class="headerlink" href="#equation-eq-qme-bloch-solution" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(7.28)<a class="headerlink" href="#equation-eq-qme-bloch-solution" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{eqnarray}
 \langle \sigma^{x}(t) \rangle &amp;=&amp; e^{-\gamma t/2} \cos(\omega_{0} t) \sin(2\theta) \\
 \langle \sigma^{y}(t) \rangle &amp;=&amp; e^{-\gamma t/2} \sin(\omega_{0} t) \sin(2\theta) \\
@@ -582,11 +584,11 @@ p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac
 \end{eqnarray}
 \end{split}\]</div>
 <p>which indicates <span class="math notranslate nohighlight">\(\gamma\)</span> is the relaxation rate.</p>
-<p>Equation <a class="reference internal" href="#equation-eq-qme-bloch-solution">(7.25)</a> that this process involves the dissipative type of decoherence with <span class="math notranslate nohighlight">\(T_1 = 1/\gamma\)</span> and <span class="math notranslate nohighlight">\(T_2 = 2/\gamma\)</span>.  Thus <span class="math notranslate nohighlight">\(T_2= 2 T_1\)</span> as mentioned in <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 3</span></a>.</p>
+<p>Equation <a class="reference internal" href="#equation-eq-qme-bloch-solution">(7.28)</a> that this process involves the dissipative type of decoherence with <span class="math notranslate nohighlight">\(T_1 = 1/\gamma\)</span> and <span class="math notranslate nohighlight">\(T_2 = 2/\gamma\)</span>.  Thus <span class="math notranslate nohighlight">\(T_2= 2 T_1\)</span> as mentioned in <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 3</span></a>.</p>
 </section>
 <section id="solving-a-master-equation-numerically-using-qutip">
 <h2><span class="section-number">7.6.3. </span>Solving a master equation numerically using QuTiP<a class="headerlink" href="#solving-a-master-equation-numerically-using-qutip" title="Link to this heading">#</a></h2>
-<p>As introduced in <a class="reference internal" href="qutip.html#ch-qutip"><span class="std std-numref">Chapter 6</span></a>, <code class="docutils literal notranslate"><span class="pre">QuTiP</span></code> has a module <code class="docutils literal notranslate"><span class="pre">mesolve()</span></code> which solve quantum master equations.    FOr numerical method, we first need to set up parameters.  As discussed in <code class="xref std std-numref docutils literal notranslate"><span class="pre">sec:openqm-qme-scaling</span></code>, we use dimensionless units. First of all, we always set <span class="math notranslate nohighlight">\(\omega_{0}=1\)</span>.  Then, temperature is about <span class="math notranslate nohighlight">\(T=0.86\omega_{0}\)</span>.  We use a typical spontaneous emission rate <span class="math notranslate nohighlight">\(\gamma_{0} = 10^{-8} \omega_{0}\)</span>.    You can see from the analytical solution <a class="reference internal" href="#equation-eq-qme-bloch-solution">(7.25)</a>, the state oscillates rapidly and decays slowly. With this these parameter values, we cannot integrate the master equation  numerically. We need to use the rotating frame discussed in <a class="reference internal" href="openqm-qme-rotating-frame.html#sec-openqm-qme-rotating-frame"><span class="std std-numref">Chapter 7.4</span></a>.  In the interaction picture, the Hamiltonian is eliminated and the master equation is simply</p>
+<p>As introduced in <a class="reference internal" href="qutip.html#ch-qutip"><span class="std std-numref">Chapter 6</span></a>, <code class="docutils literal notranslate"><span class="pre">QuTiP</span></code> has a module <code class="docutils literal notranslate"><span class="pre">mesolve()</span></code> which solve quantum master equations.    FOr numerical method, we first need to set up parameters.  As discussed in <a class="reference internal" href="openqm-qme-scaling.html#sec-openqm-qme-scaling"><span class="std std-numref">Chapter 7.4</span></a>, we use dimensionless units. First of all, we always set <span class="math notranslate nohighlight">\(\omega_{0}=1\)</span>.  Then, temperature is about <span class="math notranslate nohighlight">\(T=0.86\omega_{0}\)</span>.  We use a typical spontaneous emission rate <span class="math notranslate nohighlight">\(\gamma_{0} = 10^{-8} \omega_{0}\)</span>.    You can see from the analytical solution <a class="reference internal" href="#equation-eq-qme-bloch-solution">(7.28)</a>, the state oscillates rapidly and decays slowly. With this these parameter values, we cannot integrate the master equation  numerically. We need to use the rotating frame discussed in <a class="reference internal" href="openqm-qme-rotating-frame.html#sec-openqm-qme-rotating-frame"><span class="std std-numref">Chapter 7.5</span></a>.  In the interaction picture, the Hamiltonian is eliminated and the master equation is simply</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{d}{dt} \tilde{\rho} = \mathcal{D}^{\uparrow}(\tilde{\rho}) +  \mathcal{D}^{\downarrow}(\tilde{\rho}).
@@ -661,7 +663,7 @@ p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f4eaa107921024dadf0f85d953fa8e304160cec4a1aa43c4a07e8ec7d40abfa3.png" src="../_images/f4eaa107921024dadf0f85d953fa8e304160cec4a1aa43c4a07e8ec7d40abfa3.png" />
+<img alt="../_images/19bfb5cddd173b6126095871f1e32e527724555d12ce493a5dca42c4c0310f84.png" src="../_images/19bfb5cddd173b6126095871f1e32e527724555d12ce493a5dca42c4c0310f84.png" />
 </div>
 </div>
 </section>
@@ -703,7 +705,7 @@ p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dd61a2a6f6adf2b9f881dd109a5ffc7d9fd8fd56e773fbf52594cfca99908e0c.png" src="../_images/dd61a2a6f6adf2b9f881dd109a5ffc7d9fd8fd56e773fbf52594cfca99908e0c.png" />
+<img alt="../_images/e498da1237c403a34894cdd274210b5ae7670cf6ed750753fc7fba628fe8ee42.png" src="../_images/e498da1237c403a34894cdd274210b5ae7670cf6ed750753fc7fba628fe8ee42.png" />
 </div>
 </div>
 </section>
@@ -711,22 +713,13 @@ p_{e}^{ss} = \frac{1}{2} \left(1 + \langle \sigma^{z}\rangle_{ss}\right) = \frac
 <h2><span class="section-number">7.6.5. </span>Coherence functions<a class="headerlink" href="#coherence-functions" title="Link to this heading">#</a></h2>
 <p>The coherence functions measures the spatio-temporal correlation of radiation fields. (See <a class="reference internal" href="../foundations/coherence-g1.html#sec-coherence-g1"><span class="std std-numref">Chapter 3.11</span></a> and <a class="reference internal" href="../foundations/coherence-g2.html#sec-coherence-g2"><span class="std std-numref">Chapter 3.12</span></a>.)  To compute them, we need the creation and annihilation operators.  The open quantum approach does not solve the evolution of the radiation field.   Then, how do we calculate them?  As introduced in <a class="reference internal" href="../model/radiation-field.html#sec-radiation-field"><span class="std std-numref">Chapter 5.2</span></a>, the radiation field generated by the emitters can be expressed with the operators of the emitters.  Using Eq. <a class="reference internal" href="openqm-qme-radiation.html#equation-eq-source-field-approx">(7.13)</a>, the coherence functions for a single emitter which is placed at the origin of coordinates are given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-g1-emission">
-<span class="eqno">(7.26)<a class="headerlink" href="#equation-eq-g1-emission" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.29)<a class="headerlink" href="#equation-eq-g1-emission" title="Link to this equation">#</a></span>\[
 g^{(1)}(\tau) = \frac{\langle \sigma^{+}(\tau) \sigma^{-}(0)\rangle_{ss}}{\langle  \sigma^{+}(0)\sigma^{-}(0) \rangle_{ss}} =  \frac{\text{tr}\left[\sigma^{-} e^{\mathcal{L} \tau} \left(\rho_{ss} \sigma^{+}\right)\right]}{\text{tr}\left[\sigma^{+}\sigma^{-} \rho_{ss}\right]} = \langle e|(e^{\mathcal{L} \tau} |e\rangle\langle e|) |e \rangle = p_{e}(\tau;e) = e^{-\gamma_{0}\tau}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathcal{L} = \mathcal{D}^{\uparrow} +  \mathcal{D}^{\downarrow}\)</span> and <span class="math notranslate nohighlight">\(p_{e}(\tau;e)\)</span> is a conditional probability that the system is in the excited state <span class="math notranslate nohighlight">\(|e\rangle\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span> and remains in the excited state after <span class="math notranslate nohighlight">\(\tau\)</span>.  For a single emitter, the excited state decays with decay rate <span class="math notranslate nohighlight">\(\gamma_{0}\)</span> and thus <span class="math notranslate nohighlight">\(g^{(1)}(\tau) = e^{-\gamma_{0} t}\)</span>.  The numerical result agree with it perfectly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Continued from the previous code block. </span>
-<span class="c1"># You need to execute it before running this code.</span>
-
-<span class="c1"># We already set up Hamiltonian H, collapse operators c_ops</span>
-<span class="c1"># in the first code block in this page.</span>
-<span class="c1"># We need to modify</span>
-<span class="c1"># 1) psi0 - initial state</span>
-<span class="c1"># 2) operator to be measured. that is sigmaz</span>
-
-<span class="n">rho_ss</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">c_ops</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_ss</span> <span class="o">=</span> <span class="n">steadystate</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">c_ops</span><span class="p">)</span>
 
 <span class="c1"># intensity</span>
 <span class="n">I</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">sigmap</span><span class="p">()</span><span class="o">*</span><span class="n">sigmam</span><span class="p">(),</span><span class="n">rho_ss</span><span class="p">)</span>
@@ -752,24 +745,24 @@ g^{(1)}(\tau) = \frac{\langle \sigma^{+}(\tau) \sigma^{-}(0)\rangle_{ss}}{\langl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fe5ac5e18e814ce3093e676ac90f43a1317328bb91297c80a7c32be9db490a48.png" src="../_images/fe5ac5e18e814ce3093e676ac90f43a1317328bb91297c80a7c32be9db490a48.png" />
+<img alt="../_images/6dde3ddae5fa4dfba0e2c0101eb5d6b060b8781cb8907b94cf2b5bb7dcc5eded.png" src="../_images/6dde3ddae5fa4dfba0e2c0101eb5d6b060b8781cb8907b94cf2b5bb7dcc5eded.png" />
 </div>
 </div>
 </section>
 <section id="second-order-coherence-function">
 <h2><span class="section-number">7.6.6. </span>Second-order coherence function<a class="headerlink" href="#second-order-coherence-function" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight" id="equation-eq-g2-emission">
-<span class="eqno">(7.27)<a class="headerlink" href="#equation-eq-g2-emission" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.30)<a class="headerlink" href="#equation-eq-g2-emission" title="Link to this equation">#</a></span>\[
 g^{(2)}(\tau) = \frac{\langle \sigma^{+}(0)\sigma^{+}(\tau)\sigma^{-}(\tau) \sigma^{-}(0) \rangle_{ss}}{(\langle  \sigma^{+}(0)\sigma^{+}(0) \rangle_{ss})^2}
 =\frac{\text{tr}\left[\sigma^{+}\sigma^{-} e^{\mathcal{L}\tau} \left(\sigma^{-}\rho_{ss}\sigma^{+}\right)\right]}{\left(\text{tr}\left[\sigma^{+}\sigma^{-}\rho_{ss}\right]\right)^2}
 \]</div>
 <p>Using Eqs. <a class="reference internal" href="../model/emitter.html#equation-eq-sigma-pm">(5.2)</a>, <span class="math notranslate nohighlight">\(e^{\mathcal{L}t} (\sigma^{-}\rho_{ss}\sigma^{+}) = \langle e|\rho| e\rangle e^{\mathcal{L}t}(|g\rangle\langle g|)\)</span> , we find an explicit expression of the correlation function</p>
 <div class="math notranslate nohighlight" id="equation-eq-g2-explicit">
-<span class="eqno">(7.28)<a class="headerlink" href="#equation-eq-g2-explicit" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.31)<a class="headerlink" href="#equation-eq-g2-explicit" title="Link to this equation">#</a></span>\[
 g^{(2)}(\tau)= \frac{\langle e | \left(e^{\mathcal{L}\tau} |g\rangle\langle g |\right) | e \rangle}{\langle e | \rho^{ss} | e \rangle}  = \frac{\langle e | \rho(\tau;g) | e \rangle}{\langle e | \rho^{ss} | e \rangle} = \frac{p_{e}(\tau;g)}{p_{e}^{ss}}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\rho(\tau;g)\)</span> is a state at <span class="math notranslate nohighlight">\(t=\tau\)</span> starting from the ground state at <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(p_{e}(\tau;g)\)</span> is a conditional probability that the system is in the ground state at <span class="math notranslate nohighlight">\(t=0\)</span> and in the excited state at <span class="math notranslate nohighlight">\(t=\tau\)</span>.  <span class="math notranslate nohighlight">\(p_{s}^{ss}\)</span> is the probability of the steady state being in <span class="math notranslate nohighlight">\(|e\rangle\)</span> which we already know from <a class="reference internal" href="#equation-eq-p-e-ss">(7.24)</a>.  Noting that <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow \infty} p_{e}(\tau;g) = p_{e}^{ss}\)</span>, we find <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow \infty} g^{(2)}(\tau) = 1\)</span>.  On the other hand, <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow 0} p_{e}(\tau;g) = 0\)</span> since <span class="math notranslate nohighlight">\(|e\rangle\)</span> and <span class="math notranslate nohighlight">\(|g\rangle\)</span> are orthogonal.  Thus we have <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0\)</span>.</p>
-<p>From the final expression of Eq. <a class="reference internal" href="#equation-eq-g2-explicit">(7.28)</a>, only we need is <span class="math notranslate nohighlight">\(p_{e}(\tau;g)\)</span> which can be obtained by solving the master equation. Using the general solution <a class="reference internal" href="#equation-eq-qme-bloch-solution">(7.25)</a> with initial condition <span class="math notranslate nohighlight">\(\theta=0\)</span>, we find <span class="math notranslate nohighlight">\(p_{e}(\tau;g) = \frac{1}{2}\left(1-e^{-\gamma \tau}\right)\left(1+\langle\sigma_z^{ss}\right)\)</span> and <span class="math notranslate nohighlight">\(p_{e}^{ss} = \frac{1}{2}\left(1+\langle\sigma_z^{ss}\right)\)</span>, from which we obtain an explicit expression of the second-order coherence:</p>
+<p>where <span class="math notranslate nohighlight">\(\rho(\tau;g)\)</span> is a state at <span class="math notranslate nohighlight">\(t=\tau\)</span> starting from the ground state at <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(p_{e}(\tau;g)\)</span> is a conditional probability that the system is in the ground state at <span class="math notranslate nohighlight">\(t=0\)</span> and in the excited state at <span class="math notranslate nohighlight">\(t=\tau\)</span>.  <span class="math notranslate nohighlight">\(p_{s}^{ss}\)</span> is the probability of the steady state being in <span class="math notranslate nohighlight">\(|e\rangle\)</span> which we already know from <a class="reference internal" href="#equation-eq-p-e-ss">(7.27)</a>.  Noting that <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow \infty} p_{e}(\tau;g) = p_{e}^{ss}\)</span>, we find <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow \infty} g^{(2)}(\tau) = 1\)</span>.  On the other hand, <span class="math notranslate nohighlight">\(\lim_{\tau \rightarrow 0} p_{e}(\tau;g) = 0\)</span> since <span class="math notranslate nohighlight">\(|e\rangle\)</span> and <span class="math notranslate nohighlight">\(|g\rangle\)</span> are orthogonal.  Thus we have <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0\)</span>.</p>
+<p>From the final expression of Eq. <a class="reference internal" href="#equation-eq-g2-explicit">(7.31)</a>, only we need is <span class="math notranslate nohighlight">\(p_{e}(\tau;g)\)</span> which can be obtained by solving the master equation. Using the general solution <a class="reference internal" href="#equation-eq-qme-bloch-solution">(7.28)</a> with initial condition <span class="math notranslate nohighlight">\(\theta=0\)</span>, we find <span class="math notranslate nohighlight">\(p_{e}(\tau;g) = \frac{1}{2}\left(1-e^{-\gamma \tau}\right)\left(1+\langle\sigma_z^{ss}\right)\)</span> and <span class="math notranslate nohighlight">\(p_{e}^{ss} = \frac{1}{2}\left(1+\langle\sigma_z^{ss}\right)\)</span>, from which we obtain an explicit expression of the second-order coherence:</p>
 <div class="math notranslate nohighlight">
 \[
 g^{(2)}(\tau) =  1-e^{-\gamma |\tau|}
@@ -798,7 +791,7 @@ g^{(2)}(\tau) =  1-e^{-\gamma |\tau|}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/957811d6cb9de3991d65068b74e56ed563d5b141993a641e4d198ece241b311f.png" src="../_images/957811d6cb9de3991d65068b74e56ed563d5b141993a641e4d198ece241b311f.png" />
+<img alt="../_images/1a30019d823f0f9965d8c5ac52bd7c1a9363574aeaf7c640f2e809e22a36ea08.png" src="../_images/1a30019d823f0f9965d8c5ac52bd7c1a9363574aeaf7c640f2e809e22a36ea08.png" />
 </div>
 </div>
 </section>
@@ -835,12 +828,12 @@ g^{(2)}(\tau) =  1-e^{-\gamma |\tau|}
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="openqm-qme-GKSL.html"
+       href="openqm-qme-rotating-frame.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.5. </span>Davies-GKSL master equation</p>
+        <p class="prev-next-title"><span class="section-number">7.5. </span>Rotating frame</p>
       </div>
     </a>
     <a class="right-next"

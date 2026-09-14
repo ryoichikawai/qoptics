@@ -41,9 +41,9 @@ parts:
       sections:
       -  file: methods/openqm-qme-def
       -  file: methods/openqm-qme-radiation
+      -  file: methods/openqm-qme-GKSL
       -  file: methods/openqm-qme-scaling
       -  file: methods/openqm-qme-rotating-frame
-      -  file: methods/openqm-qme-GKSL
       -  file: methods/openqm-qme-example
    -  file: methods/openqm-jump-intro
       sections:
@@ -66,11 +66,13 @@ parts:
    -  file: dimer1/dimer-case1-intro
       sections:
       -  file: dimer1/dimer-case1-model
+      -  file: dimer1/dimer-case1-functions
       -  file: dimer1/dimer-case1-qme
       -  file: dimer1/dimer-case1-jump
    -  file: dimer2/dimer-case2-intro
       sections:
       -  file: dimer2/dimer-case2-theory
+      -  file: dimer2/dimer-case2-functions
       -  file: dimer2/dimer-case2-qme
       -  file: dimer2/dimer-case2-jump
    -  file: dimer3/dimer-case3-intro

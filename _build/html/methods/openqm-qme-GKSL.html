@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.5. Davies-GKSL master equation &#8212; Optical coherence from small atomic clusters.</title>
+    <title>7.3. Davies-GKSL master equation &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'methods/openqm-qme-GKSL';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.6. An example: Single emitter" href="openqm-qme-example.html" />
-    <link rel="prev" title="7.4. Rotating frame" href="openqm-qme-rotating-frame.html" />
+    <link rel="next" title="7.4. Parameter values and normalization" href="openqm-qme-scaling.html" />
+    <link rel="prev" title="7.2. Far-field operator and coherence functions" href="openqm-qme-radiation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -209,9 +209,9 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="openqm-qme-intro.html">7. Quantum master equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-def.html">7.1. Optical quantum master equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-scaling.html">7.3. Parameter values and normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-rotating-frame.html">7.4. Rotating frame</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.5. Davies-GKSL master equation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-scaling.html">7.4. Parameter values and normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-rotating-frame.html">7.5. Rotating frame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">7.6. An example: Single emitter</a></li>
 </ul>
 </details></li>
@@ -237,17 +237,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.7. Dimer QME: Diagonalization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Thermal fluorescence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Weak coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.3. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.4. Diner Case I: QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-functions.html">11.4. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.5. Diner Case I: QME with rotating frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.6. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Strong coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-functions.html">12.2. Dimer Case2:  Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.3. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.4. Dimer II: Quantum trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.5. Dimer II: Quantum trajectories</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -495,9 +497,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-the-optical-quantum-master-equation">7.5.1. Issues with the optical quantum master equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gksl-master-equation">7.5.2. GKSL master equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-number-of-jump-operators">7.5.3. The number of jump operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-the-optical-quantum-master-equation">7.3.1. Issues with the optical quantum master equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.3.2. Davies-GKSL master equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-number-of-jump-operators">7.3.3. The number of jump operators</a></li>
 </ul>
             </nav>
         </div>
@@ -510,19 +512,19 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="davies-gksl-master-equation">
-<span id="sec-openqm-gksl"></span><h1><span class="section-number">7.5. </span>Davies-GKSL master equation<a class="headerlink" href="#davies-gksl-master-equation" title="Link to this heading">#</a></h1>
+<span id="sec-openqm-gksl"></span><h1><span class="section-number">7.3. </span>Davies-GKSL master equation<a class="headerlink" href="#davies-gksl-master-equation" title="Link to this heading">#</a></h1>
 <section id="issues-with-the-optical-quantum-master-equation">
-<h2><span class="section-number">7.5.1. </span>Issues with the optical quantum master equation<a class="headerlink" href="#issues-with-the-optical-quantum-master-equation" title="Link to this heading">#</a></h2>
-<p>The quantum master equation is based on the second order perturbation theory along with Markovian and other approximations.  It is not always perfect.  When the interaction with environment is strong, it obviously fails.  Fortunately, interaction between emitters and radiation fields is generally weak.  It works reasonably well. However, there are situations where the results are qualitatively unacceptable.  We already mentioned that the dipole-dipole coupling diverges under the Decke limit.  In that case, we stays in the safe parameter regions, that is <span class="math notranslate nohighlight">\(r_{12} &gt; 0.01 \lambda_{0}\)</span>.  Even in this parameter region,  the standard optical master equation could fail.  Here we discuss one of such issues.</p>
-<p>The definition of <span class="math notranslate nohighlight">\(\Omega_{ij}\)</span> and <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span> in Eqs. <a class="reference internal" href="openqm-qme-def.html#equation-eq-omega-ij">(7.10)</a> and <a class="reference internal" href="openqm-qme-def.html#equation-eq-gamma-ij">(7.11)</a>, we used the free decay rate <span class="math notranslate nohighlight">\(\gamma_0\)</span> using a single Borh frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>.  When emtters are free (no mutual intreaction nor external potential), that is correct.  However, when the free Hamiltonian is perturbed by the coupling, the transition energy is no longer <span class="math notranslate nohighlight">\(\omega_{0}\)</span>.  There are multiple Bohr frequencies and each transition should have different transition rates. But the master equation <a class="reference internal" href="openqm-qme-def.html#equation-eq-optical-qme">(7.9)</a> uses a single Bohr frequency <span class="math notranslate nohighlight">\(\omega_{0}\)</span> in any case regardless of the actual Bohr frequancies.`</p>
-<p>The question is whether such approximation is acceptable or not.  If the omission of the change in the Bohr frequencies causes only small quantitative errors, we can accept it.  However, if the error cause qualitative difference, then we need to use a better approximation.  Indeed the quantitative change of <span class="math notranslate nohighlight">\(\Omega_{12}\)</span> and <span class="math notranslate nohighlight">\(\Gamma_{12}\)</span> is not very big.  However, it causes qualitative error from which leads us to a wrong conclusion.</p>
-<p>The key issue is the broken detailed balance.  If only one Bohr frequency is used, the steady state is always diagonal in the product basis and the system never reaches the true thermal state (Gibbs state).  For the two emitters, coherence between <span class="math notranslate nohighlight">\(|eg\rangle\)</span> and <span class="math notranslate nohighlight">\(|ge\rangle\)</span> will never be established by the dipole-dipole interaction if <a class="reference internal" href="openqm-qme-def.html#equation-eq-omega-ij">(7.10)</a>
-and <a class="reference internal" href="openqm-qme-def.html#equation-eq-gamma-ij">(7.11)</a>.</p>
-<p>If we want to investigate the coherence between the product basis by the interaction between the emitters, we need to use a different method.</p>
+<h2><span class="section-number">7.3.1. </span>Issues with the optical quantum master equation<a class="headerlink" href="#issues-with-the-optical-quantum-master-equation" title="Link to this heading">#</a></h2>
+<p>The quantum master equation is based on the second order perturbation theory along with Markovian and other approximations.  It is not always perfect.  The definition of <span class="math notranslate nohighlight">\(\Omega_{ij}\)</span> and <span class="math notranslate nohighlight">\(\Gamma_{ij}\)</span> in Eqs. <a class="reference internal" href="openqm-qme-def.html#equation-eq-omega-ij">(7.10)</a> and <a class="reference internal" href="openqm-qme-def.html#equation-eq-gamma-ij">(7.11)</a>, we used the free spontaneous emission rate <span class="math notranslate nohighlight">\(\gamma_0\)</span> using a single Bohr frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>.  When emitters are free (no mutual interaction nor external potential), there is no issue.  However, when the free Hamiltonian is perturbed by the coupling, the transition energy is no longer <span class="math notranslate nohighlight">\(\omega_{0}\)</span>.  There could be multiple Bohr frequencies.  Then, each transition should have different transition rates. But the master equation <a class="reference internal" href="openqm-qme-def.html#equation-eq-optical-qme">(7.9)</a> uses a single Bohr frequency <span class="math notranslate nohighlight">\(\omega_{0}\)</span> regardless of the actual Bohr frequencies.</p>
+<p><strong>Broken detailed balance</strong></p>
+<p>As a consequence,  the detailed balance is broken and the steady state does not match to the true Gibbs state.  We might miss some coherence due to errors in the steady state.  In realistic cases, the dipole-dipole interaction is very weak with respect to <span class="math notranslate nohighlight">\(\omega_{0}\)</span>.  Hence, the energy shift due to the dipole-dipole coupling is negligible and the single Bohr frequency <span class="math notranslate nohighlight">\(\omega_{0}\)</span> is acceptable.</p>
+<p><strong>Interaction picture</strong></p>
+<p>When there are multiple time scales, we want to eliminate fast time scale by using a rotating frame.  However, when there are multiple Bohr frequencies, eliminating one frequency <span class="math notranslate nohighlight">\(\omega_{0}\)</span> does not remove all fast oscillations.</p>
+<p>The Davies-GKSL master equation takes into account the multiple Bohr frequencies and resolves the above issues.</p>
 </section>
-<section id="gksl-master-equation">
-<h2><span class="section-number">7.5.2. </span>GKSL master equation<a class="headerlink" href="#gksl-master-equation" title="Link to this heading">#</a></h2>
-<p>It is possible to construct a quantum master equation that satisfies the detailed balance.  The basic theory was developed in <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../references/references.html#id78" title="E. B. Davies. Markovian master equations. Communications in Mathematical Physics, 39(2):91–110, 1974. doi:10.1007/BF01608389.">27</a>, <a class="reference internal" href="../references/references.html#id79" title="Vittorio Gorini, Andrzej Kossakowski, and E. C. G. Sudarshan. Completely positive dynamical semigroups of n‐level systems. Journal of Mathematical Physics, 17(5):821-825, 05 1976. doi:10.1063/1.522979.">28</a>, <a class="reference internal" href="../references/references.html#id80" title="G. Lindblad. On the generators of quantum dynamical semigroups. Communications in Mathematical Physics, 48(2):119–130, 1976. doi:10.1007/BF01608499.">29</a>]</span>, which is known as the GKSL master equation.  Microscopic derivation of the GKSL optical master equation is given in <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">3</a>]</span>.</p>
+<section id="id1">
+<h2><span class="section-number">7.3.2. </span>Davies-GKSL master equation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>It is possible to construct a quantum master equation that satisfies the detailed balance.  The basic theory was developed in <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../references/references.html#id78" title="E. B. Davies. Markovian master equations. Communications in Mathematical Physics, 39(2):91–110, 1974. doi:10.1007/BF01608389.">27</a>, <a class="reference internal" href="../references/references.html#id79" title="Vittorio Gorini, Andrzej Kossakowski, and E. C. G. Sudarshan. Completely positive dynamical semigroups of n‐level systems. Journal of Mathematical Physics, 17(5):821-825, 05 1976. doi:10.1063/1.522979.">28</a>, <a class="reference internal" href="../references/references.html#id80" title="G. Lindblad. On the generators of quantum dynamical semigroups. Communications in Mathematical Physics, 48(2):119–130, 1976. doi:10.1007/BF01608499.">29</a>]</span>, which is known as the GKSL master equation or the Davies master equation (We shall call it the GKSL master equation).  Microscopic derivation of the GKSL optical master equation is given in <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references/references.html#id33" title="H.-P. Breuer and F. Petruccione. The theory of open quantum systems. Oxford, Oxford, 2002. ISBN 9780199213900. doi:10.1093/acprof:oso/9780199213900.001.0001.">3</a>]</span>.</p>
 <p>Consider the Bohr frequency <span class="math notranslate nohighlight">\(\omega_{\alpha\beta}=E_{\alpha}-E_{\beta}\)</span> between energy eigenstate <span class="math notranslate nohighlight">\(|E_{\alpha}\rangle\)</span> and <span class="math notranslate nohighlight">\(|E_{\beta}\rangle\)</span>.  Then, we define jump operators for emission</p>
 <div class="math notranslate nohighlight">
 \[
@@ -536,7 +538,7 @@ A_{j}(\omega_{\beta\alpha}) =  |E_{\alpha}\rangle\langle E_{\alpha}| \sigma^{+}_
 <p>Noting that <span class="math notranslate nohighlight">\(\omega_{\alpha\beta} = - \omega_{\beta\alpha}\)</span>, we have <span class="math notranslate nohighlight">\(A^{\dagger}(\omega_{\alpha\beta})=A(\omega_{\beta\alpha}) = A(-\omega_{\alpha\beta})\)</span>.</p>
 <p>and the dissipator is defined as</p>
 <div class="math notranslate nohighlight" id="equation-eq-gksl-dissipator">
-<span class="eqno">(7.20)<a class="headerlink" href="#equation-eq-gksl-dissipator" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(7.18)<a class="headerlink" href="#equation-eq-gksl-dissipator" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 D(\rho) =&amp; \sum_{ij} \sum_{\omega_{\alpha\beta}&gt;0} \Gamma_{ij}^{\downarrow}(\omega_{\alpha\beta}) \left[ A_{i}(\omega_{\alpha\beta}) \rho A^{\dagger}_{j}(\omega_{\alpha\beta}) - \frac{1}{2}\left\{A^{\dagger}_{j}(\omega_{\alpha\beta})  A_{i}(\omega_{\alpha\beta}),\rho\right\}\right] \\
 &amp; + \sum_{ij} \sum_{\omega_{\alpha\beta}&gt;0} \Gamma_{ij}^{\uparrow}(\omega_{\alpha\beta}) \left[ A^{\dagger}_{i}(\omega_{\alpha\beta}) \rho A_{j}(\omega_{\alpha\beta}) - \frac{1}{2}\left\{A_{j}(\omega_{\alpha\beta})  A^{\dagger}_{i}(\omega_{\alpha\beta}),\rho\right\}\right] 
@@ -544,23 +546,24 @@ D(\rho) =&amp; \sum_{ij} \sum_{\omega_{\alpha\beta}&gt;0} \Gamma_{ij}^{\downarro
 \end{split}\]</div>
 <p>where emission rate <span class="math notranslate nohighlight">\(\Gamma^{\downarrow}_{ij}\)</span> and absorption rate <span class="math notranslate nohighlight">\(\Gamma^{\uparrow}_{ij}\)</span> are defined by</p>
 <div class="math notranslate nohighlight" id="equation-eq-gksl-gamma">
-<span class="eqno">(7.21)<a class="headerlink" href="#equation-eq-gksl-gamma" title="Link to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(7.19)<a class="headerlink" href="#equation-eq-gksl-gamma" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
-\Gamma^{\downarrow}_{ij} (\omega_{\alpha\beta}) &amp;= \frac{4 d^2 \omega_{\alpha\beta}^3}{3 \hbar c} \left[1 + N(\omega_{\alpha\beta})\right]\\
-\Gamma^{\uparrow}_{ij} (\omega_{\alpha\beta}) &amp;= \frac{4 d^2 \omega_{\alpha\beta}^3}{3 \hbar c} N(\omega_{\alpha\beta})
+\Gamma^{\downarrow}_{ij} (\omega_{\alpha\beta}) &amp;= \frac{4 d^2 \omega_{\alpha\beta}^3}{3 \hbar c} \left[1 + \bar{n}(\omega_{\alpha\beta})\right]\\
+\Gamma^{\uparrow}_{ij} (\omega_{\alpha\beta}) &amp;= \frac{4 d^2 \omega_{\alpha\beta}^3}{3 \hbar c} \bar{n}(\omega_{\alpha\beta})
 \end{aligned}
 \end{split}\]</div>
 <p>with <span class="math notranslate nohighlight">\(N(\omega) = \left(e^{\hbar \omega/T}-1\right)^{-1}\)</span>.</p>
 <p>These transition rate satisfies the detailed balance</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\Gamma^{\uparrow}(\omega_{\alpha\beta})}{\Gamma^{\downarrow}(\omega_{\alpha\beta})} = \frac{N(\omega_{\alpha\beta})}{1 + N(\omega_{\alpha\beta})} = e^{-\omega_{\alpha\beta}/T}
+\frac{\Gamma^{\uparrow}(\omega_{\alpha\beta})}{\Gamma^{\downarrow}(\omega_{\alpha\beta})} = \frac{\bar{n}(\omega_{\alpha\beta})}{1 + \bar{n}(\omega_{\alpha\beta})} = e^{-\omega_{\alpha\beta}/T}
 \]</div>
 <p>which guarantees that the steady state is the Gibbs state.</p>
-<p>In conclusion, when the dipole-dipole coupling is weak, that is <span class="math notranslate nohighlight">\(\Omega_{ij} \ll \omega_{0}\)</span> and also <span class="math notranslate nohighlight">\(\Omega_{ij} \ll T\)</span>, we use the standard optical master equation. Otherwise, we use the GKSL version with <a class="reference internal" href="#equation-eq-gksl-dissipator">(7.20)</a> and <a class="reference internal" href="#equation-eq-gksl-gamma">(7.21)</a>.</p>
+<p>In conclusion, when the dipole-dipole coupling is weak, that is <span class="math notranslate nohighlight">\(\Omega_{ij} \ll \omega_{0}\)</span> and also <span class="math notranslate nohighlight">\(\Omega_{ij} \ll T\)</span>, we use the standard optical master equation. Otherwise, we use the GKSL version with <a class="reference internal" href="#equation-eq-gksl-dissipator">(7.18)</a> and <a class="reference internal" href="#equation-eq-gksl-gamma">(7.19)</a>.</p>
+<p>The jump operators <span class="math notranslate nohighlight">\(A_{j}(\omega)\)</span>  sattisfies <span class="math notranslate nohighlight">\([H,A_{j}(\omega)] = - \omega A(\omega)\)</span>.   Hence, <span class="math notranslate nohighlight">\(e^{-i H t} A_{j}(\omega) e^{i H t} = e^{-i \omega} A(\omega)\)</span>.  This property is essential when the full interaction picture is used to eliminate rapid oscillation. See <a class="reference internal" href="openqm-qme-rotating-frame.html#sec-openqm-qme-rotating-frame"><span class="std std-numref">Chapter 7.5</span></a>.</p>
 </section>
 <section id="the-number-of-jump-operators">
-<h2><span class="section-number">7.5.3. </span>The number of jump operators<a class="headerlink" href="#the-number-of-jump-operators" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3.3. </span>The number of jump operators<a class="headerlink" href="#the-number-of-jump-operators" title="Link to this heading">#</a></h2>
 <p>In general, there is a jump operator for each transition.  That means For N=2, there for 4 jump operators for emission and another 4 operators for absorption, totaling 8 operators.  The standard optical master equation had only 4.  For N=3 with <span class="math notranslate nohighlight">\(S_3\)</span> symmetry,  we need 14 operators and if there is no symmetry there are 26 operators. The optical master equation needs only 6.   The number of jump operators grows very rapidly as the number of emitters increases.  Hence, this method is not practical for large <span class="math notranslate nohighlight">\(N\)</span> unless the system has a high level of symmetry.</p>
 </section>
 </section>
@@ -596,20 +599,20 @@ D(\rho) =&amp; \sum_{ij} \sum_{\omega_{\alpha\beta}&gt;0} \Gamma_{ij}^{\downarro
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="openqm-qme-rotating-frame.html"
+       href="openqm-qme-radiation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.4. </span>Rotating frame</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>Far-field operator and coherence functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="openqm-qme-example.html"
+       href="openqm-qme-scaling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.6. </span>An example: Single emitter</p>
+        <p class="prev-next-title"><span class="section-number">7.4. </span>Parameter values and normalization</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -631,9 +634,9 @@ D(\rho) =&amp; \sum_{ij} \sum_{\omega_{\alpha\beta}&gt;0} \Gamma_{ij}^{\downarro
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-the-optical-quantum-master-equation">7.5.1. Issues with the optical quantum master equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gksl-master-equation">7.5.2. GKSL master equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-number-of-jump-operators">7.5.3. The number of jump operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-with-the-optical-quantum-master-equation">7.3.1. Issues with the optical quantum master equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.3.2. Davies-GKSL master equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-number-of-jump-operators">7.3.3. The number of jump operators</a></li>
 </ul>
   </nav></div>
 

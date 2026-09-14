@@ -209,9 +209,9 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="openqm-qme-intro.html">7. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-def.html">7.1. Optical quantum master equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-scaling.html">7.3. Parameter values and normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-rotating-frame.html">7.4. Rotating frame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openqm-qme-GKSL.html">7.5. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-GKSL.html">7.3. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-scaling.html">7.4. Parameter values and normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="openqm-qme-rotating-frame.html">7.5. Rotating frame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openqm-qme-example.html">7.6. An example: Single emitter</a></li>
 </ul>
 </details></li>
@@ -237,17 +237,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.7. Dimer QME: Diagonalization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Thermal fluorescence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Weak coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.3. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.4. Diner Case I: QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-functions.html">11.4. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.5. Diner Case I: QME with rotating frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.6. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Strong coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-functions.html">12.2. Dimer Case2:  Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.3. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.4. Dimer II: Quantum trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.5. Dimer II: Quantum trajectories</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -627,8 +629,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of emissions  = 1000    rate = 0.04243887740681483
-number of absorption = 1000    rate = 0.04243887740681483
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of emissions  = 1000    rate = 0.04266630258088464
+number of absorption = 999    rate = 0.042623636278303755
 </pre></div>
 </div>
 </div>
@@ -658,7 +660,7 @@ number of absorption = 1000    rate = 0.04243887740681483
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/22d8e92fbcc137b86984e46029e79a2dc950b99c284a7596a35558f7c9fa2200.png" src="../_images/22d8e92fbcc137b86984e46029e79a2dc950b99c284a7596a35558f7c9fa2200.png" />
+<img alt="../_images/c42808cdaa45c4f64bcb85e6d0c05fc88381a00ac24dc6df79ad066fce45c302.png" src="../_images/c42808cdaa45c4f64bcb85e6d0c05fc88381a00ac24dc6df79ad066fce45c302.png" />
 </div>
 </div>
 </section>
@@ -693,12 +695,12 @@ number of absorption = 1000    rate = 0.04243887740681483
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  23.56056056056056
-standard deviation =  17.770753663586024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean waiting time  =  23.45865865865866
+standard deviation =  18.669864124546553
 likely sub-poissonian
 </pre></div>
 </div>
-<img alt="../_images/210b6b1cbfb124aec83461b050d4c132983e051861026a9e6daabad1f61f50d1.png" src="../_images/210b6b1cbfb124aec83461b050d4c132983e051861026a9e6daabad1f61f50d1.png" />
+<img alt="../_images/de84b0e7af01d1bbd5d9d657eb47c26f727d9dbdb9a83a99b071c9414d1e2f03.png" src="../_images/de84b0e7af01d1bbd5d9d657eb47c26f727d9dbdb9a83a99b071c9414d1e2f03.png" />
 </div>
 </div>
 </section>
@@ -761,7 +763,7 @@ g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04d070cb4a3357fa3b738747ad5471c420473c6d26744974e617e30a3646a8c3.png" src="../_images/04d070cb4a3357fa3b738747ad5471c420473c6d26744974e617e30a3646a8c3.png" />
+<img alt="../_images/98c6cfe24bfbe01d3ff8c2cc4e5d68403eff2ea7ce2952243d3557a565aec07c.png" src="../_images/98c6cfe24bfbe01d3ff8c2cc4e5d68403eff2ea7ce2952243d3557a565aec07c.png" />
 </div>
 </div>
 </section>
@@ -822,8 +824,8 @@ g^{(2)}(\tau) = \frac{n(\tau)}{n(\infty)}  = \frac{n(\tau) t_\text{max}}{N \Delt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of absorptions = 1093  rate = 0.04554166666666667
-Number of emissions   = 1093  rate = 0.04554166666666667
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of absorptions = 1053  rate = 0.043875
+Number of emissions   = 1053  rate = 0.043875
 </pre></div>
 </div>
 </div>

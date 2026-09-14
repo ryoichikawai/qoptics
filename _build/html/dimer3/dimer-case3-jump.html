@@ -209,9 +209,9 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">7. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">7.1. Optical quantum master equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-scaling.html">7.3. Parameter values and normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-rotating-frame.html">7.4. Rotating frame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-GKSL.html">7.5. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-GKSL.html">7.3. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-scaling.html">7.4. Parameter values and normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-rotating-frame.html">7.5. Rotating frame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">7.6. An example: Single emitter</a></li>
 </ul>
 </details></li>
@@ -237,17 +237,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.7. Dimer QME: Diagonalization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Thermal fluorescence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Weak coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.3. Dimer I: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.4. Diner Case I: QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.5. Quantum trajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-functions.html">11.4. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.5. Diner Case I: QME with rotating frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.6. Quantum trajectory</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Coherence by indistinguishability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer2/dimer-case2-intro.html">12. Dimer II: Strong coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.2. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-functions.html">12.2. Dimer Case2:  Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-qme.html">12.3. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.4. Dimer II: Quantum trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer2/dimer-case2-jump.html">12.5. Dimer II: Quantum trajectories</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -585,8 +587,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emissions in channel 1 = 638
-Number of emissions in channel 2 = 1570
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emissions in channel 1 = 618
+Number of emissions in channel 2 = 1607
 </pre></div>
 </div>
 </div>
@@ -610,7 +612,7 @@ Number of emissions in channel 2 = 1570
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/68decb7f2d1cbb5c479e10385f44a56cb9c1c68bb3a7c4ee2de457c3f25c83b8.png" src="../_images/68decb7f2d1cbb5c479e10385f44a56cb9c1c68bb3a7c4ee2de457c3f25c83b8.png" />
+<img alt="../_images/0f27e534d996194f6e9772008e0c6ca402a6ed93e3e2249e58a8dd8c0052fa0b.png" src="../_images/0f27e534d996194f6e9772008e0c6ca402a6ed93e3e2249e58a8dd8c0052fa0b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -645,13 +647,13 @@ Number of emissions in channel 2 = 1570
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**channel 1**
-mean waiting time  =  62.73229183990571
-standard deviation =  83.94002143289418
+mean waiting time  =  64.60800328762821
+standard deviation =  90.44432553375785
 likely super-poissonian
 
 **channel 2**
-mean waiting time  =  25.412482593261174
-standard deviation =  26.564073505443556
+mean waiting time  =  24.884649862056616
+standard deviation =  24.522607308269453
 likely poissonian
 </pre></div>
 </div>
@@ -681,7 +683,7 @@ likely poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/530142a785fe4bd5a64443af755c23b10df8c9a08a4a0f52e3f4f492d7170e35.png" src="../_images/530142a785fe4bd5a64443af755c23b10df8c9a08a4a0f52e3f4f492d7170e35.png" />
+<img alt="../_images/247414bbe47ecbcd3ee6cf5a111a9859a6f9fc1ef680185d487fac12ece131bd.png" src="../_images/247414bbe47ecbcd3ee6cf5a111a9859a6f9fc1ef680185d487fac12ece131bd.png" />
 </div>
 </div>
 <section id="second-order-coherence-function">
@@ -759,7 +761,7 @@ likely poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/532bda689943081d50898a8f5b82579f50034199dee2060146236e576bd7a84e.png" src="../_images/532bda689943081d50898a8f5b82579f50034199dee2060146236e576bd7a84e.png" />
+<img alt="../_images/07fbb091938fccf8c0dc285d3fbe0d75d7a8e03a9d7178c5d018299860b1a8f3.png" src="../_images/07fbb091938fccf8c0dc285d3fbe0d75d7a8e03a9d7178c5d018299860b1a8f3.png" />
 </div>
 </div>
 </section>
@@ -836,8 +838,8 @@ likely poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emissions in channel 1 = 528
-Number of emissions in channel 2 = 860
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emissions in channel 1 = 516
+Number of emissions in channel 2 = 870
 </pre></div>
 </div>
 </div>
@@ -861,7 +863,7 @@ Number of emissions in channel 2 = 860
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1d4b1ed5dfe63ca7b8c53c4c50afa5ede56f4721d7abafe53f6f19f1a1bf8c8a.png" src="../_images/1d4b1ed5dfe63ca7b8c53c4c50afa5ede56f4721d7abafe53f6f19f1a1bf8c8a.png" />
+<img alt="../_images/bc3fa064238d5eb5c45e1acd3a53dad1c251abce5495a61012d71977e3bda51e.png" src="../_images/bc3fa064238d5eb5c45e1acd3a53dad1c251abce5495a61012d71977e3bda51e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -896,13 +898,13 @@ Number of emissions in channel 2 = 860
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>**channel 1**
-mean waiting time  =  75.66737920586367
-standard deviation =  77.4467255435483
+mean waiting time  =  77.31446930415576
+standard deviation =  74.23283794119102
 likely poissonian
 
 **channel 2**
-mean waiting time  =  46.5260780388833
-standard deviation =  52.02541692176359
+mean waiting time  =  45.950222208994184
+standard deviation =  52.0146130761099
 likely super-poissonian
 </pre></div>
 </div>
@@ -932,7 +934,7 @@ likely super-poissonian
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cc2061b601efa6bfa5bf7e64a52456345f9d51013feae4d8758a1538f21c874b.png" src="../_images/cc2061b601efa6bfa5bf7e64a52456345f9d51013feae4d8758a1538f21c874b.png" />
+<img alt="../_images/601317d8229a1a415df4d804449cd5db5d6a076d3505106710fb23eda4e6db3e.png" src="../_images/601317d8229a1a415df4d804449cd5db5d6a076d3505106710fb23eda4e6db3e.png" />
 </div>
 </div>
 </section>

@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12.2. Dimer Case2: Functions &#8212; Optical coherence from small atomic clusters.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dimer2/dimer-case2-functions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12.3. Dimer II: QME - Indistinguishability and broken ergodicity" href="dimer-case2-qme.html" />
+    <link rel="prev" title="12.1. Dimer II: Theory" href="dimer-case2-theory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../cover.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/me-tiny.png" class="logo__image only-light" alt="Optical coherence from small atomic clusters. - Home"/>
+    <img src="../_static/me-tiny.png" class="logo__image only-dark pst-js-only" alt="Optical coherence from small atomic clusters. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../cover.html">
+                    A Short Note on Open Quantum Mechanics Approach to Optics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Front matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/aboutme.html">About Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/preface.html">Preface</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../frontmatter/intro.html">Preparation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/thisbook.html">How to use this note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/jupyter.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontmatter/cloud.html">Google Colab</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../foundations/qmstates.html">1. Quantum states and measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/photons.html">2. Photons and quantum radiation fields</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../foundations/coherence.html">3. What is coherence?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g1.html">3.11. First-order coherence function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../foundations/coherence-g2.html">3.12. The second-order coeherence function</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundations/bunching.html">4. Bunching and full counting statistics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models and Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../model/system.html">5. The System</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model/emitter.html">5.1. Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/radiation-field.html">5.2. Radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/coupling.html">5.3. Interaction between emitters and radiation field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/driving.html">5.4. External driving</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/detector.html">5.5. Dectector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model/phonon-bath.html">5.6. Phonon bath</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/qutip.html">6. Numerical calculation using QuTip</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-qme-intro.html">7. Quantum master equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-def.html">7.1. Optical quantum master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-radiation.html">7.2. Far-field operator and coherence functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-GKSL.html">7.3. Davies-GKSL master equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-scaling.html">7.4. Parameter values and normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-rotating-frame.html">7.5. Rotating frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-qme-example.html">7.6. An example: Single emitter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../methods/openqm-jump-intro.html">8. Jump method and Quantum Trajectory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-method.html">8.1. Jump method algorithm</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../methods/openqm-jump-example.html">8.3. A Simple example of the jump method</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../monomer/monomer-intro.html">9. Monomer: Driving and the Rabi oscillation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-model.html">9.1. Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-theory.html">9.2. QME: Theoretical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-qme.html">9.3. QME: Numerical solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer/monomer-jump.html">9.4. Quantum Trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer-model/dimer-intro.html">10. Dimer: The model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-unitary.html">10.5. Dimer QME:  The unitary part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-dissipator.html">10.6. Dimer QME: Dissipator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer-model/dimer-qme-diagonalization.html">10.7. Dimer QME: Diagonalization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer1/dimer-case1-intro.html">11. Dimer I: Weak coupling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-model.html">11.3. Dimer I: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-functions.html">11.4. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-qme.html">11.5. Diner Case I: QME with rotating frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer1/dimer-case1-jump.html">11.6. Quantum trajectory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case2-intro.html">12. Dimer II: Strong coupling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.2. Dimer Case2:  Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case2-qme.html">12.3. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="dimer-case2-jump.html">12.5. Dimer II: Quantum trajectories</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.3. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">13.4. Full counting statistics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../trimer0/trimer-theory.html">14. Trimer:  Theoretical model</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../trimer1/trimer-case1-intro.html">15. Trimer Case 1:  Incoherent cluster</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-qme.html">15.1. Trimer Case I: QME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-jump.html">15.2. Trimer Case I: MCWF</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../trimer2/trimer-case2-intro.html">16. Trimer Case II:  Full S₃ symmetry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-model.html">16.1. Trimer: Case II - Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-functions.html">16.2. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-qme.html">16.3. Trimer Case II:  QME</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ryoichikawai/q-optics/blob/main/dimer2/dimer-case2-functions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryoichikawai/q-optics/issues/new?title=Issue%20on%20page%20%2Fdimer2/dimer-case2-functions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/dimer2/dimer-case2-functions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dimer Case2:  Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dimer-case2-functions">
+<h1><span class="section-number">12.2. </span>Dimer Case2:  Functions<a class="headerlink" href="#dimer-case2-functions" title="Link to this heading">#</a></h1>
+<p>This page contains parameter values and functions used in other pages of the chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qutip</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Constant parameters</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># default energy scale</span>
+<span class="n">omega0</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># default spontaneous emission rate</span>
+<span class="n">gamma0</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">omega0</span><span class="p">):</span>
+    <span class="n">k0</span> <span class="o">=</span> <span class="n">omega0</span>  <span class="c1"># omega = c k, c=1</span>
+    <span class="n">lambda0</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">k0</span>
+    <span class="k">return</span> <span class="n">k0</span><span class="p">,</span> <span class="n">lambda0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Spin operators in 2^3 = 8 dimensions</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Spin operators ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">spin_ops</span><span class="p">():</span>
+    <span class="n">i2</span> <span class="o">=</span> <span class="n">qeye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">sz</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmaz</span><span class="p">(),</span><span class="n">i2</span><span class="p">),</span><span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span><span class="n">sigmaz</span><span class="p">())]</span>
+    <span class="n">sp</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmap</span><span class="p">(),</span><span class="n">i2</span><span class="p">),</span><span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span><span class="n">sigmap</span><span class="p">())]</span>
+    <span class="n">sm</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">sigmam</span><span class="p">(),</span><span class="n">i2</span><span class="p">),</span><span class="n">tensor</span><span class="p">(</span><span class="n">i2</span><span class="p">,</span><span class="n">sigmam</span><span class="p">())]</span>
+    <span class="k">return</span> <span class="n">sz</span><span class="p">,</span> <span class="n">sp</span><span class="p">,</span> <span class="n">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Product basis</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pbasis</span><span class="p">():</span>
+    <span class="c1">#--This function calls kprod3--</span>
+    <span class="c1"># v = product basis vectors [8][8]</span>
+    <span class="c1"># label = names of corresponding states [8]</span>
+    <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ee&quot;</span><span class="p">,</span><span class="s2">&quot;eg&quot;</span><span class="p">,</span><span class="s2">&quot;ge&quot;</span><span class="p">,</span><span class="s2">&quot;gg&quot;</span><span class="p">]</span>
+    <span class="n">v</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)))</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)))</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">label</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Dicke basis</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dicke</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="c1">#--- v = product basis [4][4]</span>
+    <span class="c1">#--- u = Dicke basis [4][4]</span>
+    <span class="n">label</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;s&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;g&quot;</span><span class="p">]</span>
+    <span class="n">u</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> 
+    <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">label</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Dipole-dipole coupling</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ddcoupling</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">chi</span><span class="p">):</span>
+    <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">chi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">chi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Hamiltonian</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hamiltonian</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="o">*</span><span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nbar_all</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+    <span class="n">nbar</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">nbar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">nbar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">nbar</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Decay rates</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">decay_rate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">chi</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+    <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">chi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">chi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">gamma1</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">omega0</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+    <span class="n">gamma2</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">omega0</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">gamma1</span><span class="p">[</span><span class="mi">0</span><span class="p">],(</span><span class="mi">1</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">gamma1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">gamma2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">gamma2</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">gamma</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Jump and Collaps operators</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">collapse_ops</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">gamma</span><span class="p">,</span><span class="n">nbar</span><span class="p">):</span>
+    
+    <span class="p">[</span><span class="n">e</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">g</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># superradient channel</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">e</span><span class="p">]</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">g</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span>
+    <span class="c1"># subradient channel</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">e</span><span class="p">]</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">g</span><span class="p">]</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span>
+    
+    <span class="n">c_ops</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># emission operators</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">nbar</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="c1"># absorption operators</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">nbar</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">*</span><span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">c_ops</span> <span class="c1"># collapse operators including the decay rates [8]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Energy eigenvalues</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">eigen_energies</span><span class="p">(</span><span class="n">omega0</span><span class="p">,</span><span class="n">Omega</span><span class="p">):</span>
+    <span class="n">E</span><span class="o">=</span><span class="p">[</span><span class="n">omega0</span><span class="p">,</span> <span class="n">Omega</span><span class="p">,</span> <span class="o">-</span><span class="n">Omega</span><span class="p">,</span> <span class="o">-</span><span class="n">omega0</span><span class="p">]</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">E</span><span class="p">),</span> <span class="n">order</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Transition energy</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">transition_energies</span><span class="p">(</span><span class="n">E</span><span class="p">):</span>
+    <span class="c1"># w = transition energies for each channel [3]</span>
+    <span class="p">[</span><span class="n">e</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">g</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">w0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">E</span><span class="p">[</span><span class="n">e</span><span class="p">]</span><span class="o">-</span><span class="n">E</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="n">E</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">-</span><span class="n">E</span><span class="p">[</span><span class="n">g</span><span class="p">]])</span>
+    <span class="n">w1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">E</span><span class="p">[</span><span class="n">e</span><span class="p">]</span><span class="o">-</span><span class="n">E</span><span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">E</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">-</span><span class="n">E</span><span class="p">[</span><span class="n">g</span><span class="p">]])</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="n">w0</span><span class="p">,</span><span class="n">w1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">w</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>position of emitters</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">emitters_pos</span><span class="p">(</span><span class="n">r12</span><span class="p">):</span>
+    <span class="c1"># returns the position of emitters as numpy array [3][3]</span>
+    <span class="c1"># coordinate origin = center of the triangle</span>
+    <span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">r12</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="n">r12</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>location of detector</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">detector_pos</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">):</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_Gibbsstate</span><span class="p">(</span><span class="n">E</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+    <span class="n">Boltzmann</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">E</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">/</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Boltzmann</span><span class="p">)</span>
+    <span class="n">Gibbs</span> <span class="o">=</span> <span class="n">Boltzmann</span><span class="o">/</span><span class="n">Z</span>
+    <span class="k">return</span> <span class="n">Gibbs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            name: "book",
+            path: "./dimer2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dimer-case2-theory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">12.1. </span>Dimer II: Theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dimer-case2-qme.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12.3. </span>Dimer II: QME - Indistinguishability and broken ergodicity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ryoichi Kawai
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
