@@ -498,7 +498,6 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-coherence-function-detector-model-i">12.3.1. First-order coherence function (Detector Model I)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-coherence-function-detector-model-ii">12.3.2. First-order coherence function (Detector Model II)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-betweem-ge-rangle-and-eg-rangle">12.3.3. Coherence betweem <span class="math notranslate nohighlight">\(|ge\rangle\)</span> and <span class="math notranslate nohighlight">\(|eg\rangle\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -676,7 +675,7 @@ Off-diagonal elements
 <span class="n">g1</span> <span class="o">=</span> <span class="n">G1</span><span class="o">/</span><span class="n">I2</span>
 <span class="n">g1_weak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1_waek</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;weak&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1_weak</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;weak&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span><span class="n">g1_weak</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;strong&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span><span class="n">g1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
@@ -688,24 +687,7 @@ Off-diagonal elements
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">g1</span> <span class="o">=</span> <span class="n">G1</span><span class="o">/</span><span class="n">I2</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">g1_weak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1_waek</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;weak&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span><span class="n">g1_weak</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">g1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;strong&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">times</span><span class="p">,</span><span class="n">g1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;g1_waek&#39; is not defined
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 400x300 with 0 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/56ef4dfb4317eccd037dd6c1b12071f418835d230be1b476592310e7131e9f30.png" src="../_images/56ef4dfb4317eccd037dd6c1b12071f418835d230be1b476592310e7131e9f30.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -769,9 +751,6 @@ Off-diagonal elements
 <img alt="../_images/b386c53055464decac1fac5e4e7b352a2fcf14b28b5bc618ad46a2816cfb0221.png" src="../_images/b386c53055464decac1fac5e4e7b352a2fcf14b28b5bc618ad46a2816cfb0221.png" />
 </div>
 </div>
-</section>
-<section id="coherence-betweem-ge-rangle-and-eg-rangle">
-<h2><span class="section-number">12.3.3. </span>Coherence betweem <span class="math notranslate nohighlight">\(|ge\rangle\)</span> and <span class="math notranslate nohighlight">\(|eg\rangle\)</span><a class="headerlink" href="#coherence-betweem-ge-rangle-and-eg-rangle" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -843,7 +822,6 @@ Off-diagonal elements
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-coherence-function-detector-model-i">12.3.1. First-order coherence function (Detector Model I)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-coherence-function-detector-model-ii">12.3.2. First-order coherence function (Detector Model II)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-betweem-ge-rangle-and-eg-rangle">12.3.3. Coherence betweem <span class="math notranslate nohighlight">\(|ge\rangle\)</span> and <span class="math notranslate nohighlight">\(|eg\rangle\)</span></a></li>
 </ul>
   </nav></div>
 
