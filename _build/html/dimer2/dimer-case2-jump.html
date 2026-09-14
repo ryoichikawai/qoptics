@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12.5. Dimer II: Quantum trajectories &#8212; Optical coherence from small atomic clusters.</title>
+    <title>12.4. Dimer II: Quantum trajectories &#8212; Optical coherence from small atomic clusters.</title>
   
   
   
@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="13. Dimer III: Coherence by external driving" href="../dimer3/dimer-case3-intro.html" />
-    <link rel="prev" title="12.3. Dimer II: QME - Indistinguishability and broken ergodicity" href="dimer-case2-qme.html" />
+    <link rel="prev" title="12.3. Dimer Case 2: Davies-GKSL with the full interaction picture" href="dimer-case2-gksl.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -247,9 +247,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="dimer-case2-intro.html">12. Dimer II: Strong coupling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="dimer-case2-theory.html">12.1. Dimer II: Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dimer-case2-functions.html">12.2. Dimer Case2:  Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dimer-case2-qme.html">12.3. Dimer II: QME - Indistinguishability and broken ergodicity</a></li>
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.5. Dimer II: Quantum trajectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimer-case2-gksl.html">12.3. Dimer Case 2:  Davies-GKSL with the full interaction picture</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.4. Dimer II: Quantum trajectories</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -497,14 +496,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">12.5.1. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-quantum-trajectory">12.5.2. A single quantum trajectory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectories">12.5.3. Quantum trajectories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-average-of-state-population">12.5.4. Ensemble average of state population</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broken-ergodicity-the-dark-antisymmetric-state">12.5.5. Broken ergodicity: the dark antisymmetric state</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-of-emitted-photons">12.5.6. Waiting-time distribution of emitted photons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-g-2-tau-from-the-photon-clicks">12.5.7. Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-check-mcwf-vs-analytic-theory">12.5.8. Self-check: MCWF vs. analytic theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">12.4.1. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-quantum-trajectory">12.4.2. A single quantum trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectories">12.4.3. Quantum trajectories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-average-of-state-population">12.4.4. Ensemble average of state population</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broken-ergodicity-the-dark-antisymmetric-state">12.4.5. Broken ergodicity: the dark antisymmetric state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-of-emitted-photons">12.4.6. Waiting-time distribution of emitted photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-g-2-tau-from-the-photon-clicks">12.4.7. Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-check-mcwf-vs-analytic-theory">12.4.8. Self-check: MCWF vs. analytic theory</a></li>
 </ul>
             </nav>
         </div>
@@ -517,7 +516,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dimer-ii-quantum-trajectories">
-<span id="sec-dimer-case2-jump"></span><h1><span class="section-number">12.5. </span>Dimer II: Quantum trajectories<a class="headerlink" href="#dimer-ii-quantum-trajectories" title="Link to this heading">#</a></h1>
+<span id="sec-dimer-case2-jump"></span><h1><span class="section-number">12.4. </span>Dimer II: Quantum trajectories<a class="headerlink" href="#dimer-ii-quantum-trajectories" title="Link to this heading">#</a></h1>
 <p>On the previous page we solved the dimer with the Lindblad master equation (<code class="docutils literal notranslate"><span class="pre">steadystate</span></code> and <code class="docutils literal notranslate"><span class="pre">mesolve</span></code>).  Here we solve the <em>same</em> open-system dynamics with the <strong>Monte Carlo wavefunction (MCWF)</strong> (or quantum trajectory, quantum jump) method (<code class="docutils literal notranslate"><span class="pre">mcsolve</span></code> in QuTip).  Instead of propagating a density matrix, the state follows a stochastic <em>pure-state</em> trajectory: it evolves under a non-Hermitian effective Hamiltonian and, at random times, undergoes a <strong>quantum jump</strong> through one of the collapse operators.  The ensemble average over trajectories reproduces the master-equation density matrix, so every result of the previous page must re-emerge here.</p>
 <p>The jump picture makes the physics of the theory page vivid:</p>
 <ol class="arabic simple">
@@ -526,7 +525,7 @@
 <li><p>the record of emission jumps is a simulated photon-click stream, from which we reconstruct <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> and recover <span class="math notranslate nohighlight">\(1-\phi^2/4\)</span>.</p></li>
 </ol>
 <section id="setup">
-<h2><span class="section-number">12.5.1. </span>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4.1. </span>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>The model is identical to the QME page.  We add projectors onto the four Dicke states so
 that a single <code class="docutils literal notranslate"><span class="pre">mcsolve</span></code> run reports the Dicke populations along each trajectory, and a
 helper that drops the vanishing (dark) collapse operators when <span class="math notranslate nohighlight">\(r_{12}\to 0\)</span>.</p>
@@ -611,7 +610,7 @@ helper that drops the vanishing (dark) collapse operators when <span class="math
 </div>
 </section>
 <section id="a-single-quantum-trajectory">
-<h2><span class="section-number">12.5.2. </span>A single quantum trajectory<a class="headerlink" href="#a-single-quantum-trajectory" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4.2. </span>A single quantum trajectory<a class="headerlink" href="#a-single-quantum-trajectory" title="Link to this heading">#</a></h2>
 <p>Because the Hamiltonian is diagonal in the Dicke basis and every collapse operator maps a
 Dicke state to another Dicke state, a trajectory started in a Dicke eigenstate <em>stays</em> a
 Dicke eigenstate until a jump between Dicke states <span class="math notranslate nohighlight">\(\{|g\rangle, |s\rangle,
@@ -653,8 +652,8 @@ Furthermore, when cascading emission happens in the symmetric channel, two photo
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total run time:   0.04s
 ** Jump counts  **
- symmetric channel: emission count=  39   absorption count=  40
-asymmetric channel: emission count=   7   absorption count=   5
+ symmetric channel: emission count=  41   absorption count=  46
+asymmetric channel: emission count=   8   absorption count=   2
 </pre></div>
 </div>
 </div>
@@ -679,12 +678,12 @@ asymmetric channel: emission count=   7   absorption count=   5
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5b3204e70b27be013fb35bc6cd2505ab821d714b8e842efb3ec23d06324e7b1a.png" src="../_images/5b3204e70b27be013fb35bc6cd2505ab821d714b8e842efb3ec23d06324e7b1a.png" />
+<img alt="../_images/725d4c1cecb894cd63019a3da4a91a159cde1a07ce79574157e5f529fd1ba826.png" src="../_images/725d4c1cecb894cd63019a3da4a91a159cde1a07ce79574157e5f529fd1ba826.png" />
 </div>
 </div>
 </section>
 <section id="quantum-trajectories">
-<h2><span class="section-number">12.5.3. </span>Quantum trajectories<a class="headerlink" href="#quantum-trajectories" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4.3. </span>Quantum trajectories<a class="headerlink" href="#quantum-trajectories" title="Link to this heading">#</a></h2>
 <p>In the MCWF method, the wave function jumps from a Dicke state to another at a random time.  The time evolution of the wave function between jumps is unitary. Since the Dicke states are eigen states of the Hamiltonian, the system stays in a Dicke state until a jump happens.  In a single trajectory calculation, the occupation of the Dicke states is either <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span>. Only one state has <span class="math notranslate nohighlight">\(1\)</span> at each moment and the rests are <span class="math notranslate nohighlight">\(0\)</span>.  When a jump happened, “<span class="math notranslate nohighlight">\(1\)</span>” moves from a state to another.  The following code plots such a trajectory.</p>
 <p>Notice that transitions between <span class="math notranslate nohighlight">\(|g\rangle\)</span> and <span class="math notranslate nohighlight">\(|s\rangle\)</span> dominates.  Jump to <span class="math notranslate nohighlight">\(|a\rangle\)</span> is not as frequent as other jumps.  However, once <span class="math notranslate nohighlight">\(|a\rangle\)</span> is occupied, the system stays in it for longer time.  This is again due to the small decay rate of the asymmetric channel.</p>
 <div class="cell docutils container">
@@ -704,12 +703,12 @@ asymmetric channel: emission count=   7   absorption count=   5
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/60ab3383988fa5843577411ca60ef0e0636461b8c78eb3cc5648459d26087c92.png" src="../_images/60ab3383988fa5843577411ca60ef0e0636461b8c78eb3cc5648459d26087c92.png" />
+<img alt="../_images/7b617d9db093d370be366ecd1617773e0264b2e143280bc459652b4b07a9d5a2.png" src="../_images/7b617d9db093d370be366ecd1617773e0264b2e143280bc459652b4b07a9d5a2.png" />
 </div>
 </div>
 </section>
 <section id="ensemble-average-of-state-population">
-<h2><span class="section-number">12.5.4. </span>Ensemble average of state population<a class="headerlink" href="#ensemble-average-of-state-population" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4.4. </span>Ensemble average of state population<a class="headerlink" href="#ensemble-average-of-state-population" title="Link to this heading">#</a></h2>
 <p>In the master equation approach, the population of states averaged over the ensemble is obtained from the diagonal elements of the density matrix.  In the jump method, at each moment of time, we have a state vector, from which we can calculate probability to obtain a particular state.  However, the state vector fluctuates from one trajectory to another. Hence, we need to obtain many trajectories and take average over them.   Averaging many trajectories must reproduce the master-equation result. In the following code, we take average over <span class="math notranslate nohighlight">\(400\)</span> trajectories.<br />
 The statistical error of a trajectory average falls as <span class="math notranslate nohighlight">\(1/\sqrt{N_{\rm traj}}\)</span>.  (Increase the number of samplings to get better statistics.)<br />
 The solid curves are the MCWF ensemble averages of probability <span class="math notranslate nohighlight">\(p_k(t) = |\langle k | \Psi(t)\rangle|^2\)</span> where <span class="math notranslate nohighlight">\(k = \{e,s,a,g\}\)</span>. The dashed lines are the thermal
@@ -757,19 +756,19 @@ the agreement is independent of <span class="math notranslate nohighlight">\(\Ga
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71d9c6e71bd9e1fe0f9c4fda092704f54e20c9b891b87b558a2c10a51a0d5fac.png" src="../_images/71d9c6e71bd9e1fe0f9c4fda092704f54e20c9b891b87b558a2c10a51a0d5fac.png" />
+<img alt="../_images/bc1b63c79486b01f467002c03e02287b99df98e882686e450c970bfb8e04029e.png" src="../_images/bc1b63c79486b01f467002c03e02287b99df98e882686e450c970bfb8e04029e.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dicke     MCWF   (std. dev.)    thermal
-  e      0.0701  (  0.0117)      0.0723
-  s      0.1976  (  0.0217)      0.1966
-  a      0.1915  (  0.0161)      0.1966
-  g      0.5408  (  0.0236)      0.5344
+  e      0.0705  (  0.0140)      0.0723
+  s      0.2010  (  0.0202)      0.1966
+  a      0.1909  (  0.0176)      0.1966
+  g      0.5375  (  0.0277)      0.5344
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="broken-ergodicity-the-dark-antisymmetric-state">
-<h2><span class="section-number">12.5.5. </span>Broken ergodicity: the dark antisymmetric state<a class="headerlink" href="#broken-ergodicity-the-dark-antisymmetric-state" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4.5. </span>Broken ergodicity: the dark antisymmetric state<a class="headerlink" href="#broken-ergodicity-the-dark-antisymmetric-state" title="Link to this heading">#</a></h2>
 <p>Set <span class="math notranslate nohighlight">\(r_{12}\to 0\)</span>.  Then <span class="math notranslate nohighlight">\(\Gamma_{12}\to\gamma_0\)</span>, so <span class="math notranslate nohighlight">\(\gamma_a=\gamma_0-\Gamma_{12}\to 0\)</span>
 and the antisymmetric collapse operators vanish: <span class="math notranslate nohighlight">\(|a\rangle\)</span> is completely decoupled from
 the field and is an eigenstate of <span class="math notranslate nohighlight">\(H\)</span>.  In the trajectory picture this is unmistakable:</p>
@@ -809,7 +808,7 @@ the reduced partition function <span class="math notranslate nohighlight">\(Z = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/99c40714c04b9058eed6873e2ec3335e861cb2480692f03b7448a0f18c3786ee.png" src="../_images/99c40714c04b9058eed6873e2ec3335e861cb2480692f03b7448a0f18c3786ee.png" />
+<img alt="../_images/343c7469909cc028ea84b5180f9cb78d9af8851601c820419bb48e5e695aaf1a.png" src="../_images/343c7469909cc028ea84b5180f9cb78d9af8851601c820419bb48e5e695aaf1a.png" />
 </div>
 </div>
 <p>Starting from <span class="math notranslate nohighlight">\(|s\rangle\)</span>, the
@@ -839,17 +838,17 @@ the reduced partition function <span class="math notranslate nohighlight">\(Z = 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dicke     MCWF   (std. dev.)    thermal
-  e      0.0888  (  0.0145)      0.0900
-  s      0.2426  (  0.0222)      0.2447
+  e      0.0917  (  0.0134)      0.0900
+  s      0.2437  (  0.0214)      0.2447
   a      0.0000  (  0.0000)      0.0000
-  g      0.6686  (  0.0223)      0.6652
+  g      0.6647  (  0.0231)      0.6652
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="waiting-time-distribution-of-emitted-photons">
-<h2><span class="section-number">12.5.6. </span>Waiting-time distribution of emitted photons<a class="headerlink" href="#waiting-time-distribution-of-emitted-photons" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4.6. </span>Waiting-time distribution of emitted photons<a class="headerlink" href="#waiting-time-distribution-of-emitted-photons" title="Link to this heading">#</a></h2>
 <p>The emission jumps (collapse operators 0 and 1) are the photon-detection events.  The
 distribution of delays between consecutive emissions is suppressed at short <span class="math notranslate nohighlight">\(\Delta t\)</span>:
 after an emission the dimer must be re-excited before it can emit again.  That short-time
@@ -899,10 +898,10 @@ suppression is the time-domain face of the antibunching we quantify next with
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2456ed7f19cb46c76b06c59101739daf52ca80fe059fc586c9c71483c58c3ee.png" src="../_images/e2456ed7f19cb46c76b06c59101739daf52ca80fe059fc586c9c71483c58c3ee.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>emitted photons: 337988
-mean waiting time  =  11.678668850996136
-standard deviation =  12.582400724365847
+<img alt="../_images/4f4780e2ca3986cf1d8c9b765ef2ca6ae022e03025a9d54b10166e93c42b9165.png" src="../_images/4f4780e2ca3986cf1d8c9b765ef2ca6ae022e03025a9d54b10166e93c42b9165.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>emitted photons: 337628
+mean waiting time  =  11.691130953187505
+standard deviation =  12.562175351147511
 likely super-poissonian
 </pre></div>
 </div>
@@ -910,7 +909,7 @@ likely super-poissonian
 </div>
 </section>
 <section id="reconstructing-g-2-tau-from-the-photon-clicks">
-<h2><span class="section-number">12.5.7. </span>Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks<a class="headerlink" href="#reconstructing-g-2-tau-from-the-photon-clicks" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4.7. </span>Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks<a class="headerlink" href="#reconstructing-g-2-tau-from-the-photon-clicks" title="Link to this heading">#</a></h2>
 <p>A detector at angle <span class="math notranslate nohighlight">\(\chi\)</span> measures the far-field operator <span class="math notranslate nohighlight">\(D^-=\sigma_1^- + e^{i\phi}
 \sigma_2^-\)</span> with <span class="math notranslate nohighlight">\(\phi = k_0 r_{12}\cos\chi\)</span>.  From the intensity of the previous page,
 the symmetric (<span class="math notranslate nohighlight">\(\eta_1\)</span>) and antisymmetric (<span class="math notranslate nohighlight">\(\eta_2\)</span>) emissions contribute to the detected
@@ -1006,8 +1005,8 @@ the exact steady-state result and the analytic <span class="math notranslate noh
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0eb4d227e819373a83981bbf20fd27f1a6d32532638ff6b8637298a14ce5c874.png" src="../_images/0eb4d227e819373a83981bbf20fd27f1a6d32532638ff6b8637298a14ce5c874.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g2(0):  clicks (bin 0) = 0.9517
+<img alt="../_images/af3dbbbf08447ccaaefb99682f9be7c7a4033a87e2c63e18a756e2aaa30b7677.png" src="../_images/af3dbbbf08447ccaaefb99682f9be7c7a4033a87e2c63e18a756e2aaa30b7677.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g2(0):  clicks (bin 0) = 0.8957
         exact steady-state = 0.8026
         analytic 1 - phi^2/4 = 0.8026
 </pre></div>
@@ -1016,7 +1015,7 @@ the exact steady-state result and the analytic <span class="math notranslate noh
 </div>
 </section>
 <section id="self-check-mcwf-vs-analytic-theory">
-<h2><span class="section-number">12.5.8. </span>Self-check: MCWF vs. analytic theory<a class="headerlink" href="#self-check-mcwf-vs-analytic-theory" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.4.8. </span>Self-check: MCWF vs. analytic theory<a class="headerlink" href="#self-check-mcwf-vs-analytic-theory" title="Link to this heading">#</a></h2>
 <p>The cell below verifies the page against the theory.  The <strong>deterministic</strong> identities
 (steady state <span class="math notranslate nohighlight">\(=\)</span> thermal state; exact <span class="math notranslate nohighlight">\(g^{(2)}(0)=1-\phi^2/4\)</span>; non-ergodic steady state)
 are hard assertions.  The <strong>stochastic</strong> MCWF estimates are reported with a Monte-Carlo
@@ -1092,10 +1091,10 @@ after changing the model or parameters.</p>
 [PASS] non-ergodic Boltzmann state is stationary (||L rho|| = 0)   ||L rho|| = 0.00e+00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] MCWF ensemble ~ thermal state (400 traj)   max deviation 0.003
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] MCWF ensemble ~ thermal state (400 traj)   max deviation 0.010
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WARN] click g2(0) ~ 1 - phi^2/4   clicks 0.9258  theory 0.8026
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PASS] click g2(0) ~ 1 - phi^2/4   clicks 0.8496  theory 0.8026
 
 DETERMINISTIC CHECKS PASSED
 </pre></div>
@@ -1136,12 +1135,12 @@ DETERMINISTIC CHECKS PASSED
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dimer-case2-qme.html"
+       href="dimer-case2-gksl.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12.3. </span>Dimer II: QME - Indistinguishability and broken ergodicity</p>
+        <p class="prev-next-title"><span class="section-number">12.3. </span>Dimer Case 2:  Davies-GKSL with the full interaction picture</p>
       </div>
     </a>
     <a class="right-next"
@@ -1171,14 +1170,14 @@ DETERMINISTIC CHECKS PASSED
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">12.5.1. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-quantum-trajectory">12.5.2. A single quantum trajectory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectories">12.5.3. Quantum trajectories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-average-of-state-population">12.5.4. Ensemble average of state population</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broken-ergodicity-the-dark-antisymmetric-state">12.5.5. Broken ergodicity: the dark antisymmetric state</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-of-emitted-photons">12.5.6. Waiting-time distribution of emitted photons</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-g-2-tau-from-the-photon-clicks">12.5.7. Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-check-mcwf-vs-analytic-theory">12.5.8. Self-check: MCWF vs. analytic theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">12.4.1. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-quantum-trajectory">12.4.2. A single quantum trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-trajectories">12.4.3. Quantum trajectories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-average-of-state-population">12.4.4. Ensemble average of state population</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broken-ergodicity-the-dark-antisymmetric-state">12.4.5. Broken ergodicity: the dark antisymmetric state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waiting-time-distribution-of-emitted-photons">12.4.6. Waiting-time distribution of emitted photons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-g-2-tau-from-the-photon-clicks">12.4.7. Reconstructing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> from the photon clicks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-check-mcwf-vs-analytic-theory">12.4.8. Self-check: MCWF vs. analytic theory</a></li>
 </ul>
   </nav></div>
 

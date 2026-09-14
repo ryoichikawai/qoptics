@@ -73,7 +73,7 @@ parts:
       sections:
       -  file: dimer2/dimer-case2-theory
       -  file: dimer2/dimer-case2-functions
-      -  file: dimer2/dimer-case2-qme
+      -  file: dimer2/dimer-case2-gksl
       -  file: dimer2/dimer-case2-jump
    -  file: dimer3/dimer-case3-intro
       sections:
