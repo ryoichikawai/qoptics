@@ -252,10 +252,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">13.4. Full counting statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.2. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.3. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.4. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">13.5. Full counting statistics</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../trimer0/trimer-theory.html">14. Trimer:  Theoretical model</a></li>
@@ -501,7 +501,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-scale-and-unit">7.4.3. Time scale and unit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-scale-and-unit">7.4.4. Energy scale and unit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-values">7.4.5. Typical values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-and-triple-time-scales">7.4.6. Dual and triple time scales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-triple-and-quadraple-time-scales">7.4.6. Dual, triple, and quadraple time scales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-source">7.4.7. Data source</a></li>
 </ul>
             </nav>
         </div>
@@ -521,12 +522,17 @@
 <ol class="arabic simple">
 <li><p>wave length:  <span class="math notranslate nohighlight">\(\lambda_0\)</span>.</p></li>
 <li><p>magnitude of dipole moment: <span class="math notranslate nohighlight">\(d\)</span> <span class="math notranslate nohighlight">\(\quad\Rightarrow\quad\)</span> the free spontaneous emission rate: <span class="math notranslate nohighlight">\(\gamma_{0}\)</span>.</p></li>
-<li><p>temperature of the photon gasL <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+<li><p>temperature of a photon gas: <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
 <li><p>angle between the dipole moment and the line connecting two emitters:  <span class="math notranslate nohighlight">\(\chi\)</span>.</p></li>
-<li><p>polar angles toward the detector: <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>.</p></li>
-<li><p>location of emitters: <span class="math notranslate nohighlight">\(\mathbf{r}_{i}\)</span>.</p></li>
+<li><p>unit vector from the center of emitters to the detector: <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}\)</span> specifyed by polar angles: <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>.</p></li>
+<li><p>location of each emitter: <span class="math notranslate nohighlight">\(\mathbf{r}_{i}\)</span>.</p></li>
+<li><p>strength of external driving <span class="math notranslate nohighlight">\(E_{L}\)</span>  <span class="math notranslate nohighlight">\(\quad\Rightarrow\quad\)</span>  Rabi frequency <span class="math notranslate nohighlight">\(\Omega_{L} = \mathbf{d}\cdot\mathbf{E}_{L}\)</span>  (<a class="reference internal" href="../model/driving.html#sec-driving"><span class="std std-numref">Chapter 5.4</span></a>)</p></li>
 </ol>
-<p>However, directly measuring the dipole moment is difficult.  Instead we use the free spontaneous emission rate <span class="math notranslate nohighlight">\(\gamma_{0} = \displaystyle\frac{4 \omega_{0}^{3} d^{2}}{3 \hbar c^2}\)</span> as basic parameter in place of <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<p><em>Remarks</em></p>
+<ol class="arabic simple">
+<li><p>Instead of specifying the magnitude of dipole moment, we use the free spontaneous emission rate <span class="math notranslate nohighlight">\(\gamma_{0} = \displaystyle\frac{4 \omega_{0}^{3} d^{2}}{3 \hbar c^2}\)</span> as basic parameter.</p></li>
+<li><p>Similarly, the Rabi frequency <span class="math notranslate nohighlight">\(\Omega_{L} = \mathbf{d}\cdot\mathbf{E}_{L}\)</span> is used as a parameter instead of the laser intensity.</p></li>
+</ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Basic parameters</p>
@@ -537,6 +543,7 @@
 <li><p>dipolemoment direction:  <span class="math notranslate nohighlight">\(\chi\)</span></p></li>
 <li><p>detector location:  <span class="math notranslate nohighlight">\((\theta, \phi)\)</span></p></li>
 <li><p>location of emitters:  <span class="math notranslate nohighlight">\(\mathbf{r}_{i},\,  i=1, \cdots, N\)</span></p></li>
+<li><p>Rabi frequency <span class="math notranslate nohighlight">\(\Omega_{L}\)</span>.</p></li>
 </ol>
 </div>
 </section>
@@ -554,6 +561,7 @@
 <h2><span class="section-number">7.4.3. </span>Time scale and unit<a class="headerlink" href="#time-scale-and-unit" title="Link to this heading">#</a></h2>
 <p>There are two time scales, <span class="math notranslate nohighlight">\(\omega_{0}\)</span> and <span class="math notranslate nohighlight">\(\gamma_{0}\)</span>. The frequency <span class="math notranslate nohighlight">\(\omega_{0}\)</span> dictates the rapid oscillation and the decay rate <span class="math notranslate nohighlight">\(\gamma_{0}\)</span> represents a very slow relaxation process.  In a typical case, <span class="math notranslate nohighlight">\(\displaystyle \frac{\gamma_{0}}{\omega_{0}} \sim 10^{-8}\)</span>.   Since the their magnitiude of order are far apart, we treat the two time scales separately.  Particularly when we calculate time evolution of the system state, the duration of the process must be longer than <span class="math notranslate nohighlight">\(\gamma_{0}^{-1}\)</span>.  Then, we need to remove the rapid oscillation from the dynamics.  It can be done by using a rotating frame.  See xxxx.</p>
 <p>In numerical calculation, we use two times.  When we are interested in sort time behavior with in several phase oscillations, <span class="math notranslate nohighlight">\(t = \omega_{0}^{L} t^\text{L}\)</span>  where <span class="math notranslate nohighlight">\(\omega^\text{L}_{0}\)</span> and <span class="math notranslate nohighlight">\(t^\text{L}\)</span> is the frequency and time in laboratory unit.  On the other hand, for a slow relaxation dynamics, we use  <span class="math notranslate nohighlight">\(t^\prime = \gamma_{0}^\text{L} t^\text{L} = \displaystyle\frac{\gamma_{0}^\text{L}}{\omega_{0}^{L}} t = \gamma_{0} t\)</span> where we defined <span class="math notranslate nohighlight">\(\gamma_{0} =   \displaystyle\frac{\gamma_{0}^\text{L}}{\omega_{0}^{L}}\)</span>.</p>
+<p>When external driving is used, the Rabi frequency <span class="math notranslate nohighlight">\(\Omega_{L}\)</span> sets another time scale.</p>
 </section>
 <section id="energy-scale-and-unit">
 <h2><span class="section-number">7.4.4. </span>Energy scale and unit<a class="headerlink" href="#energy-scale-and-unit" title="Link to this heading">#</a></h2>
@@ -587,8 +595,8 @@
 <li><p><span class="math notranslate nohighlight">\(|\mathbf{r}_{i}-\mathbf{r}_{j}| \sim 0.01 - 0.1 \lambda_{0}\)</span>.</p></li>
 </ol>
 </section>
-<section id="dual-and-triple-time-scales">
-<h2><span class="section-number">7.4.6. </span>Dual and triple time scales<a class="headerlink" href="#dual-and-triple-time-scales" title="Link to this heading">#</a></h2>
+<section id="dual-triple-and-quadraple-time-scales">
+<h2><span class="section-number">7.4.6. </span>Dual, triple, and quadraple time scales<a class="headerlink" href="#dual-triple-and-quadraple-time-scales" title="Link to this heading">#</a></h2>
 <p>The time scales are determined by the Bohr frequency <span class="math notranslate nohighlight">\(\omega_{0}\)</span>, dipole-dipole coupling strength <span class="math notranslate nohighlight">\(\Omega\)</span>, and spontaneous emission rate <span class="math notranslate nohighlight">\(\gamma_0\)</span>.  There are two cases:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\omega_0 \gg \gamma_{0} &gt; \Omega\)</span></p></li>
@@ -596,6 +604,16 @@
 </ol>
 <p>Recall that <span class="math notranslate nohighlight">\(\Omega\)</span> determines the time scale of energy exchange between the emitters. In the first case, the exchange time is slower than the decay process.  Hence, the is not enough time to make a transition and we can safely ignore the dipole-dipole coupling.   Then we have two time scale <span class="math notranslate nohighlight">\(\omega_{0}\)</span> and <span class="math notranslate nohighlight">\(\gamma_{0}\)</span>  (dual time scales).  These time scales are typically at order of <span class="math notranslate nohighlight">\(\displaystyle\frac{\gamma_{0}}{\omega_{0}} = 10^{-8}\)</span>.  Since we are interested in the slow decay process, we will eliminate <span class="math notranslate nohighlight">\(\omega_{0}\)</span> using the rotating frame.</p>
 <p>When the distance between the emitters is less than <span class="math notranslate nohighlight">\(0.1 \lambda_{0}\)</span>, the dipole-dipole coupling gets significantly large.  Then, all three scales become important (triple time scales).   Typical orders are  <span class="math notranslate nohighlight">\(\displaystyle\frac{\Omega}{\omega_{0}}= 10^{-5}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle\frac{\gamma_{0}}{\omega_{0}}= 10^{-8}\)</span>.  Then, we need to eliminate both <span class="math notranslate nohighlight">\(\omega_{0}\)</span> and <span class="math notranslate nohighlight">\(\Omega\)</span>, which can be done again with the rotating frame method but we also have to use the Davies-GKSL master equation.</p>
+</section>
+<section id="data-source">
+<h2><span class="section-number">7.4.7. </span>Data source<a class="headerlink" href="#data-source" title="Link to this heading">#</a></h2>
+<p><strong>Spontaneous emission rate of a single CdSe dot</strong></p>
+<p>Brokmann et al., Phys. Rev. Lett. 93 (2004), 107403</p>
+<ul class="simple">
+<li><p>Wave length in vacuum: <span class="math notranslate nohighlight">\(\lambda_{0} = 560 \text{ nm}\)</span></p></li>
+<li><p>Radiative lifetime in vaccume: <span class="math notranslate nohighlight">\(\tau = 25.5 \text{ ns}\)</span>,   In dielectric material (<span class="math notranslate nohighlight">\(n=1.5\)</span>):  <span class="math notranslate nohighlight">\(\tau = 17.0 \text{ ns}\)</span>.</p></li>
+</ul>
+<p>This makes <span class="math notranslate nohighlight">\(\displaystyle\frac{\gamma_{0}}{\omega_{0}} \sim 1.2 \times 10^{-8}\)</span>.   However, when the dot is in the dielectric material, <span class="math notranslate nohighlight">\(\displaystyle\frac{\gamma_{0}}{\omega_{0}} \sim 1.8 \times 10^{-8}\)</span></p>
 </section>
 </section>
 
@@ -670,7 +688,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-scale-and-unit">7.4.3. Time scale and unit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-scale-and-unit">7.4.4. Energy scale and unit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-values">7.4.5. Typical values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-and-triple-time-scales">7.4.6. Dual and triple time scales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-triple-and-quadraple-time-scales">7.4.6. Dual, triple, and quadraple time scales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-source">7.4.7. Data source</a></li>
 </ul>
   </nav></div>
 

@@ -252,10 +252,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer3/dimer-case3-intro.html">13. Dimer III: Coherence by external driving</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.1. The model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.2. First-order fringes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.3. Second-order coherence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">13.4. Full counting statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-model.html">13.2. The model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g1.html">13.3. First-order fringes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-qme-g2.html">13.4. Second-order coherence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">13.5. Full counting statistics</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../trimer0/trimer-theory.html">14. Trimer:  Theoretical model</a></li>
@@ -528,9 +528,9 @@ the Heisenberg equation of motion for <span class="math notranslate nohighlight"
 <p>Since the detector is far from the emitter, we can assume <span class="math notranslate nohighlight">\(|\mathbf{r}_{ij}| \ll \mathbf{R}_{j}|\)</span>, then Eq. <a class="reference internal" href="#equation-eq-source-field">(7.12)</a> can be approximated to</p>
 <div class="math notranslate nohighlight" id="equation-eq-source-field-approx">
 <span class="eqno">(7.13)<a class="headerlink" href="#equation-eq-source-field-approx" title="Link to this equation">#</a></span>\[
-\mathbf{E}^{(+)}_{s}(\mathbf{R},t_{R}) \approx  - \hat{\mathbf{e}}_{R} \frac{\omega_{0}^{2}d}{c^2} \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right]^{1/2} \sum_{j} e^{- i k_{0} \hat{\mathbf{R}} \cdot \mathbf{r}_{j}} \sigma^{-}_{j}(t)
+\mathbf{E}^{(+)}_{s}(\mathbf{R},t_{R}) \approx  - \hat{\mathbf{e}}_{R} \frac{\omega_{0}^{2}d}{c^2} \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{n}}\right)^2\right]^{1/2} \sum_{j} e^{- i k_{0} \hat{\mathbf{n}} \cdot \mathbf{r}_{j}} \sigma^{-}_{j}(t)
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{e}_{R}\)</span> is a unit vector in the direction of <span class="math notranslate nohighlight">\(\left(\mathbf{d} \times \mathbf{R} \right)\times \mathbf{R}\)</span>.  Notice that the field strength depends on the direction of the radial vector through the two inner products <span class="math notranslate nohighlight">\(\hat{\mathbf{d}} \cdot \hat{\mathbf{R}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} \cdot \mathbf{r}_{j}\)</span>.  The latter depends the geometric structure of the emitters.  Now the source field is expressed with the operators <span class="math notranslate nohighlight">\(\sigma^{-}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{+}_{j}\)</span> instead of <span class="math notranslate nohighlight">\(a_{\ell}\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}_{\ell}\)</span>.  This allows us to evaluate the coherence functions with <span class="math notranslate nohighlight">\(\sigma^{-}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{+}_{j}\)</span> which we can obtain from the quantum master equation.</p>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{e}_{R}\)</span> is a unit vector in the direction of <span class="math notranslate nohighlight">\(\left(\mathbf{d} \times \mathbf{R} \right)\times \mathbf{R}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{n}} = \mathbf{R}/|\mathbf{R}|\)</span>.  Notice that the field strength depends on the direction of the radial vector through the two inner products <span class="math notranslate nohighlight">\(\hat{\mathbf{d}} \cdot \hat{\mathbf{n}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{n}} \cdot \mathbf{r}_{j}\)</span>.  The latter depends the geometric structure of the emitters.  Now the source field is expressed with the operators <span class="math notranslate nohighlight">\(\sigma^{-}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{+}_{j}\)</span> instead of <span class="math notranslate nohighlight">\(a_{\ell}\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}_{\ell}\)</span>.  This allows us to evaluate the coherence functions with <span class="math notranslate nohighlight">\(\sigma^{-}_{j}\)</span> and <span class="math notranslate nohighlight">\(\sigma^{+}_{j}\)</span> which we can obtain from the quantum master equation.</p>
 <p>The detector sees both free and source fields.  The signal from the free field is the background noise to the source signal. It is not possible to eliminate the noise.  We assume that the noise from the free field is removed by some experimental process.</p>
 </section>
 <section id="detection-of-photons">
@@ -549,14 +549,14 @@ J^{\pm} (\mathbf{R},t) = \sqrt{\gamma(\mathbf{R})} \sum_{i} e^{ \pm i k_{0} \hat
 <p>with the transition rate</p>
 <div class="math notranslate nohighlight">
 \[
-\gamma(\mathbf{R}) = \left(\frac{\omega_{0}^{2}d}{c^2}\right)^{2} \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right].
+\gamma(\mathbf{R}) = \left(\frac{\omega_{0}^{2}d}{c^2}\right)^{2} \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{n}}\right)^2\right].
 \]</div>
 <p>Recall that in the jump methods, we assume that the state vector jumps to a new state determined by the collapse operator.  Is <span class="math notranslate nohighlight">\(J^{-}(\mathbf{R})\)</span> a collapse operator? The radiation field alone cannot determine it because the field does not know if the light from each emitter is coherent to others. It is determined by the other side, the emitters. (See <a class="reference internal" href="../foundations/coherence.html#ch-coherence"><span class="std std-numref">Chapter 3</span></a>.)  Since we know the state of the emitters, we can evaluate the expectation value of the intensity and determine the coherency:</p>
 <div class="math notranslate nohighlight" id="equation-eq-intensity-r">
 <span class="eqno">(7.15)<a class="headerlink" href="#equation-eq-intensity-r" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 I(\mathbf{x},t) &amp;= \langle J^{+}(\mathbf{R},t) J^{-}(\mathbf{R},t) \rangle \\
-&amp;= \left(\frac{\omega_{0}^{2}d}{c^2}\right)^2 \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{R}}\right)^2\right] \sum_{ij} e^{i k_0 \hat{\mathbf{R}}\cdot \mathbf{r}_{ij}} \langle \sigma^{+}_{i} \sigma^{-}_{j}\rangle 
+&amp;= \left(\frac{\omega_{0}^{2}d}{c^2}\right)^2 \left [ 1 - \left(\hat{\mathbf{d}}\cdot\hat{\mathbf{n}}\right)^2\right] \sum_{ij} e^{i k_0 \hat{\mathbf{n}}\cdot \mathbf{r}_{ij}} \langle \sigma^{+}_{i} \sigma^{-}_{j}\rangle 
 \end{aligned}
 \end{split}\]</div>
 <p>If <span class="math notranslate nohighlight">\(\langle \sigma^{+}_{i} \sigma_{j}\rangle = 0\)</span> for <span class="math notranslate nohighlight">\(i\ne j\)</span>, then the light from an emitter is not coherent with others.
