@@ -556,9 +556,12 @@ H_{0} = \frac{\sigma_{0}}{2} \sigma^{z}.
 \end{split}\]</div>
 <p>Hence, the coherence term <span class="math notranslate nohighlight">\(\rho_{eg}\)</span> is independent from the diagonal term and  vanishes very quickly.  The equation can be easily solved and the results is</p>
 <div class="math notranslate nohighlight" id="equation-eq-p-ee-monomer-qd">
-<span class="eqno">(10.3)<a class="headerlink" href="#equation-eq-p-ee-monomer-qd" title="Link to this equation">#</a></span>\[
-\rho_{ee}(t) = \rho_{ee}(0) e^{-(P+\gamma_{0}) t} + \frac{P}{P+\gamma_{0}} \left (1 - e^{-(P+\gamma_{0}) t} \right)
-\]</div>
+<span class="eqno">(10.3)<a class="headerlink" href="#equation-eq-p-ee-monomer-qd" title="Link to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+\rho_{ee}(t) &amp;= \rho_{ee}(0) e^{-(P+\gamma_{0}) t} + \frac{P}{P+\gamma_{0}} \left (1 - e^{-(P+\gamma_{0}) t} \right) \\
+\rho_{eg}(t) &amp;= \rho_{eg}(0) e^{- \tfrac12\left(P + \gamma_{0} + 2\gamma_{\phi}\right) t}
+\end{aligned}
+\end{split}\]</div>
 <p>The steady state is</p>
 <div class="math notranslate nohighlight" id="equation-eq-rho-ss-monomer-qd">
 <span class="eqno">(10.4)<a class="headerlink" href="#equation-eq-rho-ss-monomer-qd" title="Link to this equation">#</a></span>\[
@@ -571,7 +574,7 @@ H_{0} = \frac{\sigma_{0}}{2} \sigma^{z}.
 <p>Using the formula <a class="reference internal" href="../methods/openqm-qme-example.html#equation-eq-example-g1-explicit">(7.31)</a>, we obtain</p>
 <div class="math notranslate nohighlight" id="equation-eq-g1-monomer-qd">
 <span class="eqno">(10.5)<a class="headerlink" href="#equation-eq-g1-monomer-qd" title="Link to this equation">#</a></span>\[
-g^{(1)}(\tau) = p_{e}(\tau;|eg\rangle) = e^{-\frac{1}{2}(P + \gamma_{0}+2 \gamma_{\phi})t} \approx e^{-\gamma_{\phi}t}
+g^{(1)}(\tau) = e^{-\frac{1}{2}(P + \gamma_{0}+2 \gamma_{\phi})t} \approx e^{-\gamma_{\phi}t}
 \]</div>
 <p>Similarly using <a class="reference internal" href="../methods/openqm-qme-example.html#equation-eq-example-g2-explicit">(7.33)</a> we obtain the second-order coherence function</p>
 <div class="math notranslate nohighlight">
@@ -579,9 +582,10 @@ g^{(1)}(\tau) = p_{e}(\tau;|eg\rangle) = e^{-\frac{1}{2}(P + \gamma_{0}+2 \gamma
 g^{(2)}(\tau) = 1 - e^{-(P + \gamma_{0})\tau}
 \]</div>
 <p>which does not involve <span class="math notranslate nohighlight">\(\gamma_{\phi}\)</span>.</p>
-<div class="admonition important" id="adm-dephasig">
-<p class="admonition-title">Important</p>
-<p>Effect of dephasing
+<div class="admonition-effect-of-dephasing admonition">
+<p class="admonition-title">Effect of dephasing</p>
+<p>class: important
+:name: adm:dephasig
 While the dephasing dominates in the first-order coherence, the second-order coherence is not affected by the dephasing.</p>
 </div>
 </section>
