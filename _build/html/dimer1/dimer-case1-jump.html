@@ -232,8 +232,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../monomer2/monomer-case2-intro.html">10. Monomer Case II:   Pumping Quantum Dot</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../monomer2/monomer-case2-model.html">10.1. Monomer Case II: Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monomer2/monomer-case2-qme.html">10.2. Monomer Case II: QME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer2/monomer-case2-model.html">10.2. Monomer Case II: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monomer2/monomer-case2-qme.html">10.3. Monomer Case II: QME</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dimer-model/dimer-intro.html">11. Dimer: The model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -263,16 +263,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../dimer3/dimer-case3-jump.html">14.5. Full counting statistics</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../trimer0/trimer-theory.html">15. Trimer:  Theoretical model</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../trimer1/trimer-case1-intro.html">16. Trimer Case 1:  Incoherent cluster</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-qme.html">16.1. Trimer Case I: QME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-jump.html">16.2. Trimer Case I: MCWF</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dimer4/dimer-case4-intro.html">15. Dimer Case IV: A Pair of quantum dots</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dimer4/dimer-case4-model.html">15.1. Dimer Case IV: Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer4/dimer-case4-functions.html">15.2. Dimer Case II: Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimer4/dimer-case4-qme.html">15.3. Dimer Case IV:  QME</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../trimer2/trimer-case2-intro.html">17. Trimer Case II:  Full S₃ symmetry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-model.html">17.1. Trimer: Case II - Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-functions.html">17.2. Trimer Case2:  Shared codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-qme.html">17.3. Trimer Case II:  QME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trimer0/trimer-theory.html">16. Trimer:  Theoretical model</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../trimer1/trimer-case1-intro.html">17. Trimer Case 1:  Incoherent cluster</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-qme.html">17.1. Trimer Case I: QME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer1/trimer-case1-jump.html">17.2. Trimer Case I: MCWF</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../trimer2/trimer-case2-intro.html">18. Trimer Case II:  Full S₃ symmetry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-model.html">18.1. Trimer: Case II - Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-functions.html">18.2. Trimer Case2:  Shared codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trimer2/trimer-case2-qme.html">18.3. Trimer Case II:  QME</a></li>
 </ul>
 </details></li>
 </ul>
@@ -567,7 +573,7 @@
 <span class="n">opts</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;store_states&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="s2">&quot;keep_runs_results&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;progress_bar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
 
 <span class="c1"># get a trajectory</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H0</span><span class="p">,</span><span class="n">psi0</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">e_ops</span><span class="o">=</span><span class="n">e_ops</span><span class="p">,</span><span class="n">ntraj</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">opts</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H0</span><span class="p">,</span><span class="n">psi0</span><span class="p">,</span><span class="n">times</span><span class="p">,</span><span class="n">c_ops</span><span class="p">,</span><span class="n">e_ops</span><span class="o">=</span><span class="n">e_ops</span><span class="p">,</span><span class="n">ntraj</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">opts</span><span class="p">)</span>
 
 <span class="c1"># get results</span>
 <span class="n">t_jump</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">col_times</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># time of all jumps</span>
@@ -586,9 +592,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emission jumps in system 1 = 528
-Number of emission jumps in system 2 = 537
-Total number of emission jumps       = 1065
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of emission jumps in system 1 = 508
+Number of emission jumps in system 2 = 533
+Total number of emission jumps       = 1041
 </pre></div>
 </div>
 </div>
@@ -617,7 +623,7 @@ Total number of emission jumps       = 1065
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/45d002ed2ba74b195ccec9e76058f2cf7af276d82b8e4d01d77fbed87ec0f9e8.png" src="../_images/45d002ed2ba74b195ccec9e76058f2cf7af276d82b8e4d01d77fbed87ec0f9e8.png" />
+<img alt="../_images/8bc93d5baea98b1d600e9eddf3792a8a16ad347c55d02792c91de84e094c3106.png" src="../_images/8bc93d5baea98b1d600e9eddf3792a8a16ad347c55d02792c91de84e094c3106.png" />
 </div>
 </div>
 </section>
@@ -663,18 +669,18 @@ Total number of emission jumps       = 1065
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>** System 1 **
-mean waiting time  =  23.96161049267936
-standard deviation =  18.042883936048955
+mean waiting time  =  24.907401476398572
+standard deviation =  18.008690290440406
 likely sub-poissonian
 
 ** System 2 **
-mean waiting time  =  23.52519127596084
-standard deviation =  17.99694217752714
+mean waiting time  =  23.723574426342797
+standard deviation =  18.517148855492042
 likely sub-poissonian
 
 ** All Systems **
-mean waiting time  =  11.869304101591476
-standard deviation =  9.503902176139746
+mean waiting time  =  12.142358219744306
+standard deviation =  9.853961006211865
 likely sub-poissonian
 </pre></div>
 </div>
@@ -707,12 +713,13 @@ likely sub-poissonian
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Total System&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Waiting time&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Event Count&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d09a17fcee2c9465ee37715592c1e9b4450d61d2c18116680262913e8756c4d8.png" src="../_images/d09a17fcee2c9465ee37715592c1e9b4450d61d2c18116680262913e8756c4d8.png" />
+<img alt="../_images/28af87ded48c2562c60f0cc72c4cf3639d303d9372595afa10c3860b9ec00f18.png" src="../_images/28af87ded48c2562c60f0cc72c4cf3639d303d9372595afa10c3860b9ec00f18.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -807,12 +814,13 @@ likely sub-poissonian
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b5f723553478dcf4a217efd0c042f4db96e12998d3a1b9aa680bf682a7b4e7b2.png" src="../_images/b5f723553478dcf4a217efd0c042f4db96e12998d3a1b9aa680bf682a7b4e7b2.png" />
+<img alt="../_images/31ff917bfcb43156063f251e48efba2d37daea514703bee4810332cbdafd366b.png" src="../_images/31ff917bfcb43156063f251e48efba2d37daea514703bee4810332cbdafd366b.png" />
 </div>
 </div>
 <p>In the above plots, the orange curve is showing <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> for a single system.  The quantum trajectory from each system agrees with it.  However, the coherence function obtained from the combined data differs from it. The data still very noisy but the curve seems going to 0.5 at <span class="math notranslate nohighlight">\(\tau=0\)</span>.</p>

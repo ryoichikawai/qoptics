@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/asyncio/base_events.py", line 721, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/kawai/miniconda3/envs/book/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Parameters
+gamma0 = 1
+a = 0.01  # dimensionless distance a = r/lambda0
+r12 = a*2*np.pi #  r12= k0*(a*lambda0)
+theta_dipole = np.pi/2
+chi = np.pi/2
+
+gamma_phi = 1e6*gamma0
+P = 10
+gamma0=1
+
+H=hamiltonian()
+Omega = ddcoupling(r12,theta_dipole)
+gamma = decay_rate(r12,theta_dipole)
+
+v, label_p = pbasis()
+u, label_d = dicke(v)
+
+c_ops = collapse_ops(P,gamma,gamma_phi,u)
+
+# detector operators
+theta_detect = np.pi/2
+phi_detect = 0
+nhat = detector_pos(theta_detect,phi_detect)
+r=emitter_pos(r12)
+D1=np.exp(-1j*np.inner(nhat,r[0])) * sm[0]
+D2=np.exp(-1j*np.inner(nhat,r[1])) * sm[1]
+D = [D1,D2]
+DD = D1+D2
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 26[39m
+[32m     22[39m theta_detect = np.pi/[32m2[39m
+[32m     23[39m phi_detect = [32m0[39m
+[32m     24[39m nhat = detector_pos(theta_detect,phi_detect)
+[32m     25[39m r=emitter_pos(r12)
+[32m---> [39m[32m26[39m D1=np.exp(-[32m1j[39m*np.inner(nhat,r[[32m0[39m])) * sm[[32m0[39m]
+[32m     27[39m D2=np.exp(-[32m1j[39m*np.inner(nhat,r[[32m1[39m])) * sm[[32m1[39m]
+[32m     28[39m D = [D1,D2]
+[32m     29[39m DD = D1+D2
+
+[31mNameError[39m: name 'sm' is not defined
+
