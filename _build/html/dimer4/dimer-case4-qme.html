@@ -507,10 +507,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-approximation">15.3.1. Zeroth-order approximation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-function">15.3.2. Second-order coherence function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detector-model-i">Detector model I</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detector-model-ii">Detector model II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-approximation">15.3.1. Zeroth-order approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-function">Second-order coherence function</a></li>
 </ul>
 </li>
 </ul>
@@ -611,12 +609,10 @@
 </div>
 </div>
 </div>
-</section>
 <section id="second-order-coherence-function">
-<h2><span class="section-number">15.3.2. </span>Second-order coherence function<a class="headerlink" href="#second-order-coherence-function" title="Link to this heading">#</a></h2>
+<h3>Second-order coherence function<a class="headerlink" href="#second-order-coherence-function" title="Link to this heading">#</a></h3>
 <p>We calculate <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> using the two detector models as before.</p>
-<section id="detector-model-i">
-<h3>Detector model I<a class="headerlink" href="#detector-model-i" title="Link to this heading">#</a></h3>
+<p><strong>Detector model I</strong></p>
 <p>The result is similar to other cases and we found <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0.5\)</span>, which consistent with <span class="math notranslate nohighlight">\(1-\tfrac{1}{N}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -657,10 +653,8 @@
 <img alt="../_images/1ccaaf86ec847b97dec95063e96be19a17916a78fc2e9cf35b34261e48042de6.png" src="../_images/1ccaaf86ec847b97dec95063e96be19a17916a78fc2e9cf35b34261e48042de6.png" />
 </div>
 </div>
-</section>
-<section id="detector-model-ii">
-<h3>Detector model II<a class="headerlink" href="#detector-model-ii" title="Link to this heading">#</a></h3>
-<p>In the absence of pure dephasing, <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> measured by the second model of detector is constant in time and <span class="math notranslate nohighlight">\(g^{(2)}(0) = 1\)</span> in agreement with <span class="math notranslate nohighlight">\(2 \left(1-\tfrac{1}{N}\right)\)</span>.  When pure depahsing is included, the detector model II generates the same <span class="math notranslate nohighlight">\(g^{(2)}\)</span> and the model one, except that <span class="math notranslate nohighlight">\(g^{(0)}(0)=1\)</span>.  Since the dephasing cannot affect two photons arriving at the same time, <span class="math notranslate nohighlight">\(g^{(0)}(0)=1\)</span> is expected.  However, it falls down to <span class="math notranslate nohighlight">\(0.5\)</span> at the dephasing rate.  There is no coherence between two photons separated by time difference longer than <span class="math notranslate nohighlight">\(\gamma_{\phi}^{-1}\)</span>. The curve gradually rises to <span class="math notranslate nohighlight">\(1\)</span> in the same manner as the detector model I shows.   The drop is so quick (<span class="math notranslate nohighlight">\(\sim 100 \text{ fs}\)</span>) that it may not show up in the measurement with low time resolution.</p>
+<p><strong>Detector model II</strong></p>
+<p>In the absence of pure dephasing, <span class="math notranslate nohighlight">\(g^{(2)}(\tau)\)</span> measured by the second model of detector is constant in time and <span class="math notranslate nohighlight">\(g^{(2)}(0) = 1\)</span> in agreement with <span class="math notranslate nohighlight">\(2 \left(1-\tfrac{1}{N}\right)\)</span>.  When pure depahsing is included, the detector model II generates the same <span class="math notranslate nohighlight">\(g^{(2)}\)</span> and the model one, except that <span class="math notranslate nohighlight">\(g^{(0)}(0)=1\)</span>.  The vcertical line at <span class="math notranslate nohighlight">\(\tau=0\)</span> in the plot is actually a peak with very narrow width. Since the dephasing cannot affect two photons arriving at the same time, <span class="math notranslate nohighlight">\(g^{(0)}(0)=1\)</span> is expected.  However, it falls down to <span class="math notranslate nohighlight">\(0.5\)</span> at the dephasing rate.  There is no coherence between two photons separated by time difference longer than <span class="math notranslate nohighlight">\(\gamma_{\phi}^{-1}\)</span>. The curve gradually rises to <span class="math notranslate nohighlight">\(1\)</span> in the same manner as the detector model I shows.   The drop is so quick (<span class="math notranslate nohighlight">\(\sim 100 \text{ fs}\)</span>) that it may not show up in the measurement with low time resolution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-- g2 with popuplation dynamics</span>
@@ -798,10 +792,8 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-approximation">15.3.1. Zeroth-order approximation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-function">15.3.2. Second-order coherence function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detector-model-i">Detector model I</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detector-model-ii">Detector model II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-approximation">15.3.1. Zeroth-order approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-function">Second-order coherence function</a></li>
 </ul>
 </li>
 </ul>
