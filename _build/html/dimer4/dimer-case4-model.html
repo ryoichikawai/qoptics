@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -508,8 +508,11 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dynamics">15.1.1. Population dynamics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-elimination-of-fast-degrees">15.1.2. Adiabatic elimination of fast degrees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-approximation">15.1.3. zeroth-order approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-elimination-of-fast-degrees">15.1.2. Adiabatic elimination of fast degrees</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-approximation">zeroth-order approximation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-approximation">First-order Approximation</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -545,35 +548,33 @@ H_{dd} = \Omega_{12} (\sigma^{+}_{1} \sigma^{-}_{2} + \sigma^{+}_{2} \sigma^{-}_
 \end{split}\]</div>
 <section id="population-dynamics">
 <h2><span class="section-number">15.1.1. </span>Population dynamics<a class="headerlink" href="#population-dynamics" title="Link to this heading">#</a></h2>
-<p>Using the product basis <span class="math notranslate nohighlight">\(|u_{1}\rangle = |ee\rangle\)</span>, <span class="math notranslate nohighlight">\(|u_{2}\rangle = |eg\rangle\)</span>, <span class="math notranslate nohighlight">\(|u_{2}\rangle = |ge\rangle\)</span>, and <span class="math notranslate nohighlight">\(|u_{4}\rangle = |gg\rangle\)</span>, and the matrix elements of the density operator as <span class="math notranslate nohighlight">\(p_{1}=\rho_{11}\)</span>, <span class="math notranslate nohighlight">\(p_{2}=\rho_{22}\)</span>, <span class="math notranslate nohighlight">\(p_{3}=\rho_{33}\)</span>, <span class="math notranslate nohighlight">\(p_{4}=\rho_{44}\)</span>, <span class="math notranslate nohighlight">\(c = \rho_{12} = x+ i y\)</span>, and <span class="math notranslate nohighlight">\(c^{*} = \rho_{21}=x - i y\)</span>, the master equation can be written as a set of ODEs</p>
+<p>Using the product basis <span class="math notranslate nohighlight">\(|u_{1}\rangle = |ee\rangle\)</span>, <span class="math notranslate nohighlight">\(|u_{2}\rangle = |eg\rangle\)</span>, <span class="math notranslate nohighlight">\(|u_{2}\rangle = |ge\rangle\)</span>, and <span class="math notranslate nohighlight">\(|u_{4}\rangle = |gg\rangle\)</span>, and the matrix elements of the density operator as <span class="math notranslate nohighlight">\(p_{1}=\rho_{11}\)</span>, <span class="math notranslate nohighlight">\(p_{2}=\rho_{22}\)</span>, <span class="math notranslate nohighlight">\(p_{3}=\rho_{33}\)</span>, <span class="math notranslate nohighlight">\(p_{4}=\rho_{44}\)</span>, <span class="math notranslate nohighlight">\(c = \rho_{12} = c_\text{r}+ i c_\text{i}\)</span>, and <span class="math notranslate nohighlight">\(c^{*} = \rho_{21}=c_\text{r} - c_\text{i}\)</span>, the master equation can be written as a set of ODEs</p>
 <div class="math notranslate nohighlight" id="equation-eq-dimer-case4-qme-pop">
 <span class="eqno">(15.1)<a class="headerlink" href="#equation-eq-dimer-case4-qme-pop" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \dot{p}_{1} &amp;= -2 \gamma_{0} p_{1} + P (p_{2}+p_{3}) \\
-\dot{p}_{2} &amp;= \gamma_{0} p_{1} -(\gamma_{0}+2 P) p_{2} +P p_{4} - \Gamma_{12} x - 2 \Omega_{12} y \\
-\dot{p}_{3} &amp;= \gamma_{0} p_{1} -(\gamma_{0}+2 P) p_{3} +P p_{4} - \Gamma_{12} x + 2 \Omega_{12} y\\
-\dot{p}_{4} &amp;= \gamma_{0} (p_{2}+p_{3}) - P p_{4} + 2 \Gamma_{12} x \\
-\dot{x} &amp;= - \Gamma_{c} x + \Gamma_{12} \left[p_{4} - \tfrac12(p_{2}+p_{3}) \right] \\
-\dot{y} &amp;= - \Gamma_{c} + \Omega_{12} (p_{2}-p_{3})
+\dot{p}_{2} &amp;= \gamma_{0} p_{1} -(\gamma_{0}+2 P) p_{2} +P p_{4} - \Gamma_{12} c_\text{r} - 2 \Omega_{12} y \\
+\dot{p}_{3} &amp;= \gamma_{0} p_{1} -(\gamma_{0}+2 P) p_{3} +P p_{4} - \Gamma_{12} c_\text{r} + 2 \Omega_{12} y\\
+\dot{p}_{4} &amp;= \gamma_{0} (p_{2}+p_{3}) - P p_{4} + 2 \Gamma_{12} c_\text{r} \\
+\dot{c}_\text{r} &amp;= - \Gamma_{c} c_\text{r} + \Gamma_{12} \left[p_{4} - \tfrac12(p_{2}+p_{3}) \right] \\
+\dot{c}_\text{i} &amp;= - \Gamma_{c} c_\text{i} + \Omega_{12} (p_{2}-p_{3})
 \end{aligned}
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma_{c} = \gamma_{0} + P+ 2\gamma_{\phi}\)</span>.  Typical time scales are <span class="math notranslate nohighlight">\(\gamma_{\phi}/\gamma_{0} \sim 10^{6}\)</span>, <span class="math notranslate nohighlight">\(\Omega_{12}/\gamma_{0} \sim 10^{3}\)</span>, and <span class="math notranslate nohighlight">\(P/\gamma_{0} \sim 10\)</span>.  Hence these ODEs are very stiff.</p>
 </section>
 <section id="adiabatic-elimination-of-fast-degrees">
 <h2><span class="section-number">15.1.2. </span>Adiabatic elimination of fast degrees<a class="headerlink" href="#adiabatic-elimination-of-fast-degrees" title="Link to this heading">#</a></h2>
-<p>Noting that the fastest decay <span class="math notranslate nohighlight">\(\gamma{\phi}\)</span>  appears only in <span class="math notranslate nohighlight">\(\Gamma_{c}\)</span>,  we can eliminate the dynamics of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> by adiabatic elimination.  Since <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> relax very fast, they stays near the instantaneous fixed point all time.  Following the standard adiabatic elimination method, we assume <span class="math notranslate nohighlight">\(\dot{x} = 0\)</span> and <span class="math notranslate nohighlight">\(\dot{y} = 0\)</span>.  Hence,</p>
+<p>Noting that the fastest decay <span class="math notranslate nohighlight">\(\gamma{\phi}\)</span>  appears only in <span class="math notranslate nohighlight">\(\Gamma_{c}\)</span>,  we can eliminate the dynamics of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> by adiabatic elimination.  Since <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> relax very fast, they stays near the instantaneous fixed point all time.  Following the standard adiabatic elimination method, we assume <span class="math notranslate nohighlight">\(\dot{c}_\text{r} = 0\)</span> and <span class="math notranslate nohighlight">\(\dot{c}_\text{i} = 0\)</span>.  Hence,</p>
 <div class="math notranslate nohighlight" id="equation-eq-dimer-case4-adiabatic-elimination">
 <span class="eqno">(15.2)<a class="headerlink" href="#equation-eq-dimer-case4-adiabatic-elimination" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
-x &amp; = \frac{\Gamma_{12}}{\Gamma_{c}} \left[p_{4} - \tfrac12(p_{2}+p_{3})\right] \sim 10^{-6}\\
-y &amp; = \frac{\Omega_{12}}{\Gamma_{c}} (p_{2}-p_{3}) \sim 10^{-3}
+c_\text{r} &amp; = \frac{\Gamma_{12}}{\Gamma_{c}} \left[p_{4} - \tfrac12(p_{2}+p_{3})\right] \sim 10^{-6}\\
+c_\text{i} &amp; = \frac{\Omega_{12}}{\Gamma_{c}} (p_{2}-p_{3}) \sim 10^{-3}
 \end{aligned}
 \end{split}\]</div>
-<p>Since <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are very small, we can simply ignore them (<span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(y=0\)</span>), which is the zeroth order approximation.  In the first order approximation, we just plug <a class="reference internal" href="#equation-eq-dimer-case4-adiabatic-elimination">(15.2)</a> to the population dynamics of <span class="math notranslate nohighlight">\(p_{j}\)</span> in Eq. <a class="reference internal" href="#equation-eq-dimer-case4-qme-pop">(15.1)</a>.</p>
-</section>
 <section id="zeroth-order-approximation">
-<h2><span class="section-number">15.1.3. </span>zeroth-order approximation<a class="headerlink" href="#zeroth-order-approximation" title="Link to this heading">#</a></h2>
-<p>Assuming <span class="math notranslate nohighlight">\(x \approx 0\)</span> and <span class="math notranslate nohighlight">\(y \approx 0\)</span>, We obtain a set of ODEs for population <span class="math notranslate nohighlight">\(p_{j}\)</span>.</p>
+<h3>zeroth-order approximation<a class="headerlink" href="#zeroth-order-approximation" title="Link to this heading">#</a></h3>
+<p>Since <span class="math notranslate nohighlight">\(c_\text{r}\)</span> and <span class="math notranslate nohighlight">\(c_\text{i}\)</span> are very small, we can simply ignore them , which is the zeroth order approximation. Seeting <span class="math notranslate nohighlight">\(c_\text{r}=0\)</span> and <span class="math notranslate nohighlight">\(c_\text{i}=0\)</span>, we obtain a set of ODEs for population <span class="math notranslate nohighlight">\(p_{j}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -616,6 +617,35 @@ Y(t) = &amp; \frac{2P}{(P+\gamma_{0})^2} \left(1 - e^{-\gamma t}\right) \left(\g
 p^\text{ss}_{1} = \frac{P^2}{(P+\gamma_{0})^2}, \qquad  p^\text{ss}_{2} = p^\text{ss}_{3} = \frac{P \gamma_{0}}{(P+\gamma_{0})^2}, \qquad p^\text{ss}_{4} = \frac{\gamma_{0}^2}{(P+\gamma_{0})^2}
 \]</div>
 <p>In principle, we can evalutate coherence functions using these solutions but the final expression is complicated. We resort to a numerical method.</p>
+</section>
+<section id="first-order-approximation">
+<h3>First-order Approximation<a class="headerlink" href="#first-order-approximation" title="Link to this heading">#</a></h3>
+<p>In the first order approximation, we just plug <a class="reference internal" href="#equation-eq-dimer-case4-adiabatic-elimination">(15.2)</a> to the population dynamics of <span class="math notranslate nohighlight">\(p_{j}\)</span> in Eq. <a class="reference internal" href="#equation-eq-dimer-case4-qme-pop">(15.1)</a>.  The resulting equation of motions are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\dot{p}_{1} &amp;= - 2\gamma_{0} p_{1} + P (p_{2}+p_{3}) \\
+\dot{p}_{2} &amp;= \gamma_{0} p_{1} +P p_{4} - (\gamma_{0}+P) p_{2} - \frac{\Gamma_{12}^2}{\Gamma_{c}}\left(p_{4}-\frac{p_{2}+p_{3}}{2}\right) - \frac{2\Omega_{12}^2}{\Gamma_{c}} (p_{2}-p_{2}) \\
+\dot{p}_{3} &amp;= \gamma_{0} p_{1} +P p_{4} - (\gamma_{0}+P) p_{3} - \frac{\Gamma_{12}^2}{\Gamma_{c}}\left(p_{4}-\frac{p_{2}+p_{3}}{2}\right) + \frac{2\Omega_{12}^2}{\Gamma_{c}} (p_{2}-p_{2}) \\
+\dot{p}_{4} &amp;= -2P p_{4} + \gamma_{0}(p_{2}+p_{3}) + \frac{2\Gamma_{12}^2}{\Gamma_{c}} \left(p_{4}-\frac{p_{2}+p_{3}}{2}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>which is purely equations of population dynamics and no coherence equation is involved.  Introducing <span class="math notranslate nohighlight">\(p_{\pm} = \tfrac12\left(p_{2}\pm p_{3}\right)\)</span>,  the equations are simplified further:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\dot{p}_{1} &amp;= - 2 \gamma_{0} p_{1} + 2 P p_{+} \\
+\dot{p}_{4} &amp;= 2 \left(\frac{\Gamma_{12}^2}{\Gamma_{c}}-P\right) p_{4} + 2 \left(\gamma_{0}-\frac{\Gamma_{12}^2}{\Gamma_{c}}\right) p_{+} \\
+\dot{p}_{+} &amp;= \gamma_{0} p_{1} - \frac{\Gamma_{12}^2}{\Gamma_{c}} p_{4} + \left(\frac{\Gamma_{12}^2}{\Gamma_{c}} - \gamma_{0}- P\right) p_{+}
+\end{aligned}
+\end{split}\]</div>
+<p>with the normalization <span class="math notranslate nohighlight">\(p_{1}+p_{4}+2 p_{+}=1\)</span>.  The equation of motion for <span class="math notranslate nohighlight">\(p_{-}\)</span> is decoupled from other populations which can be solved immediately as</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{p}_{-} = -\frac{\Omega_{12}^2}{\Gamma_{c}} p_{-}\qquad \Rightarrow \qquad p_{-}(t) = p_{-}(0) e^{-2 (\Omega_{12}^2/\Gamma_{c}) t} \quad \rightarrow \quad 0
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(p_{-}\)</span> is independent and rapidly decay to zero, we can ignore it.  Hence, we still have <span class="math notranslate nohighlight">\(p_{2}=p_{3}\)</span> even in the first-order approximation.  Furthermore, the effect of the dipole-dipole coupling is diminished by the dephasing.</p>
+</section>
 </section>
 </section>
 
@@ -686,8 +716,11 @@ p^\text{ss}_{1} = \frac{P^2}{(P+\gamma_{0})^2}, \qquad  p^\text{ss}_{2} = p^\tex
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dynamics">15.1.1. Population dynamics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-elimination-of-fast-degrees">15.1.2. Adiabatic elimination of fast degrees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-approximation">15.1.3. zeroth-order approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-elimination-of-fast-degrees">15.1.2. Adiabatic elimination of fast degrees</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeroth-order-approximation">zeroth-order approximation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-approximation">First-order Approximation</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

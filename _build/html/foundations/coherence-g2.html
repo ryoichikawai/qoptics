@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -543,7 +543,7 @@ g^{(2)}(t_{1},t_{2};\mathbf{x}_{1},\mathbf{x}_{2})
 \begin{aligned}
 g^{(2)}(\tau;\mathbf{x})
 &amp;= \frac{\langle I(\mathbf{x},t) I(\mathbf{x},t+\tau)\rangle}{\langle I(\mathbf{x},t) \rangle\langle I(\mathbf{x},t+\tau) \rangle }\\
-&amp;= \frac{\langle I(\mathbf{x},t) I(\mathbf{x},t+\tau)\rangle}{[\langle I(\mathbf{x}) \rangle]^2}\\
+&amp;= \frac{\langle I(\mathbf{x},0) I(\mathbf{x},\tau)\rangle_\text{ss}}{[\langle I(\mathbf{x}) \rangle_\text{ss}]^2}\\
 \end{aligned}
 \end{split}\]</div>
 <p>In the last line, we assume that the system is in a steady state.  We will mainly work on this temporal correlation.</p>
@@ -588,10 +588,10 @@ g^{(2)}(0;\mathbf{x}) = \frac{\langle a^{\dagger} a^{\dagger} a a\rangle_{ss}}{(
 \begin{aligned}
 g^{(2)}(0) &amp;= \frac{\langle n(n-1) \rangle_{ss}}{\langle n \rangle_{ss}^2} = \frac{\langle n^2 \rangle_{ss}}{\langle n \rangle_{ss}^2} - \frac{1}{\langle n \rangle_{ss}} \\
 &amp;=1 + \left(\frac{\Delta n}{\langle n \rangle_{ss}}\right)^2 - \frac{1}{\langle n \rangle_{ss}} \\
-&amp; 1 + \frac{Q}{\langle n \rangle_{ss}}
+&amp;=1 + \frac{Q}{\langle n \rangle_{ss}}
 \end{aligned}
 \end{split}\]</div>
-<p>where we used the fluctuation of photon numbers <span class="math notranslate nohighlight">\((\Delta n)^2 = \langle n^2 \rangle_{ss} - \langle n \rangle_{ss}^2\)</span> and the Madel parameter <span class="math notranslate nohighlight">\(Q= \frac{\left(\Delta n\right)^2 - \langle n \rangle_{ss}} {\langle n \rangle_{ss}}\)</span>.  This nodelay second-order coherence function looks similar to the classical version <a class="reference internal" href="#equation-eq-g2-nodelay-classical">(3.13)</a> but actually quite different.  While the classical value is always above 1 or <span class="math notranslate nohighlight">\(Q &gt; 0\)</span>, we cannot say so for the quantum version.  When <span class="math notranslate nohighlight">\(-1 \le Q &lt; 0\)</span>, we say that the radiation field is nonclassical.  For example, if <span class="math notranslate nohighlight">\(\langle n \rangle_{ss}=1\)</span> and <span class="math notranslate nohighlight">\(\Delta n = 0\)</span>, then we have <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0\)</span> (<span class="math notranslate nohighlight">\(Q=-1\)</span>).  That means if the detector sees only one photon at a time, the nodelay second-order coherence function vanishes.  This is purely a quantum effect known as photon antibunching.</p>
+<p>where we used the fluctuation of photon numbers <span class="math notranslate nohighlight">\((\Delta n)^2 = \langle n^2 \rangle_{ss} - \langle n \rangle_{ss}^2\)</span> and the Madel parameter <span class="math notranslate nohighlight">\(Q= \frac{\left(\Delta n\right)^2 - \langle n \rangle_{ss}} {\langle n \rangle_{ss}}\)</span>.  This no-delay second-order coherence function looks similar to the classical version <a class="reference internal" href="#equation-eq-g2-nodelay-classical">(3.13)</a> but actually quite different.  While the classical value is always above 1 or <span class="math notranslate nohighlight">\(Q &gt; 0\)</span>, we cannot say so for the quantum version.  When <span class="math notranslate nohighlight">\(-1 \le Q &lt; 0\)</span>, we say that the radiation field is non-classical.  For example, if <span class="math notranslate nohighlight">\(\langle n \rangle_{ss}=1\)</span> and <span class="math notranslate nohighlight">\(\Delta n = 0\)</span>, then we have <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0\)</span> (<span class="math notranslate nohighlight">\(Q=-1\)</span>).  That means if the detector sees only one photon at a time, the no-delay second-order coherence function vanishes.  This is purely a quantum effect known as photon antibunching.</p>
 <p>If the order of the operators are different, we did not get this result. It is critical to get the correct order of creation annihilation operators to obtain correct quantum effects.</p>
 <div class="important admonition" id="adm-normal-oirder">
 <p class="admonition-title">Order of operators</p>

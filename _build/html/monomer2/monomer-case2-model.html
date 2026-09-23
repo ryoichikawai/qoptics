@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=8c6b312c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -509,6 +509,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">10.2.1. Quantum master equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">10.2.2. Coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-gamma-phi-and-p">10.2.3. Measuring <span class="math notranslate nohighlight">\(\gamma_{\phi}\)</span> and <span class="math notranslate nohighlight">\(P\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -580,7 +581,7 @@ H_{0} = \frac{\sigma_{0}}{2} \sigma^{z}.
 <p>Using the formula <a class="reference internal" href="../methods/openqm-qme-example.html#equation-eq-example-g1-explicit">(7.31)</a>, we obtain</p>
 <div class="math notranslate nohighlight" id="equation-eq-g1-monomer-qd">
 <span class="eqno">(10.5)<a class="headerlink" href="#equation-eq-g1-monomer-qd" title="Link to this equation">#</a></span>\[
-g^{(1)}(\tau) = e^{-\frac{1}{2}(P + \gamma_{0}+2 \gamma_{\phi})t} \approx e^{-\gamma_{\phi}t}
+g^{(1)}(\tau) = e^{-\frac{1}{2}(P + \gamma_{0}+2 \gamma_{\phi})\tau} \approx e^{-\gamma_{\phi}\tau}
 \]</div>
 <p>Similarly using <a class="reference internal" href="../methods/openqm-qme-example.html#equation-eq-example-g2-explicit">(7.33)</a> we obtain the second-order coherence function</p>
 <div class="math notranslate nohighlight">
@@ -588,6 +589,11 @@ g^{(1)}(\tau) = e^{-\frac{1}{2}(P + \gamma_{0}+2 \gamma_{\phi})t} \approx e^{-\g
 g^{(2)}(\tau) = 1 - e^{-(P + \gamma_{0})\tau}
 \]</div>
 <p>which does not involve <span class="math notranslate nohighlight">\(\gamma_{\phi}\)</span>.</p>
+</section>
+<section id="measuring-gamma-phi-and-p">
+<h2><span class="section-number">10.2.3. </span>Measuring <span class="math notranslate nohighlight">\(\gamma_{\phi}\)</span> and <span class="math notranslate nohighlight">\(P\)</span><a class="headerlink" href="#measuring-gamma-phi-and-p" title="Link to this heading">#</a></h2>
+<p>Plotting the first-coherence function in logarithmic scale,  <span class="math notranslate nohighlight">\(-\ln g^{(1)}(\tau) = \gamma_{\phi} \tau\)</span>.  The slope of the plot is the dephasing rate.</p>
+<p>Similarly plotting the second-order coherence function in logarithmic scale, <span class="math notranslate nohighlight">\(-\ln g^{(2)}(\tau) = (P + \gamma_{0}) \tau\)</span>.  If we know <span class="math notranslate nohighlight">\(\gamma_{0}\)</span> from other measurement, we can find <span class="math notranslate nohighlight">\(P\)</span>.</p>
 <div class="admonition-effect-of-dephasing admonition">
 <p class="admonition-title">Effect of dephasing</p>
 <p>class: important
@@ -665,6 +671,7 @@ While the dephasing dominates in the first-order coherence, the second-order coh
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-master-equation">10.2.1. Quantum master equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coherence-functions">10.2.2. Coherence functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-gamma-phi-and-p">10.2.3. Measuring <span class="math notranslate nohighlight">\(\gamma_{\phi}\)</span> and <span class="math notranslate nohighlight">\(P\)</span></a></li>
 </ul>
   </nav></div>
 
